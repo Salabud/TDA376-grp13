@@ -7,7 +7,7 @@ Team members: Daniel Esteban Lahti, Anton Bülow, Daniel Kindvall, Leo Tieu
 Description of the project
 
 ### Links and resources
-Link to google drive:
+Link to google drive: https://drive.google.com/drive/folders/1EwCuTN0YxqmnjzWAHLTlHEYnAEkhfmlo?usp=sharing
 
 ### Project setup guide
 Download this, update that, build/run program using these commands, etc...
