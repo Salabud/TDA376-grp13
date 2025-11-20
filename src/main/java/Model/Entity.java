@@ -1,4 +1,4 @@
-package com.example.antsimulator;
+package Model;
 
 public interface Entity {
     public void update();

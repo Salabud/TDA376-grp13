@@ -1,4 +1,4 @@
-package com.example.antsimulator;
+package Model;
 
 import java.util.ArrayList;
 import java.util.List;

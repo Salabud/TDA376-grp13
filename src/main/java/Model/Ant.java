@@ -1,8 +1,8 @@
-package com.example.antsimulator;
+package Model;
 
 import java.util.Random;
 
-public class Ant implements Entity{
+public class Ant implements Entity {
     private int x;
     private int y;
     private Random ran;

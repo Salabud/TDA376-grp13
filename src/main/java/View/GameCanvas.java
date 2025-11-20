@@ -1,11 +1,10 @@
-package com.example.antsimulator;
+package View;
 
+import Model.Entity;
+import Model.World;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
-
-import java.util.Arrays;
-import java.util.Objects;
 
 public class GameCanvas extends Canvas {
     World world;
