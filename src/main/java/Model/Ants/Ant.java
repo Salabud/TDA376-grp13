@@ -1,4 +1,7 @@
-package Model;
+package Model.Ants;
+
+import Model.Entity;
+import Model.World.World;
 
 import java.util.Random;
 

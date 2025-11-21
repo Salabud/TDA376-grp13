@@ -1,4 +1,6 @@
-package Model;
+package Model.World;
+
+import Model.Entity;
 
 import java.util.ArrayList;
 import java.util.List;
