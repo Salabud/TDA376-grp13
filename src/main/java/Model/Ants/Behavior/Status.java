@@ -1,4 +1,4 @@
 package Model.Ants.Behavior;
 
-public interface AntStatus {
+public interface Status {
 }
