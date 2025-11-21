@@ -16,20 +16,18 @@ public abstract class Entity implements Updateable{
     private EntityType type; //Final?
     private List<Status> statuses;
 
-
-
     public void setX(int x){
         this.x = x;
     }
     public int getX() {
-        return x;
+        return this.x;
     }
 
     public void setY(int y){
         this.y = y;
     }
     public int getY() {
-        return y;
+        return this.y;
     }
 
     public String getType() {
@@ -45,7 +43,7 @@ public abstract class Entity implements Updateable{
     }
 
     public float getMaxHealth() {
-        return maxHealth;
+        return this.maxHealth;
     }
 
     public void setMaxHealth(float maxHealth) {
@@ -53,7 +51,7 @@ public abstract class Entity implements Updateable{
     }
 
     public float getHunger() {
-        return hunger;
+        return this.hunger;
     }
 
     public void setHunger(float hunger) {
@@ -61,7 +59,7 @@ public abstract class Entity implements Updateable{
     }
 
     public float getMaxHunger() {
-        return maxHunger;
+        return this.maxHunger;
     }
 
     public void setMaxHunger(float maxHunger) {
@@ -69,7 +67,7 @@ public abstract class Entity implements Updateable{
     }
 
     public int getAge() {
-        return age;
+        return this.age;
     }
 
     public void setAge(int age) {
@@ -77,14 +75,14 @@ public abstract class Entity implements Updateable{
     }
 
     public List<Status> getStatuses() {
-        return statuses;
+        return this.statuses;
     }
     public void applyStatuses(){
 
     }
 
     public int getMovementInterval() {
-        return movementInterval;
+        return this.movementInterval;
     }
 
     public void setMovementInterval(int movementInterval) {
