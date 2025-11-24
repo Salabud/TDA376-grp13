@@ -37,6 +37,8 @@ public final class AntFactory {
         world.addEntity(larva);
     }
 
+    //yo
+
     public void createQueenAnt(World world, AntColony colony, int x, int y, int age){
 
     }
