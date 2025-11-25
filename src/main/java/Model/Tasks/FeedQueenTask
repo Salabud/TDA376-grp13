@@ -1,0 +1,35 @@
+package Model.Tasks;
+
+import Model.Ants.WorkerAnt;
+import Model.Ants.Behavior.FeedBehavior;
+
+public class FeedQueenTask implements Task {
+    private final Position queenPosition;
+    private boolean isComplete = false;
+
+    @Override
+    public void execute(WorkerAnt ant) {
+        if (!ant.getPosition().equals(queenPosition)) {
+            ant.setAntState(new WalkingState());
+            ant.setMovementStrategy(new MoveToLocationStrategy(queenPosition));
+            ant.getMovementStrategy().move(ant);
+            return;
+        }
+
+        if (!(ant.getBehavior() instanceof FeedBehavior)) {
+            ant.setBehavior(new FeedBehavior());
+        }
+        ant.setAntState(new WorkingState());
+        ant.getBehavior().perform(ant);
+
+        if (ant.hasFedQueen()) {
+            isComplete = true;
+            ant.setCurrentTask(null);
+            ant.setAntState(new IdleState());
+        }
+    }
+
+    public boolean isComplete() {
+        return isComplete;
+    }
+}
