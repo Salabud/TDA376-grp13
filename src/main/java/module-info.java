@@ -3,7 +3,8 @@ module com.example.antsimulator {
     requires javafx.fxml;
 
     requires com.dlsc.formsfx;
-
+    requires java.sql;
+    exports Model.Tasks;
     opens com.example.antsimulator to javafx.fxml;
     exports Model;
     opens Model to javafx.fxml;
