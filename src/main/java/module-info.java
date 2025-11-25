@@ -21,4 +21,6 @@ module com.example.antsimulator {
     opens Model.Ants.Behavior to javafx.fxml;
     exports Model.World;
     opens Model.World to javafx.fxml;
+    exports Model.Ants.Behavior.State;
+    opens Model.Ants.Behavior.State to javafx.fxml;
 }
