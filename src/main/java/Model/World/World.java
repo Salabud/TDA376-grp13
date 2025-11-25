@@ -1,35 +1,34 @@
 package Model.World;
 
-import Model.Entity;
-
-import java.util.ArrayList;
 import java.util.List;
 
+import Model.Entity;
+
 public class World {
-    private Entity[][] grid;
-    private List<Entity> entities;
+    private List<Entity>[][] entityGrid;
+    private List<Tile>[] tileGrid;
+    
 
     World(){
-        int gridSize = 100;
-        grid = new Entity[gridSize][gridSize];
-        entities = new ArrayList<>();
+        int gridSize = 100; //Temporary demo size
+        this.entityGrid = new List[gridSize][gridSize];
+        this.tileGrid = new List[gridSize];
     }
 
-    public void addEntity(Entity ent){
-        grid[ent.getX()][ent.getY()] = ent;
-        entities.add(ent);
+    public void addEntity(Entity entity){
+        entityGrid[entity.getX()][entity.getY()].add(entity);
+    }
+
+    public void removeEntity(Entity entity) {
+        entityGrid[entity.getX()][entity.getY()].remove(entity);
+    }
+
+    public void breakTile(Tile tile){
+        // tileGrid[tile.getX()] MAKE INTO ITEM
+
     }
 
 
     public void tick(){
-        for (Entity entity: entities) {
-            entity.update();
         }
     }
-    public Entity[][] getGrid(){
-        return grid;
-    }
-    public List<Entity> getEntities(){
-        return entities;
-    }
-}
