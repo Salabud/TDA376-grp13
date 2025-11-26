@@ -23,12 +23,23 @@ public class World {
         entityGrid[entity.getX()][entity.getY()].remove(entity);
     }
 
-    public void breakTile(Tile tile){
-        // tileGrid[tile.getX()] MAKE INTO ITEM
+    public Item breakTile(Tile tile){
+        return null; //TODO
+    }
 
+    public void addTile(Tile tile){
+        //TODO
     }
 
 
     public void tick(){
+        for (int x=0; x<entityGrid.length; x++){
+            for (int y=0; y<entityGrid[x].length; y++){
+                for (Entity entity : entityGrid[x][y]){
+                    entity.update();
+                }
+            }
         }
     }
+}
+

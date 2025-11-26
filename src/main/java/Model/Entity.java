@@ -5,8 +5,7 @@ import Model.Ants.Behavior.Status;
 import java.util.List;
 
 public abstract class Entity implements Updateable{
-    private int x;
-    private int y;
+    private Position position;
     private float health;
     private float maxHealth;
     private float hunger;
@@ -16,6 +15,10 @@ public abstract class Entity implements Updateable{
     private EntityType type; //Final?
     private List<Status> statuses;
 
+    public void update(){
+
+    }
+    
     public void setX(int x){
         this.x = x;
     }
