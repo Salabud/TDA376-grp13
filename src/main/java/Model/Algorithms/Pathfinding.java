@@ -118,6 +118,15 @@ public class Pathfinding {
         }
 
         Collections.reverse(path);
+
+        // Removing the first and last node. The ant already starts on one and the ant doesn't
+        // want to end up in the tile it is going to go to.
+        if (path.size() >= 2) {
+            path = path.subList(1, path.size() - 1);
+        } else {
+            return new Position[0];
+        }
+
         return path.toArray(new Position[0]);
     }
 }
