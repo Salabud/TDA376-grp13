@@ -24,6 +24,7 @@ public class EntityCanvas extends Canvas {
 
     public void updateEntities(List<Entity> entities) {
         this.entities = entities;
+        render();
     }
 
     public void render() {
