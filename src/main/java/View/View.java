@@ -28,9 +28,6 @@ public class View implements ModelListener {
         this.root = new BorderPane();
     }
     
-    /**
-     * Initialize the view and set up the scene.
-     */
     public void initialize() {
         // Create canvas components
         //this.worldCanvas = new WorldCanvas();
@@ -39,6 +36,7 @@ public class View implements ModelListener {
         
         // Layout components
         root.setCenter(worldCanvas);
+        root.setCenter(entityCanvas);
         // Add other canvases as needed
         
         // Create scene
@@ -73,7 +71,6 @@ public class View implements ModelListener {
     @Override
     public void onModelUpdated() {
         // Refresh the entire view
-        render();
     }
     
     @Override
@@ -91,17 +88,8 @@ public class View implements ModelListener {
             interfaceCanvas.updateGameState(newState);
         }
     }
-    
-    /**
-     * Main rendering method.
-     */
-    private void render() {
-        if (worldCanvas != null) {
-            worldCanvas.render();
-        }
-        if (entityCanvas != null) {
-            entityCanvas.render();
-        }
+
+    public void renderInterface() {
         if (interfaceCanvas != null) {
             interfaceCanvas.render();
         }

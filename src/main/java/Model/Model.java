@@ -21,6 +21,7 @@ public class Model extends Application {
     private String gameState;
     
     public Model() {
+        this.worlds = new ArrayList<>();
         this.listeners = new ArrayList<>();
         this.tickrate = 60; // Default tickrate
         this.gameState = "RUNNING";
@@ -100,5 +101,12 @@ public class Model extends Application {
             world.tick();
         }
         notifyEntitiesChanged();
+    }
+
+    public void addWorld(World world) {
+        this.worlds.add(world);
+    }
+    public void removeWorld(World world) {
+        this.worlds.remove(world);
     }
 }
