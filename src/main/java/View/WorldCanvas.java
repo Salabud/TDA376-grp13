@@ -13,13 +13,16 @@ public class WorldCanvas extends Canvas {
     private GraphicsContext gc;
     private int cellsize;
     private int gridStrokeSize;
+    private final Sprite dirt;
 
-    public WorldCanvas(World world, int width, int height) {
+    public WorldCanvas() {
         gc = getGraphicsContext2D();
+        dirt = new Sprite(10,10, Color.SADDLEBROWN);
     }
 
     public void render() {
         gc.clearRect(0, 0, getWidth(), getHeight());
+
 
 
     }

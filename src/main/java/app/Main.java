@@ -7,6 +7,7 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 
 public class Main extends Application {
+    static Thread gameThread;
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -31,9 +32,27 @@ public class Main extends Application {
         
         // Start the model (game loop, etc.)
         model.start(stage);
+
+        gameThread = new Thread() {
+            @Override
+            public void run(){
+                try {
+                    while(true){
+                        Thread.sleep(600);
+                        System.out.println("ticking...");
+                    }
+                } catch(InterruptedException e){
+
+                }
+            }
+        };
+
+        System.out.println("Starting program");
+        gameThread.start();
     }
 
     public static void main(String[] args) {
         launch(args);
+
     }
 }

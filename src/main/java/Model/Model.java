@@ -1,6 +1,7 @@
 package Model;
 
 import Model.World.World;
+import View.EntityCanvas;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
@@ -95,6 +96,9 @@ public class Model extends Application {
      */
     public void update() {
         // Update game logic
-        notifyModelUpdated();
+        for (World world: worlds){
+            world.tick();
+        }
+        notifyEntitiesChanged();
     }
 }
