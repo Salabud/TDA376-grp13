@@ -6,8 +6,8 @@ import Model.Ants.Movement.AntMovement;
 import Model.Ants.State.AntState;
 import Model.Colony.AntColony;
 import Model.Colony.ColonyMediator;
+import Model.Datastructures.Position;
 import Model.EntityType;
-import Model.Position;
 import Model.World.World;
 import java.util.List;
 
