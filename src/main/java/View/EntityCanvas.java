@@ -22,10 +22,10 @@ public class EntityCanvas extends Canvas {
         this.cellsize = 10;
         setWidth(1000);
         setHeight(1000);
-        this.workerAnt = new Sprite(cellsize*0.8, cellsize*0.8, Color.ORANGE);
-        this.larva = new Sprite(cellsize*0.8, cellsize*0.8, Color.WHITE);
-        this.food = new Sprite(cellsize*0.8, cellsize*0.8, Color.RED);
-        this.queen = new Sprite(cellsize*0.8, cellsize*0.8, Color.YELLOW);
+        this.workerAnt = new Sprite(cellsize, Color.ORANGE);
+        this.larva = new Sprite(cellsize, Color.WHITE);
+        this.food = new Sprite(cellsize, Color.RED);
+        this.queen = new Sprite(cellsize, Color.YELLOW);
     }
 
     public void updateEntities(List<Entity> entities) {
@@ -34,6 +34,7 @@ public class EntityCanvas extends Canvas {
     }
 
     public void render() {
+        gc.clearRect(0, 0, getWidth(), getHeight());
         for (Entity entity : entities) {
             switch (entity.getType()) {
                 case EntityType.WORKER_ANT:

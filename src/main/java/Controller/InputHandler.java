@@ -1,4 +1,4 @@
-package View;
+package Controller;
 
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;

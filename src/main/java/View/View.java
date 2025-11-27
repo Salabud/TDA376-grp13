@@ -1,10 +1,11 @@
 package View;
 
-import Model.Entity;
+import Controller.InputHandler;
 import Model.ModelListener;
 import Model.World.World;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 /**
@@ -22,6 +23,7 @@ public class View implements ModelListener {
     private WorldCanvas worldCanvas;
     private EntityCanvas entityCanvas;
     private InterfaceCanvas interfaceCanvas;
+    private StackPane canvasLayer;
     
     public View(Stage stage) {
         this.stage = stage;
@@ -30,13 +32,14 @@ public class View implements ModelListener {
     
     public void initialize() {
         // Create canvas components
-        //this.worldCanvas = new WorldCanvas();
+        this.worldCanvas = new WorldCanvas();
         this.entityCanvas = new EntityCanvas();
         this.interfaceCanvas = new InterfaceCanvas();
+        canvasLayer = new StackPane();
         
         // Layout components
-        root.setCenter(worldCanvas);
-        root.setCenter(entityCanvas);
+        canvasLayer.getChildren().addAll(worldCanvas, entityCanvas);
+        root.setCenter(canvasLayer);
         // Add other canvases as needed
         
         // Create scene
@@ -72,7 +75,17 @@ public class View implements ModelListener {
     public void onModelUpdated() {
         // Refresh the entire view
     }
-    
+
+    /**
+     * @param world the world that is to be rendered
+     */
+    @Override
+    public void onTilesetChanged(World world) {
+        // Update specific entity rendering
+        if (worldCanvas != null) {
+            worldCanvas.render(world);
+        }
+    }
     @Override
     public void onEntitiesChanged(World world) {
         // Update specific entity rendering

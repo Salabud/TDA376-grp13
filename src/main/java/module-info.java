@@ -28,4 +28,6 @@ module com.example.antsimulator {
     opens Model.Ants.Movement to javafx.fxml;
     exports Model.Ants.Status;
     opens Model.Ants.Status to javafx.fxml;
+    exports Model.Datastructures;
+    opens Model.Datastructures to javafx.fxml;
 }

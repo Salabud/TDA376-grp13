@@ -71,6 +71,12 @@ public class Model {
             listener.onModelUpdated();
         }
     }
+
+    protected void notifyTilesetChanged() {
+        for (ModelListener listener : listeners){
+            listener.onTilesetChanged(worlds.getFirst()); //refactor when we are handling multiple worlds
+        }
+    }
     
     protected void notifyEntitiesChanged() {
         for (ModelListener listener : listeners) {
@@ -107,6 +113,8 @@ public class Model {
         for (ModelListener listener : listeners) {
             listener.onGameStateChanged(newState);
         }
+        notifyEntitiesChanged();
+        notifyTilesetChanged();
     }
 
     public void addWorld(World world) {

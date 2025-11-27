@@ -11,7 +11,11 @@ public class Sprite {
         this.color = color;
         this.height = height;
         this.width = width;
-
+    }
+    public Sprite(double size, Color color){
+        this.color = color;
+        this.height = size;
+        this.width = size;
     }
 
     public double getWidth() {

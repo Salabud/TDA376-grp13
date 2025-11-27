@@ -1,7 +1,6 @@
 package Controller;
 
 import Model.Model;
-import View.InputHandler;
 import View.View;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
