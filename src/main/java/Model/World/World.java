@@ -4,27 +4,30 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Model.Ants.AntFactory;
+import Model.Ants.TaskPerformerAnt;
 import Model.Colony.AntColony;
 import Model.Colony.ColonyMediator;
 import Model.Colony.ColonyTaskBoard;
 import Model.Entity;
+import Model.Tasks.TemporaryTestTask;
 
 public class World {
     private List<Entity>[][] entityGrid;
     private List<Entity> entities;
-    private List<Tile>[] tileGrid;
+    private List<Tile>[][] tileGrid;
     private List<Tile> tiles;
     
 
     public World(){
         int gridSize = 100; //Temporary demo size
         this.entityGrid = new List[gridSize][gridSize];
-        this.tileGrid = new List[gridSize];
+        this.tileGrid = new List[gridSize][gridSize];
         this.entities = new ArrayList<>();
         this.tiles = new ArrayList<>();
-        for (int x=0; x<entityGrid.length; x++) {
-            for (int y=0; y < entityGrid[x].length; y++) {
+        for (int x=0; x<gridSize; x++) {
+            for (int y=0; y < gridSize; y++) {
                 entityGrid[x][y] = new ArrayList<>();
+                tileGrid[x][y] = new ArrayList<>();
             }
         }
 
@@ -34,7 +37,8 @@ public class World {
         AntColony colony = new AntColony(mediator, taskBoard);
         
         AntFactory factory = AntFactory.getInstance();
-        factory.createWorkerAnt(this, colony, 0, 50, 50, mediator);
+        TaskPerformerAnt ant = factory.createWorkerAnt(this, colony, 0, 0, 0, mediator);
+        ant.assignTask(new TemporaryTestTask());
         Tile tile1 = new Tile(70, 50, MaterialType.DIRT);
         tiles.add(tile1);
     }
@@ -62,16 +66,13 @@ public class World {
     }
 
     public void tick(){
-        for (int x=0; x<entityGrid.length; x++){
-            for (int y=0; y<entityGrid[x].length; y++){
-                for (Entity entity : entityGrid[x][y]){
-                    entity.update();
-                }
-            }
+        // Iterate over entities list, not entityGrid, since entities can move
+        for (Entity entity : entities) {
+            entity.update();
         }
     }
 
-    public List<Tile>[] getTileGrid() {
+    public List<Tile>[][] getTileGrid() {
         return tileGrid;
     }
 

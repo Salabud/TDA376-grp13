@@ -22,8 +22,7 @@ public class WorkerAnt extends TaskPerformerAnt {
 
     @Override
     public void update() {
-        if (currentTask != null) {
-            currentTask.execute(this);
-        }
+        //System.out.println("workerAnt update");
+        super.update();
     }
 }

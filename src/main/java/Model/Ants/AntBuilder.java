@@ -1,5 +1,6 @@
 package Model.Ants;
 
+import Model.Ants.Movement.NoMovement;
 import Model.Ants.Status.Status;
 import Model.Ants.Behavior.AntBehavior;
 import Model.Ants.Movement.AntMovement;
@@ -31,7 +32,7 @@ public class AntBuilder {
     private ColonyMediator mediator;
     private AntState state;
     private AntBehavior behavior;
-    private AntMovement movement;
+    private AntMovement movement = new NoMovement();
 
     public AntBuilder world(World world) { this.world = world; return this; }
     public AntBuilder position(Position position) { this.position = position; return this; }

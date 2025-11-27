@@ -2,8 +2,8 @@ package Model.Ants.Movement;
 
 import Model.Ants.Ant;
 
-public class notInMovement implements AntMovement{
-    public notInMovement(){
+public class NoMovement implements AntMovement{
+    public NoMovement(){
     }
 
     public void move(Ant ant){

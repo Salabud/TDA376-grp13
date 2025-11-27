@@ -49,7 +49,7 @@ public class EntityCanvas extends Canvas {
                     gc.setFill(SpriteRegistry.getInstance().Queen.getColor());
                     gc.fillOval(entity.getX(), entity.getY(), SpriteRegistry.getInstance().Queen.getWidth(), SpriteRegistry.getInstance().Queen.getHeight());
                     break;
-                case EntityType.FOOD:
+                case EntityType.ITEM:
                     gc.setFill(SpriteRegistry.getInstance().Food.getColor());
                     gc.fillOval(entity.getX(), entity.getY(), SpriteRegistry.getInstance().Food.getWidth(), SpriteRegistry.getInstance().Food.getHeight());
                     break;

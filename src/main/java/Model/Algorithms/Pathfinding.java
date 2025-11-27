@@ -1,15 +1,15 @@
 package Model.Algorithms;
 
 import Model.Datastructures.Position;
+import Model.World.Tile;
 
 import java.util.*;
 
 public class Pathfinding {
+    public static Position[] Astar(Position start, Position goal, List<Tile>[][] tileGrid) {
+        int gridWidth = tileGrid.length;
+        int gridHeight = tileGrid[0].length;
 
-    // Replace this with your actual world reference (null = passable)
-    public static Object[][] world;
-
-    public static Position[] Astar(Position start, Position goal) {
         Set<String> closed = new HashSet<>();
 
         Map<String, Double> gScore = new HashMap<>();
@@ -41,7 +41,7 @@ public class Pathfinding {
 
             closed.add(currentKey);
 
-            for (Position neighbor : neighbors(current)) {
+            for (Position neighbor : neighbors(current, tileGrid, gridWidth, gridHeight)) {
 
                 String nk = key(neighbor);
 
@@ -65,7 +65,7 @@ public class Pathfinding {
         return new Position[0];
     }
 
-    // Heuristic for grid
+    // Heuristic for grid (Manhattan distance)
     private static double heuristic(Position a, Position b) {
         return Math.abs(a.getX() - b.getX()) + Math.abs(a.getY() - b.getY());
     }
@@ -74,17 +74,18 @@ public class Pathfinding {
         return p.getX() + "," + p.getY();
     }
 
-    private static boolean passable(int x, int y) {
-        return world[x][y] == null;
-    }
-
-    private static boolean inBounds(int x, int y) {
+    private static boolean inBounds(int x, int y, int gridWidth, int gridHeight) {
         return x >= 0 && y >= 0 &&
-                x < world.length &&
-                y < world[0].length;
+                x < gridWidth &&
+                y < gridHeight;
     }
 
-    private static List<Position> neighbors(Position p) {
+    private static boolean passable(int x, int y, List<Tile>[][] tileGrid) {
+        List<Tile> tilesAtPosition = tileGrid[x][y];
+        return tilesAtPosition == null || tilesAtPosition.isEmpty();
+    }
+
+    private static List<Position> neighbors(Position p, List<Tile>[][] tileGrid, int gridWidth, int gridHeight) {
         List<Position> list = new ArrayList<>();
         int x = p.getX();
         int y = p.getY();
@@ -100,7 +101,7 @@ public class Pathfinding {
             int nx = x + d[0];
             int ny = y + d[1];
 
-            if (inBounds(nx, ny) && passable(nx, ny)) {
+            if (inBounds(nx, ny, gridWidth, gridHeight) && passable(nx, ny, tileGrid)) {
                 list.add(new Position(nx, ny));
             }
         }
@@ -119,12 +120,10 @@ public class Pathfinding {
 
         Collections.reverse(path);
 
-        // Removing the first and last node. The ant already starts on one and the ant doesn't
-        // want to end up in the tile it is going to go to.
-        if (path.size() >= 2) {
+        // Remove the first node (start position) - ant is already there
+
+        if (path.size() >= 1) {
             path = path.subList(1, path.size() - 1);
-        } else {
-            return new Position[0];
         }
 
         return path.toArray(new Position[0]);

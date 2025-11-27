@@ -14,5 +14,12 @@ public class TaskPerformerAnt extends Ant{
     }
 
     @Override
-    public void update() {}
+    public void update() {
+        //System.out.println("taskPerformerAnt update");
+        if (currentTask != null) {
+            currentTask.execute(this);
+        }
+        System.out.println("ant tick");
+        super.update();
+    }
 }
