@@ -14,20 +14,18 @@ import Model.Tasks.TemporaryTestTask;
 public class World {
     private List<Entity>[][] entityGrid;
     private List<Entity> entities;
-    private List<Tile>[][] tileGrid;
+    private Tile[][] tileGrid;
     private List<Tile> tiles;
-    
 
     public World(){
         int gridSize = 100; //Temporary demo size
         this.entityGrid = new List[gridSize][gridSize];
-        this.tileGrid = new List[gridSize][gridSize];
+        this.tileGrid = new Tile[gridSize][gridSize];
         this.entities = new ArrayList<>();
         this.tiles = new ArrayList<>();
         for (int x=0; x<gridSize; x++) {
             for (int y=0; y < gridSize; y++) {
                 entityGrid[x][y] = new ArrayList<>();
-                tileGrid[x][y] = new ArrayList<>();
             }
         }
 
@@ -37,21 +35,21 @@ public class World {
         AntColony colony = new AntColony(mediator, taskBoard);
         
         AntFactory factory = AntFactory.getInstance();
-        TaskPerformerAnt ant = factory.createWorkerAnt(this, colony, 0, 0, 0, mediator);
-        ant.assignTask(new TemporaryTestTask());
+        TaskPerformerAnt ant1 = factory.createWorkerAnt(this, colony, 0, 0, 0, mediator);
+        TaskPerformerAnt ant2 = factory.createWorkerAnt(this, colony, 0, 79, 0, mediator);
+        ant1.assignTask(new TemporaryTestTask());
+        ant2.assignTask(new TemporaryTestTask());
+
         Tile tile1 = new Tile(70, 50, MaterialType.DIRT);
         tiles.add(tile1);
 
-        /**
-        for (int x = 0; x < 100; x++){
-            for (int y = 50; y < 100; y++){
+        for (int x = 20; x < 100; x++){
+            for (int y = 50; y < 70; y++){
                 Tile tile = new Tile(x,y,MaterialType.DIRT);
                 tiles.add(tile);
-                tileGrid[x][y].add(tile);
+                tileGrid[x][y] = tile;
             }
         }
-         */
-
     }
 
     public void addEntity(Entity entity){
@@ -65,11 +63,13 @@ public class World {
     }
 
     public Item breakTile(Tile tile){
-        return null; //TODO
+        return null; //TODO: same as below
     }
 
-    public void addTile(Tile tile){
-        //TODO
+    public void addTile(Tile tile, int x, int y, MaterialType materialType){
+        tile = new Tile(x, y, materialType);
+        tiles.add(tile);
+        tileGrid[x][y] = tile;
     }
 
     public List<Entity> getEntities(){
@@ -83,7 +83,7 @@ public class World {
         }
     }
 
-    public List<Tile>[][] getTileGrid() {
+    public Tile[][] getTileGrid() {
         return tileGrid;
     }
 

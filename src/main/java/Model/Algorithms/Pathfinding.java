@@ -6,7 +6,7 @@ import Model.World.Tile;
 import java.util.*;
 
 public class Pathfinding {
-    public static Position[] Astar(Position start, Position goal, List<Tile>[][] tileGrid) {
+    public static Position[] Astar(Position start, Position goal, Tile[][] tileGrid) {
         int gridWidth = tileGrid.length;
         int gridHeight = tileGrid[0].length;
 
@@ -80,12 +80,12 @@ public class Pathfinding {
                 y < gridHeight;
     }
 
-    private static boolean passable(int x, int y, List<Tile>[][] tileGrid) {
-        List<Tile> tilesAtPosition = tileGrid[x][y];
-        return tilesAtPosition == null || tilesAtPosition.isEmpty();
+    private static boolean passable(int x, int y, Tile[][] tileGrid) {
+        Tile tileAtPosition = tileGrid[x][y];
+        return tileAtPosition == null;
     }
 
-    private static List<Position> neighbors(Position p, List<Tile>[][] tileGrid, int gridWidth, int gridHeight) {
+    private static List<Position> neighbors(Position p, Tile[][] tileGrid, int gridWidth, int gridHeight) {
         List<Position> list = new ArrayList<>();
         int x = p.getX();
         int y = p.getY();
@@ -120,7 +120,7 @@ public class Pathfinding {
 
         Collections.reverse(path);
 
-        // Remove the first node (start position) - ant is already there
+        // Remove the first and last node (start position), ant is already there
 
         if (path.size() >= 1) {
             path = path.subList(1, path.size() - 1);

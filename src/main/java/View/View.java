@@ -43,7 +43,7 @@ public class View implements ModelListener {
         // Add other canvases as needed
         
         // Create scene
-        scene = new Scene(root, 1000, 1000);
+        scene = new Scene(root,800,800);
         stage.setScene(scene);
         stage.setTitle("Ant Simulator");
         

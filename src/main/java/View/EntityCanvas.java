@@ -11,7 +11,7 @@ import java.util.List;
 public class EntityCanvas extends Canvas {
     private List<Entity> entities;
     private final GraphicsContext gc = getGraphicsContext2D();
-    private int cellsize;
+    private int cellsize; //TODO: Cellsize dynamically reflect window dimensions
     private final Sprite workerAnt;
     private final Sprite larva;
     private final Sprite food;
@@ -19,9 +19,9 @@ public class EntityCanvas extends Canvas {
 
 
     public EntityCanvas(){
-        this.cellsize = 10;
-        setWidth(1000);
-        setHeight(1000);
+        this.cellsize = 8;
+        setWidth(800);
+        setHeight(800);
         this.workerAnt = new Sprite(cellsize, Color.ORANGE);
         this.larva = new Sprite(cellsize, Color.WHITE);
         this.food = new Sprite(cellsize, Color.RED);
@@ -39,19 +39,19 @@ public class EntityCanvas extends Canvas {
             switch (entity.getType()) {
                 case EntityType.WORKER_ANT:
                     gc.setFill(workerAnt.getColor());
-                    gc.fillOval(entity.getX(), entity.getY(), workerAnt.getWidth(), workerAnt.getHeight());
+                    gc.fillOval(entity.getX()*cellsize, entity.getY()*cellsize, workerAnt.getWidth(), workerAnt.getHeight());
                     break;
                 case EntityType.LARVA:
                     gc.setFill(SpriteRegistry.getInstance().Larva.getColor());
-                    gc.fillOval(entity.getX(), entity.getY(), SpriteRegistry.getInstance().Larva.getWidth(), SpriteRegistry.getInstance().Larva.getHeight());
+                    gc.fillOval(entity.getX()*cellsize, entity.getY()*cellsize, SpriteRegistry.getInstance().Larva.getWidth(), SpriteRegistry.getInstance().Larva.getHeight());
                     break;
                 case EntityType.QUEEN:
                     gc.setFill(SpriteRegistry.getInstance().Queen.getColor());
-                    gc.fillOval(entity.getX(), entity.getY(), SpriteRegistry.getInstance().Queen.getWidth(), SpriteRegistry.getInstance().Queen.getHeight());
+                    gc.fillOval(entity.getX()*cellsize, entity.getY()*cellsize, SpriteRegistry.getInstance().Queen.getWidth(), SpriteRegistry.getInstance().Queen.getHeight());
                     break;
                 case EntityType.ITEM:
                     gc.setFill(SpriteRegistry.getInstance().Food.getColor());
-                    gc.fillOval(entity.getX(), entity.getY(), SpriteRegistry.getInstance().Food.getWidth(), SpriteRegistry.getInstance().Food.getHeight());
+                    gc.fillOval(entity.getX()*cellsize, entity.getY()*cellsize, SpriteRegistry.getInstance().Food.getWidth(), SpriteRegistry.getInstance().Food.getHeight());
                     break;
 
             }

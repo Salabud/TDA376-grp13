@@ -14,7 +14,7 @@ public class PathfindingMovement implements AntMovement{
     private Position[] pathToGoal;
     int finalStep;
 
-    public PathfindingMovement(Position start, Position goal, List<Tile>[][] tileGrid){
+    public PathfindingMovement(Position start, Position goal, Tile[][] tileGrid){
         this.pathToGoal = Pathfinding.Astar(start, goal, tileGrid);
         this.finalStep = this.pathToGoal.length;
     }
@@ -27,8 +27,5 @@ public class PathfindingMovement implements AntMovement{
         }
         ant.setPosition(pathToGoal[currentStep]);
         currentStep++;
-        if (currentStep == finalStep){
-            ant.setMovement(new NoMovement());
-        }
     }
 }
