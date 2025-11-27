@@ -1,6 +1,6 @@
 package Model.World;
 
-import Model.Position;
+import Model.Datastructures.Position;
 
 public class Tile {
     private Position position;

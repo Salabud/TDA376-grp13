@@ -1,6 +1,6 @@
 package View;
 
-import Model.Entity;
+import Controller.InputHandler;
 import Model.ModelListener;
 import Model.World.World;
 import javafx.scene.Scene;

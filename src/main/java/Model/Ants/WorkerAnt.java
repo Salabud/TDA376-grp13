@@ -3,8 +3,8 @@ package Model.Ants;
 import java.util.List;
 
 import Model.Colony.ColonyMediator;
+import Model.Datastructures.Position;
 import Model.EntityType;
-import Model.Position;
 import Model.TaskPerformer;
 import Model.Ants.Status.Status;
 import Model.Tasks.Task;
