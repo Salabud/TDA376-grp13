@@ -101,4 +101,8 @@ public abstract class Entity implements Updateable{
     public void setMovementInterval(int movementInterval) {
         this.movementInterval = movementInterval;
     }
+
+    public World getWorld() {
+        return this.world;
+    }
 }

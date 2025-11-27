@@ -19,7 +19,7 @@ public class TemporaryTestTask implements Task{
 
     @Override
     public Position getTargetLocation() {
-        return new Position(100, 100);
+        return new Position(99, 99);  // Within 100x100 grid bounds (0-99)
     }
 
     @Override
@@ -39,9 +39,13 @@ public class TemporaryTestTask implements Task{
 
     @Override
     public void execute(TaskPerformerAnt ant) {
-        System.out.println(ant.getMovement());
-        if (!(ant.getMovement() instanceof NoMovement)){
-            ant.setMovement(new PathfindingMovement(ant.getPosition(), getTargetLocation()));
+        // Only set PathfindingMovement if the ant doesn't already have one
+        if (ant.getMovement() instanceof NoMovement) {
+            ant.setMovement(new PathfindingMovement(
+                ant.getPosition(), 
+                getTargetLocation(), 
+                ant.getWorld().getTileGrid()
+            ));
         }
     }
 
