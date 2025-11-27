@@ -17,6 +17,7 @@ public class Controller implements InputHandler {
     public Controller(Model model, View view) {
         this.model = model;
         this.view = view;
+        setupButtonHandlers();
     }
     
     // InputHandler implementation
@@ -80,6 +81,23 @@ public class Controller implements InputHandler {
             // Resume game logic here
             // model.setGameState("RUNNING");
         }
+    }
+
+    private void setupButtonHandlers(){
+        view.speedButton.setOnAction(e -> handleSpeedButton());
+    }
+
+    private void handleSpeedButton(){
+        System.out.println("Click");
+        if(view.speedButton.getText().equals("x3")){
+            view.speedButton.setText("x1");
+            model.setTickrate(20);
+        }
+        else {
+            view.speedButton.setText("x3");
+            model.setTickrate(60);
+        }
+
     }
     
     /**

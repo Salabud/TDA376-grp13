@@ -19,7 +19,7 @@ public class TaskPerformerAnt extends Ant{
         if (currentTask != null) {
             currentTask.execute(this);
         }
-        System.out.println("ant tick");
+        //System.out.println("ant tick");
         super.update();
     }
 }

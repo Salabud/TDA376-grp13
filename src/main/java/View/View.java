@@ -4,7 +4,9 @@ import Controller.InputHandler;
 import Model.ModelListener;
 import Model.World.World;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
@@ -23,11 +25,20 @@ public class View implements ModelListener {
     private WorldCanvas worldCanvas;
     private EntityCanvas entityCanvas;
     private InterfaceCanvas interfaceCanvas;
-    private StackPane canvasLayer;
-    
+    private Pane canvasLayer;
+
+
+    //UI elements
+    public Button speedButton;
+
+
     public View(Stage stage) {
         this.stage = stage;
         this.root = new BorderPane();
+
+        //UI elements
+        this.speedButton = new Button("x3");
+        speedButton.setLayoutX(400);
     }
     
     public void initialize() {
@@ -35,10 +46,10 @@ public class View implements ModelListener {
         this.worldCanvas = new WorldCanvas();
         this.entityCanvas = new EntityCanvas();
         this.interfaceCanvas = new InterfaceCanvas();
-        canvasLayer = new StackPane();
+        canvasLayer = new Pane();
         
         // Layout components
-        canvasLayer.getChildren().addAll(worldCanvas, entityCanvas);
+        canvasLayer.getChildren().addAll(worldCanvas, entityCanvas, speedButton);
         root.setCenter(canvasLayer);
         // Add other canvases as needed
         
