@@ -29,7 +29,6 @@ public class FeedQueenTask implements Task {
     public AntMovement getMovementStrategy() {
         return null;
     }
-
     public void execute(TaskPerformerAnt ant) {
         /*if (!ant.getPosition().equals(queenPosition)) {
             ant.setAntState(new WalkingState());

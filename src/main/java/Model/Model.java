@@ -1,57 +1,71 @@
 package Model;
 
 import Model.World.World;
-import View.EntityCanvas;
-import javafx.application.Application;
-import javafx.stage.Stage;
+import javafx.application.Platform;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
-/**
- * Model class - the Subject in the Observer pattern.
- * Follows Single Responsibility Principle - manages game state only.
- * Follows Open/Closed Principle - extensible through listeners.
- */
-public class Model extends Application {
+public class Model {
     private int tickrate;
     private List<World> worlds;
     private List<ModelListener> listeners;
     private String gameState;
+    private ScheduledExecutorService tickExecutor;
+    private boolean isRunning;
     
     public Model() {
         this.worlds = new ArrayList<>();
         this.listeners = new ArrayList<>();
-        this.tickrate = 60; // Default tickrate
+        this.tickrate = 60;
         this.gameState = "RUNNING";
+        this.isRunning = false;
     }
 
-    @Override
-    public void start(Stage stage) throws IOException {
-        // Game initialization logic here
+    public void update() {
+        for (World world : worlds) {
+            world.tick();
+        }
+        notifyEntitiesChanged();
+    }
+
+    public void startTicking() {
+        if (isRunning) return;
+        isRunning = true;
+        tickExecutor = Executors.newSingleThreadScheduledExecutor();
+        tickExecutor.scheduleWithFixedDelay(() -> {
+            Platform.runLater(this::update);
+        }, 0, tickrate, TimeUnit.MILLISECONDS);
+    }
+
+    public void stopTicking() {
+        isRunning = false;
+        if (tickExecutor != null && !tickExecutor.isShutdown()) {
+            tickExecutor.shutdownNow();
+        }
+    }
+
+    // Använd detta för att starta om tick-loopen när tickrate ändras
+    private void restartTicking() {
+        if (isRunning) {
+            stopTicking();
+            startTicking();
+        }
     }
     
-    /**
-     * Add a listener to observe model changes.
-     * Follows Dependency Inversion - depends on abstraction (ModelListener).
-     */
     public void addListener(ModelListener listener) {
         if (listener != null && !listeners.contains(listener)) {
             listeners.add(listener);
         }
     }
     
-    /**
-     * Remove a listener from observing model changes.
-     */
     public void removeListener(ModelListener listener) {
         listeners.remove(listener);
     }
     
-    /**
-     * Notify all listeners of a model update.
-     */
     protected void notifyModelUpdated() {
         for (ModelListener listener : listeners) {
             listener.onModelUpdated();
@@ -64,47 +78,40 @@ public class Model extends Application {
         }
     }
     
-    /**
-     * Notify all listeners of an entity change.
-     */
     protected void notifyEntitiesChanged() {
         for (ModelListener listener : listeners) {
-            listener.onEntitiesChanged(worlds.getFirst()); //refactor when we are handling multiple worlds
+            listener.onEntitiesChanged(worlds.getFirst()); //Refactor when we are handling multiple worlds
         }
     }
     
-    /**
-     * Notify all listeners of a game state change.
-     */
-    protected void notifyGameStateChanged(String newState) {
-        this.gameState = newState;
-        for (ModelListener listener : listeners) {
-            listener.onGameStateChanged(newState);
-        }
-    }
-    
-    // Getters and business logic methods
     public int getTickrate() {
         return tickrate;
     }
     
     public void setTickrate(int tickrate) {
         this.tickrate = tickrate;
+        restartTicking(); // Applicera ny tickrate
         notifyModelUpdated();
     }
     
     public String getGameState() {
         return gameState;
     }
-    
-    /**
-     * Main game loop update method.
-     * Called each tick to update game state.
-     */
-    public void update() {
-        // Update game logic
-        for (World world: worlds){
-            world.tick();
+
+    public void setGameState(String gameState) {
+        this.gameState = gameState;
+        if ("PAUSED".equals(gameState)) {
+            stopTicking();
+        } else if ("RUNNING".equals(gameState)) {
+            startTicking();
+        }
+        notifyGameStateChanged(gameState);
+    }
+
+    protected void notifyGameStateChanged(String newState) {
+        this.gameState = newState;
+        for (ModelListener listener : listeners) {
+            listener.onGameStateChanged(newState);
         }
         notifyEntitiesChanged();
         notifyTilesetChanged();
@@ -113,7 +120,12 @@ public class Model extends Application {
     public void addWorld(World world) {
         this.worlds.add(world);
     }
+
     public void removeWorld(World world) {
         this.worlds.remove(world);
+    }
+
+    public boolean isRunning() {
+        return isRunning;
     }
 }
