@@ -66,12 +66,9 @@ public class World {
     }
 
     public void tick(){
-        for (int x=0; x<entityGrid.length; x++){
-            for (int y=0; y<entityGrid[x].length; y++){
-                for (Entity entity : entityGrid[x][y]){
-                    entity.update();
-                }
-            }
+        //System.out.println("world tick");
+        for (Entity entity: entities){
+            entity.update();
         }
     }
 

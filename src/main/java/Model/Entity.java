@@ -19,7 +19,7 @@ public abstract class Entity implements Updateable{
     protected List<Status> statuses;
 
     public void update(){
-
+        System.out.println("entity update");
     }
 
     public void setX(int x){
