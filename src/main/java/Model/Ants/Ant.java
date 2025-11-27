@@ -18,9 +18,20 @@ public abstract class Ant extends Entity {
     List<Status> statuses;
     AntState state;
     AntBehavior behavior;
+
+    public AntMovement getMovement() {
+        return movement;
+    }
+
+    public void setMovement(AntMovement movement) {
+        this.movement = movement;
+    }
+
     AntMovement movement;
     
 
     @Override
-    public void update() {}
+    public void update() {
+
+    }
 }

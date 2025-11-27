@@ -1,10 +1,9 @@
 package Model.Tasks;
 
-import Model.Ants.Ant;
 import Model.Ants.Behavior.AntBehavior;
 import Model.Ants.Movement.AntMovement;
 import Model.Ants.TaskPerformerAnt;
-import Model.Position;
+import Model.Datastructures.Position;
 
 public interface Task {
     int getPriority();

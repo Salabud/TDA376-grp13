@@ -1,6 +1,4 @@
-package Model;
-
-import java.util.Objects;
+package Model.Datastructures;
 
 public class Position {
     private int x;

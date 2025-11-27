@@ -1,6 +1,7 @@
 package Model;
 
 import Model.Ants.Status.Status;
+import Model.Datastructures.Position;
 
 import java.util.List;
 
@@ -33,6 +34,9 @@ public abstract class Entity implements Updateable{
         return this.position.getX();
     }
 
+    public void setPosition(Position position){
+        this.position = position;
+    }
     public Position getPosition(){
         return this.position;
     }
