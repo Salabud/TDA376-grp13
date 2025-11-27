@@ -1,4 +1,4 @@
 package Model.World;
 
-public class Dirt {
+public class Dirt extends Item{
 }

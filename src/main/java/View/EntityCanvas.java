@@ -12,14 +12,20 @@ public class EntityCanvas extends Canvas {
     private List<Entity> entities;
     private final GraphicsContext gc = getGraphicsContext2D();
     private int cellsize;
-    private final Sprite workerAnt = new Sprite(cellsize*0.8, cellsize*0.8, Color.ORANGE);
-    private final Sprite larva = new Sprite(cellsize*0.8, cellsize*0.8, Color.WHITE);
-    private final Sprite food = new Sprite(cellsize*0.8, cellsize*0.8, Color.RED);
-    private final Sprite queen = new Sprite(cellsize*0.8, cellsize*0.8, Color.YELLOW);
+    private final Sprite workerAnt;
+    private final Sprite larva;
+    private final Sprite food;
+    private final Sprite queen;
 
 
     public EntityCanvas(){
-        this.cellsize = 10; //Modularize
+        this.cellsize = 10;
+        setWidth(1000);
+        setHeight(1000);
+        this.workerAnt = new Sprite(cellsize, Color.ORANGE);
+        this.larva = new Sprite(cellsize, Color.WHITE);
+        this.food = new Sprite(cellsize, Color.RED);
+        this.queen = new Sprite(cellsize, Color.YELLOW);
     }
 
     public void updateEntities(List<Entity> entities) {
@@ -28,6 +34,7 @@ public class EntityCanvas extends Canvas {
     }
 
     public void render() {
+        gc.clearRect(0, 0, getWidth(), getHeight());
         for (Entity entity : entities) {
             switch (entity.getType()) {
                 case EntityType.WORKER_ANT:

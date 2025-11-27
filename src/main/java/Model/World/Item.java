@@ -1,4 +1,6 @@
 package Model.World;
 
-public class Item {
+import Model.Entity;
+
+public class Item extends Entity {
 }

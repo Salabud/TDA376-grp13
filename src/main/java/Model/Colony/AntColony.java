@@ -8,9 +8,17 @@ import java.util.List;
 public class AntColony {
     List<Ant> ants;
     ColonyMediator mediator;
+    ColonyTaskBoard taskBoard;
 
-    public AntColony(ColonyMediator mediator){
+    public AntColony(ColonyMediator mediator, ColonyTaskBoard taskBoard){
         ants = new ArrayList<>();
         this.mediator = mediator;
+        this.taskBoard = taskBoard;
     }
+
+    public void addAnt(Ant ant) {
+        this.ants.add(ant);
+    }
+
+
 }

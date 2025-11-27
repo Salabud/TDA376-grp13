@@ -1,20 +1,22 @@
 package Model;
 
 import Model.Ants.Status.Status;
+import Model.World.World;
 import Model.Datastructures.Position;
 
 import java.util.List;
 
 public abstract class Entity implements Updateable{
-    private Position position;
-    private float health;
-    private float maxHealth;
-    private float hunger;
-    private float maxHunger;
-    private int age;
-    private int movementInterval;
-    private EntityType type; //Final?
-    private List<Status> statuses;
+    protected World world;
+    protected Position position;
+    protected float health;
+    protected float maxHealth;
+    protected float hunger;
+    protected float maxHunger;
+    protected int age;
+    protected int movementInterval;
+    protected EntityType type; //Final?
+    protected List<Status> statuses;
 
     public void update(){
 
@@ -31,7 +33,7 @@ public abstract class Entity implements Updateable{
         this.position.setY(y);
     }
     public int getY() {
-        return this.position.getX();
+        return this.position.getY();
     }
 
     public void setPosition(Position position){

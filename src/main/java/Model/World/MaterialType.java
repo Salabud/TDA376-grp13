@@ -1,4 +1,8 @@
 package Model.World;
 
-public class MaterialType {
+public enum MaterialType {
+    DIRT,
+    STONE,
+    FOOD,
+    GRASS
 }

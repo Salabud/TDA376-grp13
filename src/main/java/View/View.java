@@ -5,6 +5,7 @@ import Model.ModelListener;
 import Model.World.World;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 /**
@@ -22,23 +23,23 @@ public class View implements ModelListener {
     private WorldCanvas worldCanvas;
     private EntityCanvas entityCanvas;
     private InterfaceCanvas interfaceCanvas;
+    private StackPane canvasLayer;
     
     public View(Stage stage) {
         this.stage = stage;
         this.root = new BorderPane();
     }
     
-    /**
-     * Initialize the view and set up the scene.
-     */
     public void initialize() {
         // Create canvas components
-        //this.worldCanvas = new WorldCanvas();
+        this.worldCanvas = new WorldCanvas();
         this.entityCanvas = new EntityCanvas();
         this.interfaceCanvas = new InterfaceCanvas();
+        canvasLayer = new StackPane();
         
         // Layout components
-        root.setCenter(worldCanvas);
+        canvasLayer.getChildren().addAll(worldCanvas, entityCanvas);
+        root.setCenter(canvasLayer);
         // Add other canvases as needed
         
         // Create scene
@@ -73,9 +74,18 @@ public class View implements ModelListener {
     @Override
     public void onModelUpdated() {
         // Refresh the entire view
-        render();
     }
-    
+
+    /**
+     * @param world the world that is to be rendered
+     */
+    @Override
+    public void onTilesetChanged(World world) {
+        // Update specific entity rendering
+        if (worldCanvas != null) {
+            worldCanvas.render(world);
+        }
+    }
     @Override
     public void onEntitiesChanged(World world) {
         // Update specific entity rendering
@@ -91,17 +101,8 @@ public class View implements ModelListener {
             interfaceCanvas.updateGameState(newState);
         }
     }
-    
-    /**
-     * Main rendering method.
-     */
-    private void render() {
-        if (worldCanvas != null) {
-            worldCanvas.render();
-        }
-        if (entityCanvas != null) {
-            entityCanvas.render();
-        }
+
+    public void renderInterface() {
         if (interfaceCanvas != null) {
             interfaceCanvas.render();
         }
