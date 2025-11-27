@@ -3,8 +3,9 @@ package Model.Ants;
 import Model.Ants.Status.Status;
 import Model.Colony.AntColony;
 import Model.Colony.ColonyMediator;
+import Model.Datastructures.Position;
 import Model.EntityType;
-import Model.Position;
+
 import Model.World.World;
 
 import java.util.List;
@@ -32,6 +33,7 @@ public final class AntFactory {
                 .mediator(mediator)
                 .buildWorkerAnt();
         world.addEntity(ant);
+        colony.addAnt(ant);
         return ant; //Vi kanske inte ens behöver returnera instans?
     }
     public WorkerAnt loadWorkerAnt(World world, AntColony colony, int colonyId, int x, int y, int age,
