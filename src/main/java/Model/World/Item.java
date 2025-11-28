@@ -11,11 +11,9 @@ public class Item extends Entity {
         this.type = EntityType.ITEM;
         this.position = new Position(x,y);
         this.materialType = materialType;
-
     }
 
     public MaterialType getMaterialType() {
         return materialType;
     }
-
 }

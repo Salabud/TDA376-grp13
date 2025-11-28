@@ -4,7 +4,6 @@ import Model.Datastructures.Position;
 
 public class Tile {
     private Position position;
-
     private MaterialType materialType;
 
     public Tile(int x, int y, MaterialType materialType){

@@ -13,13 +13,14 @@ import Model.Entity;
 import Model.Tasks.TemporaryTestTask;
 
 public class World {
-    private List<Entity>[][] entityGrid;
     private List<Entity> entities;
+    private List<Entity>[][] entityGrid;
     private Tile[][] tileGrid;
     private List<Tile> tiles;
+    private final int gridSize;    
 
     public World(){
-        int gridSize = 100; //Temporary demo size
+        this.gridSize = 100; //Temporary demo size
         this.entityGrid = new List[gridSize][gridSize];
         this.tileGrid = new Tile[gridSize][gridSize];
         this.entities = new ArrayList<>();
@@ -69,23 +70,43 @@ public class World {
     }
 
     public void addEntity(Entity entity){
-        entityGrid[entity.getX()][entity.getY()].add(entity);
-        entities.add(entity);
+        int x = entity.getX();
+        int y = entity.getY();
+        if (inBounds(x, y)) {
+            entityGrid[x][y].add(entity);
+            entities.add(entity);
+        }
     }
 
     public void removeEntity(Entity entity) {
-        entityGrid[entity.getX()][entity.getY()].remove(entity);
-        entities.remove(entity);
+        int x = entity.getX();
+        int y = entity.getY();
+        if (inBounds(x, y)) {
+            entityGrid[x][y].remove(entity);
+            entities.remove(entity);
+        }
     }
 
-    public Item breakTile(Tile tile){
-        return null; //TODO: same as below
+    public Item killEntity(Entity entity){
+        removeEntity(entity);
+        return new Item(null, MaterialType.CORPSE);
+    }
+
+    public void breakTile(Tile tile){
+        int x = tile.getPosition().getX();
+        int y = tile.getPosition().getY();
+        if (inBounds(x, y) && tileGrid[x][y] == tile) {
+            tileGrid[x][y] = null;
+            //return new Item(null, tile.getMaterialType()); TODO: Tile hanterar sin övergång till item
+        }
     }
 
     public void addTile(Tile tile, int x, int y, MaterialType materialType){
         tile = new Tile(x, y, materialType);
-        tiles.add(tile);
-        tileGrid[x][y] = tile;
+        if (inBounds(x, y) && tileGrid[x][y] == null) {
+          tiles.add(tile);
+          tileGrid[x][y] = tile;
+        }
     }
     public void addTile(Tile tile){
         tiles.add(tile);
@@ -93,7 +114,12 @@ public class World {
     }
 
     public List<Entity> getEntities(){
-        return this.entities;
+        return entities;
+    }
+
+    private boolean inBounds(int x, int y) {
+        boolean withinGrid = x >= 0 && x < gridSize && y >= 0 && y < gridSize;
+        return withinGrid;
     }
 
     public void tick(){
@@ -110,5 +136,11 @@ public class World {
     public List<Tile> getTiles() {
         return tiles;
     }
+  
+    public Tile getTile(int x, int y) {
+      if (inBounds(x, y)) {
+          return tileGrid[x][y];
+      }
+      return null;
+    }
 }
-
