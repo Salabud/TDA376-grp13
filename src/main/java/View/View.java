@@ -1,5 +1,6 @@
 package View;
 
+import Controller.Controller;
 import Controller.InputHandler;
 import Model.ModelListener;
 import Model.World.World;
@@ -23,7 +24,8 @@ public class View implements ModelListener {
     private Scene scene;
     private BorderPane root;
     private InputHandler inputHandler;
-    
+    private GameInterface gameInterface;
+
     // Canvas components for rendering
     private WorldCanvas worldCanvas;
     private EntityCanvas entityCanvas;
@@ -31,10 +33,12 @@ public class View implements ModelListener {
     private Pane mainPane;
 
 
-
     public View(Stage stage) {
         this.stage = stage;
         this.root = new BorderPane();
+
+        // Create UI elements
+        gameInterface = new GameInterface();
 
     }
     
@@ -42,16 +46,15 @@ public class View implements ModelListener {
         // initialize the Pane that will be used for the main display
         mainPane = new Pane();
 
+
+
         // Create canvas components
         this.worldCanvas = new WorldCanvas();
         this.entityCanvas = new EntityCanvas();
         this.interfaceCanvas = new InterfaceCanvas();
 
-        
         // Layout components
-        loadMainMenu();
         root.setCenter(mainPane);
-        // Add other canvases as needed
         
         // Create scene
         scene = new Scene(root,800,800);
@@ -60,6 +63,9 @@ public class View implements ModelListener {
         
         // Set up input handlers if controller is registered
         setupInputHandlers();
+
+        // Start the Main Menu
+        loadMainMenu();
     }
     
     /**
@@ -125,7 +131,7 @@ public class View implements ModelListener {
     private void loadRunningGame() {
         mainPane.getChildren().clear();
         mainPane.getChildren().addAll(worldCanvas, entityCanvas);
-        mainPane.getChildren().addAll(GameInterface.getInstance().getNodes());
+        mainPane.getChildren().addAll(gameInterface.getNodes());
     }
 
     public void renderInterface() {
@@ -136,5 +142,16 @@ public class View implements ModelListener {
     
     public Stage getStage() {
         return stage;
+    }
+
+    public GameInterface getGameInterface(){
+        return gameInterface;
+    }
+
+    /**
+     * Resets the game interface. If the speed of the last game was x3/paused, it will now start at the default value
+     */
+    public void resetInterface() {
+        gameInterface = new GameInterface();
     }
 }

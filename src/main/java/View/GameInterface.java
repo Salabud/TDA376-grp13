@@ -7,14 +7,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GameInterface {
-    private static GameInterface INSTANCE;
     private List<Node> nodes;
 
     private Button exitButton;
     private Button speedButton;
     private Button pauseButton;
 
-    private GameInterface(){
+    public GameInterface(){
         nodes = new ArrayList<>();
 
         exitButton = new Button("Exit");
@@ -44,10 +43,4 @@ public class GameInterface {
         return nodes;
     }
 
-    public static GameInterface getInstance(){
-        if (INSTANCE == null){
-            INSTANCE = new GameInterface();
-        }
-        return INSTANCE;
-    }
 }

@@ -15,11 +15,14 @@ import View.GameInterface;
 public class Controller implements InputHandler {
     private Model model;
     private View view;
+    private GameInterface gameInterface;
     
     public Controller(Model model, View view) {
         this.model = model;
         this.view = view;
+        gameInterface = view.getGameInterface();
         setupButtonHandlers();
+
     }
     
     // InputHandler implementation
@@ -86,13 +89,13 @@ public class Controller implements InputHandler {
     }
 
     private void setupButtonHandlers(){
-        GameInterface.getInstance().getSpeedButton().setOnAction(e -> handleSpeedButton());
-        GameInterface.getInstance().getExitButton().setOnAction(e -> handleExitButton());
-        GameInterface.getInstance().getPauseButton().setOnAction(e -> handlePauseButton());
+        gameInterface.getSpeedButton().setOnAction(e -> handleSpeedButton());
+        gameInterface.getExitButton().setOnAction(e -> handleExitButton());
+        gameInterface.getPauseButton().setOnAction(e -> handlePauseButton());
         }
 
     private void handlePauseButton() {
-        Button btn = GameInterface.getInstance().getPauseButton();
+        Button btn = gameInterface.getPauseButton();
         if(btn.getText().equals("Pause")){
             model.setGameState("PAUSED");
             btn.setText("Resume");
@@ -108,7 +111,7 @@ public class Controller implements InputHandler {
     }
 
     private void handleSpeedButton(){
-        Button btn = GameInterface.getInstance().getSpeedButton();
+        Button btn = gameInterface.getSpeedButton();
         System.out.println("Click");
         if(btn.getText().equals("x3")){
             btn.setText("x1");

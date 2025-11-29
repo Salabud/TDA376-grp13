@@ -10,6 +10,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class Model {
+    private int startingTickrate;
     private int tickrate;
     private List<World> worlds;
     private List<ModelListener> listeners;
@@ -20,7 +21,8 @@ public class Model {
     public Model() {
         this.worlds = new ArrayList<>();
         this.listeners = new ArrayList<>();
-        this.tickrate = 60;
+        this.startingTickrate = 60;
+        this.tickrate = startingTickrate;
         this.gameState = "MAIN_MENU";
         this.isRunning = false;
     }
@@ -134,5 +136,8 @@ public class Model {
         worlds.clear();
         worlds.add(new World());
 
+    }
+    public int getStartingTickrate(){
+        return startingTickrate;
     }
 }

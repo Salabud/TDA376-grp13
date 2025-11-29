@@ -36,6 +36,8 @@ public class MainMenuController implements InputHandler{
 
     private void handleNewGameButton() {
         model.newGame();
+        model.setTickrate(model.getStartingTickrate());
+        view.resetInterface();
         model.setGameState("RUNNING");
         view.setInputHandler(new Controller(model, view));
     }
