@@ -130,4 +130,9 @@ public class Model {
     public boolean isRunning() {
         return isRunning;
     }
+    public void newGame(){
+        worlds.clear();
+        worlds.add(new World());
+
+    }
 }

@@ -6,7 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import View.GameInterface;
-
+//Ludvig ---- I would like to rename this class to GameInterfaceController. We need separate controllers for different game states, so I'm not sure what "Controller.java" would be used for
 /**
  * Controller class - Mediator between Model and View.
  * Follows Single Responsibility Principle - handles user input and coordinates actions.
@@ -88,7 +88,20 @@ public class Controller implements InputHandler {
     private void setupButtonHandlers(){
         GameInterface.getInstance().getSpeedButton().setOnAction(e -> handleSpeedButton());
         GameInterface.getInstance().getExitButton().setOnAction(e -> handleExitButton());
+        GameInterface.getInstance().getPauseButton().setOnAction(e -> handlePauseButton());
         }
+
+    private void handlePauseButton() {
+        Button btn = GameInterface.getInstance().getPauseButton();
+        if(btn.getText().equals("Pause")){
+            model.setGameState("PAUSED");
+            btn.setText("Resume");
+        } else {
+            model.setGameState("RUNNING");
+            btn.setText("Pause");
+        }
+
+    }
 
     private void handleExitButton() {
         model.setGameState("MAIN_MENU");

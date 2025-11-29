@@ -12,6 +12,7 @@ public class GameInterface {
 
     private Button exitButton;
     private Button speedButton;
+    private Button pauseButton;
 
     private GameInterface(){
         nodes = new ArrayList<>();
@@ -21,9 +22,17 @@ public class GameInterface {
         exitButton.setLayoutX(0);
         nodes.add(exitButton);
 
+        pauseButton = new Button("Pause");
+        pauseButton.setLayoutX(300);
+        pauseButton.setPrefWidth(100);
+        nodes.add(pauseButton);
+
         speedButton = new Button("x3");
         speedButton.setLayoutX(400);
         nodes.add(speedButton);
+    }
+    public Button getPauseButton(){
+        return  pauseButton;
     }
     public Button getExitButton(){
         return exitButton;
