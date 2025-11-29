@@ -11,6 +11,8 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
+import java.util.Arrays;
+
 /**
  * View class - Observer of Model, displays game state.
  * Follows Single Responsibility Principle - handles rendering only.
@@ -29,17 +31,11 @@ public class View implements ModelListener {
     private Pane mainPane;
 
 
-    //UI elements
-    public Button speedButton;
-
 
     public View(Stage stage) {
         this.stage = stage;
         this.root = new BorderPane();
 
-        //UI elements
-        this.speedButton = new Button("x3");
-        speedButton.setLayoutX(400);
     }
     
     public void initialize() {
@@ -122,13 +118,14 @@ public class View implements ModelListener {
         }
     }
     private void loadMainMenu(){
-        mainPane.getChildren().removeAll();
+        mainPane.getChildren().clear();
         mainPane.getChildren().addAll(MainMenu.getInstance().getNodes());
         mainPane.setStyle(MainMenu.getInstance().getBackGroundColor());
     }
     private void loadRunningGame() {
-        mainPane.getChildren().removeAll();
-        mainPane.getChildren().addAll(worldCanvas, entityCanvas, speedButton);
+        mainPane.getChildren().clear();
+        mainPane.getChildren().addAll(worldCanvas, entityCanvas);
+        mainPane.getChildren().addAll(GameInterface.getInstance().getNodes());
     }
 
     public void renderInterface() {

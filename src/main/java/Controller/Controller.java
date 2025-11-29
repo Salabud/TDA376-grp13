@@ -2,9 +2,10 @@ package Controller;
 
 import Model.Model;
 import View.View;
+import javafx.scene.control.Button;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import View.MainMenu;
+import View.GameInterface;
 
 /**
  * Controller class - Mediator between Model and View.
@@ -85,18 +86,23 @@ public class Controller implements InputHandler {
     }
 
     private void setupButtonHandlers(){
-        view.speedButton.setOnAction(e -> handleSpeedButton());
-
+        GameInterface.getInstance().getSpeedButton().setOnAction(e -> handleSpeedButton());
+        GameInterface.getInstance().getExitButton().setOnAction(e -> handleExitButton());
         }
 
+    private void handleExitButton() {
+        model.setGameState("MAIN_MENU");
+    }
+
     private void handleSpeedButton(){
+        Button btn = GameInterface.getInstance().getSpeedButton();
         System.out.println("Click");
-        if(view.speedButton.getText().equals("x3")){
-            view.speedButton.setText("x1");
+        if(btn.getText().equals("x3")){
+            btn.setText("x1");
             model.setTickrate(20);
         }
         else {
-            view.speedButton.setText("x3");
+            btn.setText("x3");
             model.setTickrate(60);
         }
 

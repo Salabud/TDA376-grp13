@@ -23,7 +23,7 @@ public class MainMenu {
     private String buttonColor;
     private Label titleLabel;
 
-    MainMenu(){
+    private MainMenu(){
         nodes = new ArrayList<>();
         backGroundColor = "-fx-background-color: rgb(112,93,86);";
         buttonColor = "-fx-base: rgb(50, 41 ,47);";
