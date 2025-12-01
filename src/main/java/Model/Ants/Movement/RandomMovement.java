@@ -2,6 +2,9 @@ package Model.Ants.Movement;
 
 import Model.Ants.Ant;
 
+/**
+ * Implements a movement strategy where the ant moves in a random direction each update.
+ */
 public class RandomMovement implements AntMovement {
     @Override
     public void move(Ant ant) {

@@ -6,6 +6,9 @@ import Model.Ants.QueenAnt;
 import Model.Ants.TaskPerformerAnt;
 import Model.Datastructures.Position;
 
+/**
+ * Task for feeding the queen ant.
+ */
 public class FeedQueenTask implements Task {
     private QueenAnt queen;
     private boolean isComplete = false;
@@ -56,5 +59,11 @@ public class FeedQueenTask implements Task {
 
     public String getDescription(){
         return null;
+    }
+
+    @Override
+    public void setAssigned(boolean status) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setAssigned'");
     }
 }

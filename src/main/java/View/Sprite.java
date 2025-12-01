@@ -2,6 +2,9 @@ package View;
 
 import javafx.scene.paint.Color;
 
+/**
+ * Represents a visual sprite with dimensions and color.
+ */
 public class Sprite {
     private double width;
     private double height;

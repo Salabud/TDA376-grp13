@@ -5,6 +5,10 @@ import Model.Ants.Ant;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Represents an ant colony, serving as a container for its ants,
+ * nest, and task board.
+ */
 public class AntColony {
     List<Ant> ants;
     ColonyMediator mediator;

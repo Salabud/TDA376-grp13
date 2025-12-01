@@ -7,8 +7,8 @@ import javafx.scene.input.MouseEvent;
 
 /**
  * Controller class - Mediator between Model and View.
- * Follows Single Responsibility Principle - handles user input and coordinates actions.
- * Implements InputHandler to process View events.
+ * Follows Single Responsibility Principle, handles user input and coordinates actions.
+ * Extensibly implements InputHandler (following the observer pattern) to process View events.
  */
 public class Controller implements InputHandler {
     private Model model;
@@ -19,11 +19,13 @@ public class Controller implements InputHandler {
         this.view = view;
         setupButtonHandlers();
     }
-    
-    // InputHandler implementation
+
+    /**
+     * Handles key press events.
+     * @param event : The key event to handle.
+     */
     @Override
     public void handleKeyPress(KeyEvent event) {
-        // Process keyboard input and update model accordingly
         switch (event.getCode()) {
             case W:
             case UP:
@@ -49,20 +51,26 @@ public class Controller implements InputHandler {
                 break;
         }
     }
-    
+
+    /**
+     * Handles mouse click events.
+     * @param event : The mouse event to handle.
+     */
     @Override
     public void handleMouseClick(MouseEvent event) {
-        // Convert screen coordinates to world coordinates
         double worldX = event.getX();
         double worldY = event.getY();
         
         // Process click (e.g., select entity, place task, etc.)
         // model.handleWorldClick(worldX, worldY);
     }
-    
+
+    /**
+     * Handles mouse move events (for e.g. hover effects).
+     * @param event : The mouse event to handle.
+     */
     @Override
     public void handleMouseMove(MouseEvent event) {
-        // Handle mouse movement (e.g., hover effects)
         double worldX = event.getX();
         double worldY = event.getY();
         
@@ -87,6 +95,9 @@ public class Controller implements InputHandler {
         view.speedButton.setOnAction(e -> handleSpeedButton());
     }
 
+    /**
+     * Handles world tick speed button toggle.
+     */
     private void handleSpeedButton(){
         System.out.println("Click");
         if(view.speedButton.getText().equals("x3")){

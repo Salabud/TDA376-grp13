@@ -12,6 +12,11 @@ import Model.EntityType;
 import Model.World.World;
 import java.util.List;
 
+/** 
+ * Builder class for creating Ant objects with various configurations.
+ * This class follows the Builder design pattern to provide a flexible and readable way
+ * to construct Ant instances with different attributes.
+ */
 public class AntBuilder {
     // Entity fields
     private World world;
@@ -52,6 +57,10 @@ public class AntBuilder {
     public AntBuilder behavior(AntBehavior behavior) { this.behavior = behavior; return this; }
     public AntBuilder movement(AntMovement movement) { this.movement = movement; return this; }
 
+    /**
+     * Builds and returns a WorkerAnt instance with the configured attributes.
+     * @return : A WorkerAnt instance.
+     */
     public WorkerAnt buildWorkerAnt() {
         WorkerAnt ant = new WorkerAnt(type, world, colonyId, position.getX(), position.getY(), mediator);
         applyEntityFields(ant);
@@ -59,6 +68,10 @@ public class AntBuilder {
         return ant;
     }
 
+    /**
+     * Builds and returns a QueenAnt instance with the configured attributes.
+     * @return : A QueenAnt instance.
+     */
     public QueenAnt buildQueenAnt() {
         QueenAnt ant = new QueenAnt();
         applyEntityFields(ant);
@@ -66,6 +79,10 @@ public class AntBuilder {
         return ant;
     }
 
+    /**
+     * Builds and returns a Larva instance with the configured attributes.
+     * @return : A Larva instance.
+     */
     public Larva buildLarva() {
         Larva larva = new Larva(world, colonyId, position.getX(), position.getY(), mediator);
         applyEntityFields(larva);
@@ -73,6 +90,10 @@ public class AntBuilder {
         return larva;
     }
 
+    /**
+     * Applies the common entity fields (its super super class) to the given ant.
+     * @param ant
+     */
     private void applyEntityFields(Ant ant) {
         ant.setHealth(this.health);
         ant.setMaxHealth(this.maxHealth);
@@ -82,6 +103,10 @@ public class AntBuilder {
         ant.setMovementInterval(this.movementInterval);
     }
 
+    /**
+     * Applies the common ant fields (its super class) to the given ant.
+     * @param ant
+     */
     private void applyAntFields(Ant ant) {
         ant.statuses = this.statuses;
         ant.nickname = this.nickname;

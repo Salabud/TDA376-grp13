@@ -1,5 +1,8 @@
 package Model.Datastructures;
 
+/**
+ * Represents a position in a 2D space with x and y coordinates. Not in terms of pixels.
+ */
 public class Position {
     private int x;
     private int y;

@@ -1,8 +1,8 @@
 package Model.Ants;
 
-import Model.TaskPerformer;
 import Model.Tasks.Task;
 
+/** Represents the queen ant in the simulation. */
 public class QueenAnt extends TaskPerformerAnt {
   
     @Override

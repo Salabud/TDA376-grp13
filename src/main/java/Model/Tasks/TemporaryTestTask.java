@@ -8,6 +8,9 @@ import Model.Ants.Movement.PathfindingMovement;
 import Model.Ants.TaskPerformerAnt;
 import Model.Datastructures.Position;
 
+/**
+ * A temporary task used for testing movement implementations.
+ */
 public class TemporaryTestTask implements Task{
     private Ant antAssigned;
     boolean isComplete = false;
@@ -56,5 +59,11 @@ public class TemporaryTestTask implements Task{
     @Override
     public boolean isAssigned() {
         return isAssigned;
+    }
+
+    @Override
+    public void setAssigned(boolean status) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setAssigned'");
     }
 }

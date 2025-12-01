@@ -9,6 +9,7 @@ import Model.World.World;
 
 import java.util.List;
 
+/** Represents a larva in the simulation. */
 public class Larva extends Ant implements Carryable {
     public Larva(World world, int colonyId, int x, int y, ColonyMediator mediator){
         this.position = new Position(x,y);

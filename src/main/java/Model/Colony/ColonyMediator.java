@@ -8,34 +8,49 @@ import java.sql.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * Mediator class for managing communication and task assignment within an ant colony between ants,
+ * following the mediator pattern. Think of it as a hivemind that helps coordinate the activities of individual ants.
+ */
 public class ColonyMediator {
     private ColonyTaskBoard taskBoard;
 
-    private Task getBestTask(TaskPerformerAnt ant){
-        for(Task task : taskBoard.getTaskBoard()){
+    /**
+     * Suggests the most appropriate available task for the given ant.
+     * If the ant is suitable for the task, it gets assigned the task.
+     * @param ant : The ant requesting a task.
+     */
+    public void getBestTask(TaskPerformerAnt ant){
+        for(Task task : taskBoard.getTaskBoard()){ //TODO: iterate through non-assigned tasks only
             if (ant.isAvailableForTask(task)){
-                return task;
+                assignTask(ant, task);
+                break;
             }
         }
-        // If no tasks are available
-        return null;
     }
 
-    public Task assignTask(TaskPerformerAnt ant){
-        // !! Can return null if no tasks are good/available!!
-
-        Task bestTask = getBestTask(ant);
-        if(bestTask != null){
-            taskBoard.removeTask(bestTask);
-
-        }
-        return bestTask;
+    /**
+     * Assigns the best available task to the given ant.
+     * @param ant
+     * @return
+     */
+    private void assignTask(TaskPerformerAnt ant, Task task){
+        ant.assignTask(task);
+        taskBoard.removeTask(task); // TODO: flag task as assigned instead of removing
     }
 
+    /**
+     * Adds a new task to the colony's task board.
+     * @param task : The task to be added.
+     */
     public void addTask(Task task){
         taskBoard.addTask(task);
     }
 
+    /**
+     * Sets the colony's task board.
+     * @param taskBoard : The task board to set.
+     */
     public void setColonyTaskBoard(ColonyTaskBoard taskBoard){
         this.taskBoard = taskBoard;
     }

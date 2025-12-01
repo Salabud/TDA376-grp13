@@ -6,6 +6,10 @@ import Model.Datastructures.Position;
 
 import java.util.List;
 
+/**
+ * Abstract base class for all beings (e.g. ants) in the simulation.
+ * Contains common attributes and methods shared by all entities.
+ */
 public abstract class Entity implements Updateable{
     protected World world;
     protected Position position;
@@ -94,14 +98,28 @@ public abstract class Entity implements Updateable{
 
     }
 
+    /**
+     * Gets the movement interval of the entity. 
+     * Movement interval defines how often the entity can move.
+     * @return The movement interval in ticks.
+     */
     public int getMovementInterval() {
         return this.movementInterval;
     }
 
+    /**
+     * Sets the movement interval of the entity.
+     * Movement interval defines how often the entity can move.
+     * @param movementInterval The movement interval in ticks.
+     */
     public void setMovementInterval(int movementInterval) {
         this.movementInterval = movementInterval;
     }
 
+    /**
+     * Gets the world the entity belongs to.
+     * @return The world the entity belongs to.
+     */
     public World getWorld() {
         return this.world;
     }

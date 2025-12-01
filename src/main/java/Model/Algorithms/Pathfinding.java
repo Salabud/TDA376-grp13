@@ -5,6 +5,9 @@ import Model.World.Tile;
 
 import java.util.*;
 
+/**
+ * Implements the A* pathfinding algorithm to find the shortest path between two positions on a grid.
+ */
 public class Pathfinding {
     public static Position[] Astar(Position start, Position goal, Tile[][] tileGrid) {
         int gridWidth = tileGrid.length;

@@ -2,6 +2,9 @@ package Model.World;
 
 import Model.Datastructures.Position;
 
+/**
+ * Represents a static tile in the world grid with a specific material type.
+ */
 public class Tile {
     private Position position;
     private MaterialType materialType;

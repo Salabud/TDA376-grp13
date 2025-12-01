@@ -11,6 +11,7 @@ import Model.Entity;
 
 import java.util.List;
 
+/** Abstract class representing an ant in the simulation. */
 public abstract class Ant extends Entity {
     protected int colonyId;
     protected String nickname;
@@ -26,8 +27,8 @@ public abstract class Ant extends Entity {
     }
 
     /**
-     * Sätter myrans movement strategy
-     * @param movement
+     * Sets the movement strategy for the ant.
+     * @param movement : The movement strategy to set.
      */
     public void setMovement(AntMovement movement) {
         this.movement = movement;

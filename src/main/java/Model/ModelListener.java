@@ -4,7 +4,7 @@ import Model.World.World;
 
 /**
  * Observer interface for Model changes.
- * Follows Interface Segregation Principle - clients only depend on methods they use.
+ * Follows Interface Segregation Principle, clients only depend on methods they use.
  */
 public interface ModelListener {
     /**

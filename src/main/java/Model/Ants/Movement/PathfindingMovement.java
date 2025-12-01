@@ -9,6 +9,9 @@ import Model.World.Tile;
 
 import java.util.List;
 
+/**
+ * Implements a movement strategy where the ant follows a precomputed path to a goal using A* pathfinding.
+ */
 public class PathfindingMovement implements AntMovement{
     int currentStep = 0;
     private Position[] pathToGoal;

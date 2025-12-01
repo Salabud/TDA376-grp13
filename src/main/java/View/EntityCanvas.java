@@ -9,6 +9,9 @@ import javafx.scene.paint.Color;
 
 import java.util.List;
 
+/**
+ * Canvas for rendering entities in the simulation.
+ */
 public class EntityCanvas extends Canvas {
     private List<Entity> entities;
     private final GraphicsContext gc = getGraphicsContext2D();
@@ -31,11 +34,18 @@ public class EntityCanvas extends Canvas {
         this.dirt = new Sprite(cellsize, Color.rgb(50,41,47));
     }
 
+    /**
+     * Updates the list of entities to render.
+     * @param entities : The new list of entities.
+     */
     public void updateEntities(List<Entity> entities) {
         this.entities = entities;
         render();
     }
 
+    /**
+     * Renders the entities onto the canvas.
+     */
     public void render() {
         gc.clearRect(0, 0, getWidth(), getHeight());
         for (Entity entity : entities) {

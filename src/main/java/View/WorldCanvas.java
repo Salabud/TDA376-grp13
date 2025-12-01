@@ -10,6 +10,9 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
+/**
+ * Canvas for rendering the world grid and tiles (for the most part terrain).
+ */
 public class WorldCanvas extends Canvas {
 
     private GraphicsContext gc;
