@@ -1,6 +1,7 @@
 package app;
 
 import Controller.Controller;
+import Controller.MainMenuController;
 import Model.Model;
 import Model.World.World;
 import View.View;
@@ -22,9 +23,11 @@ public class Main extends Application {
         model.addWorld(world);
         View view = new View(stage);
         Controller controller = new Controller(model, view);
+        MainMenuController mainMenuController = new MainMenuController(model, view);
         model.addListener(view);
-        view.setInputHandler(controller);
+        view.setInputHandler(mainMenuController);
         view.initialize();
+        model.initialise();
         stage.show();
 
         model.startTicking();

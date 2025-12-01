@@ -14,6 +14,7 @@ import java.util.concurrent.TimeUnit;
  * It manages the worlds, entities, and the game state, and notifies listeners of changes.
  */
 public class Model {
+    private int startingTickrate;
     private int tickrate;
     private List<World> worlds;
     private List<ModelListener> listeners;
@@ -24,9 +25,13 @@ public class Model {
     public Model() {
         this.worlds = new ArrayList<>();
         this.listeners = new ArrayList<>();
-        this.tickrate = 60;
-        this.gameState = "RUNNING";
+        this.startingTickrate = 60;
+        this.tickrate = startingTickrate;
+        this.gameState = "MAIN_MENU";
         this.isRunning = false;
+    }
+    public void initialise(){
+        setGameState("MAIN_MENU");
     }
 
     /**
@@ -34,10 +39,17 @@ public class Model {
      */
     public void update() {
         for (World world : worlds) {
-            world.tick();
-        }
+            if(gameState.equals("RUNNING")){
+                world.tick();
+            }
+            if(world.checkTilesChanged()){ //Re-render tileset only if there have been changes
+                notifyTilesetChanged();
+                world.setTilesChanged(false);
+            }
+
+        };
         notifyEntitiesChanged();
-        notifyTilesetChanged();
+
     }
 
     /**
@@ -146,9 +158,11 @@ public class Model {
     public void setGameState(String gameState) {
         this.gameState = gameState;
         if ("PAUSED".equals(gameState)) {
-            stopTicking();
+            //stopTicking();
         } else if ("RUNNING".equals(gameState)) {
-            startTicking();
+            //startTicking();
+        } else if ("MAIN_MENU".equals(gameState)){
+
         }
         notifyGameStateChanged(gameState);
     }
@@ -188,5 +202,16 @@ public class Model {
      */
     public boolean isRunning() {
         return isRunning;
+    }
+    public void newGame(){
+        worlds.clear();
+        worlds.add(new World());
+
+    }
+    public int getStartingTickrate(){
+        return startingTickrate;
+    }
+    public World getWorld(){
+        return worlds.getFirst();
     }
 }

@@ -1,10 +1,14 @@
 package Controller;
 
 import Model.Model;
+import Model.World.MaterialType;
+import Model.World.Tile;
 import View.View;
+import javafx.scene.control.Button;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-
+import View.GameInterface;
+//Ludvig ---- I would like to rename this class to GameInterfaceController. We need separate controllers for different game states, so I'm not sure what "Controller.java" would be used for
 /**
  * Controller class - Mediator between Model and View.
  * Follows Single Responsibility Principle, handles user input and coordinates actions.
@@ -13,11 +17,16 @@ import javafx.scene.input.MouseEvent;
 public class Controller implements InputHandler {
     private Model model;
     private View view;
+    private GameInterface gameInterface;
+    private boolean suppressFirstClick;
     
     public Controller(Model model, View view) {
         this.model = model;
         this.view = view;
+        gameInterface = view.getGameInterface();
         setupButtonHandlers();
+        suppressFirstClick = true;
+
     }
 
     /**
@@ -58,11 +67,25 @@ public class Controller implements InputHandler {
      */
     @Override
     public void handleMouseClick(MouseEvent event) {
-        double worldX = event.getX();
-        double worldY = event.getY();
-        
-        // Process click (e.g., select entity, place task, etc.)
-        // model.handleWorldClick(worldX, worldY);
+        if(suppressFirstClick){
+            suppressFirstClick = false;
+        } else {
+            // Convert screen coordinates to world coordinates
+            double worldX = event.getX();
+            double worldY = event.getY();
+
+
+            //Testing stuff, not meant to stick around
+            int intX = (int)(worldX/8);
+            int intY = (int)(worldY/8);
+            //model.getWorld().addTile(new Tile(intX, intY, MaterialType.DIRT)); //clicking places dirt
+            for (int i = intX-1; i < intX + 2; i++){
+                for (int a = intY-1; a < intY + 2; a++){
+                    model.getWorld().addTile(new Tile(i, a, MaterialType.DIRT)); //clicking places dirt
+                }
+            }
+
+        }
     }
 
     /**
@@ -92,20 +115,38 @@ public class Controller implements InputHandler {
     }
 
     private void setupButtonHandlers(){
-        view.speedButton.setOnAction(e -> handleSpeedButton());
+        gameInterface.getSpeedButton().setOnAction(e -> handleSpeedButton());
+        gameInterface.getExitButton().setOnAction(e -> handleExitButton());
+        gameInterface.getPauseButton().setOnAction(e -> handlePauseButton());
+        }
+
+    private void handlePauseButton() {
+        Button btn = gameInterface.getPauseButton();
+        if(btn.getText().equals("Pause")){
+            model.setGameState("PAUSED");
+            btn.setText("Resume");
+        } else {
+            model.setGameState("RUNNING");
+            btn.setText("Pause");
+        }
+
+    }
+
+    private void handleExitButton() {
+        model.setGameState("MAIN_MENU");
     }
 
     /**
      * Handles world tick speed button toggle.
      */
     private void handleSpeedButton(){
-        System.out.println("Click");
-        if(view.speedButton.getText().equals("x3")){
-            view.speedButton.setText("x1");
+        Button btn = gameInterface.getSpeedButton();
+        if(btn.getText().equals("x3")){
+            btn.setText("x1");
             model.setTickrate(20);
         }
         else {
-            view.speedButton.setText("x3");
+            btn.setText("x3");
             model.setTickrate(60);
         }
 

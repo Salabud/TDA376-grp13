@@ -27,7 +27,7 @@ public class EntityCanvas extends Canvas {
         this.cellsize = 8;
         setWidth(800);
         setHeight(800);
-        this.workerAnt = new Sprite(cellsize, Color.ORANGE);
+        this.workerAnt = new Sprite(cellsize, Color.rgb(250, 149, 0));
         this.larva = new Sprite(cellsize, Color.WHITE);
         this.food = new Sprite(cellsize, Color.GREEN);
         this.queen = new Sprite(cellsize, Color.YELLOW);

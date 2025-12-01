@@ -21,9 +21,11 @@ public class World {
     private List<Entity>[][] entityGrid;
     private Tile[][] tileGrid;
     private List<Tile> tiles; // Current tiles in the world, for easy rendering access
-    private final int gridSize;    
+    private final int gridSize;
+    private boolean tilesChanged;
 
     public World(){
+        this.tilesChanged = false;
         this.gridSize = 100; //Temporary demo size
         this.entityGrid = new List[gridSize][gridSize];
         this.tileGrid = new Tile[gridSize][gridSize];
@@ -46,15 +48,18 @@ public class World {
         ant1.assignTask(new TemporaryTestTask());
         ant2.assignTask(new TemporaryTestTask());
 
-        Tile tile1 = new Tile(24, 29, MaterialType.DIRT);
+        Tile tile1 = new Tile(24, 28, MaterialType.DIRT);
         addTile(tile1);
+        tilesChanged = true;
 
         //Showcase entities
-        Item dirt = new Item(20,20, MaterialType.DIRT);
+        Item dirt = new Item(24,27, MaterialType.DIRT);
         addEntity(dirt);
-        Item food = new Item(22,20,MaterialType.FOOD);
+        Item food = new Item(24,29,MaterialType.FOOD);
         addEntity(food);
-        Larva larva1 = factory.createLarva(this, colony, 3,24,20,mediator);
+        Item food2 = new Item(25,28,MaterialType.FOOD);
+        addEntity(food2);
+        Larva larva1 = factory.createLarva(this, colony, 3,23,28,mediator);
 
 
         for (int x = 20; x < 100; x++){
@@ -116,6 +121,7 @@ public class World {
         int y = tile.getPosition().getY();
         if (inBounds(x, y) && tileGrid[x][y] == tile) {
             tileGrid[x][y] = null;
+            tilesChanged = true;
             //return new Item(null, tile.getMaterialType()); TODO: Tile hanterar sin övergång till item
         }
     }
@@ -132,6 +138,7 @@ public class World {
         if (inBounds(x, y) && tileGrid[x][y] == null) {
           tiles.add(tile);
           tileGrid[x][y] = tile;
+          tilesChanged = true;
         }
     }
 
@@ -142,6 +149,7 @@ public class World {
     public void addTile(Tile tile){
         tiles.add(tile);
         tileGrid[tile.getPosition().getX()][tile.getPosition().getY()] = tile;
+        tilesChanged = true;
     }
 
     public List<Entity> getEntities(){
@@ -195,5 +203,11 @@ public class World {
           return tileGrid[x][y];
       }
       return null;
+    }
+    public boolean checkTilesChanged(){
+        return tilesChanged;
+    }
+    public void setTilesChanged(boolean bool){
+        this.tilesChanged = bool;
     }
 }

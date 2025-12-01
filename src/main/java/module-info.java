@@ -4,6 +4,7 @@ module com.example.antsimulator {
 
     requires com.dlsc.formsfx;
     requires java.sql;
+    requires java.desktop;
     exports app;
     exports Model.Tasks;
     exports Model;
