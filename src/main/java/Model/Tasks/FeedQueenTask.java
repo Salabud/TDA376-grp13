@@ -13,7 +13,7 @@ import Model.Datastructures.Position;
 public class FeedQueenTask implements Task {
     private QueenAnt queen;
     private boolean isComplete = false;
-
+    private PathfindingMovement movementStrategy;
     /***
      *
      * @param queen the queen to feed
@@ -39,7 +39,7 @@ public class FeedQueenTask implements Task {
     }
 
     public AntMovement getMovementStrategy() {
-        return null;
+        return movementStrategy;
     }
 
     /***
