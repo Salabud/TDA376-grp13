@@ -40,13 +40,32 @@ public class World {
             }
         }
 
+
+    }
+    public World withStartWorld(){
         //Hardcoded starting world
+
+        for (int x = 20; x < 100; x++){
+            for (int y = 50; y < 70; y++){
+                Tile tile = new Tile(x,y,MaterialType.DIRT);
+                tiles.add(tile);
+                tileGrid[x][y] = tile;
+            }
+        }
+        for (int x = 20; x < 70; x++){
+            for (int y = 30; y < 40; y++){
+                Tile tile = new Tile(x,y,MaterialType.DIRT);
+                tiles.add(tile);
+                tileGrid[x][y] = tile;
+            }
+        }
+
         ColonyMediator mediator = new ColonyMediator();
         ColonyTaskBoard taskBoard = new ColonyTaskBoard();
         AntColony colony = new AntColony(mediator, taskBoard);
         mediator.setAntColony(colony);
         mediator.setColonyTaskBoard(taskBoard);
-        
+
         AntFactory factory = AntFactory.getInstance();
         TaskPerformerAnt ant1 = factory.createWorkerAnt(this, colony, 0, 30, 0, mediator);
         TaskPerformerAnt ant2 = factory.createWorkerAnt(this, colony, 0, 79, 0, mediator);
@@ -70,20 +89,7 @@ public class World {
         Larva larva1 = factory.createLarva(this, colony, 3,23,28,mediator);
 
 
-        for (int x = 20; x < 100; x++){
-            for (int y = 50; y < 70; y++){
-                Tile tile = new Tile(x,y,MaterialType.DIRT);
-                tiles.add(tile);
-                tileGrid[x][y] = tile;
-            }
-        }
-        for (int x = 20; x < 70; x++){
-            for (int y = 30; y < 40; y++){
-                Tile tile = new Tile(x,y,MaterialType.DIRT);
-                tiles.add(tile);
-                tileGrid[x][y] = tile;
-            }
-        }
+        return this;
     }
 
     /**

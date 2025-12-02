@@ -127,6 +127,7 @@ public class Controller implements InputHandler {
     //TODO Implement
     private void handleSaveButton() {
         System.out.println("SAVE");
+        model.saveColony();
     }
 
     private void handlePauseButton() {

@@ -3,6 +3,7 @@ package model;
 import model.world.World;
 import javafx.application.Platform;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executors;
@@ -204,9 +205,23 @@ public class Model {
         return isRunning;
     }
     public void newGame(){
-        worlds.clear();
-        worlds.add(new World());
+        removeWorld(worlds.getFirst());
+        worlds.add(new World().withStartWorld());
+    }
 
+    /**
+     * Save the world into a json object
+     */
+    public void saveColony(){
+        SaveFileCreator.getInstance().save(worlds.getFirst(), "SAVE");
+    }
+    public void loadColony() throws IOException {
+        stopTicking();
+        removeWorld(worlds.getFirst());
+        World loadedWorld = SaveFileLoader.getInstance().load("SAVE");
+        worlds.add(loadedWorld);
+        notifyTilesetChanged();
+        startTicking();
     }
     public int getStartingTickrate(){
         return startingTickrate;
