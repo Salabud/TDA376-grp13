@@ -18,7 +18,7 @@ import java.util.List;
  * to construct Ant instances with different attributes.
  */
 public class AntBuilder {
-    // Entity fields
+    // Being fields
     private World world;
     private Position position;
     private float health;
@@ -63,7 +63,7 @@ public class AntBuilder {
      */
     public WorkerAnt buildWorkerAnt() {
         WorkerAnt ant = new WorkerAnt(type, world, colonyId, position.getX(), position.getY(), mediator);
-        applyEntityFields(ant);
+        applyBeingFields(ant);
         applyAntFields(ant);
         return ant;
     }
@@ -74,7 +74,7 @@ public class AntBuilder {
      */
     public QueenAnt buildQueenAnt() {
         QueenAnt ant = new QueenAnt();
-        applyEntityFields(ant);
+        applyBeingFields(ant);
         applyAntFields(ant);
         return ant;
     }
@@ -85,16 +85,16 @@ public class AntBuilder {
      */
     public Larva buildLarva() {
         Larva larva = new Larva(world, colonyId, position.getX(), position.getY(), mediator);
-        applyEntityFields(larva);
+        applyBeingFields(larva);
         applyAntFields(larva);
         return larva;
     }
 
     /**
-     * Applies the common entity fields (its super super class) to the given ant.
+     * Applies the common Being fields (its super super class) to the given ant.
      * @param ant
      */
-    private void applyEntityFields(Ant ant) {
+    private void applyBeingFields(Ant ant) {
         ant.setHealth(this.health);
         ant.setMaxHealth(this.maxHealth);
         ant.setHunger(this.hunger);

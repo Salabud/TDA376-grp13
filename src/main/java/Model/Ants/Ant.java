@@ -2,17 +2,16 @@ package Model.Ants;
 
 import Model.Ants.Behavior.AntBehavior;
 import Model.Ants.Movement.AntMovement;
-import Model.Ants.Movement.NoMovement;
 import Model.Ants.State.AntState;
 import Model.Ants.Status.Status;
+import Model.Being;
 import Model.Colony.AntColony;
 import Model.Colony.ColonyMediator;
-import Model.Entity;
 
 import java.util.List;
 
 /** Abstract class representing an ant in the simulation. */
-public abstract class Ant extends Entity {
+public abstract class Ant extends Being {
     protected int colonyId;
     protected String nickname;
     protected AntColony colony;
