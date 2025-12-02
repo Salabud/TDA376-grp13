@@ -34,6 +34,11 @@ public class World {
         this.tileGrid = new Tile[gridSize][gridSize];
         this.entities = new ArrayList<>();
         this.tiles = new ArrayList<>();
+        colonyMediator = new ColonyMediator();
+        taskBoard = new ColonyTaskBoard();
+        colony = new AntColony(colonyMediator, taskBoard);
+        colonyMediator.setAntColony(colony);
+        colonyMediator.setColonyTaskBoard(taskBoard);
         for (int x=0; x<gridSize; x++) {
             for (int y=0; y < gridSize; y++) {
                 entityGrid[x][y] = new ArrayList<>();
@@ -226,5 +231,11 @@ public class World {
     }
 
     public AntColony getAntColony() { return colony;
+    }
+    public ColonyMediator getColonyMediator(){
+        return colonyMediator;
+    }
+    public ColonyTaskBoard getTaskBoard(){
+        return taskBoard;
     }
 }

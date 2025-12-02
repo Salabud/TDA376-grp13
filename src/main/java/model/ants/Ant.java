@@ -57,6 +57,7 @@ public abstract class Ant extends Being {
         JSONObject obj = super.toJSON();
         obj.put("nickname", nickname);
         obj.put("antType", antType);
+        obj.put("colonyId", colonyId);
         //TODO implement after refactoring of Entity
         return obj;
     }

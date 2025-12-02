@@ -1,6 +1,8 @@
 package model;
 
+import model.ants.AntFactory;
 import model.ants.status.Status;
+import model.colony.AntColony;
 import model.datastructures.Position;
 import model.world.Item;
 import model.world.MaterialType;
@@ -36,9 +38,12 @@ public class SaveFileLoader {
         String content = Files.readString(Paths.get(saveName + ".json"));
         JSONObject json = new JSONObject(content);
 
-        System.out.println(json);
-
         World loadedWorld = new World();
+
+
+        // Load colony
+        JSONObject colonyObj = json.getJSONObject("colony");
+        AntColony antColony = new AntColony(loadedWorld.getColonyMediator(), loadedWorld.getTaskBoard());
 
         // Load tiles
         JSONArray tiles = json.getJSONArray("tiles");
@@ -79,7 +84,7 @@ public class SaveFileLoader {
                     float hunger = entity.getFloat("hunger");
                     float maxHunger = entity.getFloat("maxHunger");
                     int age = entity.getInt("age");
-                    float hungerDepletionRate = entity.getFloat("hungerDepletionRate");
+                    //float hungerDepletionRate = entity.getFloat("hungerDepletionRate");
                     List<Status> statuses = new ArrayList<>();
                     //TODO add statuses
                     BeingType beingType = BeingType.valueOf(entity.getString("beingType"));
@@ -87,20 +92,36 @@ public class SaveFileLoader {
                         case ANT -> {
                             // Load Ant properties
                             AntType antType = AntType.valueOf(entity.getString("antType"));
+                            int colonyId = entity.getInt("colonyId");
+                            String nickname = entity.optString("nickname", null);
+                            switch (antType){
+                                case WORKER_ANT -> {
+                                    AntFactory.getInstance().loadWorkerAnt(loadedWorld, antColony, colonyId, position.getX(), position.getY(),
+                                            age, nickname, loadedWorld.getColonyMediator(), health, maxHealth, hunger, maxHunger, movementInterval,
+                                            statuses);
+                                }
+                                case QUEEN -> {
+                                    AntFactory.getInstance().loadQueenAnt(loadedWorld, antColony, colonyId, position.getX(), position.getY(),
+                                            age, nickname, loadedWorld.getColonyMediator(), health,maxHealth, hunger, maxHunger, movementInterval,
+                                            statuses);
+                                }
+                                case LARVA -> {
+                                    AntFactory.getInstance().loadLarva(loadedWorld, antColony, colonyId, position.getX(), position.getY(),
+                                            age, nickname, loadedWorld.getColonyMediator(), health,maxHealth, hunger, maxHunger, movementInterval,
+                                            statuses);
+                                }
+                                default -> {
+                                }
+                            }
                         }
                         default -> {}
                     }
-
-
-                    //TODO
                 }
                 default ->{}
             }
         }
-
         return loadedWorld;
     }
-
 
     public static SaveFileLoader getInstance(){
         if (INSTANCE == null) {

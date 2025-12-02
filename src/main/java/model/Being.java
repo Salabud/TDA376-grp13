@@ -96,7 +96,7 @@ public abstract class Being extends Entity {
         obj.put("hunger", hunger);
         obj.put("maxHunger", maxHunger);
         obj.put("age", age);
-        obj.put("hungerDepletionRate", hungerDepletionRate);
+        //obj.put("hungerDepletionRate", hungerDepletionRate);
         obj.put("beingType", beingType);
         //TODO add statuses
         return obj;

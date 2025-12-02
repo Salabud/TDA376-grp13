@@ -16,7 +16,7 @@ public class WorkerAnt extends TaskPerformerAnt {
         this.beingType = BeingType.ANT;
         this.antType = AntType.WORKER_ANT;
         this.world = world;
-        this.colonyId = colonyId; //TODO Should this be in Ant.java?
+        this.colonyId = colonyId;
         this.position = new Position(x,y);
         this.mediator = mediator;
     }
@@ -35,7 +35,6 @@ public class WorkerAnt extends TaskPerformerAnt {
     @Override
     public JSONObject toJSON(){
         JSONObject obj = super.toJSON();
-        obj.put("colonyId", colonyId);
         //TODO
         return obj;
     }
