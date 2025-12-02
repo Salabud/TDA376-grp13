@@ -161,7 +161,7 @@ public class Controller implements InputHandler {
         model.setTickrate(20);
         gameInterface.setPressedButton(">>>");
     }
-    
+
     /**
      * Additional controller methods for specific game actions.
      * These methods update the Model, which then notifies the View through observers.
