@@ -1,7 +1,17 @@
 package model.ants.state;
 
 /**
- * Interface for ant state, defining how an ant's state is updated following the state pattern. E.g. StunnedState, WorkingState, ReturningState.
+ * Enum representing the different states an ant can be in. 
+ * 
+ * <p>Used to handle transitions between movement and 
+ * behavior strategies while e.g. executing a task. Follows state pattern.
  */
-public interface AntState {
+public enum AntState {
+    MOVING,
+    WORKING,
+    EATING,
+    FEEDING,
+    RESTING,
+    STUNNED,
+    DEAD,
 }

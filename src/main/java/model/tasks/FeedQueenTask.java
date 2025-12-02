@@ -10,88 +10,82 @@ import model.datastructures.Position;
 /**
  * Task for feeding the queen ant.
  */
-public class FeedQueenTask implements Task {
+public class FeedQueenTask extends Task {
     private QueenAnt queen;
-    private boolean isComplete = false;
     private PathfindingMovement movementStrategy;
-    /***
-     *
+    
+    /**
      * @param queen the queen to feed
      */
     public FeedQueenTask(QueenAnt queen) {
+        super();
         this.queen = queen;
     }
 
-    public boolean isAssigned(){
-        return false;
-    }
-
+    @Override
     public int getPriority() {
         return 1; // Hårdkodat för tillfället
     }
 
-    public Position getTargetLocation(){
+    @Override
+    public Position getTargetLocation() {
         return queen.getPosition();
     }
 
+    @Override
     public AntBehavior getBehaviorStrategy() {
         return null;
     }
 
+    @Override
     public AntMovement getMovementStrategy() {
         return movementStrategy;
     }
 
-    /***
+    /**
      * Currently only moves to queen
      * TODO: find food first (once food is implemented), feed queen (once feeding is implemented)
      * @param ant The ant to perform the task
      */
+    @Override
     public void execute(TaskPerformerAnt ant) {
-        /*if (!ant.getPosition().equals(queenPosition)) {
-            ant.setAntState(new WalkingState());
-            ant.setMovementStrategy(new MoveToLocationStrategy(queenPosition));
-            ant.getMovementStrategy().move(ant);
-            return;
+        switch (phase) {
+            case NOT_STARTED:
+                setPhase(TaskPhase.MOVING_TO_TARGET);
+                // Fall through
+            case MOVING_TO_TARGET:
+                if (!ant.getPosition().equals(queen.getPosition())) {
+                    if (!(ant.getMovement() instanceof PathfindingMovement)) {
+                        ant.setMovement(new PathfindingMovement(
+                                ant.getPosition(),
+                                getTargetLocation(),
+                                ant.getWorld().getTileGrid()
+                        ));
+                    }
+                } else {
+                    setPhase(TaskPhase.WORKING);
+                }
+                break;
+            case WORKING:
+                // TODO: implement feeding behavior
+                // ant.feedQueen();
+                setPhase(TaskPhase.COMPLETE);
+                break;
+            case COMPLETE:
+                break;
+            default:
+                break;
         }
-
-        if (!(ant.getBehavior() instanceof FeedBehavior)) {
-            ant.setBehavior(new FeedBehavior());
-        }
-        ant.setAntState(new WorkingState());
-        ant.getBehavior().perform(ant);
-
-        if (ant.hasFedQueen()) {
-            isComplete = true;
-            ant.setCurrentTask(null);
-            ant.setAntState(new IdleState());
-        }*/
-
-        if(!ant.getPosition().equals(queen.getPosition())){
-            if(!(ant.getMovement() instanceof PathfindingMovement)){
-                ant.setMovement(new PathfindingMovement(
-                        ant.getPosition(),
-                        getTargetLocation(),
-                        ant.getWorld().getTileGrid()
-                ));
-            }
-        }
-        else {
-            //ant.feedQueen();
-        }
-    }
-
-    public boolean isComplete() {
-        return isComplete;
-    }
-
-    public String getDescription(){
-        return null;
     }
 
     @Override
-    public void setAssigned(boolean status) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'setAssigned'");
+    public String getDescription() {
+        return switch (phase) {
+            case NOT_STARTED -> "Waiting to feed queen";
+            case MOVING_TO_TARGET -> "Moving to queen";
+            case WORKING -> "Feeding queen";
+            case COMPLETE -> "Finished feeding queen";
+            default -> "Feed queen task";
+        };
     }
 }

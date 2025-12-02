@@ -1,6 +1,7 @@
 module com.example.antsimulator {
     requires javafx.controls;
     requires javafx.fxml;
+    requires transitive javafx.graphics;
 
     requires com.dlsc.formsfx;
     requires java.sql;

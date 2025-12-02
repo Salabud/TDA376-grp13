@@ -6,17 +6,91 @@ import model.ants.TaskPerformerAnt;
 import model.datastructures.Position;
 
 /**
- * Represents a task to be performed by an ant, following the command pattern.
+ * Abstract base class for tasks performed by ants, following the command pattern.
  * E.g. ForageTask, ExpandNestTask, FeedQueenTask etc.
+ * 
+ * Provides common fields and behavior shared by all tasks:
+ * - Task phase tracking (internal state machine)
+ * - Assignment status
+ * - Completion checking
  */
-public interface Task {
-    void execute(TaskPerformerAnt ant); //Både WorkerAnt, QueenAnt och eventuellt SoldierAnt implementerar
-    int getPriority();
-    Position getTargetLocation();
-    AntBehavior getBehaviorStrategy();
-    AntMovement getMovementStrategy();
-    boolean isComplete();
-    String getDescription();
-    boolean isAssigned();
-    void setAssigned(boolean status);
+public abstract class Task {
+    
+    /**
+     * Internal task phases for progression logic.
+     * Subclasses use these to manage their own state machine.
+     * 
+     * <p>Note: Enums are immutable so exposing them is safe.
+     */
+    public enum TaskPhase {
+        NOT_STARTED,
+        MOVING_TO_TARGET,
+        WORKING,
+        RETURNING,
+        COMPLETE
+    }
+    
+    protected TaskPhase phase;
+    protected boolean isAssigned;
+    protected int priority;
+    
+    protected Task() {
+        this.phase = TaskPhase.NOT_STARTED;
+        this.isAssigned = false;
+        this.priority = 0;
+    }
+    
+    /**
+     * Execute one tick of this task's logic.
+     * Subclasses implement their specific behavior here.
+     * <p>Should be implemented as a switch.
+     */
+    public abstract void execute(TaskPerformerAnt ant);
+    
+    /**
+     * Priority for task selection (higher = more urgent).
+     */
+    public abstract int getPriority();
+    
+    /**
+     * The target location for this task (e.g., food position, nest entrance).
+     */
+    public abstract Position getTargetLocation();
+    
+    /**
+     * The behavior strategy to use while performing this task.
+     */
+    public abstract AntBehavior getBehaviorStrategy();
+    
+    /**
+     * The movement strategy to use while performing this task.
+     */
+    public abstract AntMovement getMovementStrategy();
+    
+    /**
+     * Human-readable description of current task state.
+     */
+    public abstract String getDescription();
+    
+    // Common implementations for shared fields
+    
+    public boolean isComplete() {
+        return phase == TaskPhase.COMPLETE;
+    }
+    
+    public TaskPhase getPhase() {
+        return phase;
+    }
+    
+    protected void setPhase(TaskPhase phase) {
+        this.phase = phase;
+    }
+    
+    public boolean isAssigned() {
+        return isAssigned;
+    }
+    
+    public void setAssigned(boolean status) {
+        this.isAssigned = status;
+    }
 }

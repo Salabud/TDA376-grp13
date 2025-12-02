@@ -40,4 +40,17 @@ public class Position {
         Position position = (Position) o;
         return x == position.x && y == position.y;
     }
+    
+    /**
+     * Check if this position is adjacent to another position.
+     * Adjacent means Manhattan distance of 1 (directly up, down, left, or right).
+     * 
+     * @param other the position to check adjacency with
+     * @return true if the positions are adjacent
+     */
+    public boolean isAdjacentTo(Position other) {
+        int dx = Math.abs(this.x - other.x);
+        int dy = Math.abs(this.y - other.y);
+        return (dx + dy) == 1;
+    }
 }

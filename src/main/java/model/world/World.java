@@ -69,7 +69,6 @@ public class World {
         colony.addFoodPosition(new Position(25, 25));
         Larva larva1 = factory.createLarva(this, colony, 3,23,28,mediator);
 
-
         for (int x = 20; x < 100; x++){
             for (int y = 50; y < 70; y++){
                 Tile tile = new Tile(x,y,MaterialType.DIRT);

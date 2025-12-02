@@ -32,6 +32,30 @@ public abstract class Ant extends Being {
     public void setMovement(AntMovement movement) {
         this.movement = movement;
     }
+    
+    public AntBehavior getBehavior() {
+        return behavior;
+    }
+    
+    /**
+     * Sets the behavior strategy for the ant.
+     * @param behavior : The behavior strategy to set, or null to clear.
+     */
+    public void setBehavior(AntBehavior behavior) {
+        this.behavior = behavior;
+    }
+    
+    public AntState getState() {
+        return state;
+    }
+    
+    /**
+     * Sets the current state of the ant.
+     * @param state : The new state.
+     */
+    public void setState(AntState state) {
+        this.state = state;
+    }
 
     @Override
     public void update() {
