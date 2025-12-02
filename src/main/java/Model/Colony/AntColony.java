@@ -34,4 +34,7 @@ public class AntColony {
     public void addFoodPosition(Position position){
         this.knownFoodPositions.add(position);
     }
+    public void deleteFoodPosition(Position position){
+        this.knownFoodPositions.remove(position);
+    }
 }

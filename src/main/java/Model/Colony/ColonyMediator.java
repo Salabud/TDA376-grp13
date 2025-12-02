@@ -96,7 +96,12 @@ public class ColonyMediator {
     }
 
     public void reportHungry(TaskPerformerAnt ant){
-        ant.assignTask(new EatTask(getBestFoodPosition(ant.getPosition())));
+        Position foodPosition = getBestFoodPosition(ant.getPosition());
+        if(foodPosition == null){
+            return;
+        }
+        ant.assignTask(new EatTask(foodPosition));
+        antColony.deleteFoodPosition(foodPosition);
     }
 
     /***
@@ -104,6 +109,10 @@ public class ColonyMediator {
      * @return
      */
     private Position getBestFoodPosition(Position position){
-        return antColony.getFoodPositions().getFirst();
+        List<Position> foodPositions = antColony.getFoodPositions();
+        if(!foodPositions.isEmpty()){
+            return foodPositions.getFirst();
+        }
+        return null;
     }
 }
