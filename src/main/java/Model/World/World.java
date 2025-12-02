@@ -5,6 +5,7 @@ import java.util.List;
 
 import Model.Ants.AntFactory;
 import Model.Ants.Larva;
+import Model.Ants.QueenAnt;
 import Model.Ants.TaskPerformerAnt;
 import Model.Colony.AntColony;
 import Model.Colony.ColonyMediator;
@@ -48,6 +49,7 @@ public class World {
         TaskPerformerAnt ant2 = factory.createWorkerAnt(this, colony, 0, 79, 0, mediator);
         ant1.assignTask(new MoveRandomlyTask());
         ant2.assignTask(new TemporaryTestTask());
+        QueenAnt queen = factory.createQueenAnt(this, colony, 0, 10, 10, mediator);
 
         Tile tile1 = new Tile(24, 28, MaterialType.DIRT);
         addTile(tile1);

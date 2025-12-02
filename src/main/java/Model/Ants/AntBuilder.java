@@ -73,7 +73,7 @@ public class AntBuilder {
      * @return : A QueenAnt instance.
      */
     public QueenAnt buildQueenAnt() {
-        QueenAnt ant = new QueenAnt();
+        QueenAnt ant = new QueenAnt(type, world, colonyId, position.getX(), position.getY(), mediator);
         applyBeingFields(ant);
         applyAntFields(ant);
         return ant;

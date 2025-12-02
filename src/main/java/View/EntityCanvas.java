@@ -59,6 +59,8 @@ public class EntityCanvas extends Canvas {
                     gc.fillOval(entity.getX()*cellsize, entity.getY()*cellsize, larva.getWidth(), larva.getHeight());
                     break;
                 case EntityType.QUEEN:
+                    gc.setFill(queen.getColor());
+                    gc.fillOval(entity.getX()*cellsize, entity.getY()*cellsize, queen.getWidth(), queen.getHeight());
                     break;
                 case EntityType.ITEM:
                     Item item = (Item) entity;
