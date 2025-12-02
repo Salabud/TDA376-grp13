@@ -42,6 +42,7 @@ public class SaveFileLoader {
 
         // Load tiles
         JSONArray tiles = json.getJSONArray("tiles");
+
         for (int i = 0; i < tiles.length(); i++) {
             JSONObject obj = tiles.getJSONObject(i);
             String material = obj.getString("materialType");
