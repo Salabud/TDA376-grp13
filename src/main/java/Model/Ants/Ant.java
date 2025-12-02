@@ -37,5 +37,6 @@ public abstract class Ant extends Being {
     public void update() {
         //System.out.println("ant update");
         this.movement.move(this);
+        super.update();
     }
 }

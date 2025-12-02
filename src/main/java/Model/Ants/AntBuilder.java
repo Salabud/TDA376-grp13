@@ -23,7 +23,7 @@ public class AntBuilder {
     private Position position;
     private float health;
     private float maxHealth;
-    private float hunger;
+    private float hunger = 100;
     private float maxHunger;
     private int age;
     private int movementInterval;

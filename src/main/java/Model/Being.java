@@ -14,6 +14,7 @@ public abstract class Being extends Entity {
     protected float hunger;
     protected float maxHunger;
     protected int age;
+    protected float hungerDepletionRate = 0.01F;
     protected List<Status> statuses;
 
     public float getHealth() {
@@ -56,6 +57,14 @@ public abstract class Being extends Entity {
         this.age = age;
     }
 
+    public float getHungerDepletionRate(){
+        return this.hungerDepletionRate;
+    }
+
+    public void setHungerDepletionRate(float hungerDepletionRate){
+        this.hungerDepletionRate = hungerDepletionRate;
+    }
+
     public List<Status> getStatuses() {
         return this.statuses;
     }
@@ -63,4 +72,14 @@ public abstract class Being extends Entity {
 
     }
 
+    public void hungerTick(float depletionRate){
+        this.hunger = this.hunger - depletionRate;
+    }
+
+    @Override
+    public void update() {
+        hungerTick(hungerDepletionRate);
+        System.out.println(hunger);
+        super.update();
+    }
 }
