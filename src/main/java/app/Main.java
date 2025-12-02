@@ -1,10 +1,10 @@
 package app;
 
-import Controller.Controller;
-import Controller.MainMenuController;
-import Model.Model;
-import Model.World.World;
-import View.View;
+import controller.Controller;
+import controller.MainMenuController;
+import model.Model;
+import model.world.World;
+import view.View;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.animation.AnimationTimer;
