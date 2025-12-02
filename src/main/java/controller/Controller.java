@@ -115,19 +115,28 @@ public class Controller implements InputHandler {
     }
 
     private void setupButtonHandlers(){
-        gameInterface.getSpeedButton().setOnAction(e -> handleSpeedButton());
+        gameInterface.getSpeed1Button().setOnAction(e -> handleSpeed1Button());
+        gameInterface.getSpeed2Button().setOnAction(e -> handleSpeed2Button());
+        gameInterface.getSpeed3Button().setOnAction(e -> handleSpeed3Button());
         gameInterface.getExitButton().setOnAction(e -> handleExitButton());
+        gameInterface.getSaveButton().setOnAction(e -> handleSaveButton());
         gameInterface.getPauseButton().setOnAction(e -> handlePauseButton());
         }
 
+
+    //TODO Implement
+    private void handleSaveButton() {
+        System.out.println("SAVE");
+    }
+
     private void handlePauseButton() {
         Button btn = gameInterface.getPauseButton();
-        if(btn.getText().equals("Pause")){
+        if(btn.getText().equals(" Pause ")){
             model.setGameState("PAUSED");
-            btn.setText("Resume");
+            btn.setText(" Resume ");
         } else {
             model.setGameState("RUNNING");
-            btn.setText("Pause");
+            btn.setText(" Pause ");
         }
 
     }
@@ -137,19 +146,19 @@ public class Controller implements InputHandler {
     }
 
     /**
-     * Handles world tick speed button toggle.
+     * Handles world tick speed button toggles.
      */
-    private void handleSpeedButton(){
-        Button btn = gameInterface.getSpeedButton();
-        if(btn.getText().equals("x3")){
-            btn.setText("x1");
-            model.setTickrate(20);
-        }
-        else {
-            btn.setText("x3");
-            model.setTickrate(60);
-        }
-
+    private void handleSpeed1Button(){
+        model.setTickrate(60);
+        gameInterface.setPressedButton(">");
+    }
+    private void handleSpeed2Button(){
+        model.setTickrate(30);
+        gameInterface.setPressedButton(">>");
+    }
+    private void handleSpeed3Button(){
+        model.setTickrate(20);
+        gameInterface.setPressedButton(">>>");
     }
     
     /**
