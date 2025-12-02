@@ -94,4 +94,5 @@ public class FeedQueenTask implements Task {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'setAssigned'");
     }
+
 }
