@@ -1,6 +1,7 @@
 package Model.Ants.Movement;
 
 import Model.Ants.Ant;
+import Model.Datastructures.Position;
 
 /**
  * Implements a movement strategy where the ant moves in a random direction each update.
@@ -15,19 +16,19 @@ public class RandomMovement implements AntMovement {
         switch (randomNum) {
             case 0:
                 //move north
-                ant.getPosition().move(0, 1);
+                ant.setPosition(new Position(ant.getX(), ant.getY()+1));
                 break;
             case 1:
                 //move east
-                ant.getPosition().move(1, 0);
+                ant.setPosition(new Position(ant.getX()+1, ant.getY()));
                 break;
             case 2:
                 //move south
-                ant.getPosition().move(0, -1);
+                ant.setPosition(new Position(ant.getX(), ant.getY()-1));
                 break;
             case 3:
                 //move west
-                ant.getPosition().move(-1, 0);
+                ant.setPosition(new Position(ant.getX()-1, ant.getY()));
         }
 
     }
