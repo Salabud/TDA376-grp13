@@ -8,8 +8,6 @@ import view.MainMenu;
 
 import java.io.IOException;
 
-import java.io.IOException;
-
 public class MainMenuController implements InputHandler{
     private Model model;
     private View view;

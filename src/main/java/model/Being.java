@@ -1,6 +1,6 @@
 package model;
 
-import Model.Ants.Status.Status;
+import model.ants.status.Status;
 import org.json.JSONObject;
 
 import java.util.List;

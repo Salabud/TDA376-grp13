@@ -2,9 +2,7 @@ package view;
 
 import javafx.scene.Node;
 import javafx.scene.control.Button;
-import javafx.scene.control.ButtonBase;
 import javafx.scene.control.ComboBox;
-import javafx.scene.text.Font;
 
 import java.util.ArrayList;
 import java.util.List;

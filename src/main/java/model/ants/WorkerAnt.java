@@ -1,15 +1,11 @@
-package Model.Ants;
+package model.ants;
 
-import java.util.List;
-
-import Model.AntType;
-import Model.BeingType;
-import Model.Colony.ColonyMediator;
-import Model.Datastructures.Position;
-import Model.EntityType;
-import Model.Ants.Status.Status;
-import Model.Tasks.Task;
-import Model.World.World;
+import model.AntType;
+import model.BeingType;
+import model.colony.ColonyMediator;
+import model.datastructures.Position;
+import model.EntityType;
+import model.world.World;
 import org.json.JSONObject;
 
 /** Represents a worker ant in the simulation. */

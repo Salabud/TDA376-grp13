@@ -1,13 +1,13 @@
 package model.ants;
 
-import Model.AntType;
-import Model.Ants.Status.Status;
-import Model.BeingType;
-import Model.Carryable;
-import Model.Colony.ColonyMediator;
-import Model.Datastructures.Position;
-import Model.EntityType;
-import Model.World.World;
+import model.AntType;
+import model.ants.status.Status;
+import model.BeingType;
+import model.Carryable;
+import model.colony.ColonyMediator;
+import model.datastructures.Position;
+import model.EntityType;
+import model.world.World;
 
 import java.util.List;
 

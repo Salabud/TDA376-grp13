@@ -1,11 +1,10 @@
 package view;
 
-import Model.Ants.Ant;
-import Model.Being;
-import Model.BeingType;
-import Model.Entity;
-import Model.EntityType;
-import Model.World.Item;
+import model.ants.Ant;
+import model.Being;
+import model.Entity;
+import model.EntityType;
+import model.world.Item;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;

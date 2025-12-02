@@ -1,11 +1,11 @@
-package Model;
+package model;
 
-import Model.Ants.Status.Status;
-import Model.Datastructures.Position;
-import Model.World.Item;
-import Model.World.MaterialType;
-import Model.World.Tile;
-import Model.World.World;
+import model.ants.status.Status;
+import model.datastructures.Position;
+import model.world.Item;
+import model.world.MaterialType;
+import model.world.Tile;
+import model.world.World;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

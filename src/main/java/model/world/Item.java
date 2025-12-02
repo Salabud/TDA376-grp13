@@ -1,9 +1,9 @@
 package model.world;
 
-import Model.Carryable;
-import Model.Datastructures.Position;
-import Model.Entity;
-import Model.EntityType;
+import model.Carryable;
+import model.datastructures.Position;
+import model.Entity;
+import model.EntityType;
 import org.json.JSONObject;
 
 /**

@@ -3,15 +3,14 @@ package model.world;
 import java.util.ArrayList;
 import java.util.List;
 
-import Model.Ants.*;
-import Model.Colony.AntColony;
-import Model.Colony.ColonyMediator;
-import Model.Colony.ColonyTaskBoard;
-import Model.Datastructures.Position;
-import Model.Entity;
-import Model.Tasks.FeedQueenTask;
-import Model.Tasks.MoveRandomlyTask;
-import Model.Tasks.TemporaryTestTask;
+import model.ants.*;
+import model.colony.AntColony;
+import model.colony.ColonyMediator;
+import model.colony.ColonyTaskBoard;
+import model.datastructures.Position;
+import model.Entity;
+import model.tasks.FeedQueenTask;
+import model.tasks.TemporaryTestTask;
 
 /**
  * Represents the world in which entities exist and interact.
@@ -224,5 +223,8 @@ public class World {
     }
     public void setTilesChanged(boolean bool){
         this.tilesChanged = bool;
+    }
+
+    public AntColony getAntColony() { return colony;
     }
 }

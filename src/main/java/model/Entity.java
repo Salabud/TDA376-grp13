@@ -1,7 +1,7 @@
-package Model;
+package model;
 
-import Model.Datastructures.Position;
-import Model.World.World;
+import model.datastructures.Position;
+import model.world.World;
 import org.json.JSONObject;
 
 /**

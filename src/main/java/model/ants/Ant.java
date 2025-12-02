@@ -1,15 +1,13 @@
 package model.ants;
 
-import Model.AntType;
-import Model.Ants.Behavior.AntBehavior;
-import Model.Ants.Movement.AntMovement;
-import Model.Ants.State.AntState;
-import Model.Ants.Status.Status;
-import Model.Being;
-import Model.BeingType;
-import Model.Colony.AntColony;
-import Model.Colony.ColonyMediator;
-import Model.Entity;
+import model.AntType;
+import model.ants.behavior.AntBehavior;
+import model.ants.movement.AntMovement;
+import model.ants.state.AntState;
+import model.ants.status.Status;
+import model.Being;
+import model.colony.AntColony;
+import model.colony.ColonyMediator;
 import org.json.JSONObject;
 
 import java.util.List;

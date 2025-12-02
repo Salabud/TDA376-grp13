@@ -1,7 +1,7 @@
 package model.colony;
 
-import Model.Ants.Ant;
-import Model.Datastructures.Position;
+import model.ants.Ant;
+import model.datastructures.Position;
 import org.json.JSONObject;
 
 import java.util.ArrayList;

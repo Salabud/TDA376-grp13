@@ -1,8 +1,7 @@
 package model.ants;
 
-import Model.Ants.State.AntState;
-import Model.Tasks.EatTask;
-import Model.Tasks.Task;
+import model.tasks.EatTask;
+import model.tasks.Task;
 import org.json.JSONObject;
 
 /** Abstract class for ants that can perform tasks. E.g. WorkerAnt, QueenAnt, (TODO: SoldierAnt)*/
