@@ -13,11 +13,14 @@ public class Chamber {
     private Position position;
     private ChamberType type;
     private List<Tunnel> tunnels;
+
     
-    //TODO: Also keep track of tiles occupied by the chamber
+    //TODO: Keep track of tiles occupied by the chamber
     private int radius;
     public static final int DEFAULT_RADIUS = 4;
     public static final int MIN_RADIUS = 4;
+    private List<Position> tilePositions;
+    private int capaticy;
     
     /**
      * Constructor for Chamber with default radius.
