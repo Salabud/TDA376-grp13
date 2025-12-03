@@ -51,20 +51,9 @@ public class EntityCanvas extends Canvas {
     public void render() {
         gc.clearRect(0, 0, getWidth(), getHeight());
         for (Entity entity : entities) {
+            gc.setFill(Color.BLACK);
+            gc.fillOval(entity.getX()*cellsize-2, entity.getY()*cellsize-2, 12, 12);
             switch (entity.getType()) {
-                case EntityType.ITEM:
-                    Item item = (Item) entity;
-                    switch(item.getMaterialType()){
-                        case FOOD -> {
-                            gc.setFill(food.getColor());
-                            gc.fillOval(entity.getX()*cellsize, entity.getY()*cellsize, food.getWidth(), food.getHeight());
-                        }
-                        case DIRT -> {
-                            gc.setFill(dirt.getColor());
-                            gc.fillOval(entity.getX()*cellsize, entity.getY()*cellsize, dirt.getWidth(), dirt.getHeight());
-                        }
-                    }
-                    break;
                 case BEING:
                     Being being = (Being) entity;
                     switch(being.getBeingType()){
@@ -86,9 +75,19 @@ public class EntityCanvas extends Canvas {
                             }
                     }
                     break;
-
-
-
+                case EntityType.ITEM:
+                    Item item = (Item) entity;
+                    switch(item.getMaterialType()){
+                        case FOOD -> {
+                            gc.setFill(food.getColor());
+                            gc.fillOval(entity.getX()*cellsize, entity.getY()*cellsize, food.getWidth(), food.getHeight());
+                        }
+                        case DIRT -> {
+                            gc.setFill(dirt.getColor());
+                            gc.fillOval(entity.getX()*cellsize, entity.getY()*cellsize, dirt.getWidth(), dirt.getHeight());
+                        }
+                    }
+                    break;
 
             }
         }

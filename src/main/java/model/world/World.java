@@ -50,18 +50,36 @@ public class World {
     public World withStartWorld(){
         //Hardcoded starting world
 
-        for (int x = 20; x < 100; x++){
-            for (int y = 50; y < 70; y++){
+
+        for (int x = 0; x < 100; x++){
+                Tile tile = new Tile(x,20,MaterialType.GRASS);
+                tiles.add(tile);
+                tileGrid[x][20] = tile;
+        }
+        for (int x = 0; x < 100; x++){
+            for (int y = 21; y < 100; y++){
                 Tile tile = new Tile(x,y,MaterialType.DIRT);
                 tiles.add(tile);
                 tileGrid[x][y] = tile;
             }
         }
+
+        for (int x = 20; x < 90; x++){
+            for (int y = 50; y < 70; y++){
+                tiles.remove(tileGrid[x][y]);
+                tileGrid[x][y] = null;
+            }
+        }
         for (int x = 20; x < 70; x++){
             for (int y = 30; y < 40; y++){
-                Tile tile = new Tile(x,y,MaterialType.DIRT);
-                tiles.add(tile);
-                tileGrid[x][y] = tile;
+                tiles.remove(tileGrid[x][y]);
+                tileGrid[x][y] = null;
+            }
+        }
+        for (int x = 43; x < 47; x++){
+            for (int y = 19; y < 60; y++){
+                tiles.remove(tileGrid[x][y]);
+                tileGrid[x][y] = null;
             }
         }
 
@@ -71,29 +89,25 @@ public class World {
         colonyMediator.setAntColony(colony);
         colonyMediator.setColonyTaskBoard(taskBoard);
 
+
         AntFactory factory = AntFactory.getInstance();
-        TaskPerformerAnt ant1 = factory.createWorkerAnt(this, colony, 0, 30, 0, colonyMediator);
-        TaskPerformerAnt ant2 = factory.createWorkerAnt(this, colony, 0, 79, 0, colonyMediator);
-        QueenAnt queen = factory.createQueenAnt(this, colony, 0, 10, 10, colonyMediator);
+        TaskPerformerAnt ant1 = factory.createWorkerAnt(this, colony, 0, 30, 30, colonyMediator);
+        TaskPerformerAnt ant2 = factory.createWorkerAnt(this, colony, 0, 60, 34, colonyMediator);
+        QueenAnt queen = factory.createQueenAnt(this, colony, 0, 20, 60, colonyMediator);
         ant1.assignTask(new FeedQueenTask(queen));
         ant2.assignTask(new TemporaryTestTask());
 
-
-        Tile tile1 = new Tile(24, 28, MaterialType.DIRT);
-        addTile(tile1);
-        tilesChanged = true;
-
         //Showcase entities
-        Item dirt = new Item(new Position(27, 24), MaterialType.DIRT);
-        addEntity(dirt);
-        Item food = new Item(new Position(28, 24), MaterialType.FOOD);
+        //Item dirt = new Item(new Position(27, 24), MaterialType.DIRT);
+        //addEntity(dirt);
+        Item food = new Item(new Position(45, 24), MaterialType.FOOD);
         addEntity(food);
-        Item food2 = new Item(new Position(25,25), MaterialType.FOOD);
+        Item food2 = new Item(new Position(46,25), MaterialType.FOOD);
         addEntity(food2);
-        colony.addFoodPosition(new Position(25, 25));
-        Larva larva1 = factory.createLarva(this, colony, 3,23,28,colonyMediator);
+        colony.addFoodPosition(new Position(46, 25));
+        Larva larva1 = factory.createLarva(this, colony, 3,23,35,colonyMediator);
 
-
+        tilesChanged = true;
         return this;
     }
 
@@ -162,6 +176,16 @@ public class World {
     }
 
     /**
+     * Remove a tile from the world (without turning into an item)
+     * @param position the position of the tile to be removed
+     */
+    public void removeTile(Position position){
+        tiles.remove(tileGrid[position.getX()][position.getY()]);
+        tileGrid[position.getX()][position.getY()] = null;
+        tilesChanged = true;
+    }
+
+    /**
      * Adds a tile to the world at its position.
      * @param tile : The tile to be added.
      */
@@ -173,6 +197,9 @@ public class World {
 
     public List<Entity> getEntities(){
         return entities;
+    }
+    public List<Entity>[][] getEntityGrid(){
+        return entityGrid;
     }
 
     /**

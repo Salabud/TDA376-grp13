@@ -81,7 +81,7 @@ public abstract class Being extends Entity {
     @Override
     public void update() {
         hungerTick(hungerDepletionRate);
-        System.out.println(hunger);
+        //System.out.println(hunger);
         super.update();
     }
 

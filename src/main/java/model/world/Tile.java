@@ -15,6 +15,11 @@ public class Tile {
         this.position = new Position(x,y);
     }
 
+    public Tile(Position position, MaterialType materialType){
+        this.materialType = materialType;
+        this.position = position;
+    }
+
     public MaterialType getMaterialType() {
         return materialType;
     }

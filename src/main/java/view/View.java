@@ -80,6 +80,9 @@ public class View implements ModelListener {
             scene.setOnKeyPressed(inputHandler::handleKeyPress);
             scene.setOnMouseClicked(inputHandler::handleMouseClick);
             scene.setOnMouseMoved(inputHandler::handleMouseMove);
+            scene.setOnMousePressed(inputHandler::handleMousePressed);
+            scene.setOnMouseReleased(inputHandler::handleMouseReleased);
+            scene.setOnMouseDragged(inputHandler::handleMouseDragged);
         }
     }
     

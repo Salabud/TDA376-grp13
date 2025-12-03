@@ -32,6 +32,21 @@ public class MainMenuController implements InputHandler{
 
     }
 
+    @Override
+    public void handleMousePressed(MouseEvent event) {
+
+    }
+
+    @Override
+    public void handleMouseReleased(MouseEvent event) {
+
+    }
+
+    @Override
+    public void handleMouseDragged(MouseEvent event) {
+
+    }
+
     private void setupButtonHandlers(){
         MainMenu.getInstance().getNewGameButton().setOnAction(e -> {
             handleNewGameButton();

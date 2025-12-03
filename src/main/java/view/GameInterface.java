@@ -118,6 +118,9 @@ public class GameInterface {
     public Button getSpeed3Button(){
         return speed3Button;
     }
+    public ComboBox<Tool> getTools(){
+        return tools;
+    }
     public List<Node> getNodes(){
         return nodes;
     }
