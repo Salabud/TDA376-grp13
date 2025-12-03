@@ -18,7 +18,9 @@ public class WorldCanvas extends Canvas {
     private final Sprite dirt;
     private final Sprite stone;
     private final Sprite food;
+    private final Sprite grass;
     private Color background;
+    private Color sky;
     private int outlineThickness;
 
 
@@ -34,16 +36,24 @@ public class WorldCanvas extends Canvas {
         dirt = new Sprite(cellsize, Color.rgb(50,41,47));
         stone = new Sprite(cellsize, Color.DARKGREY);
         food = new Sprite(cellsize, Color.RED);
+        grass = new Sprite(cellsize, Color.rgb(105, 165, 85));
+
 
 
 
         background = Color.rgb(112,93,86);
+        sky = Color.rgb(110, 150, 230);
 
     }
     public void render(World world) {
         //gc.clearRect(0, 0, getWidth(), getHeight());
         gc.setFill(background);
         gc.fillRect(0,0,getWidth(),getHeight());
+
+        //paint sky
+        gc.setFill(sky);
+        gc.fillRect(0,0,800,160);
+
         for (Tile tile : world.getTiles()){
             switch (tile.getMaterialType()) {
                 case MaterialType.DIRT:
@@ -55,6 +65,8 @@ public class WorldCanvas extends Canvas {
                 case MaterialType.STONE:
                     break;
                 case MaterialType.GRASS:
+                    gc.setFill(grass.getColor());
+                    gc.fillRect(tile.getPosition().getX()*cellsize, tile.getPosition().getY()*cellsize, grass.getWidth(), grass.getHeight());
                     break;
             }
         }

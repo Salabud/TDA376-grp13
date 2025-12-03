@@ -1,6 +1,7 @@
 package model;
 
 import model.ants.status.Status;
+import org.json.JSONObject;
 
 import java.util.List;
 
@@ -16,6 +17,7 @@ public abstract class Being extends Entity {
     protected int age;
     protected float hungerDepletionRate = 0.01F;
     protected List<Status> statuses;
+    protected BeingType beingType;
 
     public float getHealth() {
         return health;
@@ -79,7 +81,24 @@ public abstract class Being extends Entity {
     @Override
     public void update() {
         hungerTick(hungerDepletionRate);
-        System.out.println(hunger);
+        //System.out.println(hunger);
         super.update();
+    }
+
+    public BeingType getBeingType(){
+        return beingType;
+    }
+    @Override
+    public JSONObject toJSON(){
+        JSONObject obj = super.toJSON();
+        obj.put("health", health);
+        obj.put("maxHealth", maxHealth);
+        obj.put("hunger", hunger);
+        obj.put("maxHunger", maxHunger);
+        obj.put("age", age);
+        //obj.put("hungerDepletionRate", hungerDepletionRate);
+        obj.put("beingType", beingType);
+        //TODO add statuses
+        return obj;
     }
 }

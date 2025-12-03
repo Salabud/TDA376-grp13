@@ -14,7 +14,7 @@ public class MusicHandler {
         }
         if(gameState.equals("MAIN_MENU")){
             currentTrack = mainMenuTrack;
-            currentTrack.play();
+            currentTrack.play(-30);
         }
     }
     public static MusicHandler getInstance(){

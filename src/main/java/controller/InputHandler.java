@@ -23,4 +23,22 @@ public interface InputHandler {
      * Handle mouse movement input.
      */
     void handleMouseMove(MouseEvent event);
+
+    /**
+     * Handle mouse press input.
+     * @param event
+     */
+    void handleMousePressed(MouseEvent event);
+
+    /**
+     * Handle mouse release event.
+     * @param event
+     */
+    void handleMouseReleased(MouseEvent event);
+
+    /**
+     * Handle mouse dragging event.
+     * @param event
+     */
+    void handleMouseDragged(MouseEvent event);
 }

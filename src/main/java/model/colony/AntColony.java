@@ -2,6 +2,7 @@ package model.colony;
 
 import model.ants.Ant;
 import model.datastructures.Position;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,5 +37,12 @@ public class AntColony {
     }
     public void deleteFoodPosition(Position position){
         this.knownFoodPositions.remove(position);
+    }
+
+    //TODO
+    public JSONObject toJSON(){
+        JSONObject obj = new JSONObject();
+        obj.put("knownFoodPositions", knownFoodPositions);
+        return obj;
     }
 }

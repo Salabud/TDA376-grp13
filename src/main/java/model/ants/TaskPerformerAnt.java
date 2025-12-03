@@ -2,6 +2,7 @@ package model.ants;
 
 import model.tasks.EatTask;
 import model.tasks.Task;
+import org.json.JSONObject;
 
 /** Abstract class for ants that can perform tasks. E.g. WorkerAnt, QueenAnt, (TODO: SoldierAnt)*/
 public class TaskPerformerAnt extends Ant{
@@ -32,5 +33,11 @@ public class TaskPerformerAnt extends Ant{
 
         //System.out.println("ant tick");
         super.update();
+    }
+
+    @Override
+    public JSONObject toJSON(){
+        JSONObject obj = super.toJSON();
+        return obj;
     }
 }

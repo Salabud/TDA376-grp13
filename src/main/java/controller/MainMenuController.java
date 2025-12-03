@@ -6,6 +6,8 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import view.MainMenu;
 
+import java.io.IOException;
+
 public class MainMenuController implements InputHandler{
     private Model model;
     private View view;
@@ -30,10 +32,40 @@ public class MainMenuController implements InputHandler{
 
     }
 
+    @Override
+    public void handleMousePressed(MouseEvent event) {
+
+    }
+
+    @Override
+    public void handleMouseReleased(MouseEvent event) {
+
+    }
+
+    @Override
+    public void handleMouseDragged(MouseEvent event) {
+
+    }
+
     private void setupButtonHandlers(){
         MainMenu.getInstance().getNewGameButton().setOnAction(e -> {
             handleNewGameButton();
         });
+        MainMenu.getInstance().getLoadGameButton().setOnAction(e -> {
+            try {
+                handleLoadButton();
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
+    }
+
+    private void handleLoadButton() throws IOException {
+        model.loadColony();
+        model.setTickrate(model.getStartingTickrate());
+        view.resetInterface();
+        model.setGameState("RUNNING");
+        view.setInputHandler(new Controller(model, view));
     }
 
     private void handleNewGameButton() {

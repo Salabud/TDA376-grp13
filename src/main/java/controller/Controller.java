@@ -1,8 +1,15 @@
 package controller;
 
+import controller.mouseTool.MouseTool;
+import controller.mouseTool.PlaceDirt;
+import controller.mouseTool.PlaceFood;
+import controller.mouseTool.Shovel;
+import javafx.scene.control.ComboBox;
 import model.Model;
+import model.datastructures.Position;
 import model.world.MaterialType;
 import model.world.Tile;
+import view.Tool;
 import view.View;
 import javafx.scene.control.Button;
 import javafx.scene.input.KeyEvent;
@@ -19,6 +26,8 @@ public class Controller implements InputHandler {
     private View view;
     private GameInterface gameInterface;
     private boolean suppressFirstClick;
+    private MouseTool currentTool;
+    private boolean dragging;
     
     public Controller(Model model, View view) {
         this.model = model;
@@ -26,6 +35,8 @@ public class Controller implements InputHandler {
         gameInterface = view.getGameInterface();
         setupButtonHandlers();
         suppressFirstClick = true;
+        currentTool = null;
+        dragging = false;
 
     }
 
@@ -73,21 +84,26 @@ public class Controller implements InputHandler {
             // Convert screen coordinates to world coordinates
             double worldX = event.getX();
             double worldY = event.getY();
-
-
-            //Testing stuff, not meant to stick around
-            int intX = (int)(worldX/8);
-            int intY = (int)(worldY/8);
-            //model.getWorld().addTile(new Tile(intX, intY, MaterialType.DIRT)); //clicking places dirt
-            for (int i = intX-1; i < intX + 2; i++){
-                for (int a = intY-1; a < intY + 2; a++){
-                    model.getWorld().addTile(new Tile(i, a, MaterialType.DIRT)); //clicking places dirt
-                }
-            }
-
+        }
+    }
+    @Override
+    public void handleMousePressed(MouseEvent event) {
+        if (suppressFirstClick) {
+            suppressFirstClick = false;
+            return;
+        }
+        dragging = true;
+        applyTool(event);
+    }
+    public void handleMouseDragged(MouseEvent event) {
+        if (dragging) {
+            applyTool(event);
         }
     }
 
+    public void handleMouseReleased(MouseEvent event) {
+        dragging = false;
+    }
     /**
      * Handles mouse move events (for e.g. hover effects).
      * @param event : The mouse event to handle.
@@ -99,7 +115,18 @@ public class Controller implements InputHandler {
         
         // Update hover state if needed
     }
-    
+
+    private void applyTool(MouseEvent event) {
+        double worldX = event.getX();
+        double worldY = event.getY();
+
+        int intX = (int)(worldX / 8);
+        int intY = (int)(worldY / 8);
+        Position mousePosition = new Position(intX, intY);
+
+        currentTool.execute(model.getWorld(), mousePosition);
+    }
+
     /**
      * Toggle game pause state.
      */
@@ -115,19 +142,39 @@ public class Controller implements InputHandler {
     }
 
     private void setupButtonHandlers(){
-        gameInterface.getSpeedButton().setOnAction(e -> handleSpeedButton());
+        gameInterface.getSpeed1Button().setOnAction(e -> handleSpeed1Button());
+        gameInterface.getSpeed2Button().setOnAction(e -> handleSpeed2Button());
+        gameInterface.getSpeed3Button().setOnAction(e -> handleSpeed3Button());
         gameInterface.getExitButton().setOnAction(e -> handleExitButton());
+        gameInterface.getSaveButton().setOnAction(e -> handleSaveButton());
         gameInterface.getPauseButton().setOnAction(e -> handlePauseButton());
+
+        ComboBox<Tool> toolCombo = gameInterface.getTools();
+        toolCombo.valueProperty().addListener((obs, oldTool, newTool) -> {
+          if (newTool != null){
+              switch(newTool){
+                  case PLACE_DIRT -> currentTool = PlaceDirt.getInstance();
+                  case SHOVEL -> currentTool = Shovel.getInstance();
+                  case PLACE_FOOD ->  currentTool = PlaceFood.getInstance();
+              }
+          }
+        });
         }
+
+
+    //TODO Implement
+    private void handleSaveButton() {
+        model.saveColony();
+    }
 
     private void handlePauseButton() {
         Button btn = gameInterface.getPauseButton();
-        if(btn.getText().equals("Pause")){
+        if(btn.getText().equals(" Pause ")){
             model.setGameState("PAUSED");
-            btn.setText("Resume");
+            btn.setText(" Resume ");
         } else {
             model.setGameState("RUNNING");
-            btn.setText("Pause");
+            btn.setText(" Pause ");
         }
 
     }
@@ -137,21 +184,21 @@ public class Controller implements InputHandler {
     }
 
     /**
-     * Handles world tick speed button toggle.
+     * Handles world tick speed button toggles.
      */
-    private void handleSpeedButton(){
-        Button btn = gameInterface.getSpeedButton();
-        if(btn.getText().equals("x3")){
-            btn.setText("x1");
-            model.setTickrate(20);
-        }
-        else {
-            btn.setText("x3");
-            model.setTickrate(60);
-        }
-
+    private void handleSpeed1Button(){
+        model.setTickrate(60);
+        gameInterface.setPressedButton(">");
     }
-    
+    private void handleSpeed2Button(){
+        model.setTickrate(30);
+        gameInterface.setPressedButton(">>");
+    }
+    private void handleSpeed3Button(){
+        model.setTickrate(20);
+        gameInterface.setPressedButton(">>>");
+    }
+
     /**
      * Additional controller methods for specific game actions.
      * These methods update the Model, which then notifies the View through observers.

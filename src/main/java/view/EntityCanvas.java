@@ -1,5 +1,7 @@
 package view;
 
+import model.ants.Ant;
+import model.Being;
 import model.Entity;
 import model.EntityType;
 import model.world.Item;
@@ -49,18 +51,29 @@ public class EntityCanvas extends Canvas {
     public void render() {
         gc.clearRect(0, 0, getWidth(), getHeight());
         for (Entity entity : entities) {
+            gc.setFill(Color.BLACK);
+            gc.fillOval(entity.getX()*cellsize-2, entity.getY()*cellsize-2, 12, 12);
             switch (entity.getType()) {
-                case EntityType.WORKER_ANT:
-                    gc.setFill(workerAnt.getColor());
-                    gc.fillOval(entity.getX()*cellsize, entity.getY()*cellsize, workerAnt.getWidth(), workerAnt.getHeight());
-                    break;
-                case EntityType.LARVA:
-                    gc.setFill(larva.getColor());
-                    gc.fillOval(entity.getX()*cellsize, entity.getY()*cellsize, larva.getWidth(), larva.getHeight());
-                    break;
-                case EntityType.QUEEN:
-                    gc.setFill(queen.getColor());
-                    gc.fillOval(entity.getX()*cellsize, entity.getY()*cellsize, queen.getWidth(), queen.getHeight());
+                case BEING:
+                    Being being = (Being) entity;
+                    switch(being.getBeingType()){
+                        case ANT:
+                            Ant ant = (Ant) being;
+                            switch(ant.getAntType()){
+                                case WORKER_ANT:
+                                    gc.setFill(workerAnt.getColor());
+                                    gc.fillOval(entity.getX()*cellsize, entity.getY()*cellsize, workerAnt.getWidth(), workerAnt.getHeight());
+                                    break;
+                                case LARVA:
+                                    gc.setFill(larva.getColor());
+                                    gc.fillOval(entity.getX()*cellsize, entity.getY()*cellsize, larva.getWidth(), larva.getHeight());
+                                    break;
+                                case QUEEN:
+                                    gc.setFill(queen.getColor());
+                                    gc.fillOval(entity.getX()*cellsize, entity.getY()*cellsize, queen.getWidth(), queen.getHeight());
+                                    break;
+                            }
+                    }
                     break;
                 case EntityType.ITEM:
                     Item item = (Item) entity;
