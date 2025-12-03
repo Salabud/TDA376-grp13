@@ -20,7 +20,7 @@ public class Main extends Application {
     public void start(Stage stage) throws Exception {
         World world = new World();
         model = new Model();
-        model.addWorld(world);
+        model.addWorld(world.withStartWorld());
         View view = new View(stage);
         Controller controller = new Controller(model, view);
         MainMenuController mainMenuController = new MainMenuController(model, view);

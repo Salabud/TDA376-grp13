@@ -1,15 +1,20 @@
 package model.ants;
 
+import model.AntType;
+import model.BeingType;
 import model.colony.ColonyMediator;
 import model.datastructures.Position;
 import model.EntityType;
 import model.world.World;
+import org.json.JSONObject;
 
 /** Represents a worker ant in the simulation. */
 public class WorkerAnt extends TaskPerformerAnt {
 
-    public WorkerAnt(EntityType type, World world, int colonyId, int x, int y, ColonyMediator mediator){
-        this.type = EntityType.WORKER_ANT;
+    public WorkerAnt(World world, int colonyId, int x, int y, ColonyMediator mediator){
+        this.type = EntityType.BEING;
+        this.beingType = BeingType.ANT;
+        this.antType = AntType.WORKER_ANT;
         this.world = world;
         this.colonyId = colonyId;
         this.position = new Position(x,y);
@@ -20,5 +25,17 @@ public class WorkerAnt extends TaskPerformerAnt {
     public void update() {
         //System.out.println("workerAnt update");
         super.update();
+    }
+
+
+    /**
+     * Create a JSON Object of the entity
+     * @return
+     */
+    @Override
+    public JSONObject toJSON(){
+        JSONObject obj = super.toJSON();
+        //TODO
+        return obj;
     }
 }

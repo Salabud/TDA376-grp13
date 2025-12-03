@@ -2,6 +2,7 @@ package model;
 
 import model.datastructures.Position;
 import model.world.World;
+import org.json.JSONObject;
 
 /**
  * Abstract base class for all entities in the simulation.
@@ -12,6 +13,7 @@ public abstract class Entity implements Updateable {
     protected Position position;
     protected int movementInterval;
     protected EntityType type; //Final?
+    private int entityId;
 
     public void update() {
         //System.out.println("entity update");
@@ -72,5 +74,19 @@ public abstract class Entity implements Updateable {
      */
     public World getWorld() {
         return this.world;
+    }
+
+    /**
+     * Create a JSON Object of the entity
+     * @return
+     */
+    public JSONObject toJSON(){
+        JSONObject obj = new JSONObject();
+        obj.put("x", position.getX());
+        obj.put("y", position.getY());
+        obj.put("entityId", entityId);
+        obj.put("entityType", type);
+        obj.put("movementInterval", movementInterval);
+        return obj;
     }
 }

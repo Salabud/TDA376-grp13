@@ -19,4 +19,5 @@ public interface Task {
     String getDescription();
     boolean isAssigned();
     void setAssigned(boolean status);
+
 }
