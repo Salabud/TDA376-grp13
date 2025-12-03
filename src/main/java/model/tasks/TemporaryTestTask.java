@@ -27,16 +27,6 @@ public class TemporaryTestTask extends Task {
     }
 
     @Override
-    public AntBehavior getBehaviorStrategy() {
-        return null;
-    }
-
-    @Override
-    public AntMovement getMovementStrategy() {
-        return null;
-    }
-
-    @Override
     public void execute(TaskPerformerAnt ant) {
         if (ant.getMovement() instanceof NoMovement) {
             ant.setMovement(new PathfindingMovement(

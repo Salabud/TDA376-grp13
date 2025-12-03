@@ -58,16 +58,6 @@ public abstract class Task {
     public abstract Position getTargetLocation();
     
     /**
-     * The behavior strategy to use while performing this task.
-     */
-    public abstract AntBehavior getBehaviorStrategy();
-    
-    /**
-     * The movement strategy to use while performing this task.
-     */
-    public abstract AntMovement getMovementStrategy();
-    
-    /**
      * Human-readable description of current task state.
      */
     public abstract String getDescription();

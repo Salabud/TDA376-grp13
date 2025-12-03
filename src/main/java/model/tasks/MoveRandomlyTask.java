@@ -33,16 +33,6 @@ public class MoveRandomlyTask extends Task {
     }
 
     @Override
-    public AntBehavior getBehaviorStrategy() {
-        return null;
-    }
-
-    @Override
-    public AntMovement getMovementStrategy() {
-        return movementStrategy;
-    }
-
-    @Override
     public String getDescription() {
         return "Ant moves around randomly";
     }

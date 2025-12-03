@@ -32,16 +32,6 @@ public class FeedQueenTask extends Task {
         return queen.getPosition();
     }
 
-    @Override
-    public AntBehavior getBehaviorStrategy() {
-        return null;
-    }
-
-    @Override
-    public AntMovement getMovementStrategy() {
-        return movementStrategy;
-    }
-
     /**
      * Currently only moves to queen
      * TODO: find food first (once food is implemented), feed queen (once feeding is implemented)

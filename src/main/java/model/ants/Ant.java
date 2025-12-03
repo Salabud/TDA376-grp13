@@ -59,8 +59,16 @@ public abstract class Ant extends Being {
 
     @Override
     public void update() {
-        //System.out.println("ant update");
-        this.movement.move(this);
+        // Execute movement strategy (if any)
+        if (movement != null) {
+            movement.move(this);
+        }
+        
+        // Execute behavior strategy (if any)
+        if (behavior != null) {
+            behavior.perform(this);
+        }
+        
         super.update();
     }
 }
