@@ -3,8 +3,11 @@ package model.colony;
 import model.ants.TaskPerformerAnt;
 import model.colony.antnest.Tunnel;
 import model.datastructures.Position;
+import model.Entity;
 import model.tasks.EatTask;
 import model.tasks.Task;
+import model.world.Item;
+import model.world.MaterialType;
 
 import java.util.List;
 
@@ -23,8 +26,9 @@ public class ColonyMediator {
      * @param ant : The ant requesting a task.
      */
     public void getBestTask(TaskPerformerAnt ant){
-        for(Task task : taskBoard.getTaskBoard()){ //TODO: iterate through non-assigned tasks only
-            if (ant.isAvailableForTask(task)){
+        for(Task task : taskBoard.getTaskBoard()){
+            // Only consider unassigned tasks
+            if (!task.isAssigned() && ant.isAvailableForTask(task)){
                 assignTask(ant, task);
                 break;
             }
@@ -38,7 +42,15 @@ public class ColonyMediator {
      */
     private void assignTask(TaskPerformerAnt ant, Task task){
         ant.assignTask(task);
-        taskBoard.removeTask(task); // TODO: flag task as assigned instead of removing
+        task.setAssigned(true);
+    }
+    
+    /**
+     * Called when a task is completed. Removes the task from the taskboard.
+     * @param task : The completed task.
+     */
+    public void reportTaskCompleted(Task task){
+        taskBoard.removeTask(task);
     }
 
     /**
@@ -97,12 +109,18 @@ public class ColonyMediator {
         if(foodPosition == null){
             return;
         }
-        //TODO: make generic reportHungry that works for Ant
-        //TODO: instead of knownfoodpositions, tell WorkerAnt to go to food chamber. (less omnipotent behavior from mediator)
-        ant.assignTask(new EatTask(foodPosition));
+        
+        Item foodItem = findFoodItemAt(ant, foodPosition);
+        if(foodItem == null){
+            // Food was already eaten or removed
+            antColony.deleteFoodPosition(foodPosition);
+            return;
+        }
+        
+        ant.assignTask(new EatTask(foodItem));
         antColony.deleteFoodPosition(foodPosition);
     }
-
+    
     /***
      * TODO: Implement a better way of picking a food
      * @return
@@ -111,6 +129,22 @@ public class ColonyMediator {
         List<Position> foodPositions = antColony.getFoodPositions();
         if(!foodPositions.isEmpty()){
             return foodPositions.getFirst(); // TODO: dependant on ant's position
+        }
+        return null;
+    }
+
+    /**
+     * Find a food Item at the given position.
+     */
+    private Item findFoodItemAt(TaskPerformerAnt ant, Position position) {
+        List<Entity>[][] entityGrid = ant.getWorld().getEntityGrid();
+        int x = position.getX();
+        int y = position.getY();
+        
+        for (Entity entity : entityGrid[x][y]) {
+            if (entity instanceof Item item && item.getMaterialType() == MaterialType.FOOD) {
+                return item;
+            }
         }
         return null;
     }

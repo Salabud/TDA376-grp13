@@ -16,4 +16,12 @@ public interface AntBehavior {
      * @param ant the ant performing this behavior
      */
     void perform(Ant ant);
+    
+    /**
+     * Check if this behavior has completed its work.
+     * Used by tasks to know when to transition to the next phase.
+     * 
+     * @return true if the behavior is finished
+     */
+    boolean isComplete();
 }

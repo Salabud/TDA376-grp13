@@ -24,14 +24,27 @@ public class TaskPerformerAnt extends Ant{
 
     @Override
     public void update() {
-        if(getHunger() < 30 && !(currentTask instanceof EatTask)){ //30 placeholder for now
+        // Report hunger if below temp threshold (30) no matter current task
+        if (getHunger() < 30 && !(currentTask instanceof EatTask)) {
             mediator.reportHungry(this);
         }
+        
+        // Execute current task
         if (currentTask != null) {
             currentTask.execute(this);
+            
+            // Check if task just completed
+            if (currentTask.isComplete()) {
+                mediator.reportTaskCompleted(currentTask);
+                currentTask = null;
+            }
+        }
+        
+        // If idle (no task), request a new task from mediator
+        if (currentTask == null) {
+            mediator.getBestTask(this);
         }
 
-        //System.out.println("ant tick");
         super.update();
     }
 

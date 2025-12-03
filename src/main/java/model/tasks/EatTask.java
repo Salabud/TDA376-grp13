@@ -1,23 +1,21 @@
 package model.tasks;
 
-import model.ants.behavior.AntBehavior;
 import model.ants.behavior.EatBehavior;
-import model.ants.movement.AntMovement;
 import model.ants.movement.NoMovement;
 import model.ants.movement.PathfindingMovement;
 import model.ants.state.AntState;
 import model.ants.TaskPerformerAnt;
 import model.datastructures.Position;
+import model.world.Item;
 
 public class EatTask extends Task {
-    private Position foodPosition;
-    private int eatingProgress;
-    private static final int EATING_DURATION = 600; // temp value to debugging
+    private final Item foodItem;
+    private final Position foodPosition;
     
-    public EatTask(Position foodPosition) {
-        super();  // Initializes phase = NOT_STARTED, isAssigned = false
-        this.foodPosition = foodPosition;
-        this.eatingProgress = 0;
+    public EatTask(Item foodItem) {
+        super();
+        this.foodItem = foodItem;
+        this.foodPosition = foodItem.getPosition();
     }
     
     @Override
@@ -38,15 +36,14 @@ public class EatTask extends Task {
                 if (ant.getPosition().isAdjacentTo(foodPosition)) {
                     ant.setState(AntState.EATING);
                     ant.setMovement(new NoMovement());
-                    ant.setBehavior(new EatBehavior());
+                    ant.setBehavior(new EatBehavior(foodItem));
                     setPhase(TaskPhase.WORKING);
                 }
                 break;
                 
             case WORKING:
-                // Track eating progress (behavior handles hunger restoration)
-                eatingProgress++;
-                if (eatingProgress >= EATING_DURATION) {
+                // Behavior handles eating progress - check if it's done
+                if (ant.getBehavior() != null && ant.getBehavior().isComplete()) {
                     ant.setState(AntState.RESTING);
                     ant.setMovement(new NoMovement());
                     ant.setBehavior(null);
@@ -55,7 +52,6 @@ public class EatTask extends Task {
                 break;
                 
             case COMPLETE:
-                // Task done, nothing to configure
                 break;
                 
             default:
@@ -78,7 +74,7 @@ public class EatTask extends Task {
         return switch (phase) {
             case NOT_STARTED -> "Waiting to start";
             case MOVING_TO_TARGET -> "Moving to food";
-            case WORKING -> "Eating (" + (eatingProgress * 100 / EATING_DURATION) + "%)";
+            case WORKING -> "Eating...";
             case COMPLETE -> "Finished eating";
             default -> "Eating task";
         };

@@ -24,7 +24,7 @@ public class AntBuilder {
     private float health;
     private float maxHealth;
     private float hunger = 31;
-    private float maxHunger;
+    private float maxHunger = 100;
     private int age;
     private int movementInterval;
     private EntityType type;
