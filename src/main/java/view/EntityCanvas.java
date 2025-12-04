@@ -10,6 +10,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import view.sprite.CircleSprite;
 import view.sprite.DiamondSprite;
+import view.sprite.SelectSprite;
 import view.sprite.Sprite;
 
 import java.util.List;
@@ -29,6 +30,7 @@ public class EntityCanvas extends Canvas {
     private final Sprite poison;
     private final Sprite itemOutline;
     private final Sprite beingOutline;
+    private final Sprite selectionSprite;
     private int selectedEntityId = -1;
 
 
@@ -48,6 +50,9 @@ public class EntityCanvas extends Canvas {
         this.food = new DiamondSprite(cellsize+2, Color.GREEN, gc);
         this.dirt = new DiamondSprite(cellsize+2, Color.rgb(50,41,47), gc);
         this.poison = new DiamondSprite(cellsize+2, Color.PURPLE, gc);
+
+        // Other sprites
+        this.selectionSprite = new SelectSprite(cellsize+8, Color.WHITE, gc);
     }
 
     /**
@@ -107,8 +112,7 @@ public class EntityCanvas extends Canvas {
             }
         }
         if (selectedEntity != null){
-            gc.setFill(Color.WHITE);
-            gc.fillRect(selectedEntity.getX()*cellsize-2, selectedEntity.getY()*cellsize-2, 12, 12);
+            selectionSprite.paint(selectedEntity.getX()*cellsize-5, selectedEntity.getY()*cellsize-5);
         }
     }
 

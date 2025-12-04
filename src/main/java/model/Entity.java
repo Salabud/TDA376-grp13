@@ -13,7 +13,7 @@ public abstract class Entity implements Updateable {
     protected Position position;
     protected int movementInterval;
     protected EntityType type; //Final?
-    private int entityId;
+    protected int entityId;
 
     public void update() {
         //System.out.println("entity update");

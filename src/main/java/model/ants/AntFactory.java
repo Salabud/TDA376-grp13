@@ -1,5 +1,6 @@
 package model.ants;
 
+import model.EntityIdManager;
 import model.ants.status.Status;
 import model.colony.AntColony;
 import model.colony.ColonyMediator;
@@ -52,9 +53,10 @@ public final class AntFactory {
                 .mediator(mediator)
                 .maxHunger(40)
                 .buildWorkerAnt();
-
+        ant.setEntityId(EntityIdManager.getInstance().getNextId());
         world.addEntity(ant);
         colony.addAnt(ant);
+
         return ant; //Vi kanske inte ens behöver returnera instans?
     }
 
@@ -95,6 +97,7 @@ public final class AntFactory {
                 .movementInterval(movementInterval)
                 .statuses(statuses)
                 .buildWorkerAnt();
+        ant.setEntityId(EntityIdManager.getInstance().getNextId());
         world.addEntity(ant);
         colony.addAnt(ant);
         return ant;
@@ -119,6 +122,7 @@ public final class AntFactory {
                 .type(EntityType.LARVA)
                 .mediator(mediator)
                 .buildLarva();
+        larva.setEntityId(EntityIdManager.getInstance().getNextId());
         world.addEntity(larva);
         colony.addAnt(larva);
         return larva;
@@ -161,6 +165,7 @@ public final class AntFactory {
                 .movementInterval(movementInterval)
                 .statuses(statuses)
                 .buildLarva();
+        larva.setEntityId(EntityIdManager.getInstance().getNextId());
         world.addEntity(larva);
         colony.addAnt(larva);
         return larva;
@@ -185,6 +190,7 @@ public final class AntFactory {
                 .type(EntityType.QUEEN)
                 .mediator(mediator)
                 .buildQueenAnt();
+        ant.setEntityId(EntityIdManager.getInstance().getNextId());
         world.addEntity(ant);
         colony.addAnt(ant);
         return ant;
@@ -227,6 +233,7 @@ public final class AntFactory {
                 .movementInterval(movementInterval)
                 .statuses(statuses)
                 .buildQueenAnt();
+        ant.setEntityId(EntityIdManager.getInstance().getNextId());
         world.addEntity(ant);
         colony.addAnt(ant);
         return ant;

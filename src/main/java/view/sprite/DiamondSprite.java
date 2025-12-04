@@ -14,8 +14,8 @@ public class DiamondSprite extends Sprite{
 
     @Override
     public void paint(int x, int y){
-        double cx = x + width / 2.0;  // center X
-        double cy = y + height / 2.0;  // center Y
+        double cx = x-1 + width / 2.0;  // center X
+        double cy = y-1 + height / 2.0;  // center Y
         double rx  = width / 2.0;         // radius to a x point
         double ry  = height / 2.0;         // radius to a x point
 
