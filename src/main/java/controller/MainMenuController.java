@@ -69,7 +69,7 @@ public class MainMenuController implements InputHandler{
         model.setTickrate(model.getStartingTickrate());
         view.resetInterface();
         model.setGameState("RUNNING");
-        view.setInputHandler(new Controller(model, view));
+        view.setInputHandler(new GameInterfaceController(model, view));
     }
 
     private void handleNewGameButton() throws IOException {
@@ -77,7 +77,7 @@ public class MainMenuController implements InputHandler{
         model.setTickrate(model.getStartingTickrate());
         view.resetInterface();
         model.setGameState("RUNNING");
-        view.setInputHandler(new Controller(model, view));
+        view.setInputHandler(new GameInterfaceController(model, view));
     }
 
 }

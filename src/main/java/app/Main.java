@@ -1,6 +1,6 @@
 package app;
 
-import controller.Controller;
+import controller.GameInterfaceController;
 import controller.MainMenuController;
 import model.Model;
 import model.world.World;
@@ -22,7 +22,7 @@ public class Main extends Application {
         model = new Model();
         model.addWorld(world.withStartWorld());
         View view = new View(stage);
-        Controller controller = new Controller(model, view);
+        GameInterfaceController gameInterfaceController = new GameInterfaceController(model, view);
         MainMenuController mainMenuController = new MainMenuController(model, view);
         model.addListener(view);
         view.setInputHandler(mainMenuController);

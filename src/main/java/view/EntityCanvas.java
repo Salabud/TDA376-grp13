@@ -8,10 +8,7 @@ import model.world.Item;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
-import view.sprite.CircleSprite;
-import view.sprite.DiamondSprite;
-import view.sprite.SelectSprite;
-import view.sprite.Sprite;
+import view.sprite.*;
 
 import java.util.List;
 
@@ -32,6 +29,7 @@ public class EntityCanvas extends Canvas {
     private final Sprite beingOutline;
     private final Sprite selectionSprite;
     private int selectedEntityId = -1;
+    private SelectWindow selectWindow;
 
 
     public EntityCanvas(){
@@ -53,6 +51,7 @@ public class EntityCanvas extends Canvas {
 
         // Other sprites
         this.selectionSprite = new SelectSprite(cellsize+8, Color.WHITE, gc);
+        this.selectWindow = new SelectWindow(gc);
     }
 
     /**
@@ -109,6 +108,7 @@ public class EntityCanvas extends Canvas {
 
             if (entity.getEntityId() == selectedEntityId){
                 selectedEntity = entity;
+                selectWindow.paint(selectedEntity);
             }
         }
         if (selectedEntity != null){
@@ -118,6 +118,5 @@ public class EntityCanvas extends Canvas {
 
     public void setSelectedEntity(int selectedEntityId) {
         this.selectedEntityId = selectedEntityId;
-        System.out.println(selectedEntityId);
     }
 }
