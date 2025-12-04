@@ -28,11 +28,6 @@ public class TaskPerformerAnt extends Ant{
 
     @Override
     public void update() {
-        // Report hunger if below temp threshold (30) no matter current task
-        if (getHunger() < 30 && !(currentTask instanceof EatTask)) {
-            mediator.reportHungry(this);
-        }
-        
         // Execute current task
         if (currentTask != null) {
             currentTask.execute(this);

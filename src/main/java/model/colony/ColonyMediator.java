@@ -1,15 +1,14 @@
 package model.colony;
 
 import model.ants.Larva;
+import model.ants.QueenAnt;
 import model.ants.TaskPerformerAnt;
 import model.colony.antnest.Tunnel;
 import model.datastructures.Position;
-import model.Entity;
 import model.tasks.EatTask;
-import model.tasks.FeedLarvaTask;
+import model.tasks.FeedBeingTask;
 import model.tasks.Task;
 import model.world.Item;
-import model.world.MaterialType;
 
 import java.util.List;
 
@@ -63,19 +62,15 @@ public class ColonyMediator {
         taskBoard.addTask(task);
     }
 
-    /**
-     * Sets the colony's task board.
-     * @param taskBoard : The task board to set.
-     */
+
     public void setColonyTaskBoard(ColonyTaskBoard taskBoard){
         this.taskBoard = taskBoard;
     }
-
     public void setAntColony(AntColony antColony){
         this.antColony = antColony;
     }
 
-    // Discovery Reporting ===========================================
+    // Discovery & Reporting ===========================================
     
     /**
      * Report that food was discovered at a location.
@@ -107,63 +102,72 @@ public class ColonyMediator {
     }
 
     public void reportHungry(TaskPerformerAnt ant){
-        Position foodPosition = getBestFoodPosition(ant.getPosition());
-        if(foodPosition == null){
+        Item food = findBestFood(ant.getPosition());
+        if (food == null) {
             return;
         }
         
-        Item foodItem = findFoodItemAt(ant, foodPosition);
-        if(foodItem == null){
-            // Food was already eaten or removed
-            antColony.deleteFoodPosition(foodPosition);
-            return;
-        }
-        
-        ant.assignTask(new EatTask(foodItem));
-        antColony.deleteFoodPosition(foodPosition);
-    }
-    
-    /***
-     * TODO: Implement a better way of picking a food
-     * @return
-     */
-    private Position getBestFoodPosition(Position position){
-        List<Position> foodPositions = antColony.getFoodPositions();
-        if(!foodPositions.isEmpty()){
-            return foodPositions.getFirst(); // TODO: dependant on ant's position
-        }
-        return null;
+        ant.assignTask(new EatTask(food));
+        antColony.deleteKnownFood(food);
     }
 
     /**
-     * Find a food Item at the given position.
+     * Find the best available food item, preferring closer food.
+     * @param position the position to find food near
+     * @return the best food Item, or null if none available
      */
-    private Item findFoodItemAt(TaskPerformerAnt ant, Position position) {
-        List<Entity>[][] entityGrid = ant.getWorld().getEntityGrid();
-        int x = position.getX();
-        int y = position.getY();
-        
-        for (Entity entity : entityGrid[x][y]) {
-            if (entity instanceof Item item && item.getMaterialType() == MaterialType.FOOD) {
-                return item;
-            }
+    private Item findBestFood(Position position) {
+        List<Item> knownFood = antColony.getKnownFood();
+        if (knownFood.isEmpty()) {
+            return null;
         }
-        return null;
+        // TODO: Sort by distance to position
+        return knownFood.getFirst();
     }
 
     /**
      * Report that a larva is hungry and needs to be fed.
-     * Creates a FeedLarvaTask and adds it to the task board.
+     * Creates a FeedBeingTask and adds it to the task board.
      * Does not create duplicate tasks for the same larva.
      * @param larva : The hungry larva
      */
     public void reportLarvaHungry(Larva larva) {
         for (Task task : taskBoard.getTaskBoard()) {
-            if (task instanceof FeedLarvaTask feedTask && feedTask.getLarva() == larva) {
+            if (task instanceof FeedBeingTask feedTask && feedTask.getTarget() == larva) {
                 return;
             }
         }
         
-        taskBoard.addTask(new FeedLarvaTask(larva));
+        Item food = findBestFood(larva.getPosition());
+        if (food == null) {
+            return;
+        }
+
+        System.out.println("adding feed larva task");
+        taskBoard.addTask(new FeedBeingTask(larva, food, 2, "larva"));
+        antColony.deleteKnownFood(food);
+    }
+
+    /**
+     * Report that the queen is hungry and needs to be fed.
+     * Creates a FeedBeingTask and adds it to the task board.
+     * Does not create duplicate tasks for the queen.
+     * @param queen : The hungry queen
+     */
+    public void reportQueenHungry(QueenAnt queen) {
+        for (Task task : taskBoard.getTaskBoard()) {
+            if (task instanceof FeedBeingTask feedTask && feedTask.getTarget() == queen) {
+                return;
+            }
+        }
+        
+        Item food = findBestFood(queen.getPosition());
+        if (food == null) {
+            return;
+        }
+        
+        // Queen has highest priority (1)
+        taskBoard.addTask(new FeedBeingTask(queen, food, 1, "queen"));
+        antColony.deleteKnownFood(food);
     }
 }

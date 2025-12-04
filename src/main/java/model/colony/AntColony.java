@@ -2,9 +2,13 @@ package model.colony;
 
 import model.ants.Ant;
 import model.datastructures.Position;
+import model.world.Item;
+import model.world.MaterialType;
+
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -15,11 +19,11 @@ public class AntColony {
     List<Ant> ants;
     ColonyMediator mediator;
     ColonyTaskBoard taskBoard;
-    List<Position> knownFoodPositions;
+    List<Item> knownFood;
 
     public AntColony(ColonyMediator mediator, ColonyTaskBoard taskBoard){
         ants = new ArrayList<>();
-        knownFoodPositions = new ArrayList<>();
+        knownFood = new ArrayList<>();
         this.mediator = mediator;
         this.taskBoard = taskBoard;
     }
@@ -29,20 +33,28 @@ public class AntColony {
     }
 
     public List<Position> getFoodPositions(){
-        return this.knownFoodPositions;
+        List<Position> positions = new ArrayList<>();
+        for (Item item : knownFood) {
+            positions.add(item.getPosition());
+        }
+        return positions;
     }
-
-    public void addFoodPosition(Position position){
-        this.knownFoodPositions.add(position);
+    
+    public List<Item> getKnownFood(){
+        return this.knownFood;
     }
-    public void deleteFoodPosition(Position position){
-        this.knownFoodPositions.remove(position);
+    
+    public void addKnownFood(Item food){
+        this.knownFood.add(food);
+    }
+    public void deleteKnownFood(Item food){
+        this.knownFood.removeIf(item -> item.equals(food));
     }
 
     //TODO
     public JSONObject toJSON(){
         JSONObject obj = new JSONObject();
-        obj.put("knownFoodPositions", knownFoodPositions);
+        obj.put("knownFood", getKnownFood());
         return obj;
     }
 }

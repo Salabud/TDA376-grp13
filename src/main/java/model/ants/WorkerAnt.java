@@ -5,6 +5,7 @@ import model.BeingType;
 import model.colony.ColonyMediator;
 import model.datastructures.Position;
 import model.EntityType;
+import model.tasks.EatTask;
 import model.world.World;
 import org.json.JSONObject;
 
@@ -23,7 +24,11 @@ public class WorkerAnt extends TaskPerformerAnt {
 
     @Override
     public void update() {
-        //System.out.println("workerAnt update");
+        // Report hunger if below temp threshold (30) no matter current task
+        if (getHunger() < 30 && !(currentTask instanceof EatTask)) {
+            mediator.reportHungry(this);
+        }
+        //System.out.println("Worker Ant Hunger:"+getHunger());
         super.update();
     }
 

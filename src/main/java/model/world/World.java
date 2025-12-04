@@ -9,7 +9,7 @@ import model.colony.ColonyMediator;
 import model.colony.ColonyTaskBoard;
 import model.datastructures.Position;
 import model.Entity;
-import model.tasks.FeedQueenTask;
+import model.tasks.FeedBeingTask;
 import model.tasks.MoveCarryableTask;
 import model.tasks.TemporaryTestTask;
 
@@ -87,21 +87,16 @@ public class World {
         colonyMediator.setAntColony(colony);
         colonyMediator.setColonyTaskBoard(taskBoard);
 
-
         AntFactory factory = AntFactory.getInstance();
         TaskPerformerAnt ant1 = factory.createWorkerAnt(this, colony, 0, 30, 30, colonyMediator);
         QueenAnt queen = factory.createQueenAnt(this, colony, 0, 20, 60, colonyMediator);
-        //Showcase entities
-        //Item dirt = new Item(new Position(27, 24), MaterialType.DIRT);
-        //addEntity(dirt);
         Item food = new Item(new Position(45, 24), MaterialType.FOOD);
         addEntity(food);
         Item food2 = new Item(new Position(46,25), MaterialType.FOOD);
         addEntity(food2);
-        colony.addFoodPosition(new Position(46, 25));
+        colony.addKnownFood(food);
+        colony.addKnownFood(food2);
         Larva larva1 = factory.createLarva(this, colony, 3,23,35,colonyMediator);
-
-        ant1.assignTask(new FeedQueenTask(queen, food));
         tilesChanged = true;
         return this;
     }

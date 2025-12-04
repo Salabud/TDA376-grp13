@@ -206,16 +206,16 @@ public class Model {
     }
     public void newGame() throws IOException {
 //        removeWorld(worlds.getFirst());
-//        worlds.add(new World().withStartWorld());
+        worlds.add(new World().withStartWorld());
 
 
         //Temporary loading of a starting save until world generation is implemented
-        stopTicking();
+        /*stopTicking();
         if (!worlds.isEmpty()) removeWorld(worlds.getFirst());
         World loadedWorld = SaveFileLoader.getInstance().load("START_WORLD");
         worlds.add(loadedWorld);
         notifyTilesetChanged();
-        startTicking();
+        startTicking();*/
     }
 
     /**

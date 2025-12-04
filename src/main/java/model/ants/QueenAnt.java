@@ -5,10 +5,13 @@ import model.BeingType;
 import model.colony.ColonyMediator;
 import model.datastructures.Position;
 import model.EntityType;
+import model.tasks.Task;
 import model.world.World;
 
 /** Represents the queen ant in the simulation. */
 public class QueenAnt extends TaskPerformerAnt {
+    private static final float HUNGER_THRESHOLD = 50f; // Report hunger when below this level
+    private boolean hasReportedHunger = false; // Prevent spamming reports
 
     public QueenAnt(EntityType type, World world, int colonyId, int x, int y, ColonyMediator mediator){
         this.type = EntityType.BEING;
@@ -22,7 +25,23 @@ public class QueenAnt extends TaskPerformerAnt {
 
     @Override
     public void update() {
-    super.update();
+        // Report hunger to mediator when below threshold
+        if (getHunger() < HUNGER_THRESHOLD && !hasReportedHunger && mediator != null) {
+            mediator.reportQueenHungry(this);
+            hasReportedHunger = true;
+        }
+        
+        // Reset the flag once hunger is restored
+        if (getHunger() >= HUNGER_THRESHOLD) {
+            hasReportedHunger = false;
+        }
+        
+        super.update();
+    }
+
+    @Override
+    public boolean isAvailableForTask(Task task) {
+        return false; //Hardcoded for now until we add "BirthLarvaTask"
     }
 
     public void layLarva(int amount){
