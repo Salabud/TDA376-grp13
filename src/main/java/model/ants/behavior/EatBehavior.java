@@ -40,6 +40,7 @@ public class EatBehavior implements AntBehavior {
         
         if (eatingProgress >= EATING_DURATION) {
             ant.getWorld().removeEntity(foodItem);
+            ant.setBehavior(null);
             isComplete = true;
         }
     }

@@ -1,10 +1,12 @@
 package model.colony;
 
+import model.ants.Larva;
 import model.ants.TaskPerformerAnt;
 import model.colony.antnest.Tunnel;
 import model.datastructures.Position;
 import model.Entity;
 import model.tasks.EatTask;
+import model.tasks.FeedLarvaTask;
 import model.tasks.Task;
 import model.world.Item;
 import model.world.MaterialType;
@@ -147,5 +149,21 @@ public class ColonyMediator {
             }
         }
         return null;
+    }
+
+    /**
+     * Report that a larva is hungry and needs to be fed.
+     * Creates a FeedLarvaTask and adds it to the task board.
+     * Does not create duplicate tasks for the same larva.
+     * @param larva : The hungry larva
+     */
+    public void reportLarvaHungry(Larva larva) {
+        for (Task task : taskBoard.getTaskBoard()) {
+            if (task instanceof FeedLarvaTask feedTask && feedTask.getLarva() == larva) {
+                return;
+            }
+        }
+        
+        taskBoard.addTask(new FeedLarvaTask(larva));
     }
 }

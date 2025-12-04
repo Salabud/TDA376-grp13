@@ -7,6 +7,7 @@ package model.ants.state;
  * behavior strategies while e.g. executing a task. Follows state pattern.
  */
 public enum AntState {
+    IDLE,
     MOVING,
     WORKING,
     EATING,

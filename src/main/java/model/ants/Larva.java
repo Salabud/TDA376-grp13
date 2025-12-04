@@ -13,18 +13,22 @@ import java.util.List;
 
 /** Represents a larva in the simulation. */
 public class Larva extends Ant implements Carryable {
+    private float TRANSFORM_AGE = 5*60F; // In seconds
+    private static final float HUNGER_THRESHOLD = 50f; // Report hunger when below this level
+    private boolean hasReportedHunger = false; // Prevent spamming reports
+
     public Larva(World world, int colonyId, int x, int y, ColonyMediator mediator){
         this.position = new Position(x,y);
+        this.mediator = mediator;
         type = EntityType.BEING;
         beingType = BeingType.ANT;
         antType = AntType.LARVA;
-
     }
     public Larva(World world, int colonyId, int x, int y, int age,
                  String nickname, ColonyMediator mediator, float health, float maxHealth, float hunger,
                  float maxHunger, int movementInterval, List<Status> statuses){
         position = new Position(x,y);
-        type = EntityType.LARVA;
+        this.mediator = mediator;
     }
 
     @Override
@@ -32,7 +36,27 @@ public class Larva extends Ant implements Carryable {
         this.position = position;
     }
 
+    //TODO: Implement becomeWorker
     public void becomeWorker(){
+        System.out.println("becoming worker");
+    }
 
+    @Override
+    public void update(){
+        // Report hunger to mediator
+        if (getHunger() < HUNGER_THRESHOLD && !hasReportedHunger && mediator != null) {
+            mediator.reportLarvaHungry(this);
+            hasReportedHunger = true;
+        }
+        
+        // Reset the flag once hunger is restored
+        if (getHunger() >= HUNGER_THRESHOLD) {
+            hasReportedHunger = false;
+        }
+        
+        if (this.getAge() > TRANSFORM_AGE){
+            becomeWorker();
+        }
+        super.update();
     }
 }

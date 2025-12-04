@@ -1,6 +1,7 @@
 package model.ants;
 
 import model.Carryable;
+import model.ants.state.AntState;
 import model.datastructures.Position;
 import model.tasks.EatTask;
 import model.tasks.Task;
@@ -45,6 +46,7 @@ public class TaskPerformerAnt extends Ant{
         
         // If idle (no task), request a new task from mediator
         if (currentTask == null) {
+            setState(AntState.IDLE);
             mediator.getBestTask(this);
         }
 
