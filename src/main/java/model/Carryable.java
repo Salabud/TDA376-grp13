@@ -6,5 +6,10 @@ import model.datastructures.Position;
  * Represents an entity that can be carried and moved.
  */
 public interface Carryable {
-    public void move(Position position);
+    /**
+     * Move the carryable entity to a new position.
+     * @param position : The new position to move to.
+     */
+    public void moveTo(Position position);
+    public Position getPosition();
 }

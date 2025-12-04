@@ -28,8 +28,8 @@ public class Larva extends Ant implements Carryable {
     }
 
     @Override
-    public void move(Position position) {
-
+    public void moveTo(Position position) {
+        this.position = position;
     }
 
     public void becomeWorker(){

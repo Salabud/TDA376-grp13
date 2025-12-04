@@ -13,7 +13,7 @@ import model.datastructures.Position;
 public class FeedQueenTask extends Task {
     private QueenAnt queen;
     private PathfindingMovement movementStrategy;
-    
+
     /**
      * @param queen the queen to feed
      */

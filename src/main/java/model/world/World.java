@@ -10,6 +10,7 @@ import model.colony.ColonyTaskBoard;
 import model.datastructures.Position;
 import model.Entity;
 import model.tasks.FeedQueenTask;
+import model.tasks.MoveCarryableTask;
 import model.tasks.TemporaryTestTask;
 
 /**
@@ -44,9 +45,8 @@ public class World {
                 entityGrid[x][y] = new ArrayList<>();
             }
         }
-
-
     }
+  
     public World withStartWorld(){
         //Hardcoded starting world
         for (int x = 0; x < 100; x++){
