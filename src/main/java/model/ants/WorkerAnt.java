@@ -5,7 +5,9 @@ import model.BeingType;
 import model.colony.ColonyMediator;
 import model.datastructures.Position;
 import model.EntityType;
+import model.tasks.BirthTask;
 import model.tasks.EatTask;
+import model.tasks.Task;
 import model.world.World;
 import org.json.JSONObject;
 
@@ -28,10 +30,17 @@ public class WorkerAnt extends TaskPerformerAnt {
         if (getHunger() < 30 && !(currentTask instanceof EatTask)) {
             mediator.reportHungry(this);
         }
-        //System.out.println("Worker Ant Hunger:"+getHunger());
         super.update();
     }
 
+    @Override
+    protected boolean isTaskTypeAllowed(Task task) {
+        // Workers cannot give birth
+        if (task instanceof BirthTask) {
+            return false;
+        }
+        return true;
+    }
 
     /**
      * Create a JSON Object of the entity

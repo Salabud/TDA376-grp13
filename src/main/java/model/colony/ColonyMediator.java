@@ -5,6 +5,7 @@ import model.ants.QueenAnt;
 import model.ants.TaskPerformerAnt;
 import model.colony.antnest.Tunnel;
 import model.datastructures.Position;
+import model.tasks.BirthTask;
 import model.tasks.EatTask;
 import model.tasks.FeedBeingTask;
 import model.tasks.Task;
@@ -61,7 +62,6 @@ public class ColonyMediator {
     public void addTask(Task task){
         taskBoard.addTask(task);
     }
-
 
     public void setColonyTaskBoard(ColonyTaskBoard taskBoard){
         this.taskBoard = taskBoard;
@@ -143,7 +143,6 @@ public class ColonyMediator {
             return;
         }
 
-        System.out.println("adding feed larva task");
         taskBoard.addTask(new FeedBeingTask(larva, food, 2, "larva"));
         antColony.deleteKnownFood(food);
     }
@@ -166,8 +165,31 @@ public class ColonyMediator {
             return;
         }
         
-        // Queen has highest priority (1)
         taskBoard.addTask(new FeedBeingTask(queen, food, 1, "queen"));
         antColony.deleteKnownFood(food);
+    }
+
+    /**
+     * Request the queen to give birth to a new larva.
+     * Creates a BirthTask if no birth task is already pending.
+     * @param queen : The queen to give birth
+     */
+    public void requestBirth(QueenAnt queen) {
+        // Check if a BirthTask already exists
+        for (Task task : taskBoard.getTaskBoard()) {
+            if (task instanceof BirthTask) {
+                return;
+            }
+        }
+        
+        BirthTask birthTask = new BirthTask(antColony, this);
+        if (!queen.isAvailableForTask(birthTask)) {
+            return;
+        }
+
+        System.out.println("ColonyMediator adding and assigning birth task");
+        taskBoard.addTask(birthTask);
+        queen.assignTask(birthTask);
+        birthTask.setAssigned(true);
     }
 }

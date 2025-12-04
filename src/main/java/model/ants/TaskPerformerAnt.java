@@ -1,9 +1,10 @@
 package model.ants;
 
+import model.AntType;
 import model.Carryable;
 import model.ants.state.AntState;
+import model.ants.status.Status;
 import model.datastructures.Position;
-import model.tasks.EatTask;
 import model.tasks.Task;
 import org.json.JSONObject;
 
@@ -15,11 +16,49 @@ public class TaskPerformerAnt extends Ant{
 
     /**
      * Checks if the ant is available to take on a new task.
-     * @param task : The task to check.
+     * Checks: idle state, ant type requirements, and status effects.
+     * Subclasses can override isTaskTypeAllowed() for type-specific restrictions.
+     * 
+     * @param task : The task to check, or null to check if idle.
      * @return True if the ant is available for the task, false otherwise.
      */
     public boolean isAvailableForTask(Task task) {
-        return true; // Simplified for now, TODO: implement logic based on ant state, status, etc.
+        // Check if ant is idle (no current task or task is complete)
+        if (currentTask != null && !currentTask.isComplete()) {
+            return false;
+        }
+        
+        // If task is null, just checking if idle
+        if (task == null) {
+            return true;
+        }
+        
+        // Check if task requires a specific ant type
+        AntType requiredType = task.getRequiredAntType();
+        if (requiredType != null && requiredType != this.antType) {
+            return false;
+        }
+        
+        // Check if any status effect prevents this task
+        for (Status status : statuses) {
+            if (!status.allowsTask(task)) {
+                return false;
+            }
+        }
+        
+        // Subclass-specific checks (e.g., workers can't birth)
+        return isTaskTypeAllowed(task);
+    }
+    
+    /**
+     * Subclass-specific task type restrictions.
+     * Override in subclasses to add instanceof checks for disallowed tasks.
+     * 
+     * @param task the task to check
+     * @return true if this ant type can perform this task type
+     */
+    protected boolean isTaskTypeAllowed(Task task) {
+        return true; // Default: all tasks allowed
     }
 
     public void assignTask(Task task) {

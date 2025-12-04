@@ -40,7 +40,6 @@ public class FeedBehavior implements AntBehavior {
         targetBeing.setHunger(newHunger);
 
         eatingProgress++;
-        System.out.println("Feeding: " + eatingProgress);
         if (eatingProgress >= EATING_DURATION) {
             if (foodItem != null) {
                 ant.getWorld().removeEntity(foodItem);

@@ -45,7 +45,6 @@ public class Larva extends Ant implements Carryable {
     public void update(){
         // Report hunger to mediator
         if (getHunger() < HUNGER_THRESHOLD && !hasReportedHunger && mediator != null) {
-            System.out.println("report Larva hunger");
             mediator.reportLarvaHungry(this);
             hasReportedHunger = true;
         }

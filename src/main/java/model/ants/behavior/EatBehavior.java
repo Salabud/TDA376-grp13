@@ -37,7 +37,6 @@ public class EatBehavior implements AntBehavior {
         ant.setHunger(newHunger);
         
         eatingProgress++;
-        System.out.println("Eating: " + eatingProgress);
         if (eatingProgress >= EATING_DURATION) {
             ant.getWorld().removeEntity(foodItem);
             ant.setBehavior(null);

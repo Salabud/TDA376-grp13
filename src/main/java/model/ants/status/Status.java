@@ -1,6 +1,7 @@
 package model.ants.status;
 
 import model.ants.Ant;
+import model.tasks.Task;
 
 /**
  * Interface for ant status effects, 
@@ -8,5 +9,19 @@ import model.ants.Ant;
  * <p>E.g. Poisoned, Carrying, Starving.
  */
 public interface Status {
-    public void applyStatusEffect(Ant ant);
+    /**
+     * Apply the status effect to the ant each tick.
+     */
+    void applyStatusEffect(Ant ant);
+    
+    /**
+     * Check if this status allows the ant to perform a given task.
+     * Default: all tasks are allowed.
+     * 
+     * @param task : the task to check
+     * @return true if the task is allowed, false otherwise
+     */
+    default boolean allowsTask(Task task) {
+        return true;
+    }
 }

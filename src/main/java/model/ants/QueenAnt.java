@@ -5,6 +5,9 @@ import model.BeingType;
 import model.colony.ColonyMediator;
 import model.datastructures.Position;
 import model.EntityType;
+import model.tasks.EatTask;
+import model.tasks.FeedBeingTask;
+import model.tasks.MoveCarryableTask;
 import model.tasks.Task;
 import model.world.World;
 
@@ -40,8 +43,18 @@ public class QueenAnt extends TaskPerformerAnt {
     }
 
     @Override
-    public boolean isAvailableForTask(Task task) {
-        return false; //Hardcoded for now until we add "BirthLarvaTask"
+    protected boolean isTaskTypeAllowed(Task task) {
+        if (task instanceof FeedBeingTask) {
+            return false;
+        }
+        // Queen cant eat on her own (she gets fed)
+        if (task instanceof EatTask) {
+            return false;
+        }
+        if (task instanceof MoveCarryableTask) {
+            return false;
+        }
+        return true;
     }
 
     public void layLarva(int amount){

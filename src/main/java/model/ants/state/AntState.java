@@ -13,6 +13,5 @@ public enum AntState {
     EATING,
     FEEDING,
     RESTING,
-    STUNNED,
     DEAD,
 }

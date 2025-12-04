@@ -91,11 +91,26 @@ public class World {
         TaskPerformerAnt ant1 = factory.createWorkerAnt(this, colony, 0, 30, 30, colonyMediator);
         QueenAnt queen = factory.createQueenAnt(this, colony, 0, 20, 60, colonyMediator);
         Item food = new Item(new Position(45, 24), MaterialType.FOOD);
-        addEntity(food);
         Item food2 = new Item(new Position(46,25), MaterialType.FOOD);
+        Item food3 = new Item(new Position(45,25), MaterialType.FOOD);
+        Item food4 = new Item(new Position(43,23), MaterialType.FOOD);
+        Item food5 = new Item(new Position(43,25), MaterialType.FOOD);
+        Item food6 = new Item(new Position(43,26), MaterialType.FOOD);
+        Item food7 = new Item(new Position(43,27), MaterialType.FOOD);
+        addEntity(food);
         addEntity(food2);
+        addEntity(food3);
+        addEntity(food4);
+        addEntity(food5);
+        addEntity(food6);
+        addEntity(food7);
         colony.addKnownFood(food);
         colony.addKnownFood(food2);
+        colony.addKnownFood(food3);
+        colony.addKnownFood(food4);
+        colony.addKnownFood(food5);
+        colony.addKnownFood(food6);
+        colony.addKnownFood(food7);
         Larva larva1 = factory.createLarva(this, colony, 3,23,35,colonyMediator);
         tilesChanged = true;
         return this;
@@ -207,6 +222,9 @@ public class World {
      * Updates all entities in the world one simulation tick.
      */
     public void tick(){
+        // Update colony (checks for birth requests, etc.)
+        colony.update();
+        
         for (Entity entity : entities) {
             entity.update();
         }

@@ -1,7 +1,6 @@
 package model.tasks;
 
-import model.ants.behavior.AntBehavior;
-import model.ants.movement.AntMovement;
+import model.AntType;
 import model.ants.TaskPerformerAnt;
 import model.datastructures.Position;
 
@@ -82,5 +81,15 @@ public abstract class Task {
     
     public void setAssigned(boolean status) {
         this.isAssigned = status;
+    }
+    
+    /**
+     * Returns the required ant type for this task, or null if any ant can perform it.
+     * Subclasses can override to restrict which ant types can do this task.
+     * 
+     * @return the required AntType, or null for no restriction
+     */
+    public AntType getRequiredAntType() {
+        return null; // Default: any ant can do this task
     }
 }
