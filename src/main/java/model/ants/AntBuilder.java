@@ -10,6 +10,7 @@ import model.colony.ColonyMediator;
 import model.datastructures.Position;
 import model.EntityType;
 import model.world.World;
+import java.util.ArrayList;
 import java.util.List;
 
 /** 
@@ -28,7 +29,7 @@ public class AntBuilder {
     private int age;
     private int movementInterval;
     private EntityType type;
-    private List<Status> statuses;
+    private List<Status> statuses = new ArrayList<>();
 
     // Ant fields
     private int colonyId;
