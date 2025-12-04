@@ -1,8 +1,8 @@
 package Model;
 
-import Model.Ants.Status.Status;
-
 import java.util.List;
+
+import Model.Ants.Status.Status;
 
 /**
  * Abstract base class for all beings (e.g. ants) in the simulation.
@@ -67,9 +67,6 @@ public abstract class Being extends Entity {
 
     public List<Status> getStatuses() {
         return this.statuses;
-    }
-    public void applyStatuses(){
-
     }
 
     public void hungerTick(float depletionRate){

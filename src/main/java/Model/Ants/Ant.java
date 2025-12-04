@@ -1,5 +1,7 @@
 package Model.Ants;
 
+import java.util.List;
+
 import Model.Ants.Behavior.AntBehavior;
 import Model.Ants.Movement.AntMovement;
 import Model.Ants.State.AntState;
@@ -7,8 +9,6 @@ import Model.Ants.Status.Status;
 import Model.Being;
 import Model.Colony.AntColony;
 import Model.Colony.ColonyMediator;
-
-import java.util.List;
 
 /** Abstract class representing an ant in the simulation. */
 public abstract class Ant extends Being {
@@ -33,9 +33,16 @@ public abstract class Ant extends Being {
         this.movement = movement;
     }
 
+    public void healthTick(float healthChange){
+        this.health = this.health + healthChange;
+    }
+
     @Override
     public void update() {
         //System.out.println("ant update");
+        for (Status status : statuses) {
+            status.applyStatus(this);
+        }
         this.movement.move(this);
         super.update();
     }
