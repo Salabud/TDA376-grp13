@@ -205,7 +205,7 @@ public class Model {
         return isRunning;
     }
     public void newGame() throws IOException {
-//        removeWorld(worlds.getFirst());
+        removeWorld(worlds.getFirst());
         worlds.add(new World().withStartWorld());
 
 

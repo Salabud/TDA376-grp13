@@ -9,6 +9,7 @@ import model.datastructures.Position;
 import model.EntityType;
 import model.world.World;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /** Represents a larva in the simulation. */
@@ -23,6 +24,7 @@ public class Larva extends Ant implements Carryable {
         type = EntityType.BEING;
         beingType = BeingType.ANT;
         antType = AntType.LARVA;
+        this.statuses = new ArrayList<>();
     }
     public Larva(World world, int colonyId, int x, int y, int age,
                  String nickname, ColonyMediator mediator, float health, float maxHealth, float hunger,
