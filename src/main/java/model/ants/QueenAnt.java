@@ -22,9 +22,7 @@ public class QueenAnt extends TaskPerformerAnt {
 
     @Override
     public void update() {
-        if (currentTask != null) {
-            currentTask.execute(this);
-        }
+    super.update();
     }
 
     public void layLarva(int amount){
