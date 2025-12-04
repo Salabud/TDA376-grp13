@@ -26,8 +26,10 @@ public class EntityCanvas extends Canvas {
     private final Sprite food;
     private final Sprite queen;
     private final Sprite dirt;
+    private final Sprite poison;
     private final Sprite itemOutline;
     private final Sprite beingOutline;
+    private int selectedEntityId = -1;
 
 
     public EntityCanvas(){
@@ -45,6 +47,7 @@ public class EntityCanvas extends Canvas {
         this.itemOutline = new DiamondSprite(cellsize+6, Color.BLACK, gc);
         this.food = new DiamondSprite(cellsize+2, Color.GREEN, gc);
         this.dirt = new DiamondSprite(cellsize+2, Color.rgb(50,41,47), gc);
+        this.poison = new DiamondSprite(cellsize+2, Color.PURPLE, gc);
     }
 
     /**
@@ -61,6 +64,8 @@ public class EntityCanvas extends Canvas {
      */
     public void render() {
         gc.clearRect(0, 0, getWidth(), getHeight());
+        Entity selectedEntity = null;
+
         for (Entity entity : entities) {
             int posX = entity.getX()*cellsize;
             int posY = entity.getY()*cellsize;
@@ -91,10 +96,24 @@ public class EntityCanvas extends Canvas {
                     switch (item.getMaterialType()){
                         case DIRT -> dirt.paint(posX,posY);
                         case FOOD -> food.paint(posX,posY);
+                        case POISON -> poison.paint(posX,posY);
                     }
                     break;
 
             }
+
+            if (entity.getEntityId() == selectedEntityId){
+                selectedEntity = entity;
+            }
         }
+        if (selectedEntity != null){
+            gc.setFill(Color.WHITE);
+            gc.fillRect(selectedEntity.getX()*cellsize-2, selectedEntity.getY()*cellsize-2, 12, 12);
+        }
+    }
+
+    public void setSelectedEntity(int selectedEntityId) {
+        this.selectedEntityId = selectedEntityId;
+        System.out.println(selectedEntityId);
     }
 }

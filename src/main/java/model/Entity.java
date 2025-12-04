@@ -35,6 +35,12 @@ public abstract class Entity implements Updateable {
         return this.position.getY();
     }
 
+    public int getEntityId() {return this.entityId;}
+
+    public void setEntityId(int entityId){
+        this.entityId = entityId;
+    }
+
     public void setPosition(Position position) {
         this.position = position;
     }

@@ -1,9 +1,6 @@
 package controller;
 
-import controller.mouseTool.MouseTool;
-import controller.mouseTool.PlaceDirt;
-import controller.mouseTool.PlaceFood;
-import controller.mouseTool.Shovel;
+import controller.mouseTool.*;
 import javafx.scene.control.ComboBox;
 import model.Model;
 import model.datastructures.Position;
@@ -28,6 +25,7 @@ public class Controller implements InputHandler {
     private boolean suppressFirstClick;
     private MouseTool currentTool;
     private boolean dragging;
+
     
     public Controller(Model model, View view) {
         this.model = model;
@@ -37,6 +35,10 @@ public class Controller implements InputHandler {
         suppressFirstClick = true;
         currentTool = null;
         dragging = false;
+        currentTool = SelectTool.getInstance();
+
+        // Connect controller to tools
+        SelectTool.getInstance().setController(this);
 
     }
 
@@ -81,9 +83,7 @@ public class Controller implements InputHandler {
         if(suppressFirstClick){
             suppressFirstClick = false;
         } else {
-            // Convert screen coordinates to world coordinates
-            double worldX = event.getX();
-            double worldY = event.getY();
+            if (currentTool.isClickTriggered()) applyTool(event);
         }
     }
     @Override
@@ -93,10 +93,10 @@ public class Controller implements InputHandler {
             return;
         }
         dragging = true;
-        applyTool(event);
+        if (currentTool.isPressTriggered()) applyTool(event);
     }
     public void handleMouseDragged(MouseEvent event) {
-        if (dragging) {
+        if (dragging && currentTool.isDraggedTriggered()) {
             applyTool(event);
         }
     }
@@ -120,9 +120,9 @@ public class Controller implements InputHandler {
         double worldX = event.getX();
         double worldY = event.getY();
 
-        int intX = (int)(worldX / 8);
-        int intY = (int)(worldY / 8);
-        Position mousePosition = new Position(intX, intY);
+        int posX = (int)(worldX / 8);
+        int posY = (int)(worldY / 8);
+        Position mousePosition = new Position(posX, posY);
 
         currentTool.execute(model.getWorld(), mousePosition);
     }
@@ -157,6 +157,8 @@ public class Controller implements InputHandler {
                   case PLACE_DIRT -> currentTool = PlaceDirt.getInstance();
                   case SHOVEL -> currentTool = Shovel.getInstance();
                   case PLACE_FOOD ->  currentTool = PlaceFood.getInstance();
+                  case SELECT -> currentTool = SelectTool.getInstance();
+                  case PLACE_POISON ->  currentTool = PlacePoison.getInstance();
               }
           }
         });
@@ -195,6 +197,13 @@ public class Controller implements InputHandler {
         model.setTickrate(20);
         gameInterface.setPressedButton(">>>");
     }
+
+    public void selectEntity(int entityId){
+        view.setSelectedEntity(entityId);
+    }
+
+
+
 
     /**
      * Additional controller methods for specific game actions.

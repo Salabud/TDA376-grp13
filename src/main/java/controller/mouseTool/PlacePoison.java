@@ -1,12 +1,14 @@
 package controller.mouseTool;
 
 import model.datastructures.Position;
+import model.world.Item;
+import model.world.MaterialType;
 import model.world.World;
 
-public class Shovel extends MouseTool{
-    private static Shovel INSTANCE;
+public class PlacePoison extends MouseTool{
+private static PlacePoison INSTANCE;
 
-    public Shovel(){
+    private PlacePoison(){
         draggedTriggered = true;
         pressTriggered = true;
     }
@@ -17,18 +19,13 @@ public class Shovel extends MouseTool{
         int y = position.getY();
 
         if (position.getX() > 1 && position.getX() < 98 && position.getY() > 1 && position.getY() < 98){
-            world.removeTile(position);
-            world.removeTile(new Position(x-1,y));
-            world.removeTile(new Position(x+1,y));
-            world.removeTile(new Position(x, y-1));
-            world.removeTile(new Position(x,y+1));
+            if (world.getTileGrid()[x][y] == null && world.getEntityGrid()[x][y].isEmpty()) world.addEntity(new Item(position, MaterialType.POISON));
         }
-
     }
 
-    public static Shovel getInstance(){
+    public static PlacePoison getInstance(){
         if (INSTANCE == null){
-            INSTANCE = new Shovel();
+            INSTANCE = new PlacePoison();
         }
         return INSTANCE;
     }

@@ -5,5 +5,6 @@ public enum MaterialType {
     STONE,
     FOOD,
     GRASS,
-    CORPSE
+    CORPSE,
+    POISON
 }

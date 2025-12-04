@@ -23,36 +23,36 @@ public class GameInterface {
 
     public GameInterface(){
 
-        font = "-fx-base: rgb(50, 41 ,47); -fx-padding: 0 0 0 0; -fx-font-size: 25px; -fx-font-family: 'Segoe UI Emoji';";
+        font = "-fx-base: rgb(50, 41 ,47); -fx-padding: 0 0 0 0; -fx-font-size: 12px; -fx-font-family: 'Daydream';";
 
         nodes = new ArrayList<>();
         //▶️⏩️🔍
         //🪏⛰️
 
-        exitButton = new Button("✖\uFE0F");
+        exitButton = new Button("Exit");
         exitButton.setLayoutY(0);
         exitButton.setLayoutX(0);
-        exitButton.setPrefSize(40,40);
+        exitButton.setPrefSize(80,40);
         exitButton.setFocusTraversable(false);
         exitButton.setStyle(font);
         nodes.add(exitButton);
 
-        saveButton = new Button("\uD83D\uDCBE");
-        saveButton.setLayoutX(60);
-        saveButton.setPrefSize(40,40);
+        saveButton = new Button("Save");
+        saveButton.setLayoutX(80);
+        saveButton.setPrefSize(80,40);
         saveButton.setFocusTraversable(false);
         saveButton.setStyle(font);
         nodes.add(saveButton);
 
-        pauseButton = new Button("⏯️");
-        pauseButton.setLayoutX(340);
-        pauseButton.setPrefWidth(40);
+        pauseButton = new Button("Pause");
+        pauseButton.setLayoutX(280);
+        pauseButton.setPrefWidth(100);
         pauseButton.setPrefHeight(40);
         pauseButton.setFocusTraversable(false);
         pauseButton.setStyle(font);
         nodes.add(pauseButton);
 
-        speed1Button = new Button("▶\uFE0F");
+        speed1Button = new Button(">");
         speed1Button.setLayoutX(380);
         speed1Button.setPrefWidth(40);
         speed1Button.setPrefHeight(40);
@@ -61,7 +61,7 @@ public class GameInterface {
         nodes.add(speed1Button);
 
 
-        speed3Button = new Button("⏩\uFE0F");
+        speed3Button = new Button(">>");
         speed3Button.setLayoutX(420);
         speed3Button.setPrefSize(40, 40);
         speed3Button.setFocusTraversable(false);
@@ -70,8 +70,8 @@ public class GameInterface {
 
         tools = new ComboBox<>();
         tools.setFocusTraversable(false);
-        tools.setLayoutX(650);
-        tools.setPrefSize(150,40);
+        tools.setLayoutX(600);
+        tools.setPrefSize(200,40);
         tools.getItems().addAll(Tool.values());
         tools.setValue(Tool.SELECT);
         tools.setStyle(font);
@@ -80,11 +80,11 @@ public class GameInterface {
             @Override
             public String toString(Tool tool) {
                 return switch (tool) {
-                    case SELECT -> "\uD83D\uDD0D";
-                    case PLACE_DIRT -> "⛰\uFE0F";
-                    case SHOVEL -> "\uD83E\uDE8F";
-                    case PLACE_FOOD -> "\uD83C\uDF4E";
-                    case PLACE_POSION -> "☣\uFE0F";
+                    case SELECT -> "Select";
+                    case PLACE_DIRT -> "Place dirt";
+                    case SHOVEL -> "Dig";
+                    case PLACE_FOOD -> "Place food";
+                    case PLACE_POISON -> "Place poison";
                 };
             }
             @Override

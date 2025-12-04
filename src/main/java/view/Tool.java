@@ -5,5 +5,5 @@ public enum Tool {
     SHOVEL,
     PLACE_DIRT,
     PLACE_FOOD,
-    PLACE_POSION
+    PLACE_POISON
 }

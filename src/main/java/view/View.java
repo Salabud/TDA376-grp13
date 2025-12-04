@@ -158,4 +158,8 @@ public class View implements ModelListener {
     public void resetInterface() {
         gameInterface = new GameInterface();
     }
+
+    public void setSelectedEntity(int entityId){
+        entityCanvas.setSelectedEntity(entityId);
+    }
 }
