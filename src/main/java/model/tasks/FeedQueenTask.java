@@ -85,17 +85,17 @@ public class FeedQueenTask extends Task {
                 if (ant.getPosition().isAdjacentTo(queen.getPosition())) {
                     ant.setState(AntState.FEEDING);
                     ant.dropCarriedObject();
-                    queen.setBehavior(new EatBehavior(food));
+                    ant.setBehavior(new FeedBehavior(food, queen));
                     setPhase(TaskPhase.WORKING);
                 }
 
             case WORKING:
 
-                if (queen.getBehavior() != null && queen.getBehavior().isComplete()) {
+                if (ant.getBehavior() != null && ant.getBehavior().isComplete()) {
                     ant.setState(AntState.RESTING);
                     ant.setMovement(new NoMovement());
                     ant.setBehavior(null);
-                    queen.setBehavior(null);
+                    ant.setBehavior(null);
                     setPhase(TaskPhase.COMPLETE);
                 }
             case COMPLETE:
