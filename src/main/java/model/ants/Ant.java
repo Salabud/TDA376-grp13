@@ -1,17 +1,18 @@
 package model.ants;
 
+import java.util.List;
+
+import org.json.JSONObject;
+
 import model.AntType;
+import model.Being;
 import model.ants.behavior.AntBehavior;
 import model.ants.movement.AntMovement;
 import model.ants.movement.NoMovement;
 import model.ants.state.AntState;
 import model.ants.status.Status;
-import model.Being;
 import model.colony.AntColony;
 import model.colony.ColonyMediator;
-import org.json.JSONObject;
-
-import java.util.List;
 
 /** Abstract class representing an ant in the simulation. */
 public abstract class Ant extends Being {
@@ -36,6 +37,16 @@ public abstract class Ant extends Being {
      */
     public void setMovement(AntMovement movement) {
         this.movement = movement;
+    }
+
+    public void healthTick(float healthChange) {
+        this.health += healthChange;
+        if (this.health > this.maxHealth) {
+            this.health = this.maxHealth;
+        }
+        if (this.health < 0) {
+            this.health = 0;
+        }
     }
     
     public AntBehavior getBehavior() {
@@ -64,6 +75,9 @@ public abstract class Ant extends Being {
 
     @Override
     public void update() {
+        for(Status state : statuses) {
+            state.applyStatusEffect(this);
+        }
         // Execute movement strategy (if any)
         if (movement != null) {
             movement.move(this);
