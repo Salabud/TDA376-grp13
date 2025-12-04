@@ -99,4 +99,8 @@ public abstract class Ant extends Being {
         //TODO implement after refactoring of Entity
         return obj;
     }
+
+    public int getColonyId() {
+        return colonyId;
+    }
 }
