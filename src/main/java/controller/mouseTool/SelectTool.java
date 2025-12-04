@@ -20,9 +20,12 @@ public class SelectTool extends MouseTool{
         Entity ent;
         if (!world.getEntityGrid()[x][y].isEmpty()) {
             ent = world.getEntityGrid()[x][y].getFirst();
-            System.out.println("Clicked " + ent.getEntityId());
+            System.out.println("Clicked " + ent.getEntityId() + " " + ent);
             controller.selectEntity(ent.getEntityId());
+        } else {
+            controller.selectEntity(-1);
         }
+
 
     }
 
