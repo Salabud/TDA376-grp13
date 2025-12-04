@@ -26,8 +26,6 @@ public class GameInterface {
         font = "-fx-base: rgb(50, 41 ,47); -fx-padding: 0 0 0 0; -fx-font-size: 12px; -fx-font-family: 'Daydream';";
 
         nodes = new ArrayList<>();
-        //▶️⏩️🔍
-        //🪏⛰️
 
         exitButton = new Button("Exit");
         exitButton.setLayoutY(0);

@@ -8,6 +8,8 @@ import model.EntityType;
 import model.tasks.Task;
 import model.world.World;
 
+import java.util.ArrayList;
+
 /** Represents the queen ant in the simulation. */
 public class QueenAnt extends TaskPerformerAnt {
     private static final float HUNGER_THRESHOLD = 50f; // Report hunger when below this level
@@ -21,6 +23,7 @@ public class QueenAnt extends TaskPerformerAnt {
         this.colonyId = colonyId;
         this.position = new Position(x,y);
         this.mediator = mediator;
+        this.statuses = new ArrayList<>();
     }
 
     @Override

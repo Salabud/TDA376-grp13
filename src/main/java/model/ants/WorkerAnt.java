@@ -9,6 +9,8 @@ import model.tasks.EatTask;
 import model.world.World;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
 /** Represents a worker ant in the simulation. */
 public class WorkerAnt extends TaskPerformerAnt {
 
@@ -20,6 +22,7 @@ public class WorkerAnt extends TaskPerformerAnt {
         this.colonyId = colonyId;
         this.position = new Position(x,y);
         this.mediator = mediator;
+        this.statuses = new ArrayList<>();
     }
 
     @Override
