@@ -42,4 +42,6 @@ public class Tile {
     public int getY() {
         return position.getY();
     }
+
+    public Item toItem(){return new Item(this.position, this.materialType);}
 }
