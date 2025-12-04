@@ -204,9 +204,18 @@ public class Model {
     public boolean isRunning() {
         return isRunning;
     }
-    public void newGame(){
-        removeWorld(worlds.getFirst());
-        worlds.add(new World().withStartWorld());
+    public void newGame() throws IOException {
+//        removeWorld(worlds.getFirst());
+//        worlds.add(new World().withStartWorld());
+
+
+        //Temporary loading of a starting save until world generation is implemented
+        stopTicking();
+        if (!worlds.isEmpty()) removeWorld(worlds.getFirst());
+        World loadedWorld = SaveFileLoader.getInstance().load("START_WORLD");
+        worlds.add(loadedWorld);
+        notifyTilesetChanged();
+        startTicking();
     }
 
     /**

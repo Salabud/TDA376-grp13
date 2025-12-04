@@ -1,24 +1,28 @@
-package view;
+package view.sprite;
 
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
 /**
  * Represents a visual sprite with dimensions and color.
  */
-public class Sprite {
-    private double width;
-    private double height;
-    private Color color;
+public abstract class Sprite {
+    protected double width;
+    protected double height;
+    protected Color color;
+    protected GraphicsContext gc;
 
-    public Sprite(double width, double height, Color color){
+    public Sprite(double width, double height, Color color, GraphicsContext gc){
         this.color = color;
         this.height = height;
         this.width = width;
+        this.gc = gc;
     }
-    public Sprite(double size, Color color){
+    public Sprite(double size, Color color, GraphicsContext gc){
         this.color = color;
         this.height = size;
         this.width = size;
+        this.gc = gc;
     }
 
     public double getWidth() {
@@ -44,5 +48,10 @@ public class Sprite {
     public void setColor(Color color) {
         this.color = color;
     }
+
+    public void paint(int x, int y){
+
+    }
+
 }
 

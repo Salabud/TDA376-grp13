@@ -35,4 +35,11 @@ public class Tile {
         obj.put("materialType", materialType);
         return obj;
     }
+
+    public int getX() {
+        return position.getX();
+    }
+    public int getY() {
+        return position.getY();
+    }
 }

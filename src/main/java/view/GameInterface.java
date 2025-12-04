@@ -23,7 +23,7 @@ public class GameInterface {
 
     public GameInterface(){
 
-        font = "-fx-base: rgb(50, 41 ,47); -fx-padding: 0 0 0 0; -fx-font-size: 30px; -fx-font-family: 'Segoe UI Emoji';";
+        font = "-fx-base: rgb(50, 41 ,47); -fx-padding: 0 0 0 0; -fx-font-size: 25px; -fx-font-family: 'Segoe UI Emoji';";
 
         nodes = new ArrayList<>();
         //▶️⏩️🔍
@@ -103,12 +103,12 @@ public class GameInterface {
     public void setPressedButton(String button){
         switch(button){
             case ">":
-                speed1Button.setStyle("-fx-base: rgb(25, 20 ,23); -fx-padding: 0 0 0 0; -fx-font-size: 30px;");
+                speed1Button.setStyle("-fx-base: rgb(25, 20 ,23); -fx-padding: 0 0 0 0; -fx-font-size: 25px;");
                 speed3Button.setStyle(font);
                 break;
             case ">>>":
                 speed1Button.setStyle(font);
-                speed3Button.setStyle("-fx-base: rgb(25, 20 ,23); -fx-padding: 0 0 0 0; -fx-font-size: 30px;");
+                speed3Button.setStyle("-fx-base: rgb(25, 20 ,23); -fx-padding: 0 0 0 0; -fx-font-size: 25px;");
                 break;
         }
     }

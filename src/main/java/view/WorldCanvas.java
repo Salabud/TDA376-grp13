@@ -6,6 +6,8 @@ import model.world.World;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
+import view.sprite.Sprite;
+import view.sprite.SquareSprite;
 
 /**
  * Canvas for rendering the world grid and tiles (for the most part terrain).
@@ -33,10 +35,10 @@ public class WorldCanvas extends Canvas {
         outlineThickness = 2;
 
         //Tiles
-        dirt = new Sprite(cellsize, Color.rgb(50,41,47));
-        stone = new Sprite(cellsize, Color.DARKGREY);
-        food = new Sprite(cellsize, Color.RED);
-        grass = new Sprite(cellsize, Color.rgb(105, 165, 85));
+        dirt = new SquareSprite(cellsize, Color.rgb(50,41,47), gc);
+        stone = new SquareSprite(cellsize, Color.DARKGREY, gc);
+        food = new SquareSprite(cellsize, Color.RED, gc);
+        grass = new SquareSprite(cellsize, Color.rgb(105, 165, 85), gc);
 
 
 
@@ -55,18 +57,20 @@ public class WorldCanvas extends Canvas {
         gc.fillRect(0,0,800,160);
 
         for (Tile tile : world.getTiles()){
+            int posX = tile.getX()*cellsize;
+            int posY = tile.getY()*cellsize;
             switch (tile.getMaterialType()) {
                 case MaterialType.DIRT:
-                    gc.setFill(dirt.getColor());
-                    gc.fillRect(tile.getPosition().getX()*cellsize, tile.getPosition().getY()*cellsize, dirt.getWidth(), dirt.getHeight());
+                    dirt.paint(posX,posY);
                     break;
                 case MaterialType.FOOD:
+                    food.paint(posX,posY);
                     break;
                 case MaterialType.STONE:
+                    stone.paint(posX, posY);
                     break;
                 case MaterialType.GRASS:
-                    gc.setFill(grass.getColor());
-                    gc.fillRect(tile.getPosition().getX()*cellsize, tile.getPosition().getY()*cellsize, grass.getWidth(), grass.getHeight());
+                    grass.paint(posX, posY);
                     break;
             }
         }

@@ -8,6 +8,9 @@ import model.world.Item;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
+import view.sprite.CircleSprite;
+import view.sprite.DiamondSprite;
+import view.sprite.Sprite;
 
 import java.util.List;
 
@@ -23,17 +26,25 @@ public class EntityCanvas extends Canvas {
     private final Sprite food;
     private final Sprite queen;
     private final Sprite dirt;
+    private final Sprite itemOutline;
+    private final Sprite beingOutline;
 
 
     public EntityCanvas(){
         this.cellsize = 8;
         setWidth(800);
         setHeight(800);
-        this.workerAnt = new Sprite(cellsize, Color.rgb(250, 149, 0));
-        this.larva = new Sprite(cellsize, Color.WHITE);
-        this.food = new Sprite(cellsize, Color.GREEN);
-        this.queen = new Sprite(cellsize, Color.YELLOW);
-        this.dirt = new Sprite(cellsize, Color.rgb(50,41,47));
+
+        // Being sprites
+        this.beingOutline = new CircleSprite(cellsize+4, Color.BLACK, gc);
+        this.workerAnt = new CircleSprite(cellsize, Color.rgb(250, 149, 0), gc);
+        this.larva = new CircleSprite(cellsize, Color.WHITE, gc);
+        this.queen = new CircleSprite(cellsize, Color.YELLOW, gc);
+
+        // Item Sprites
+        this.itemOutline = new DiamondSprite(cellsize+6, Color.BLACK, gc);
+        this.food = new DiamondSprite(cellsize+2, Color.GREEN, gc);
+        this.dirt = new DiamondSprite(cellsize+2, Color.rgb(50,41,47), gc);
     }
 
     /**
@@ -51,41 +62,35 @@ public class EntityCanvas extends Canvas {
     public void render() {
         gc.clearRect(0, 0, getWidth(), getHeight());
         for (Entity entity : entities) {
+            int posX = entity.getX()*cellsize;
+            int posY = entity.getY()*cellsize;
             gc.setFill(Color.BLACK);
-            gc.fillOval(entity.getX()*cellsize-2, entity.getY()*cellsize-2, 12, 12);
             switch (entity.getType()) {
                 case BEING:
+                    beingOutline.paint(posX-2,posY-2);
                     Being being = (Being) entity;
                     switch(being.getBeingType()){
                         case ANT:
                             Ant ant = (Ant) being;
                             switch(ant.getAntType()){
                                 case WORKER_ANT:
-                                    gc.setFill(workerAnt.getColor());
-                                    gc.fillOval(entity.getX()*cellsize, entity.getY()*cellsize, workerAnt.getWidth(), workerAnt.getHeight());
+                                    workerAnt.paint(posX, posY);
                                     break;
                                 case LARVA:
-                                    gc.setFill(larva.getColor());
-                                    gc.fillOval(entity.getX()*cellsize, entity.getY()*cellsize, larva.getWidth(), larva.getHeight());
+                                    larva.paint(posX, posY);
                                     break;
                                 case QUEEN:
-                                    gc.setFill(queen.getColor());
-                                    gc.fillOval(entity.getX()*cellsize, entity.getY()*cellsize, queen.getWidth(), queen.getHeight());
+                                    queen.paint(posX, posY);
                                     break;
                             }
                     }
                     break;
                 case EntityType.ITEM:
                     Item item = (Item) entity;
-                    switch(item.getMaterialType()){
-                        case FOOD -> {
-                            gc.setFill(food.getColor());
-                            gc.fillOval(entity.getX()*cellsize, entity.getY()*cellsize, food.getWidth(), food.getHeight());
-                        }
-                        case DIRT -> {
-                            gc.setFill(dirt.getColor());
-                            gc.fillOval(entity.getX()*cellsize, entity.getY()*cellsize, dirt.getWidth(), dirt.getHeight());
-                        }
+                    itemOutline.paint(posX-2,posY-2);
+                    switch (item.getMaterialType()){
+                        case DIRT -> dirt.paint(posX,posY);
+                        case FOOD -> food.paint(posX,posY);
                     }
                     break;
 

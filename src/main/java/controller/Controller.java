@@ -171,7 +171,7 @@ public class Controller implements InputHandler {
     private void handlePauseButton() {
         if (model.getGameState().equals("RUNNING")){
             model.setGameState("PAUSED");
-            gameInterface.getPauseButton().setStyle("-fx-base: rgb(25, 20 ,23); -fx-padding: 0 0 0 0; -fx-font-size: 30px;");
+            gameInterface.getPauseButton().setStyle("-fx-base: rgb(25, 20 ,23); -fx-padding: 0 0 0 0; -fx-font-size: 25px;");
         }
         else{
             gameInterface.getPauseButton().setStyle(gameInterface.getFont());

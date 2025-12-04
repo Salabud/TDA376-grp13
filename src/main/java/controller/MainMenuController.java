@@ -49,7 +49,11 @@ public class MainMenuController implements InputHandler{
 
     private void setupButtonHandlers(){
         MainMenu.getInstance().getNewGameButton().setOnAction(e -> {
-            handleNewGameButton();
+            try {
+                handleNewGameButton();
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
         });
         MainMenu.getInstance().getLoadGameButton().setOnAction(e -> {
             try {
@@ -68,7 +72,7 @@ public class MainMenuController implements InputHandler{
         view.setInputHandler(new Controller(model, view));
     }
 
-    private void handleNewGameButton() {
+    private void handleNewGameButton() throws IOException {
         model.newGame();
         model.setTickrate(model.getStartingTickrate());
         view.resetInterface();
