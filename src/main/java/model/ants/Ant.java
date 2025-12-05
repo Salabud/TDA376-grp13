@@ -26,13 +26,13 @@ public abstract class Ant extends Being {
     protected AntMovement movement;
     protected AntType antType;
 
-
     public AntMovement getMovement() {
         return movement;
     }
 
     /**
      * Sets the movement strategy for the ant.
+     * 
      * @param movement : The movement strategy to set.
      */
     public void setMovement(AntMovement movement) {
@@ -48,25 +48,27 @@ public abstract class Ant extends Being {
             this.health = 0;
         }
     }
-    
+
     public AntBehavior getBehavior() {
         return behavior;
     }
-    
+
     /**
      * Sets the behavior strategy for the ant.
+     * 
      * @param behavior : The behavior strategy to set, or null to clear.
      */
     public void setBehavior(AntBehavior behavior) {
         this.behavior = behavior;
     }
-    
+
     public AntState getState() {
         return state;
     }
-    
+
     /**
      * Sets the current state of the ant.
+     * 
      * @param state : The new state.
      */
     public void setState(AntState state) {
@@ -75,42 +77,45 @@ public abstract class Ant extends Being {
 
     @Override
     public void update() {
-        for(Status state : statuses) {
+        for (Status state : statuses) {
             state.applyStatusEffect(this);
         }
         // Execute movement strategy (if any)
         if (movement != null) {
+            this.removePositionFromEntityGrid();
             movement.move(this);
-            
+            this.addPositionToEntityGrid();
+
             // If movement just completed, switch to NoMovement
             if (movement.isComplete() && !(movement instanceof NoMovement)) {
                 movement = new NoMovement();
             }
         }
-        
+
         // Execute behavior strategy (if any)
         if (behavior != null) {
             behavior.perform(this);
         }
-        
+
         super.update();
     }
 
-    public AntType getAntType(){
+    public AntType getAntType() {
         return antType;
     }
 
     /**
      * Create a JSON Object of the entity
+     * 
      * @return
      */
     @Override
-    public JSONObject toJSON(){
+    public JSONObject toJSON() {
         JSONObject obj = super.toJSON();
         obj.put("nickname", nickname);
         obj.put("antType", antType);
         obj.put("colonyId", colonyId);
-        //TODO implement after refactoring of Entity
+        // TODO implement after refactoring of Entity
         return obj;
     }
 }

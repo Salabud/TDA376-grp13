@@ -1,11 +1,12 @@
 package model.world;
 
-import model.Carryable;
-import model.EntityIdManager;
-import model.datastructures.Position;
-import model.Entity;
-import model.EntityType;
 import org.json.JSONObject;
+
+import model.Carryable;
+import model.Entity;
+import model.EntityIdManager;
+import model.EntityType;
+import model.datastructures.Position;
 
 /**
  * Represents an item in the world with a specific material type.
@@ -14,7 +15,7 @@ import org.json.JSONObject;
 public class Item extends Entity implements Carryable {
     private MaterialType materialType;
 
-    public Item(Position position, MaterialType materialType){
+    public Item(Position position, MaterialType materialType) {
         this.type = EntityType.ITEM;
         this.position = position;
         this.materialType = materialType;
@@ -32,11 +33,14 @@ public class Item extends Entity implements Carryable {
         return materialType;
     }
 
-    public void moveTo(Position position){
+    public void moveTo(Position position) {
+        this.removePositionFromEntityGrid();
         this.position = position;
+        this.addPositionToEntityGrid();
     }
+
     @Override
-    public JSONObject toJSON(){
+    public JSONObject toJSON() {
         JSONObject obj = super.toJSON();
         obj.put("materialType", materialType);
         return obj;
