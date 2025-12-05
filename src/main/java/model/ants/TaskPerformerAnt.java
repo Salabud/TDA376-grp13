@@ -87,7 +87,6 @@ public class TaskPerformerAnt extends Ant{
             // Check if task just completed
             if (currentTask.isComplete()) {
                 mediator.reportTaskCompleted(currentTask);
-                System.out.println("TaskPerformerAnt: reported completed task");
                 currentTask = null;
                 
                 // Resume previous task if one was interrupted
