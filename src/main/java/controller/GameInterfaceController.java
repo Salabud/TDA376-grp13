@@ -81,6 +81,7 @@ public class GameInterfaceController implements InputHandler {
         if(suppressFirstClick){
             suppressFirstClick = false;
         } else {
+            System.out.println("CLICK on scene");
             if (currentTool.isClickTriggered()) applyTool(event);
         }
     }
@@ -171,11 +172,12 @@ public class GameInterfaceController implements InputHandler {
     private void handlePauseButton() {
         if (model.getGameState().equals("RUNNING")){
             model.setGameState("PAUSED");
-            gameInterface.getPauseButton().setStyle("-fx-base: rgb(25, 20 ,23); -fx-padding: 0 0 0 0; -fx-font-size: 25px;");
+            gameInterface.getPauseButton().setStyle("-fx-base: rgb(25, 20 ,23);  -fx-padding: 0 0 0 0; -fx-font-size: 12px; -fx-font-family: 'Daydream';");
         }
         else{
             gameInterface.getPauseButton().setStyle(gameInterface.getFont());
             model.setGameState("RUNNING");
+            suppressFirstClick = true;
         }
 
     }
