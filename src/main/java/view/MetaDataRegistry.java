@@ -8,8 +8,8 @@ public class MetaDataRegistry {
     private int squareOffset;
 
     private MetaDataRegistry(){
-        screenHeight = 1100;
-        screenWidth = 1600;
+        screenHeight = 800;
+        screenWidth = 800;
         cellsize = screenHeight/100;
         squareOffset = (screenWidth-screenHeight)/2;
 
