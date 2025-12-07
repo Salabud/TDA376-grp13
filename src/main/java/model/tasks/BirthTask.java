@@ -74,6 +74,7 @@ public class BirthTask extends Task {
                         ant.getWorld().getTileGrid()));
                 ant.setBehavior(null);
                 setPhase(TaskPhase.COMPLETE);
+                break;
                 
             case COMPLETE:
                 break;

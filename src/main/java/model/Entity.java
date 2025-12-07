@@ -11,15 +11,13 @@ import model.world.World;
  * simulation.
  */
 public abstract class Entity implements Updateable {
-    protected World world; // Maybe shouldn't know this
+    protected World world; // Entity probably shouldn't know this
     protected Position position;
     protected int movementInterval;
     protected EntityType type; // Final?
     protected int entityId;
 
     public void update() {
-        // System.out.println("entity update");
-
     }
 
     public void setX(int x) {

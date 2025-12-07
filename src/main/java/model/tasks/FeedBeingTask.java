@@ -97,8 +97,9 @@ public class FeedBeingTask extends Task {
                 break;
 
             case WORKING:
+                //TODO: Add check to see if ant is carrying food, if not, go get food
                 if (ant.getBehavior() != null && ant.getBehavior().isComplete()) {
-                    ant.setState(AntState.RESTING);
+                    ant.setState(AntState.FEEDING);
                     ant.setMovement(new NoMovement());
                     ant.setBehavior(null);
                     setPhase(TaskPhase.COMPLETE);

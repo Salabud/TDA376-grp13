@@ -22,6 +22,7 @@ import java.util.List;
 public class ColonyMediator {
     private ColonyTaskBoard taskBoard;
     private AntColony antColony;
+
     /**
      * Suggests the most appropriate available task for the given ant.
      * If the ant is suitable for the task, it gets assigned the task.
@@ -73,14 +74,15 @@ public class ColonyMediator {
     // Discovery & Reporting ===========================================
     
     /**
-     * Report that food was discovered at a location.
-     * Creates a forage task for other ants to collect it.
-     * @param location : The position where food was found
-     * @param quantity : The amount of food discovered
+     * Report that food was discovered by a scouting ant.
+     * Adds the food to the colony's known food list if not already known.
+     * @param food : The food item discovered
      */
-    public void reportFoodDiscovery(Position location, int quantity) {
-        // TODO: Create and add ForageFoodTask
-        // taskBoard.addTask(new ForageFoodTask(location, quantity));
+    public void reportFoodDiscovered(Item food) {
+        List<Item> knownFood = antColony.getKnownFood();
+        if (!knownFood.contains(food)) {
+            antColony.addKnownFood(food);
+        }
     }
     
     /**

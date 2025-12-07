@@ -89,6 +89,7 @@ public class World {
 
         AntFactory factory = AntFactory.getInstance();
         TaskPerformerAnt ant1 = factory.createWorkerAnt(this, colony, 0, 30, 30, colonyMediator);
+        TaskPerformerAnt ant2 = factory.createWorkerAnt(this, colony, 0, 35, 30, colonyMediator);
         QueenAnt queen = factory.createQueenAnt(this, colony, 0, 20, 60, colonyMediator);
         Item food = new Item(new Position(45, 24), MaterialType.FOOD);
         Item food2 = new Item(new Position(46,25), MaterialType.FOOD);
