@@ -102,86 +102,6 @@
         },
         {
             "materialType": "GRASS",
-            "x": 20,
-            "y": 20
-        },
-        {
-            "materialType": "GRASS",
-            "x": 21,
-            "y": 20
-        },
-        {
-            "materialType": "GRASS",
-            "x": 22,
-            "y": 20
-        },
-        {
-            "materialType": "GRASS",
-            "x": 23,
-            "y": 20
-        },
-        {
-            "materialType": "GRASS",
-            "x": 24,
-            "y": 20
-        },
-        {
-            "materialType": "GRASS",
-            "x": 25,
-            "y": 20
-        },
-        {
-            "materialType": "GRASS",
-            "x": 26,
-            "y": 20
-        },
-        {
-            "materialType": "GRASS",
-            "x": 27,
-            "y": 20
-        },
-        {
-            "materialType": "GRASS",
-            "x": 28,
-            "y": 20
-        },
-        {
-            "materialType": "GRASS",
-            "x": 29,
-            "y": 20
-        },
-        {
-            "materialType": "GRASS",
-            "x": 30,
-            "y": 20
-        },
-        {
-            "materialType": "GRASS",
-            "x": 31,
-            "y": 20
-        },
-        {
-            "materialType": "GRASS",
-            "x": 32,
-            "y": 20
-        },
-        {
-            "materialType": "GRASS",
-            "x": 33,
-            "y": 20
-        },
-        {
-            "materialType": "GRASS",
-            "x": 34,
-            "y": 20
-        },
-        {
-            "materialType": "GRASS",
-            "x": 35,
-            "y": 20
-        },
-        {
-            "materialType": "GRASS",
             "x": 36,
             "y": 20
         },
@@ -313,6 +233,86 @@
         {
             "materialType": "GRASS",
             "x": 66,
+            "y": 20
+        },
+        {
+            "materialType": "GRASS",
+            "x": 67,
+            "y": 20
+        },
+        {
+            "materialType": "GRASS",
+            "x": 68,
+            "y": 20
+        },
+        {
+            "materialType": "GRASS",
+            "x": 69,
+            "y": 20
+        },
+        {
+            "materialType": "GRASS",
+            "x": 70,
+            "y": 20
+        },
+        {
+            "materialType": "GRASS",
+            "x": 71,
+            "y": 20
+        },
+        {
+            "materialType": "GRASS",
+            "x": 72,
+            "y": 20
+        },
+        {
+            "materialType": "GRASS",
+            "x": 73,
+            "y": 20
+        },
+        {
+            "materialType": "GRASS",
+            "x": 74,
+            "y": 20
+        },
+        {
+            "materialType": "GRASS",
+            "x": 75,
+            "y": 20
+        },
+        {
+            "materialType": "GRASS",
+            "x": 76,
+            "y": 20
+        },
+        {
+            "materialType": "GRASS",
+            "x": 77,
+            "y": 20
+        },
+        {
+            "materialType": "GRASS",
+            "x": 78,
+            "y": 20
+        },
+        {
+            "materialType": "GRASS",
+            "x": 79,
+            "y": 20
+        },
+        {
+            "materialType": "GRASS",
+            "x": 80,
+            "y": 20
+        },
+        {
+            "materialType": "GRASS",
+            "x": 81,
+            "y": 20
+        },
+        {
+            "materialType": "GRASS",
+            "x": 82,
             "y": 20
         },
         {
@@ -9293,21 +9293,6 @@
         {
             "materialType": "DIRT",
             "x": 24,
-            "y": 23
-        },
-        {
-            "materialType": "DIRT",
-            "x": 24,
-            "y": 24
-        },
-        {
-            "materialType": "DIRT",
-            "x": 24,
-            "y": 25
-        },
-        {
-            "materialType": "DIRT",
-            "x": 24,
             "y": 26
         },
         {
@@ -9533,31 +9518,6 @@
         {
             "materialType": "DIRT",
             "x": 25,
-            "y": 22
-        },
-        {
-            "materialType": "DIRT",
-            "x": 25,
-            "y": 23
-        },
-        {
-            "materialType": "DIRT",
-            "x": 25,
-            "y": 24
-        },
-        {
-            "materialType": "DIRT",
-            "x": 25,
-            "y": 25
-        },
-        {
-            "materialType": "DIRT",
-            "x": 25,
-            "y": 26
-        },
-        {
-            "materialType": "DIRT",
-            "x": 25,
             "y": 27
         },
         {
@@ -9769,36 +9729,6 @@
             "materialType": "DIRT",
             "x": 25,
             "y": 99
-        },
-        {
-            "materialType": "DIRT",
-            "x": 26,
-            "y": 21
-        },
-        {
-            "materialType": "DIRT",
-            "x": 26,
-            "y": 22
-        },
-        {
-            "materialType": "DIRT",
-            "x": 26,
-            "y": 23
-        },
-        {
-            "materialType": "DIRT",
-            "x": 26,
-            "y": 24
-        },
-        {
-            "materialType": "DIRT",
-            "x": 26,
-            "y": 25
-        },
-        {
-            "materialType": "DIRT",
-            "x": 26,
-            "y": 26
         },
         {
             "materialType": "DIRT",
@@ -10018,36 +9948,6 @@
         {
             "materialType": "DIRT",
             "x": 27,
-            "y": 21
-        },
-        {
-            "materialType": "DIRT",
-            "x": 27,
-            "y": 22
-        },
-        {
-            "materialType": "DIRT",
-            "x": 27,
-            "y": 23
-        },
-        {
-            "materialType": "DIRT",
-            "x": 27,
-            "y": 24
-        },
-        {
-            "materialType": "DIRT",
-            "x": 27,
-            "y": 25
-        },
-        {
-            "materialType": "DIRT",
-            "x": 27,
-            "y": 26
-        },
-        {
-            "materialType": "DIRT",
-            "x": 27,
             "y": 27
         },
         {
@@ -10259,31 +10159,6 @@
             "materialType": "DIRT",
             "x": 27,
             "y": 99
-        },
-        {
-            "materialType": "DIRT",
-            "x": 28,
-            "y": 21
-        },
-        {
-            "materialType": "DIRT",
-            "x": 28,
-            "y": 22
-        },
-        {
-            "materialType": "DIRT",
-            "x": 28,
-            "y": 23
-        },
-        {
-            "materialType": "DIRT",
-            "x": 28,
-            "y": 24
-        },
-        {
-            "materialType": "DIRT",
-            "x": 28,
-            "y": 25
         },
         {
             "materialType": "DIRT",
@@ -10504,26 +10379,6 @@
             "materialType": "DIRT",
             "x": 28,
             "y": 99
-        },
-        {
-            "materialType": "DIRT",
-            "x": 29,
-            "y": 21
-        },
-        {
-            "materialType": "DIRT",
-            "x": 29,
-            "y": 22
-        },
-        {
-            "materialType": "DIRT",
-            "x": 29,
-            "y": 23
-        },
-        {
-            "materialType": "DIRT",
-            "x": 29,
-            "y": 24
         },
         {
             "materialType": "DIRT",
@@ -10753,26 +10608,6 @@
         {
             "materialType": "DIRT",
             "x": 30,
-            "y": 21
-        },
-        {
-            "materialType": "DIRT",
-            "x": 30,
-            "y": 22
-        },
-        {
-            "materialType": "DIRT",
-            "x": 30,
-            "y": 23
-        },
-        {
-            "materialType": "DIRT",
-            "x": 30,
-            "y": 24
-        },
-        {
-            "materialType": "DIRT",
-            "x": 30,
             "y": 25
         },
         {
@@ -10994,21 +10829,6 @@
             "materialType": "DIRT",
             "x": 30,
             "y": 99
-        },
-        {
-            "materialType": "DIRT",
-            "x": 31,
-            "y": 21
-        },
-        {
-            "materialType": "DIRT",
-            "x": 31,
-            "y": 22
-        },
-        {
-            "materialType": "DIRT",
-            "x": 31,
-            "y": 23
         },
         {
             "materialType": "DIRT",
@@ -11243,21 +11063,6 @@
         {
             "materialType": "DIRT",
             "x": 32,
-            "y": 21
-        },
-        {
-            "materialType": "DIRT",
-            "x": 32,
-            "y": 22
-        },
-        {
-            "materialType": "DIRT",
-            "x": 32,
-            "y": 23
-        },
-        {
-            "materialType": "DIRT",
-            "x": 32,
             "y": 24
         },
         {
@@ -11484,16 +11289,6 @@
             "materialType": "DIRT",
             "x": 32,
             "y": 99
-        },
-        {
-            "materialType": "DIRT",
-            "x": 33,
-            "y": 21
-        },
-        {
-            "materialType": "DIRT",
-            "x": 33,
-            "y": 22
         },
         {
             "materialType": "DIRT",
@@ -12273,51 +12068,6 @@
         {
             "materialType": "DIRT",
             "x": 36,
-            "y": 41
-        },
-        {
-            "materialType": "DIRT",
-            "x": 36,
-            "y": 42
-        },
-        {
-            "materialType": "DIRT",
-            "x": 36,
-            "y": 43
-        },
-        {
-            "materialType": "DIRT",
-            "x": 36,
-            "y": 44
-        },
-        {
-            "materialType": "DIRT",
-            "x": 36,
-            "y": 45
-        },
-        {
-            "materialType": "DIRT",
-            "x": 36,
-            "y": 46
-        },
-        {
-            "materialType": "DIRT",
-            "x": 36,
-            "y": 47
-        },
-        {
-            "materialType": "DIRT",
-            "x": 36,
-            "y": 48
-        },
-        {
-            "materialType": "DIRT",
-            "x": 36,
-            "y": 49
-        },
-        {
-            "materialType": "DIRT",
-            "x": 36,
             "y": 70
         },
         {
@@ -12509,56 +12259,6 @@
             "materialType": "DIRT",
             "x": 37,
             "y": 29
-        },
-        {
-            "materialType": "DIRT",
-            "x": 37,
-            "y": 40
-        },
-        {
-            "materialType": "DIRT",
-            "x": 37,
-            "y": 41
-        },
-        {
-            "materialType": "DIRT",
-            "x": 37,
-            "y": 42
-        },
-        {
-            "materialType": "DIRT",
-            "x": 37,
-            "y": 43
-        },
-        {
-            "materialType": "DIRT",
-            "x": 37,
-            "y": 44
-        },
-        {
-            "materialType": "DIRT",
-            "x": 37,
-            "y": 45
-        },
-        {
-            "materialType": "DIRT",
-            "x": 37,
-            "y": 46
-        },
-        {
-            "materialType": "DIRT",
-            "x": 37,
-            "y": 47
-        },
-        {
-            "materialType": "DIRT",
-            "x": 37,
-            "y": 48
-        },
-        {
-            "materialType": "DIRT",
-            "x": 37,
-            "y": 49
         },
         {
             "materialType": "DIRT",
@@ -12758,56 +12458,6 @@
         {
             "materialType": "DIRT",
             "x": 38,
-            "y": 40
-        },
-        {
-            "materialType": "DIRT",
-            "x": 38,
-            "y": 41
-        },
-        {
-            "materialType": "DIRT",
-            "x": 38,
-            "y": 42
-        },
-        {
-            "materialType": "DIRT",
-            "x": 38,
-            "y": 43
-        },
-        {
-            "materialType": "DIRT",
-            "x": 38,
-            "y": 44
-        },
-        {
-            "materialType": "DIRT",
-            "x": 38,
-            "y": 45
-        },
-        {
-            "materialType": "DIRT",
-            "x": 38,
-            "y": 46
-        },
-        {
-            "materialType": "DIRT",
-            "x": 38,
-            "y": 47
-        },
-        {
-            "materialType": "DIRT",
-            "x": 38,
-            "y": 48
-        },
-        {
-            "materialType": "DIRT",
-            "x": 38,
-            "y": 49
-        },
-        {
-            "materialType": "DIRT",
-            "x": 38,
             "y": 70
         },
         {
@@ -12999,56 +12649,6 @@
             "materialType": "DIRT",
             "x": 39,
             "y": 29
-        },
-        {
-            "materialType": "DIRT",
-            "x": 39,
-            "y": 40
-        },
-        {
-            "materialType": "DIRT",
-            "x": 39,
-            "y": 41
-        },
-        {
-            "materialType": "DIRT",
-            "x": 39,
-            "y": 42
-        },
-        {
-            "materialType": "DIRT",
-            "x": 39,
-            "y": 43
-        },
-        {
-            "materialType": "DIRT",
-            "x": 39,
-            "y": 44
-        },
-        {
-            "materialType": "DIRT",
-            "x": 39,
-            "y": 45
-        },
-        {
-            "materialType": "DIRT",
-            "x": 39,
-            "y": 46
-        },
-        {
-            "materialType": "DIRT",
-            "x": 39,
-            "y": 47
-        },
-        {
-            "materialType": "DIRT",
-            "x": 39,
-            "y": 48
-        },
-        {
-            "materialType": "DIRT",
-            "x": 39,
-            "y": 49
         },
         {
             "materialType": "DIRT",
@@ -13248,56 +12848,6 @@
         {
             "materialType": "DIRT",
             "x": 40,
-            "y": 40
-        },
-        {
-            "materialType": "DIRT",
-            "x": 40,
-            "y": 41
-        },
-        {
-            "materialType": "DIRT",
-            "x": 40,
-            "y": 42
-        },
-        {
-            "materialType": "DIRT",
-            "x": 40,
-            "y": 43
-        },
-        {
-            "materialType": "DIRT",
-            "x": 40,
-            "y": 44
-        },
-        {
-            "materialType": "DIRT",
-            "x": 40,
-            "y": 45
-        },
-        {
-            "materialType": "DIRT",
-            "x": 40,
-            "y": 46
-        },
-        {
-            "materialType": "DIRT",
-            "x": 40,
-            "y": 47
-        },
-        {
-            "materialType": "DIRT",
-            "x": 40,
-            "y": 48
-        },
-        {
-            "materialType": "DIRT",
-            "x": 40,
-            "y": 49
-        },
-        {
-            "materialType": "DIRT",
-            "x": 40,
             "y": 70
         },
         {
@@ -13493,56 +13043,6 @@
         {
             "materialType": "DIRT",
             "x": 41,
-            "y": 40
-        },
-        {
-            "materialType": "DIRT",
-            "x": 41,
-            "y": 41
-        },
-        {
-            "materialType": "DIRT",
-            "x": 41,
-            "y": 42
-        },
-        {
-            "materialType": "DIRT",
-            "x": 41,
-            "y": 43
-        },
-        {
-            "materialType": "DIRT",
-            "x": 41,
-            "y": 44
-        },
-        {
-            "materialType": "DIRT",
-            "x": 41,
-            "y": 45
-        },
-        {
-            "materialType": "DIRT",
-            "x": 41,
-            "y": 46
-        },
-        {
-            "materialType": "DIRT",
-            "x": 41,
-            "y": 47
-        },
-        {
-            "materialType": "DIRT",
-            "x": 41,
-            "y": 48
-        },
-        {
-            "materialType": "DIRT",
-            "x": 41,
-            "y": 49
-        },
-        {
-            "materialType": "DIRT",
-            "x": 41,
             "y": 70
         },
         {
@@ -13734,56 +13234,6 @@
             "materialType": "DIRT",
             "x": 42,
             "y": 29
-        },
-        {
-            "materialType": "DIRT",
-            "x": 42,
-            "y": 40
-        },
-        {
-            "materialType": "DIRT",
-            "x": 42,
-            "y": 41
-        },
-        {
-            "materialType": "DIRT",
-            "x": 42,
-            "y": 42
-        },
-        {
-            "materialType": "DIRT",
-            "x": 42,
-            "y": 43
-        },
-        {
-            "materialType": "DIRT",
-            "x": 42,
-            "y": 44
-        },
-        {
-            "materialType": "DIRT",
-            "x": 42,
-            "y": 45
-        },
-        {
-            "materialType": "DIRT",
-            "x": 42,
-            "y": 46
-        },
-        {
-            "materialType": "DIRT",
-            "x": 42,
-            "y": 47
-        },
-        {
-            "materialType": "DIRT",
-            "x": 42,
-            "y": 48
-        },
-        {
-            "materialType": "DIRT",
-            "x": 42,
-            "y": 49
         },
         {
             "materialType": "DIRT",
@@ -14583,56 +14033,6 @@
         {
             "materialType": "DIRT",
             "x": 47,
-            "y": 40
-        },
-        {
-            "materialType": "DIRT",
-            "x": 47,
-            "y": 41
-        },
-        {
-            "materialType": "DIRT",
-            "x": 47,
-            "y": 42
-        },
-        {
-            "materialType": "DIRT",
-            "x": 47,
-            "y": 43
-        },
-        {
-            "materialType": "DIRT",
-            "x": 47,
-            "y": 44
-        },
-        {
-            "materialType": "DIRT",
-            "x": 47,
-            "y": 45
-        },
-        {
-            "materialType": "DIRT",
-            "x": 47,
-            "y": 46
-        },
-        {
-            "materialType": "DIRT",
-            "x": 47,
-            "y": 47
-        },
-        {
-            "materialType": "DIRT",
-            "x": 47,
-            "y": 48
-        },
-        {
-            "materialType": "DIRT",
-            "x": 47,
-            "y": 49
-        },
-        {
-            "materialType": "DIRT",
-            "x": 47,
             "y": 70
         },
         {
@@ -14824,56 +14224,6 @@
             "materialType": "DIRT",
             "x": 48,
             "y": 29
-        },
-        {
-            "materialType": "DIRT",
-            "x": 48,
-            "y": 40
-        },
-        {
-            "materialType": "DIRT",
-            "x": 48,
-            "y": 41
-        },
-        {
-            "materialType": "DIRT",
-            "x": 48,
-            "y": 42
-        },
-        {
-            "materialType": "DIRT",
-            "x": 48,
-            "y": 43
-        },
-        {
-            "materialType": "DIRT",
-            "x": 48,
-            "y": 44
-        },
-        {
-            "materialType": "DIRT",
-            "x": 48,
-            "y": 45
-        },
-        {
-            "materialType": "DIRT",
-            "x": 48,
-            "y": 46
-        },
-        {
-            "materialType": "DIRT",
-            "x": 48,
-            "y": 47
-        },
-        {
-            "materialType": "DIRT",
-            "x": 48,
-            "y": 48
-        },
-        {
-            "materialType": "DIRT",
-            "x": 48,
-            "y": 49
         },
         {
             "materialType": "DIRT",
@@ -15073,56 +14423,6 @@
         {
             "materialType": "DIRT",
             "x": 49,
-            "y": 40
-        },
-        {
-            "materialType": "DIRT",
-            "x": 49,
-            "y": 41
-        },
-        {
-            "materialType": "DIRT",
-            "x": 49,
-            "y": 42
-        },
-        {
-            "materialType": "DIRT",
-            "x": 49,
-            "y": 43
-        },
-        {
-            "materialType": "DIRT",
-            "x": 49,
-            "y": 44
-        },
-        {
-            "materialType": "DIRT",
-            "x": 49,
-            "y": 45
-        },
-        {
-            "materialType": "DIRT",
-            "x": 49,
-            "y": 46
-        },
-        {
-            "materialType": "DIRT",
-            "x": 49,
-            "y": 47
-        },
-        {
-            "materialType": "DIRT",
-            "x": 49,
-            "y": 48
-        },
-        {
-            "materialType": "DIRT",
-            "x": 49,
-            "y": 49
-        },
-        {
-            "materialType": "DIRT",
-            "x": 49,
             "y": 70
         },
         {
@@ -15314,56 +14614,6 @@
             "materialType": "DIRT",
             "x": 50,
             "y": 29
-        },
-        {
-            "materialType": "DIRT",
-            "x": 50,
-            "y": 40
-        },
-        {
-            "materialType": "DIRT",
-            "x": 50,
-            "y": 41
-        },
-        {
-            "materialType": "DIRT",
-            "x": 50,
-            "y": 42
-        },
-        {
-            "materialType": "DIRT",
-            "x": 50,
-            "y": 43
-        },
-        {
-            "materialType": "DIRT",
-            "x": 50,
-            "y": 44
-        },
-        {
-            "materialType": "DIRT",
-            "x": 50,
-            "y": 45
-        },
-        {
-            "materialType": "DIRT",
-            "x": 50,
-            "y": 46
-        },
-        {
-            "materialType": "DIRT",
-            "x": 50,
-            "y": 47
-        },
-        {
-            "materialType": "DIRT",
-            "x": 50,
-            "y": 48
-        },
-        {
-            "materialType": "DIRT",
-            "x": 50,
-            "y": 49
         },
         {
             "materialType": "DIRT",
@@ -15563,56 +14813,6 @@
         {
             "materialType": "DIRT",
             "x": 51,
-            "y": 40
-        },
-        {
-            "materialType": "DIRT",
-            "x": 51,
-            "y": 41
-        },
-        {
-            "materialType": "DIRT",
-            "x": 51,
-            "y": 42
-        },
-        {
-            "materialType": "DIRT",
-            "x": 51,
-            "y": 43
-        },
-        {
-            "materialType": "DIRT",
-            "x": 51,
-            "y": 44
-        },
-        {
-            "materialType": "DIRT",
-            "x": 51,
-            "y": 45
-        },
-        {
-            "materialType": "DIRT",
-            "x": 51,
-            "y": 46
-        },
-        {
-            "materialType": "DIRT",
-            "x": 51,
-            "y": 47
-        },
-        {
-            "materialType": "DIRT",
-            "x": 51,
-            "y": 48
-        },
-        {
-            "materialType": "DIRT",
-            "x": 51,
-            "y": 49
-        },
-        {
-            "materialType": "DIRT",
-            "x": 51,
             "y": 70
         },
         {
@@ -15804,56 +15004,6 @@
             "materialType": "DIRT",
             "x": 52,
             "y": 29
-        },
-        {
-            "materialType": "DIRT",
-            "x": 52,
-            "y": 40
-        },
-        {
-            "materialType": "DIRT",
-            "x": 52,
-            "y": 41
-        },
-        {
-            "materialType": "DIRT",
-            "x": 52,
-            "y": 42
-        },
-        {
-            "materialType": "DIRT",
-            "x": 52,
-            "y": 43
-        },
-        {
-            "materialType": "DIRT",
-            "x": 52,
-            "y": 44
-        },
-        {
-            "materialType": "DIRT",
-            "x": 52,
-            "y": 45
-        },
-        {
-            "materialType": "DIRT",
-            "x": 52,
-            "y": 46
-        },
-        {
-            "materialType": "DIRT",
-            "x": 52,
-            "y": 47
-        },
-        {
-            "materialType": "DIRT",
-            "x": 52,
-            "y": 48
-        },
-        {
-            "materialType": "DIRT",
-            "x": 52,
-            "y": 49
         },
         {
             "materialType": "DIRT",
@@ -16053,56 +15203,6 @@
         {
             "materialType": "DIRT",
             "x": 53,
-            "y": 40
-        },
-        {
-            "materialType": "DIRT",
-            "x": 53,
-            "y": 41
-        },
-        {
-            "materialType": "DIRT",
-            "x": 53,
-            "y": 42
-        },
-        {
-            "materialType": "DIRT",
-            "x": 53,
-            "y": 43
-        },
-        {
-            "materialType": "DIRT",
-            "x": 53,
-            "y": 44
-        },
-        {
-            "materialType": "DIRT",
-            "x": 53,
-            "y": 45
-        },
-        {
-            "materialType": "DIRT",
-            "x": 53,
-            "y": 46
-        },
-        {
-            "materialType": "DIRT",
-            "x": 53,
-            "y": 47
-        },
-        {
-            "materialType": "DIRT",
-            "x": 53,
-            "y": 48
-        },
-        {
-            "materialType": "DIRT",
-            "x": 53,
-            "y": 49
-        },
-        {
-            "materialType": "DIRT",
-            "x": 53,
             "y": 70
         },
         {
@@ -16294,56 +15394,6 @@
             "materialType": "DIRT",
             "x": 54,
             "y": 29
-        },
-        {
-            "materialType": "DIRT",
-            "x": 54,
-            "y": 40
-        },
-        {
-            "materialType": "DIRT",
-            "x": 54,
-            "y": 41
-        },
-        {
-            "materialType": "DIRT",
-            "x": 54,
-            "y": 42
-        },
-        {
-            "materialType": "DIRT",
-            "x": 54,
-            "y": 43
-        },
-        {
-            "materialType": "DIRT",
-            "x": 54,
-            "y": 44
-        },
-        {
-            "materialType": "DIRT",
-            "x": 54,
-            "y": 45
-        },
-        {
-            "materialType": "DIRT",
-            "x": 54,
-            "y": 46
-        },
-        {
-            "materialType": "DIRT",
-            "x": 54,
-            "y": 47
-        },
-        {
-            "materialType": "DIRT",
-            "x": 54,
-            "y": 48
-        },
-        {
-            "materialType": "DIRT",
-            "x": 54,
-            "y": 49
         },
         {
             "materialType": "DIRT",
@@ -16543,56 +15593,6 @@
         {
             "materialType": "DIRT",
             "x": 55,
-            "y": 40
-        },
-        {
-            "materialType": "DIRT",
-            "x": 55,
-            "y": 41
-        },
-        {
-            "materialType": "DIRT",
-            "x": 55,
-            "y": 42
-        },
-        {
-            "materialType": "DIRT",
-            "x": 55,
-            "y": 43
-        },
-        {
-            "materialType": "DIRT",
-            "x": 55,
-            "y": 44
-        },
-        {
-            "materialType": "DIRT",
-            "x": 55,
-            "y": 45
-        },
-        {
-            "materialType": "DIRT",
-            "x": 55,
-            "y": 46
-        },
-        {
-            "materialType": "DIRT",
-            "x": 55,
-            "y": 47
-        },
-        {
-            "materialType": "DIRT",
-            "x": 55,
-            "y": 48
-        },
-        {
-            "materialType": "DIRT",
-            "x": 55,
-            "y": 49
-        },
-        {
-            "materialType": "DIRT",
-            "x": 55,
             "y": 70
         },
         {
@@ -16784,56 +15784,6 @@
             "materialType": "DIRT",
             "x": 56,
             "y": 29
-        },
-        {
-            "materialType": "DIRT",
-            "x": 56,
-            "y": 40
-        },
-        {
-            "materialType": "DIRT",
-            "x": 56,
-            "y": 41
-        },
-        {
-            "materialType": "DIRT",
-            "x": 56,
-            "y": 42
-        },
-        {
-            "materialType": "DIRT",
-            "x": 56,
-            "y": 43
-        },
-        {
-            "materialType": "DIRT",
-            "x": 56,
-            "y": 44
-        },
-        {
-            "materialType": "DIRT",
-            "x": 56,
-            "y": 45
-        },
-        {
-            "materialType": "DIRT",
-            "x": 56,
-            "y": 46
-        },
-        {
-            "materialType": "DIRT",
-            "x": 56,
-            "y": 47
-        },
-        {
-            "materialType": "DIRT",
-            "x": 56,
-            "y": 48
-        },
-        {
-            "materialType": "DIRT",
-            "x": 56,
-            "y": 49
         },
         {
             "materialType": "DIRT",
@@ -17033,56 +15983,6 @@
         {
             "materialType": "DIRT",
             "x": 57,
-            "y": 40
-        },
-        {
-            "materialType": "DIRT",
-            "x": 57,
-            "y": 41
-        },
-        {
-            "materialType": "DIRT",
-            "x": 57,
-            "y": 42
-        },
-        {
-            "materialType": "DIRT",
-            "x": 57,
-            "y": 43
-        },
-        {
-            "materialType": "DIRT",
-            "x": 57,
-            "y": 44
-        },
-        {
-            "materialType": "DIRT",
-            "x": 57,
-            "y": 45
-        },
-        {
-            "materialType": "DIRT",
-            "x": 57,
-            "y": 46
-        },
-        {
-            "materialType": "DIRT",
-            "x": 57,
-            "y": 47
-        },
-        {
-            "materialType": "DIRT",
-            "x": 57,
-            "y": 48
-        },
-        {
-            "materialType": "DIRT",
-            "x": 57,
-            "y": 49
-        },
-        {
-            "materialType": "DIRT",
-            "x": 57,
             "y": 70
         },
         {
@@ -17274,56 +16174,6 @@
             "materialType": "DIRT",
             "x": 58,
             "y": 29
-        },
-        {
-            "materialType": "DIRT",
-            "x": 58,
-            "y": 40
-        },
-        {
-            "materialType": "DIRT",
-            "x": 58,
-            "y": 41
-        },
-        {
-            "materialType": "DIRT",
-            "x": 58,
-            "y": 42
-        },
-        {
-            "materialType": "DIRT",
-            "x": 58,
-            "y": 43
-        },
-        {
-            "materialType": "DIRT",
-            "x": 58,
-            "y": 44
-        },
-        {
-            "materialType": "DIRT",
-            "x": 58,
-            "y": 45
-        },
-        {
-            "materialType": "DIRT",
-            "x": 58,
-            "y": 46
-        },
-        {
-            "materialType": "DIRT",
-            "x": 58,
-            "y": 47
-        },
-        {
-            "materialType": "DIRT",
-            "x": 58,
-            "y": 48
-        },
-        {
-            "materialType": "DIRT",
-            "x": 58,
-            "y": 49
         },
         {
             "materialType": "DIRT",
@@ -17523,56 +16373,6 @@
         {
             "materialType": "DIRT",
             "x": 59,
-            "y": 40
-        },
-        {
-            "materialType": "DIRT",
-            "x": 59,
-            "y": 41
-        },
-        {
-            "materialType": "DIRT",
-            "x": 59,
-            "y": 42
-        },
-        {
-            "materialType": "DIRT",
-            "x": 59,
-            "y": 43
-        },
-        {
-            "materialType": "DIRT",
-            "x": 59,
-            "y": 44
-        },
-        {
-            "materialType": "DIRT",
-            "x": 59,
-            "y": 45
-        },
-        {
-            "materialType": "DIRT",
-            "x": 59,
-            "y": 46
-        },
-        {
-            "materialType": "DIRT",
-            "x": 59,
-            "y": 47
-        },
-        {
-            "materialType": "DIRT",
-            "x": 59,
-            "y": 48
-        },
-        {
-            "materialType": "DIRT",
-            "x": 59,
-            "y": 49
-        },
-        {
-            "materialType": "DIRT",
-            "x": 59,
             "y": 70
         },
         {
@@ -17764,56 +16564,6 @@
             "materialType": "DIRT",
             "x": 60,
             "y": 29
-        },
-        {
-            "materialType": "DIRT",
-            "x": 60,
-            "y": 40
-        },
-        {
-            "materialType": "DIRT",
-            "x": 60,
-            "y": 41
-        },
-        {
-            "materialType": "DIRT",
-            "x": 60,
-            "y": 42
-        },
-        {
-            "materialType": "DIRT",
-            "x": 60,
-            "y": 43
-        },
-        {
-            "materialType": "DIRT",
-            "x": 60,
-            "y": 44
-        },
-        {
-            "materialType": "DIRT",
-            "x": 60,
-            "y": 45
-        },
-        {
-            "materialType": "DIRT",
-            "x": 60,
-            "y": 46
-        },
-        {
-            "materialType": "DIRT",
-            "x": 60,
-            "y": 47
-        },
-        {
-            "materialType": "DIRT",
-            "x": 60,
-            "y": 48
-        },
-        {
-            "materialType": "DIRT",
-            "x": 60,
-            "y": 49
         },
         {
             "materialType": "DIRT",
@@ -18013,56 +16763,6 @@
         {
             "materialType": "DIRT",
             "x": 61,
-            "y": 40
-        },
-        {
-            "materialType": "DIRT",
-            "x": 61,
-            "y": 41
-        },
-        {
-            "materialType": "DIRT",
-            "x": 61,
-            "y": 42
-        },
-        {
-            "materialType": "DIRT",
-            "x": 61,
-            "y": 43
-        },
-        {
-            "materialType": "DIRT",
-            "x": 61,
-            "y": 44
-        },
-        {
-            "materialType": "DIRT",
-            "x": 61,
-            "y": 45
-        },
-        {
-            "materialType": "DIRT",
-            "x": 61,
-            "y": 46
-        },
-        {
-            "materialType": "DIRT",
-            "x": 61,
-            "y": 47
-        },
-        {
-            "materialType": "DIRT",
-            "x": 61,
-            "y": 48
-        },
-        {
-            "materialType": "DIRT",
-            "x": 61,
-            "y": 49
-        },
-        {
-            "materialType": "DIRT",
-            "x": 61,
             "y": 70
         },
         {
@@ -18254,56 +16954,6 @@
             "materialType": "DIRT",
             "x": 62,
             "y": 29
-        },
-        {
-            "materialType": "DIRT",
-            "x": 62,
-            "y": 40
-        },
-        {
-            "materialType": "DIRT",
-            "x": 62,
-            "y": 41
-        },
-        {
-            "materialType": "DIRT",
-            "x": 62,
-            "y": 42
-        },
-        {
-            "materialType": "DIRT",
-            "x": 62,
-            "y": 43
-        },
-        {
-            "materialType": "DIRT",
-            "x": 62,
-            "y": 44
-        },
-        {
-            "materialType": "DIRT",
-            "x": 62,
-            "y": 45
-        },
-        {
-            "materialType": "DIRT",
-            "x": 62,
-            "y": 46
-        },
-        {
-            "materialType": "DIRT",
-            "x": 62,
-            "y": 47
-        },
-        {
-            "materialType": "DIRT",
-            "x": 62,
-            "y": 48
-        },
-        {
-            "materialType": "DIRT",
-            "x": 62,
-            "y": 49
         },
         {
             "materialType": "DIRT",
@@ -18503,56 +17153,6 @@
         {
             "materialType": "DIRT",
             "x": 63,
-            "y": 40
-        },
-        {
-            "materialType": "DIRT",
-            "x": 63,
-            "y": 41
-        },
-        {
-            "materialType": "DIRT",
-            "x": 63,
-            "y": 42
-        },
-        {
-            "materialType": "DIRT",
-            "x": 63,
-            "y": 43
-        },
-        {
-            "materialType": "DIRT",
-            "x": 63,
-            "y": 44
-        },
-        {
-            "materialType": "DIRT",
-            "x": 63,
-            "y": 45
-        },
-        {
-            "materialType": "DIRT",
-            "x": 63,
-            "y": 46
-        },
-        {
-            "materialType": "DIRT",
-            "x": 63,
-            "y": 47
-        },
-        {
-            "materialType": "DIRT",
-            "x": 63,
-            "y": 48
-        },
-        {
-            "materialType": "DIRT",
-            "x": 63,
-            "y": 49
-        },
-        {
-            "materialType": "DIRT",
-            "x": 63,
             "y": 70
         },
         {
@@ -18744,56 +17344,6 @@
             "materialType": "DIRT",
             "x": 64,
             "y": 29
-        },
-        {
-            "materialType": "DIRT",
-            "x": 64,
-            "y": 40
-        },
-        {
-            "materialType": "DIRT",
-            "x": 64,
-            "y": 41
-        },
-        {
-            "materialType": "DIRT",
-            "x": 64,
-            "y": 42
-        },
-        {
-            "materialType": "DIRT",
-            "x": 64,
-            "y": 43
-        },
-        {
-            "materialType": "DIRT",
-            "x": 64,
-            "y": 44
-        },
-        {
-            "materialType": "DIRT",
-            "x": 64,
-            "y": 45
-        },
-        {
-            "materialType": "DIRT",
-            "x": 64,
-            "y": 46
-        },
-        {
-            "materialType": "DIRT",
-            "x": 64,
-            "y": 47
-        },
-        {
-            "materialType": "DIRT",
-            "x": 64,
-            "y": 48
-        },
-        {
-            "materialType": "DIRT",
-            "x": 64,
-            "y": 49
         },
         {
             "materialType": "DIRT",
@@ -18993,56 +17543,6 @@
         {
             "materialType": "DIRT",
             "x": 65,
-            "y": 40
-        },
-        {
-            "materialType": "DIRT",
-            "x": 65,
-            "y": 41
-        },
-        {
-            "materialType": "DIRT",
-            "x": 65,
-            "y": 42
-        },
-        {
-            "materialType": "DIRT",
-            "x": 65,
-            "y": 43
-        },
-        {
-            "materialType": "DIRT",
-            "x": 65,
-            "y": 44
-        },
-        {
-            "materialType": "DIRT",
-            "x": 65,
-            "y": 45
-        },
-        {
-            "materialType": "DIRT",
-            "x": 65,
-            "y": 46
-        },
-        {
-            "materialType": "DIRT",
-            "x": 65,
-            "y": 47
-        },
-        {
-            "materialType": "DIRT",
-            "x": 65,
-            "y": 48
-        },
-        {
-            "materialType": "DIRT",
-            "x": 65,
-            "y": 49
-        },
-        {
-            "materialType": "DIRT",
-            "x": 65,
             "y": 70
         },
         {
@@ -19234,56 +17734,6 @@
             "materialType": "DIRT",
             "x": 66,
             "y": 29
-        },
-        {
-            "materialType": "DIRT",
-            "x": 66,
-            "y": 40
-        },
-        {
-            "materialType": "DIRT",
-            "x": 66,
-            "y": 41
-        },
-        {
-            "materialType": "DIRT",
-            "x": 66,
-            "y": 42
-        },
-        {
-            "materialType": "DIRT",
-            "x": 66,
-            "y": 43
-        },
-        {
-            "materialType": "DIRT",
-            "x": 66,
-            "y": 44
-        },
-        {
-            "materialType": "DIRT",
-            "x": 66,
-            "y": 45
-        },
-        {
-            "materialType": "DIRT",
-            "x": 66,
-            "y": 46
-        },
-        {
-            "materialType": "DIRT",
-            "x": 66,
-            "y": 47
-        },
-        {
-            "materialType": "DIRT",
-            "x": 66,
-            "y": 48
-        },
-        {
-            "materialType": "DIRT",
-            "x": 66,
-            "y": 49
         },
         {
             "materialType": "DIRT",
@@ -19488,51 +17938,6 @@
         {
             "materialType": "DIRT",
             "x": 67,
-            "y": 41
-        },
-        {
-            "materialType": "DIRT",
-            "x": 67,
-            "y": 42
-        },
-        {
-            "materialType": "DIRT",
-            "x": 67,
-            "y": 43
-        },
-        {
-            "materialType": "DIRT",
-            "x": 67,
-            "y": 44
-        },
-        {
-            "materialType": "DIRT",
-            "x": 67,
-            "y": 45
-        },
-        {
-            "materialType": "DIRT",
-            "x": 67,
-            "y": 46
-        },
-        {
-            "materialType": "DIRT",
-            "x": 67,
-            "y": 47
-        },
-        {
-            "materialType": "DIRT",
-            "x": 67,
-            "y": 48
-        },
-        {
-            "materialType": "DIRT",
-            "x": 67,
-            "y": 49
-        },
-        {
-            "materialType": "DIRT",
-            "x": 67,
             "y": 70
         },
         {
@@ -19679,6 +18084,11 @@
             "materialType": "DIRT",
             "x": 67,
             "y": 99
+        },
+        {
+            "materialType": "DIRT",
+            "x": 68,
+            "y": 21
         },
         {
             "materialType": "DIRT",
@@ -19923,6 +18333,21 @@
         {
             "materialType": "DIRT",
             "x": 69,
+            "y": 21
+        },
+        {
+            "materialType": "DIRT",
+            "x": 69,
+            "y": 22
+        },
+        {
+            "materialType": "DIRT",
+            "x": 69,
+            "y": 23
+        },
+        {
+            "materialType": "DIRT",
+            "x": 69,
             "y": 24
         },
         {
@@ -20149,6 +18574,26 @@
             "materialType": "DIRT",
             "x": 69,
             "y": 99
+        },
+        {
+            "materialType": "DIRT",
+            "x": 70,
+            "y": 21
+        },
+        {
+            "materialType": "DIRT",
+            "x": 70,
+            "y": 22
+        },
+        {
+            "materialType": "DIRT",
+            "x": 70,
+            "y": 23
+        },
+        {
+            "materialType": "DIRT",
+            "x": 70,
+            "y": 24
         },
         {
             "materialType": "DIRT",
@@ -20428,6 +18873,31 @@
         {
             "materialType": "DIRT",
             "x": 71,
+            "y": 21
+        },
+        {
+            "materialType": "DIRT",
+            "x": 71,
+            "y": 22
+        },
+        {
+            "materialType": "DIRT",
+            "x": 71,
+            "y": 23
+        },
+        {
+            "materialType": "DIRT",
+            "x": 71,
+            "y": 24
+        },
+        {
+            "materialType": "DIRT",
+            "x": 71,
+            "y": 25
+        },
+        {
+            "materialType": "DIRT",
+            "x": 71,
             "y": 26
         },
         {
@@ -20698,6 +19168,36 @@
         {
             "materialType": "DIRT",
             "x": 72,
+            "y": 21
+        },
+        {
+            "materialType": "DIRT",
+            "x": 72,
+            "y": 22
+        },
+        {
+            "materialType": "DIRT",
+            "x": 72,
+            "y": 23
+        },
+        {
+            "materialType": "DIRT",
+            "x": 72,
+            "y": 24
+        },
+        {
+            "materialType": "DIRT",
+            "x": 72,
+            "y": 25
+        },
+        {
+            "materialType": "DIRT",
+            "x": 72,
+            "y": 26
+        },
+        {
+            "materialType": "DIRT",
+            "x": 72,
             "y": 27
         },
         {
@@ -20963,6 +19463,36 @@
         {
             "materialType": "DIRT",
             "x": 73,
+            "y": 21
+        },
+        {
+            "materialType": "DIRT",
+            "x": 73,
+            "y": 22
+        },
+        {
+            "materialType": "DIRT",
+            "x": 73,
+            "y": 23
+        },
+        {
+            "materialType": "DIRT",
+            "x": 73,
+            "y": 24
+        },
+        {
+            "materialType": "DIRT",
+            "x": 73,
+            "y": 25
+        },
+        {
+            "materialType": "DIRT",
+            "x": 73,
+            "y": 26
+        },
+        {
+            "materialType": "DIRT",
+            "x": 73,
             "y": 27
         },
         {
@@ -21228,6 +19758,36 @@
         {
             "materialType": "DIRT",
             "x": 74,
+            "y": 21
+        },
+        {
+            "materialType": "DIRT",
+            "x": 74,
+            "y": 22
+        },
+        {
+            "materialType": "DIRT",
+            "x": 74,
+            "y": 23
+        },
+        {
+            "materialType": "DIRT",
+            "x": 74,
+            "y": 24
+        },
+        {
+            "materialType": "DIRT",
+            "x": 74,
+            "y": 25
+        },
+        {
+            "materialType": "DIRT",
+            "x": 74,
+            "y": 26
+        },
+        {
+            "materialType": "DIRT",
+            "x": 74,
             "y": 27
         },
         {
@@ -21493,6 +20053,36 @@
         {
             "materialType": "DIRT",
             "x": 75,
+            "y": 21
+        },
+        {
+            "materialType": "DIRT",
+            "x": 75,
+            "y": 22
+        },
+        {
+            "materialType": "DIRT",
+            "x": 75,
+            "y": 23
+        },
+        {
+            "materialType": "DIRT",
+            "x": 75,
+            "y": 24
+        },
+        {
+            "materialType": "DIRT",
+            "x": 75,
+            "y": 25
+        },
+        {
+            "materialType": "DIRT",
+            "x": 75,
+            "y": 26
+        },
+        {
+            "materialType": "DIRT",
+            "x": 75,
             "y": 27
         },
         {
@@ -21758,6 +20348,41 @@
         {
             "materialType": "DIRT",
             "x": 76,
+            "y": 21
+        },
+        {
+            "materialType": "DIRT",
+            "x": 76,
+            "y": 22
+        },
+        {
+            "materialType": "DIRT",
+            "x": 76,
+            "y": 23
+        },
+        {
+            "materialType": "DIRT",
+            "x": 76,
+            "y": 24
+        },
+        {
+            "materialType": "DIRT",
+            "x": 76,
+            "y": 25
+        },
+        {
+            "materialType": "DIRT",
+            "x": 76,
+            "y": 26
+        },
+        {
+            "materialType": "DIRT",
+            "x": 76,
+            "y": 27
+        },
+        {
+            "materialType": "DIRT",
+            "x": 76,
             "y": 28
         },
         {
@@ -22018,6 +20643,46 @@
         {
             "materialType": "DIRT",
             "x": 77,
+            "y": 21
+        },
+        {
+            "materialType": "DIRT",
+            "x": 77,
+            "y": 22
+        },
+        {
+            "materialType": "DIRT",
+            "x": 77,
+            "y": 23
+        },
+        {
+            "materialType": "DIRT",
+            "x": 77,
+            "y": 24
+        },
+        {
+            "materialType": "DIRT",
+            "x": 77,
+            "y": 25
+        },
+        {
+            "materialType": "DIRT",
+            "x": 77,
+            "y": 26
+        },
+        {
+            "materialType": "DIRT",
+            "x": 77,
+            "y": 27
+        },
+        {
+            "materialType": "DIRT",
+            "x": 77,
+            "y": 28
+        },
+        {
+            "materialType": "DIRT",
+            "x": 77,
             "y": 29
         },
         {
@@ -22273,6 +20938,51 @@
         {
             "materialType": "DIRT",
             "x": 78,
+            "y": 21
+        },
+        {
+            "materialType": "DIRT",
+            "x": 78,
+            "y": 22
+        },
+        {
+            "materialType": "DIRT",
+            "x": 78,
+            "y": 23
+        },
+        {
+            "materialType": "DIRT",
+            "x": 78,
+            "y": 24
+        },
+        {
+            "materialType": "DIRT",
+            "x": 78,
+            "y": 25
+        },
+        {
+            "materialType": "DIRT",
+            "x": 78,
+            "y": 26
+        },
+        {
+            "materialType": "DIRT",
+            "x": 78,
+            "y": 27
+        },
+        {
+            "materialType": "DIRT",
+            "x": 78,
+            "y": 28
+        },
+        {
+            "materialType": "DIRT",
+            "x": 78,
+            "y": 29
+        },
+        {
+            "materialType": "DIRT",
+            "x": 78,
             "y": 30
         },
         {
@@ -22519,6 +21229,56 @@
             "materialType": "DIRT",
             "x": 78,
             "y": 99
+        },
+        {
+            "materialType": "DIRT",
+            "x": 79,
+            "y": 21
+        },
+        {
+            "materialType": "DIRT",
+            "x": 79,
+            "y": 22
+        },
+        {
+            "materialType": "DIRT",
+            "x": 79,
+            "y": 23
+        },
+        {
+            "materialType": "DIRT",
+            "x": 79,
+            "y": 24
+        },
+        {
+            "materialType": "DIRT",
+            "x": 79,
+            "y": 25
+        },
+        {
+            "materialType": "DIRT",
+            "x": 79,
+            "y": 26
+        },
+        {
+            "materialType": "DIRT",
+            "x": 79,
+            "y": 27
+        },
+        {
+            "materialType": "DIRT",
+            "x": 79,
+            "y": 28
+        },
+        {
+            "materialType": "DIRT",
+            "x": 79,
+            "y": 29
+        },
+        {
+            "materialType": "DIRT",
+            "x": 79,
+            "y": 30
         },
         {
             "materialType": "DIRT",
@@ -22768,12 +21528,57 @@
         {
             "materialType": "DIRT",
             "x": 80,
+            "y": 21
+        },
+        {
+            "materialType": "DIRT",
+            "x": 80,
+            "y": 22
+        },
+        {
+            "materialType": "DIRT",
+            "x": 80,
+            "y": 23
+        },
+        {
+            "materialType": "DIRT",
+            "x": 80,
+            "y": 24
+        },
+        {
+            "materialType": "DIRT",
+            "x": 80,
             "y": 25
         },
         {
             "materialType": "DIRT",
             "x": 80,
             "y": 26
+        },
+        {
+            "materialType": "DIRT",
+            "x": 80,
+            "y": 27
+        },
+        {
+            "materialType": "DIRT",
+            "x": 80,
+            "y": 28
+        },
+        {
+            "materialType": "DIRT",
+            "x": 80,
+            "y": 29
+        },
+        {
+            "materialType": "DIRT",
+            "x": 80,
+            "y": 30
+        },
+        {
+            "materialType": "DIRT",
+            "x": 80,
+            "y": 31
         },
         {
             "materialType": "DIRT",
@@ -23018,6 +21823,16 @@
         {
             "materialType": "DIRT",
             "x": 81,
+            "y": 21
+        },
+        {
+            "materialType": "DIRT",
+            "x": 81,
+            "y": 22
+        },
+        {
+            "materialType": "DIRT",
+            "x": 81,
             "y": 23
         },
         {
@@ -23034,6 +21849,31 @@
             "materialType": "DIRT",
             "x": 81,
             "y": 26
+        },
+        {
+            "materialType": "DIRT",
+            "x": 81,
+            "y": 27
+        },
+        {
+            "materialType": "DIRT",
+            "x": 81,
+            "y": 28
+        },
+        {
+            "materialType": "DIRT",
+            "x": 81,
+            "y": 29
+        },
+        {
+            "materialType": "DIRT",
+            "x": 81,
+            "y": 30
+        },
+        {
+            "materialType": "DIRT",
+            "x": 81,
+            "y": 31
         },
         {
             "materialType": "DIRT",
@@ -23278,6 +22118,11 @@
         {
             "materialType": "DIRT",
             "x": 82,
+            "y": 21
+        },
+        {
+            "materialType": "DIRT",
+            "x": 82,
             "y": 22
         },
         {
@@ -23299,6 +22144,36 @@
             "materialType": "DIRT",
             "x": 82,
             "y": 26
+        },
+        {
+            "materialType": "DIRT",
+            "x": 82,
+            "y": 27
+        },
+        {
+            "materialType": "DIRT",
+            "x": 82,
+            "y": 28
+        },
+        {
+            "materialType": "DIRT",
+            "x": 82,
+            "y": 29
+        },
+        {
+            "materialType": "DIRT",
+            "x": 82,
+            "y": 30
+        },
+        {
+            "materialType": "DIRT",
+            "x": 82,
+            "y": 31
+        },
+        {
+            "materialType": "DIRT",
+            "x": 82,
+            "y": 32
         },
         {
             "materialType": "DIRT",
@@ -23564,6 +22439,41 @@
             "materialType": "DIRT",
             "x": 83,
             "y": 26
+        },
+        {
+            "materialType": "DIRT",
+            "x": 83,
+            "y": 27
+        },
+        {
+            "materialType": "DIRT",
+            "x": 83,
+            "y": 28
+        },
+        {
+            "materialType": "DIRT",
+            "x": 83,
+            "y": 29
+        },
+        {
+            "materialType": "DIRT",
+            "x": 83,
+            "y": 30
+        },
+        {
+            "materialType": "DIRT",
+            "x": 83,
+            "y": 31
+        },
+        {
+            "materialType": "DIRT",
+            "x": 83,
+            "y": 32
+        },
+        {
+            "materialType": "DIRT",
+            "x": 83,
+            "y": 33
         },
         {
             "materialType": "DIRT",
@@ -23829,6 +22739,36 @@
             "materialType": "DIRT",
             "x": 84,
             "y": 27
+        },
+        {
+            "materialType": "DIRT",
+            "x": 84,
+            "y": 28
+        },
+        {
+            "materialType": "DIRT",
+            "x": 84,
+            "y": 29
+        },
+        {
+            "materialType": "DIRT",
+            "x": 84,
+            "y": 30
+        },
+        {
+            "materialType": "DIRT",
+            "x": 84,
+            "y": 31
+        },
+        {
+            "materialType": "DIRT",
+            "x": 84,
+            "y": 32
+        },
+        {
+            "materialType": "DIRT",
+            "x": 84,
+            "y": 33
         },
         {
             "materialType": "DIRT",
@@ -24094,6 +23034,36 @@
             "materialType": "DIRT",
             "x": 85,
             "y": 27
+        },
+        {
+            "materialType": "DIRT",
+            "x": 85,
+            "y": 28
+        },
+        {
+            "materialType": "DIRT",
+            "x": 85,
+            "y": 29
+        },
+        {
+            "materialType": "DIRT",
+            "x": 85,
+            "y": 30
+        },
+        {
+            "materialType": "DIRT",
+            "x": 85,
+            "y": 31
+        },
+        {
+            "materialType": "DIRT",
+            "x": 85,
+            "y": 32
+        },
+        {
+            "materialType": "DIRT",
+            "x": 85,
+            "y": 33
         },
         {
             "materialType": "DIRT",
@@ -24359,6 +23329,31 @@
             "materialType": "DIRT",
             "x": 86,
             "y": 27
+        },
+        {
+            "materialType": "DIRT",
+            "x": 86,
+            "y": 28
+        },
+        {
+            "materialType": "DIRT",
+            "x": 86,
+            "y": 29
+        },
+        {
+            "materialType": "DIRT",
+            "x": 86,
+            "y": 30
+        },
+        {
+            "materialType": "DIRT",
+            "x": 86,
+            "y": 31
+        },
+        {
+            "materialType": "DIRT",
+            "x": 86,
+            "y": 32
         },
         {
             "materialType": "DIRT",
@@ -24634,6 +23629,21 @@
             "materialType": "DIRT",
             "x": 87,
             "y": 28
+        },
+        {
+            "materialType": "DIRT",
+            "x": 87,
+            "y": 29
+        },
+        {
+            "materialType": "DIRT",
+            "x": 87,
+            "y": 30
+        },
+        {
+            "materialType": "DIRT",
+            "x": 87,
+            "y": 31
         },
         {
             "materialType": "DIRT",
@@ -29417,728 +28427,18 @@
         },
         {
             "materialType": "DIRT",
-            "x": 73,
-            "y": 18
-        },
-        {
-            "materialType": "DIRT",
-            "x": 72,
-            "y": 18
-        },
-        {
-            "materialType": "DIRT",
-            "x": 74,
-            "y": 18
-        },
-        {
-            "materialType": "DIRT",
-            "x": 73,
-            "y": 17
-        },
-        {
-            "materialType": "DIRT",
-            "x": 73,
+            "x": 41,
             "y": 19
         },
         {
             "materialType": "DIRT",
-            "x": 71,
-            "y": 18
-        },
-        {
-            "materialType": "DIRT",
-            "x": 72,
-            "y": 17
-        },
-        {
-            "materialType": "DIRT",
-            "x": 72,
+            "x": 40,
             "y": 19
         },
         {
             "materialType": "DIRT",
-            "x": 71,
+            "x": 39,
             "y": 19
-        },
-        {
-            "materialType": "DIRT",
-            "x": 72,
-            "y": 20
-        },
-        {
-            "materialType": "DIRT",
-            "x": 70,
-            "y": 19
-        },
-        {
-            "materialType": "DIRT",
-            "x": 71,
-            "y": 20
-        },
-        {
-            "materialType": "DIRT",
-            "x": 70,
-            "y": 20
-        },
-        {
-            "materialType": "DIRT",
-            "x": 71,
-            "y": 21
-        },
-        {
-            "materialType": "DIRT",
-            "x": 69,
-            "y": 20
-        },
-        {
-            "materialType": "DIRT",
-            "x": 70,
-            "y": 21
-        },
-        {
-            "materialType": "DIRT",
-            "x": 68,
-            "y": 20
-        },
-        {
-            "materialType": "DIRT",
-            "x": 69,
-            "y": 19
-        },
-        {
-            "materialType": "DIRT",
-            "x": 69,
-            "y": 21
-        },
-        {
-            "materialType": "DIRT",
-            "x": 68,
-            "y": 21
-        },
-        {
-            "materialType": "DIRT",
-            "x": 69,
-            "y": 22
-        },
-        {
-            "materialType": "DIRT",
-            "x": 69,
-            "y": 23
-        },
-        {
-            "materialType": "DIRT",
-            "x": 70,
-            "y": 24
-        },
-        {
-            "materialType": "DIRT",
-            "x": 71,
-            "y": 24
-        },
-        {
-            "materialType": "DIRT",
-            "x": 70,
-            "y": 23
-        },
-        {
-            "materialType": "DIRT",
-            "x": 71,
-            "y": 25
-        },
-        {
-            "materialType": "DIRT",
-            "x": 72,
-            "y": 25
-        },
-        {
-            "materialType": "DIRT",
-            "x": 73,
-            "y": 25
-        },
-        {
-            "materialType": "DIRT",
-            "x": 72,
-            "y": 24
-        },
-        {
-            "materialType": "DIRT",
-            "x": 72,
-            "y": 26
-        },
-        {
-            "materialType": "DIRT",
-            "x": 74,
-            "y": 25
-        },
-        {
-            "materialType": "DIRT",
-            "x": 73,
-            "y": 24
-        },
-        {
-            "materialType": "DIRT",
-            "x": 73,
-            "y": 26
-        },
-        {
-            "materialType": "DIRT",
-            "x": 75,
-            "y": 25
-        },
-        {
-            "materialType": "DIRT",
-            "x": 74,
-            "y": 24
-        },
-        {
-            "materialType": "DIRT",
-            "x": 74,
-            "y": 26
-        },
-        {
-            "materialType": "DIRT",
-            "x": 76,
-            "y": 25
-        },
-        {
-            "materialType": "DIRT",
-            "x": 75,
-            "y": 24
-        },
-        {
-            "materialType": "DIRT",
-            "x": 75,
-            "y": 26
-        },
-        {
-            "materialType": "DIRT",
-            "x": 77,
-            "y": 25
-        },
-        {
-            "materialType": "DIRT",
-            "x": 76,
-            "y": 24
-        },
-        {
-            "materialType": "DIRT",
-            "x": 76,
-            "y": 26
-        },
-        {
-            "materialType": "DIRT",
-            "x": 78,
-            "y": 25
-        },
-        {
-            "materialType": "DIRT",
-            "x": 77,
-            "y": 24
-        },
-        {
-            "materialType": "DIRT",
-            "x": 77,
-            "y": 26
-        },
-        {
-            "materialType": "DIRT",
-            "x": 79,
-            "y": 25
-        },
-        {
-            "materialType": "DIRT",
-            "x": 78,
-            "y": 24
-        },
-        {
-            "materialType": "DIRT",
-            "x": 78,
-            "y": 26
-        },
-        {
-            "materialType": "DIRT",
-            "x": 79,
-            "y": 24
-        },
-        {
-            "materialType": "DIRT",
-            "x": 79,
-            "y": 26
-        },
-        {
-            "materialType": "DIRT",
-            "x": 80,
-            "y": 24
-        },
-        {
-            "materialType": "DIRT",
-            "x": 79,
-            "y": 23
-        },
-        {
-            "materialType": "DIRT",
-            "x": 78,
-            "y": 23
-        },
-        {
-            "materialType": "DIRT",
-            "x": 80,
-            "y": 23
-        },
-        {
-            "materialType": "DIRT",
-            "x": 79,
-            "y": 22
-        },
-        {
-            "materialType": "DIRT",
-            "x": 78,
-            "y": 22
-        },
-        {
-            "materialType": "DIRT",
-            "x": 80,
-            "y": 22
-        },
-        {
-            "materialType": "DIRT",
-            "x": 79,
-            "y": 21
-        },
-        {
-            "materialType": "DIRT",
-            "x": 77,
-            "y": 22
-        },
-        {
-            "materialType": "DIRT",
-            "x": 78,
-            "y": 21
-        },
-        {
-            "materialType": "DIRT",
-            "x": 77,
-            "y": 21
-        },
-        {
-            "materialType": "DIRT",
-            "x": 76,
-            "y": 21
-        },
-        {
-            "materialType": "DIRT",
-            "x": 77,
-            "y": 20
-        },
-        {
-            "materialType": "DIRT",
-            "x": 75,
-            "y": 21
-        },
-        {
-            "materialType": "DIRT",
-            "x": 76,
-            "y": 20
-        },
-        {
-            "materialType": "DIRT",
-            "x": 76,
-            "y": 22
-        },
-        {
-            "materialType": "DIRT",
-            "x": 74,
-            "y": 21
-        },
-        {
-            "materialType": "DIRT",
-            "x": 75,
-            "y": 20
-        },
-        {
-            "materialType": "DIRT",
-            "x": 75,
-            "y": 22
-        },
-        {
-            "materialType": "DIRT",
-            "x": 73,
-            "y": 21
-        },
-        {
-            "materialType": "DIRT",
-            "x": 74,
-            "y": 20
-        },
-        {
-            "materialType": "DIRT",
-            "x": 74,
-            "y": 22
-        },
-        {
-            "materialType": "DIRT",
-            "x": 72,
-            "y": 21
-        },
-        {
-            "materialType": "DIRT",
-            "x": 73,
-            "y": 20
-        },
-        {
-            "materialType": "DIRT",
-            "x": 73,
-            "y": 22
-        },
-        {
-            "materialType": "DIRT",
-            "x": 72,
-            "y": 22
-        },
-        {
-            "materialType": "DIRT",
-            "x": 71,
-            "y": 22
-        },
-        {
-            "materialType": "DIRT",
-            "x": 72,
-            "y": 23
-        },
-        {
-            "materialType": "DIRT",
-            "x": 70,
-            "y": 22
-        },
-        {
-            "materialType": "DIRT",
-            "x": 71,
-            "y": 23
-        },
-        {
-            "materialType": "DIRT",
-            "x": 73,
-            "y": 23
-        },
-        {
-            "materialType": "DIRT",
-            "x": 74,
-            "y": 23
-        },
-        {
-            "materialType": "DIRT",
-            "x": 75,
-            "y": 23
-        },
-        {
-            "materialType": "DIRT",
-            "x": 81,
-            "y": 22
-        },
-        {
-            "materialType": "DIRT",
-            "x": 81,
-            "y": 21
-        },
-        {
-            "materialType": "DIRT",
-            "x": 80,
-            "y": 21
-        },
-        {
-            "materialType": "DIRT",
-            "x": 79,
-            "y": 20
-        },
-        {
-            "materialType": "DIRT",
-            "x": 78,
-            "y": 20
-        },
-        {
-            "materialType": "DIRT",
-            "x": 77,
-            "y": 19
-        },
-        {
-            "materialType": "DIRT",
-            "x": 76,
-            "y": 19
-        },
-        {
-            "materialType": "DIRT",
-            "x": 75,
-            "y": 19
-        },
-        {
-            "materialType": "DIRT",
-            "x": 74,
-            "y": 19
-        },
-        {
-            "materialType": "DIRT",
-            "x": 76,
-            "y": 23
-        },
-        {
-            "materialType": "DIRT",
-            "x": 82,
-            "y": 21
-        },
-        {
-            "materialType": "DIRT",
-            "x": 81,
-            "y": 20
-        },
-        {
-            "materialType": "DIRT",
-            "x": 80,
-            "y": 20
-        },
-        {
-            "materialType": "DIRT",
-            "x": 78,
-            "y": 19
-        },
-        {
-            "materialType": "DIRT",
-            "x": 77,
-            "y": 23
-        },
-        {
-            "materialType": "DIRT",
-            "x": 82,
-            "y": 20
-        },
-        {
-            "materialType": "DIRT",
-            "x": 81,
-            "y": 19
-        },
-        {
-            "materialType": "DIRT",
-            "x": 80,
-            "y": 19
-        },
-        {
-            "materialType": "DIRT",
-            "x": 79,
-            "y": 19
-        },
-        {
-            "materialType": "DIRT",
-            "x": 76,
-            "y": 27
-        },
-        {
-            "materialType": "DIRT",
-            "x": 77,
-            "y": 28
-        },
-        {
-            "materialType": "DIRT",
-            "x": 78,
-            "y": 28
-        },
-        {
-            "materialType": "DIRT",
-            "x": 77,
-            "y": 27
-        },
-        {
-            "materialType": "DIRT",
-            "x": 78,
-            "y": 29
-        },
-        {
-            "materialType": "DIRT",
-            "x": 79,
-            "y": 29
-        },
-        {
-            "materialType": "DIRT",
-            "x": 80,
-            "y": 29
-        },
-        {
-            "materialType": "DIRT",
-            "x": 79,
-            "y": 28
-        },
-        {
-            "materialType": "DIRT",
-            "x": 79,
-            "y": 30
-        },
-        {
-            "materialType": "DIRT",
-            "x": 81,
-            "y": 29
-        },
-        {
-            "materialType": "DIRT",
-            "x": 80,
-            "y": 28
-        },
-        {
-            "materialType": "DIRT",
-            "x": 80,
-            "y": 30
-        },
-        {
-            "materialType": "DIRT",
-            "x": 82,
-            "y": 29
-        },
-        {
-            "materialType": "DIRT",
-            "x": 81,
-            "y": 28
-        },
-        {
-            "materialType": "DIRT",
-            "x": 81,
-            "y": 30
-        },
-        {
-            "materialType": "DIRT",
-            "x": 82,
-            "y": 28
-        },
-        {
-            "materialType": "DIRT",
-            "x": 81,
-            "y": 27
-        },
-        {
-            "materialType": "DIRT",
-            "x": 83,
-            "y": 28
-        },
-        {
-            "materialType": "DIRT",
-            "x": 82,
-            "y": 27
-        },
-        {
-            "materialType": "DIRT",
-            "x": 83,
-            "y": 27
-        },
-        {
-            "materialType": "DIRT",
-            "x": 80,
-            "y": 27
-        },
-        {
-            "materialType": "DIRT",
-            "x": 79,
-            "y": 27
-        },
-        {
-            "materialType": "DIRT",
-            "x": 78,
-            "y": 27
-        },
-        {
-            "materialType": "DIRT",
-            "x": 82,
-            "y": 30
-        },
-        {
-            "materialType": "DIRT",
-            "x": 81,
-            "y": 31
-        },
-        {
-            "materialType": "DIRT",
-            "x": 83,
-            "y": 30
-        },
-        {
-            "materialType": "DIRT",
-            "x": 82,
-            "y": 31
-        },
-        {
-            "materialType": "DIRT",
-            "x": 84,
-            "y": 30
-        },
-        {
-            "materialType": "DIRT",
-            "x": 83,
-            "y": 29
-        },
-        {
-            "materialType": "DIRT",
-            "x": 83,
-            "y": 31
-        },
-        {
-            "materialType": "DIRT",
-            "x": 84,
-            "y": 29
-        },
-        {
-            "materialType": "DIRT",
-            "x": 85,
-            "y": 29
-        },
-        {
-            "materialType": "DIRT",
-            "x": 84,
-            "y": 28
-        },
-        {
-            "materialType": "DIRT",
-            "x": 85,
-            "y": 28
-        },
-        {
-            "materialType": "DIRT",
-            "x": 85,
-            "y": 30
-        },
-        {
-            "materialType": "DIRT",
-            "x": 84,
-            "y": 31
-        },
-        {
-            "materialType": "DIRT",
-            "x": 86,
-            "y": 30
-        },
-        {
-            "materialType": "DIRT",
-            "x": 85,
-            "y": 31
-        },
-        {
-            "materialType": "DIRT",
-            "x": 87,
-            "y": 30
-        },
-        {
-            "materialType": "DIRT",
-            "x": 86,
-            "y": 29
-        },
-        {
-            "materialType": "DIRT",
-            "x": 86,
-            "y": 31
-        },
-        {
-            "materialType": "DIRT",
-            "x": 87,
-            "y": 29
-        },
-        {
-            "materialType": "DIRT",
-            "x": 86,
-            "y": 28
         }
     ],
     "colony": {"knownFood": []},
@@ -30147,23 +28447,38 @@
             "movementInterval": 0,
             "entityType": "BEING",
             "health": 0,
-            "entityId": 21,
-            "hunger": 34.800873,
+            "entityId": 11,
+            "hunger": 27.04123,
             "maxHunger": 40,
             "colonyId": 0,
-            "x": 21,
-            "y": 60,
+            "x": 44,
+            "y": 57,
             "beingType": "ANT",
             "maxHealth": 0,
             "antType": "WORKER_ANT",
-            "age": 27.916412
+            "age": 22.933155
         },
         {
             "movementInterval": 0,
             "entityType": "BEING",
             "health": 0,
-            "entityId": 22,
-            "hunger": 23.320866,
+            "entityId": 12,
+            "hunger": 27.011229,
+            "maxHunger": 40,
+            "colonyId": 0,
+            "x": 75,
+            "y": 53,
+            "beingType": "ANT",
+            "maxHealth": 0,
+            "antType": "WORKER_ANT",
+            "age": 22.883156
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "BEING",
+            "health": 0,
+            "entityId": 13,
+            "hunger": 26.290949,
             "maxHunger": 100,
             "colonyId": 0,
             "x": 21,
@@ -30171,14 +28486,30 @@
             "beingType": "ANT",
             "maxHealth": 0,
             "antType": "QUEEN",
-            "age": 27.799747
+            "age": 22.849823
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 43,
+            "y": 26,
+            "entityId": 19
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 43,
+            "y": 27,
+            "entityId": 20
         },
         {
             "movementInterval": 0,
             "entityType": "BEING",
             "health": 0,
-            "entityId": 30,
-            "hunger": 33.331463,
+            "entityId": 21,
+            "hunger": 26.300991,
             "maxHunger": 100,
             "colonyId": 0,
             "x": 23,
@@ -30186,126 +28517,575 @@
             "beingType": "ANT",
             "maxHealth": 0,
             "antType": "LARVA",
-            "age": 27.783081
+            "age": 22.833157
         },
         {
             "movementInterval": 0,
-            "entityType": "BEING",
-            "health": 0,
-            "entityId": 31,
-            "hunger": 35.501408,
-            "maxHunger": 100,
-            "colonyId": 0,
-            "x": 20,
-            "y": 60,
-            "beingType": "ANT",
-            "maxHealth": 0,
-            "antType": "LARVA",
-            "age": 24.16647
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 47,
+            "y": 37,
+            "entityId": 22
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 47,
+            "y": 38,
+            "entityId": 23
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 48,
+            "y": 38,
+            "entityId": 24
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 48,
+            "y": 39,
+            "entityId": 25
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 59,
+            "y": 39,
+            "entityId": 26
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 58,
+            "y": 39,
+            "entityId": 27
         },
         {
             "movementInterval": 0,
             "entityType": "ITEM",
             "materialType": "FOOD",
             "x": 57,
-            "y": 18,
+            "y": 39,
+            "entityId": 28
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 56,
+            "y": 38,
+            "entityId": 29
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 55,
+            "y": 38,
+            "entityId": 30
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 54,
+            "y": 38,
+            "entityId": 31
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 53,
+            "y": 38,
             "entityId": 32
         },
         {
             "movementInterval": 0,
             "entityType": "ITEM",
             "materialType": "FOOD",
-            "x": 56,
-            "y": 18,
+            "x": 52,
+            "y": 37,
             "entityId": 33
         },
         {
             "movementInterval": 0,
             "entityType": "ITEM",
             "materialType": "FOOD",
-            "x": 56,
-            "y": 19,
+            "x": 51,
+            "y": 37,
             "entityId": 34
         },
         {
             "movementInterval": 0,
             "entityType": "ITEM",
             "materialType": "FOOD",
-            "x": 59,
-            "y": 19,
+            "x": 50,
+            "y": 37,
             "entityId": 35
         },
         {
             "movementInterval": 0,
             "entityType": "ITEM",
             "materialType": "FOOD",
-            "x": 59,
-            "y": 18,
+            "x": 49,
+            "y": 37,
             "entityId": 36
         },
         {
             "movementInterval": 0,
             "entityType": "ITEM",
             "materialType": "FOOD",
-            "x": 58,
-            "y": 18,
+            "x": 48,
+            "y": 37,
             "entityId": 37
         },
         {
             "movementInterval": 0,
             "entityType": "ITEM",
             "materialType": "FOOD",
-            "x": 57,
-            "y": 19,
+            "x": 47,
+            "y": 36,
             "entityId": 38
         },
         {
             "movementInterval": 0,
             "entityType": "ITEM",
             "materialType": "FOOD",
-            "x": 58,
-            "y": 19,
+            "x": 46,
+            "y": 36,
             "entityId": 39
         },
         {
             "movementInterval": 0,
             "entityType": "ITEM",
             "materialType": "FOOD",
-            "x": 60,
-            "y": 19,
+            "x": 47,
+            "y": 35,
             "entityId": 40
         },
         {
             "movementInterval": 0,
             "entityType": "ITEM",
             "materialType": "FOOD",
-            "x": 60,
-            "y": 18,
+            "x": 48,
+            "y": 35,
             "entityId": 41
         },
         {
             "movementInterval": 0,
             "entityType": "ITEM",
             "materialType": "FOOD",
-            "x": 58,
-            "y": 17,
+            "x": 49,
+            "y": 35,
             "entityId": 42
         },
         {
             "movementInterval": 0,
             "entityType": "ITEM",
             "materialType": "FOOD",
-            "x": 57,
-            "y": 17,
+            "x": 50,
+            "y": 35,
             "entityId": 43
         },
         {
             "movementInterval": 0,
             "entityType": "ITEM",
             "materialType": "FOOD",
-            "x": 56,
-            "y": 17,
+            "x": 51,
+            "y": 35,
             "entityId": 44
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 52,
+            "y": 35,
+            "entityId": 45
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 53,
+            "y": 35,
+            "entityId": 46
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 54,
+            "y": 35,
+            "entityId": 47
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 55,
+            "y": 35,
+            "entityId": 48
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 56,
+            "y": 35,
+            "entityId": 49
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 57,
+            "y": 35,
+            "entityId": 50
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 57,
+            "y": 36,
+            "entityId": 51
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 58,
+            "y": 36,
+            "entityId": 52
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 58,
+            "y": 37,
+            "entityId": 53
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 59,
+            "y": 38,
+            "entityId": 54
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 59,
+            "y": 37,
+            "entityId": 55
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 60,
+            "y": 37,
+            "entityId": 56
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 60,
+            "y": 36,
+            "entityId": 57
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 59,
+            "y": 36,
+            "entityId": 58
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 56,
+            "y": 36,
+            "entityId": 59
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 55,
+            "y": 36,
+            "entityId": 60
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 54,
+            "y": 36,
+            "entityId": 61
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 53,
+            "y": 36,
+            "entityId": 62
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 52,
+            "y": 36,
+            "entityId": 63
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 51,
+            "y": 36,
+            "entityId": 64
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 50,
+            "y": 36,
+            "entityId": 65
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 55,
+            "y": 37,
+            "entityId": 66
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 52,
+            "y": 38,
+            "entityId": 67
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 51,
+            "y": 38,
+            "entityId": 68
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 50,
+            "y": 38,
+            "entityId": 69
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 49,
+            "y": 38,
+            "entityId": 70
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 46,
+            "y": 38,
+            "entityId": 71
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 45,
+            "y": 38,
+            "entityId": 72
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 46,
+            "y": 39,
+            "entityId": 73
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 47,
+            "y": 39,
+            "entityId": 74
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 49,
+            "y": 39,
+            "entityId": 75
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 50,
+            "y": 39,
+            "entityId": 76
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 51,
+            "y": 39,
+            "entityId": 77
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 52,
+            "y": 39,
+            "entityId": 78
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 54,
+            "y": 39,
+            "entityId": 79
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 53,
+            "y": 39,
+            "entityId": 80
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 57,
+            "y": 38,
+            "entityId": 81
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 58,
+            "y": 38,
+            "entityId": 82
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 49,
+            "y": 36,
+            "entityId": 83
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 48,
+            "y": 36,
+            "entityId": 84
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 53,
+            "y": 19,
+            "entityId": 85
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 54,
+            "y": 19,
+            "entityId": 86
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 55,
+            "y": 19,
+            "entityId": 87
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 56,
+            "y": 19,
+            "entityId": 88
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 57,
+            "y": 19,
+            "entityId": 89
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 58,
+            "y": 19,
+            "entityId": 90
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 59,
+            "y": 19,
+            "entityId": 91
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 60,
+            "y": 19,
+            "entityId": 92
         },
         {
             "movementInterval": 0,
@@ -30313,87 +29093,374 @@
             "materialType": "FOOD",
             "x": 61,
             "y": 19,
-            "entityId": 45
+            "entityId": 93
         },
         {
             "movementInterval": 0,
             "entityType": "ITEM",
-            "materialType": "POISON",
-            "x": 24,
+            "materialType": "FOOD",
+            "x": 62,
             "y": 19,
-            "entityId": 46
+            "entityId": 94
         },
         {
             "movementInterval": 0,
             "entityType": "ITEM",
-            "materialType": "POISON",
-            "x": 25,
+            "materialType": "FOOD",
+            "x": 63,
             "y": 19,
-            "entityId": 47
+            "entityId": 95
         },
         {
             "movementInterval": 0,
             "entityType": "ITEM",
-            "materialType": "POISON",
-            "x": 26,
+            "materialType": "FOOD",
+            "x": 64,
             "y": 19,
-            "entityId": 48
+            "entityId": 96
         },
         {
             "movementInterval": 0,
             "entityType": "ITEM",
-            "materialType": "POISON",
-            "x": 26,
-            "y": 18,
-            "entityId": 49
-        },
-        {
-            "movementInterval": 0,
-            "entityType": "ITEM",
-            "materialType": "POISON",
-            "x": 25,
-            "y": 18,
-            "entityId": 50
-        },
-        {
-            "movementInterval": 0,
-            "entityType": "ITEM",
-            "materialType": "POISON",
-            "x": 24,
-            "y": 18,
-            "entityId": 51
-        },
-        {
-            "movementInterval": 0,
-            "entityType": "ITEM",
-            "materialType": "POISON",
-            "x": 23,
-            "y": 18,
-            "entityId": 52
-        },
-        {
-            "movementInterval": 0,
-            "entityType": "ITEM",
-            "materialType": "POISON",
-            "x": 22,
-            "y": 18,
-            "entityId": 53
-        },
-        {
-            "movementInterval": 0,
-            "entityType": "ITEM",
-            "materialType": "POISON",
-            "x": 22,
+            "materialType": "FOOD",
+            "x": 65,
             "y": 19,
-            "entityId": 54
+            "entityId": 97
         },
         {
             "movementInterval": 0,
             "entityType": "ITEM",
-            "materialType": "POISON",
-            "x": 23,
+            "materialType": "FOOD",
+            "x": 66,
             "y": 19,
-            "entityId": 55
+            "entityId": 98
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 67,
+            "y": 19,
+            "entityId": 99
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 68,
+            "y": 19,
+            "entityId": 100
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 69,
+            "y": 19,
+            "entityId": 101
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 70,
+            "y": 19,
+            "entityId": 102
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 58,
+            "y": 18,
+            "entityId": 103
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 59,
+            "y": 18,
+            "entityId": 104
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 60,
+            "y": 18,
+            "entityId": 105
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 61,
+            "y": 18,
+            "entityId": 106
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 62,
+            "y": 18,
+            "entityId": 107
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 63,
+            "y": 18,
+            "entityId": 108
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 64,
+            "y": 18,
+            "entityId": 109
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 57,
+            "y": 18,
+            "entityId": 110
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 56,
+            "y": 18,
+            "entityId": 111
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 55,
+            "y": 18,
+            "entityId": 112
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 54,
+            "y": 18,
+            "entityId": 113
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 55,
+            "y": 17,
+            "entityId": 114
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 56,
+            "y": 17,
+            "entityId": 115
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 57,
+            "y": 17,
+            "entityId": 116
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 58,
+            "y": 17,
+            "entityId": 117
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 58,
+            "y": 16,
+            "entityId": 118
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 59,
+            "y": 16,
+            "entityId": 119
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 60,
+            "y": 16,
+            "entityId": 120
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 61,
+            "y": 16,
+            "entityId": 121
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 62,
+            "y": 16,
+            "entityId": 122
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 62,
+            "y": 15,
+            "entityId": 123
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 61,
+            "y": 15,
+            "entityId": 124
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 62,
+            "y": 17,
+            "entityId": 125
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 63,
+            "y": 17,
+            "entityId": 126
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 60,
+            "y": 17,
+            "entityId": 127
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 64,
+            "y": 17,
+            "entityId": 128
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 61,
+            "y": 17,
+            "entityId": 129
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 65,
+            "y": 18,
+            "entityId": 130
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 66,
+            "y": 18,
+            "entityId": 131
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 59,
+            "y": 17,
+            "entityId": 132
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "BEING",
+            "health": 0,
+            "entityId": 133,
+            "hunger": 28.461086,
+            "maxHunger": 100,
+            "colonyId": 0,
+            "x": 20,
+            "y": 60,
+            "beingType": "ANT",
+            "maxHealth": 0,
+            "antType": "LARVA",
+            "age": 19.233212
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 52,
+            "y": 19,
+            "entityId": 134
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 51,
+            "y": 19,
+            "entityId": 135
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 50,
+            "y": 19,
+            "entityId": 136
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 53,
+            "y": 18,
+            "entityId": 137
+        },
+        {
+            "movementInterval": 0,
+            "entityType": "ITEM",
+            "materialType": "FOOD",
+            "x": 54,
+            "y": 17,
+            "entityId": 138
         }
     ],
     "statuses": []

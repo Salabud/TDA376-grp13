@@ -2,6 +2,7 @@ package model.ants;
 
 import model.AntType;
 import model.BeingType;
+import model.ants.behavior.ScoutBehavior;
 import model.colony.ColonyMediator;
 import model.datastructures.Position;
 import model.EntityType;
@@ -35,6 +36,7 @@ public class WorkerAnt extends TaskPerformerAnt {
             mediator.reportHungry(this);
         }
         if (currentTask == null && this.state == AntState.IDLE && !(this.movement instanceof RandomMovement)) {
+            this.behavior = new ScoutBehavior();
             this.movement = new RandomMovement(this, world.getTileGrid());
         }
         super.update();

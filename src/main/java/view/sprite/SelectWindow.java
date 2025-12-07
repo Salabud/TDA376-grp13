@@ -25,8 +25,6 @@ public class SelectWindow{
         height = 200;
         this.gc = gc;
         Font.loadFont(getClass().getResourceAsStream("/fonts/PKMN RBYGSC.ttf"), 60);
-
-
     }
     public void paint(Entity entity){
         this.entity = entity;
@@ -51,6 +49,7 @@ public class SelectWindow{
             case ITEM -> {
                 Item item = (Item) entity;
                 gc.fillText(item.getMaterialType().toString(),x+10,y+30);
+                gc.fillText("is scouted: " + item.isScouted(),x+10,y+50);
             }
         }
     }

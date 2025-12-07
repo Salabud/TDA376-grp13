@@ -100,6 +100,14 @@ public abstract class Ant extends Being {
     public AntType getAntType(){
         return antType;
     }
+    
+    public ColonyMediator getMediator() {
+        return mediator;
+    }
+    
+    public AntColony getColony() {
+        return colony;
+    }
 
     /**
      * Create a JSON Object of the entity

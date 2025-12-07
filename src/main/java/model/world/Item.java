@@ -13,11 +13,13 @@ import org.json.JSONObject;
  */
 public class Item extends Entity implements Carryable {
     private MaterialType materialType;
+    private boolean scouted;
 
     public Item(Position position, MaterialType materialType){
         this.type = EntityType.ITEM;
         this.position = position;
         this.materialType = materialType;
+        this.scouted = false;
         this.entityId = EntityIdManager.getInstance().getNextId();
     }
 
@@ -40,5 +42,11 @@ public class Item extends Entity implements Carryable {
         JSONObject obj = super.toJSON();
         obj.put("materialType", materialType);
         return obj;
+    }
+    public boolean isScouted() {
+        return scouted;
+    }
+    public boolean setScouted(boolean scouted) {
+        return this.scouted = scouted;
     }
 }

@@ -28,7 +28,7 @@ public class AntColony {
     private static final int MIN_FOOD_FOR_BIRTH = 2;
     private static final int BASE_LARVA_COUNT = 1;
     private static final int FOOD_PER_EXTRA_LARVA = 3;
-    private static final int MAX_LARVA_COUNT = 10;
+    private static final int MAX_LARVA_COUNT = 100;
 
     public AntColony(ColonyMediator mediator, ColonyTaskBoard taskBoard){
         ants = new ArrayList<>();
