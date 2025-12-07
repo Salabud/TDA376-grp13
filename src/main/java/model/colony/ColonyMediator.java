@@ -22,6 +22,7 @@ import java.util.List;
 public class ColonyMediator {
     private ColonyTaskBoard taskBoard;
     private AntColony antColony;
+
     /**
      * Suggests the most appropriate available task for the given ant.
      * If the ant is suitable for the task, it gets assigned the task.

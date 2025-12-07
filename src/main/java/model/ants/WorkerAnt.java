@@ -5,6 +5,8 @@ import model.BeingType;
 import model.colony.ColonyMediator;
 import model.datastructures.Position;
 import model.EntityType;
+import model.ants.movement.RandomMovement;
+import model.ants.state.AntState;
 import model.tasks.BirthTask;
 import model.tasks.EatTask;
 import model.tasks.Task;
@@ -29,8 +31,11 @@ public class WorkerAnt extends TaskPerformerAnt {
 
     @Override
     public void update() {
-        if (getHunger() < 30 && !(currentTask instanceof EatTask)) {
+        if (getHunger() < 30 && getState() != AntState.FEEDING && !(currentTask instanceof EatTask)) {
             mediator.reportHungry(this);
+        }
+        if (currentTask == null && this.state == AntState.IDLE && !(this.movement instanceof RandomMovement)) {
+            this.movement = new RandomMovement(this, world.getTileGrid());
         }
         super.update();
     }

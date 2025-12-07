@@ -19,8 +19,8 @@ import model.colony.ColonyMediator;
 public abstract class Ant extends Being {
     protected int colonyId;
     protected String nickname;
-    protected AntColony colony; //TODO: maybe shouldn't know this
-    protected ColonyMediator mediator;
+    protected AntColony colony; //TODO: ant maybe shouldn't know this
+    protected ColonyMediator mediator; //TODO: make this observer pattern
     protected List<Status> statuses;
     protected AntState state;
     protected AntBehavior behavior;
@@ -94,7 +94,7 @@ public abstract class Ant extends Being {
             behavior.perform(this);
         }
         
-        super.update();
+        super.update(); // "Being stuff": hunger and age ticking
     }
 
     public AntType getAntType(){

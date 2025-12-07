@@ -2,6 +2,9 @@ package model.ants;
 
 import model.AntType;
 import model.Carryable;
+import model.ants.movement.NoMovement;
+import model.ants.movement.PathfindingMovement;
+import model.ants.movement.RandomMovement;
 import model.ants.state.AntState;
 import model.ants.status.Status;
 import model.datastructures.Position;
@@ -12,7 +15,6 @@ import org.json.JSONObject;
 public class TaskPerformerAnt extends Ant{
     protected Task currentTask;
     protected Task previousTask; // Task to resume after interruption
-    // "Inventory" that can hold 1 object.
     private Carryable carriedObject = null;
 
     /**
@@ -93,7 +95,6 @@ public class TaskPerformerAnt extends Ant{
                 if (previousTask != null && !previousTask.isComplete()) {
                     currentTask = previousTask;
                     previousTask = null;
-                    System.out.println("TaskPerformerAnt: resuming previous task");
                 }
             }
         }
@@ -111,7 +112,7 @@ public class TaskPerformerAnt extends Ant{
             carriedObject.moveTo(new Position(getX(), getY()));
         }
         
-        super.update();  // Handles movement, behavior, and hunger tick
+        super.update();  // Handles super stuff: movement, behavior, hunger and age ticking
     }
 
     public void attemptCarry(Carryable carryable) {

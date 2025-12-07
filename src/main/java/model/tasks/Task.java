@@ -18,8 +18,7 @@ public abstract class Task {
     /**
      * Internal task phases for progression logic.
      * Subclasses use these to manage their own state machine.
-     * 
-     * <p>Note: Enums are immutable so exposing them is safe.
+     *<p>Note: Enums are immutable so exposing them is safe.
      */
     public enum TaskPhase {
         NOT_STARTED,

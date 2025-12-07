@@ -1,13 +1,10 @@
 package model.tasks;
 
-import model.ants.behavior.AntBehavior;
-import model.ants.movement.AntMovement;
 import model.ants.movement.RandomMovement;
 import model.ants.TaskPerformerAnt;
 import model.datastructures.Position;
 
 public class MoveRandomlyTask extends Task {
-    private AntMovement movementStrategy = new RandomMovement();
     
     public MoveRandomlyTask() {
         super();
@@ -15,11 +12,12 @@ public class MoveRandomlyTask extends Task {
     
     @Override
     public void execute(TaskPerformerAnt ant) {
-        if (!(ant.getMovement() instanceof RandomMovement)) {
-            ant.setMovement(movementStrategy);
+        // Create new RandomMovement when current one completes (or on first call)
+        if (!(ant.getMovement() instanceof RandomMovement) || ant.getMovement().isComplete()) {
+            ant.setMovement(new RandomMovement(ant, ant.getWorld().getTileGrid()));
             setPhase(TaskPhase.WORKING);
         }
-        // Note: This task never completes - ant moves randomly forever
+        // Note: This task never completes - ant picks new random goals forever
     }
 
     @Override
