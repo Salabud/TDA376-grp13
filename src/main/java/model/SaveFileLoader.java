@@ -75,7 +75,7 @@ public class SaveFileLoader {
                 case ITEM -> {
                     // Load Item properties and add it to the world
                     MaterialType materialType = MaterialType.valueOf(entity.getString("materialType"));
-                    loadedWorld.addEntity(new Item(position, materialType));
+                    loadedWorld.addEntity(new Item(loadedWorld, position, materialType));
 
                 }
                 case BEING -> {

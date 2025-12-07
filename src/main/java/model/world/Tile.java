@@ -43,5 +43,5 @@ public class Tile {
         return position.getY();
     }
 
-    public Item toItem(){return new Item(this.position, this.materialType);}
+    public Item toItem(){return null;} //Temporary disabling of method. World should handle this
 }

@@ -16,12 +16,13 @@ public class Item extends Entity implements Carryable {
     private MaterialType materialType;
     private boolean scouted;
 
-    public Item(Position position, MaterialType materialType) {
+    public Item(World world, Position position, MaterialType materialType) {
         this.type = EntityType.ITEM;
         this.position = position;
         this.materialType = materialType;
         this.scouted = false;
         this.entityId = EntityIdManager.getInstance().getNextId();
+        this.world = world;
     }
 
     public Item(Position position, MaterialType materialType, int entityId) {

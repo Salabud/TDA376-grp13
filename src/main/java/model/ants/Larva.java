@@ -25,6 +25,7 @@ public class Larva extends Ant implements Carryable {
         beingType = BeingType.ANT;
         antType = AntType.LARVA;
         this.statuses = new ArrayList<>();
+        this.world = world;
     }
     public Larva(World world, int colonyId, int x, int y, int age,
                  String nickname, ColonyMediator mediator, float health, float maxHealth, float hunger,

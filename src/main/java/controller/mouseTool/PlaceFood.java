@@ -20,7 +20,7 @@ public class PlaceFood extends MouseTool{
         int y = position.getY();
 
         if (position.getX() > 1 && position.getX() < 98 && position.getY() > 1 && position.getY() < 98){
-            if (world.getTileGrid()[x][y] == null && world.getEntityGrid()[x][y].isEmpty()) world.addEntity(new Item(position, MaterialType.FOOD));
+            if (world.getTileGrid()[x][y] == null && world.getEntityGrid()[x][y].isEmpty()) world.addEntity(new Item(world, position, MaterialType.FOOD));
         }
     }
 
