@@ -6,29 +6,20 @@ import model.ants.behavior.BirthBehavior;
 import model.ants.movement.NoMovement;
 import model.ants.movement.PathfindingMovement;
 import model.ants.state.AntState;
-import model.colony.AntColony;
-import model.colony.ColonyMediator;
 import model.datastructures.Position;
 
 /**
  * Task for the queen to give birth to a larva.
- * The queen performs BirthBehavior to spawn a new larva.
+ * The queen performs BirthBehavior which broadcasts a LarvaBirthEvent
+ * for the AntSpawner to handle spawning.
  */
 public class BirthTask extends Task {
-    
-    private final AntColony colony;
-    private final ColonyMediator mediator;
 
     /**
-     * Create a birth larva task.
-     * 
-     * @param colony the colony to add the new larva to
-     * @param mediator the mediator for the new larva
+     * Creates a birth task.
      */
-    public BirthTask(AntColony colony, ColonyMediator mediator) {
+    public BirthTask() {
         super();
-        this.colony = colony;
-        this.mediator = mediator;
     }
 
     @Override
@@ -52,7 +43,7 @@ public class BirthTask extends Task {
             case NOT_STARTED:
                 ant.setState(AntState.WORKING);
                 ant.setMovement(new NoMovement());
-                ant.setBehavior(new BirthBehavior(colony, mediator));
+                ant.setBehavior(new BirthBehavior());
                 setPhase(TaskPhase.WORKING);
                 break;
 

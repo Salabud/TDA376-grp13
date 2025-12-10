@@ -12,6 +12,7 @@ import model.colony.tasks.EatTask;
 import model.colony.tasks.FeedBeingTask;
 import model.colony.tasks.Task;
 import model.world.Item;
+import model.world.World;
 
 import java.util.List;
 
@@ -25,6 +26,8 @@ import java.util.List;
 public class ColonyMediator implements ColonyEventListener {
     private ColonyTaskBoard taskBoard;
     private AntColony antColony;
+    @SuppressWarnings("unused") // May be needed for future tunnel/nest functionality
+    private World world;
     
     // Birth control
     private int ticksSinceLastBirth = 0;
@@ -42,6 +45,7 @@ public class ColonyMediator implements ColonyEventListener {
             case TaskCompletedEvent taskEvent -> handleTaskCompleted(taskEvent);
             case BecameIdleEvent idleEvent -> handleBecameIdle(idleEvent);
             case BirthRequestEvent birthEvent -> handleBirthRequest(birthEvent);
+            // OBS: LarvaTransformEvent and LarvaBirthEvent are handled by AntSpawner!
             default -> { }
         }
     }
@@ -127,6 +131,9 @@ public class ColonyMediator implements ColonyEventListener {
     public void setAntColony(AntColony antColony){
         this.antColony = antColony;
     }
+    public void setWorld(World world){
+        this.world = world;
+    }
 
     // Birth control stuff
 
@@ -189,7 +196,7 @@ public class ColonyMediator implements ColonyEventListener {
             }
         }
         
-        BirthTask birthTask = new BirthTask(antColony, this);
+        BirthTask birthTask = new BirthTask();
         if (!queen.isAvailableForTask(birthTask)) {
             return;
         }

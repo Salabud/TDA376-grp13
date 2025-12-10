@@ -1,33 +1,21 @@
 package model.ants.behavior;
 
 import model.ants.Ant;
-import model.ants.AntFactory;
-import model.colony.AntColony;
-import model.colony.ColonyMediator;
+import model.colony.events.LarvaBirthEvent;
 
 /**
  * Behavior strategy for giving birth to a larva.
  * The queen ant is stationary and birthing over time.
- * When complete, a new larva is spawned at the queen's position.
+ * When complete, a LarvaBirthEvent is broadcast for the AntSpawner to handle.
  */
 public class BirthBehavior implements AntBehavior {
     
-    private final AntColony colony;
-    private final ColonyMediator mediator;
     private int birthProgress;
     private boolean isComplete;
     
     private static final int BIRTH_DURATION = 120; // 2 seconds at 60 tps
     
-    /**
-     * Create a birth behavior with the colony context.
-     * 
-     * @param colony : the colony to add the larva to
-     * @param mediator : the mediator for the new larva
-     */
-    public BirthBehavior(AntColony colony, ColonyMediator mediator) {
-        this.colony = colony;
-        this.mediator = mediator;
+    public BirthBehavior() {
         this.birthProgress = 0;
         this.isComplete = false;
     }
@@ -39,15 +27,8 @@ public class BirthBehavior implements AntBehavior {
         birthProgress++;
         
         if (birthProgress >= BIRTH_DURATION) {
-            AntFactory.getInstance().createLarva(
-                    ant.getWorld(),
-                    colony,
-                    ant.getColonyId(),
-                    ant.getX(),
-                    ant.getY(),
-                    mediator
-            );
-            
+            // Broadcast event for AntSpawner to handle spawning
+            ant.broadcastEvent(new LarvaBirthEvent(ant, ant.getPosition()));
             isComplete = true;
         }
     }

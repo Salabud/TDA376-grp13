@@ -4,11 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.ants.*;
+import model.ants.creation.AntFactory;
 import model.colony.AntColony;
 import model.colony.ColonyMediator;
 import model.colony.ColonyTaskBoard;
 import model.datastructures.Position;
 import model.Entity;
+import model.EntityIdManager;
 
 /**
  * Represents the world in which entities exist and interact.
@@ -37,6 +39,7 @@ public class World {
         colony = new AntColony(colonyMediator, taskBoard);
         colonyMediator.setAntColony(colony);
         colonyMediator.setColonyTaskBoard(taskBoard);
+        colonyMediator.setWorld(this);
         for (int x=0; x<gridSize; x++) {
             for (int y=0; y < gridSize; y++) {
                 entityGrid[x][y] = new ArrayList<>();
@@ -83,11 +86,30 @@ public class World {
         colony = new AntColony(colonyMediator, taskBoard);
         colonyMediator.setAntColony(colony);
         colonyMediator.setColonyTaskBoard(taskBoard);
+        colonyMediator.setWorld(this);
 
         AntFactory factory = AntFactory.getInstance();
-        TaskPerformerAnt ant1 = factory.createWorkerAnt(this, colony, 0, 30, 30, colonyMediator);
-        TaskPerformerAnt ant2 = factory.createWorkerAnt(this, colony, 0, 35, 30, colonyMediator);
-        QueenAnt queen = factory.createQueenAnt(this, colony, 0, 20, 60, colonyMediator);
+        
+        // Create and register worker ants
+        WorkerAnt ant1 = factory.createWorkerAnt(new Position(30, 30));
+        ant1.setEntityId(EntityIdManager.getInstance().getNextId());
+        ant1.addEventListener(colonyMediator);
+        addEntity(ant1);
+        colony.addAnt(ant1);
+        
+        WorkerAnt ant2 = factory.createWorkerAnt(new Position(35, 30));
+        ant2.setEntityId(EntityIdManager.getInstance().getNextId());
+        ant2.addEventListener(colonyMediator);
+        addEntity(ant2);
+        colony.addAnt(ant2);
+        
+        // Create and register queen
+        QueenAnt queen = factory.createQueenAnt(new Position(20, 60));
+        queen.setEntityId(EntityIdManager.getInstance().getNextId());
+        queen.addEventListener(colonyMediator);
+        addEntity(queen);
+        colony.addAnt(queen);
+        
         Item food = new Item(this, new Position(45, 24), MaterialType.FOOD);
         Item food2 = new Item(this, new Position(46,25), MaterialType.FOOD);
         Item food3 = new Item(this, new Position(45,25), MaterialType.FOOD);
@@ -109,7 +131,14 @@ public class World {
         colony.addKnownFood(food5);
         colony.addKnownFood(food6);
         colony.addKnownFood(food7);
-        Larva larva1 = factory.createLarva(this, colony, 3,23,35,colonyMediator);
+        
+        // Create and register larva
+        Larva larva1 = factory.createLarva(new Position(23, 35));
+        larva1.setEntityId(EntityIdManager.getInstance().getNextId());
+        larva1.addEventListener(colonyMediator);
+        addEntity(larva1);
+        colony.addAnt(larva1);
+        
         tilesChanged = true;
         return this;
     }

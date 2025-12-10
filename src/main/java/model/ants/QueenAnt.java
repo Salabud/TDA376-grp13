@@ -9,23 +9,28 @@ import model.colony.tasks.EatTask;
 import model.colony.tasks.FeedBeingTask;
 import model.colony.tasks.MoveCarryableTask;
 import model.colony.tasks.Task;
-import model.world.World;
 
 import java.util.ArrayList;
 
 /** Represents the queen ant in the simulation. */
 public class QueenAnt extends TaskPerformerAnt {
-    private static final float HUNGER_THRESHOLD = 50f; // Report hunger when below this level
-    private boolean hasReportedHunger = false; // Prevent spamming reports
+    private static final float DEFAULT_MAX_HEALTH = 200f;
+    private static final float DEFAULT_MAX_HUNGER = 150f;
+    private static final float HUNGER_THRESHOLD = 50f;
+    private boolean hasReportedHunger = false;
 
-    public QueenAnt(EntityType type, World world, int colonyId, int x, int y){
+    public QueenAnt(Position position) {
         this.type = EntityType.BEING;
         this.beingType = BeingType.ANT;
         this.antType = AntType.QUEEN;
-        this.world = world;
-        this.colonyId = colonyId;
-        this.position = new Position(x,y);
+        this.position = position;
         this.statuses = new ArrayList<>();
+        
+        // type-specific defaults
+        this.maxHealth = DEFAULT_MAX_HEALTH;
+        this.health = DEFAULT_MAX_HEALTH;
+        this.maxHunger = DEFAULT_MAX_HUNGER;
+        this.hunger = DEFAULT_MAX_HUNGER;
     }
 
     @Override
