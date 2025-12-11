@@ -7,6 +7,7 @@ import model.colony.events.FoodDiscoveredEvent;
 import model.world.Item;
 import model.world.MaterialType;
 import model.world.World;
+import model.world.WorldContext;
 
 import java.util.List;
 
@@ -30,17 +31,17 @@ public class ScoutBehavior implements AntBehavior {
 
     @Override
     public void perform(Ant ant) {
-        World world = ant.getWorld();
+        WorldContext surroundings = ant.getSurroundings();
         AntColony colony = ant.getColony();
         
-        if (world == null || colony == null) {
+        if (surroundings== null || colony == null) {
             return;
         }
         
         int antX = ant.getX();
         int antY = ant.getY();
         List<Item> knownFood = colony.getKnownFood();
-        List<Entity>[][] entityGrid = world.getEntityGrid();
+        List<Entity>[][] entityGrid = surroundings.getEntityGrid();
         int gridSize = entityGrid.length;
         
         for (int dx = -detectionSize; dx <= detectionSize; dx++) {

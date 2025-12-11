@@ -26,7 +26,7 @@ public class EatTask extends Task {
                 ant.setMovement(new PathfindingMovement(
                     ant.getPosition(),
                     foodPosition,
-                    ant.getWorld().getTileGrid()
+                    ant.getSurroundings().getTileGrid()
                 ));
                 ant.setBehavior(null);
                 setPhase(TaskPhase.MOVING_TO_TARGET);

@@ -22,7 +22,6 @@ public class Item extends Entity implements Carryable {
         this.materialType = materialType;
         this.scouted = false;
         this.entityId = EntityIdManager.getInstance().getNextId();
-        this.world = world;
     }
 
     public Item(Position position, MaterialType materialType, int entityId) {
@@ -37,9 +36,7 @@ public class Item extends Entity implements Carryable {
     }
 
     public void moveTo(Position position) {
-        this.removePositionFromEntityGrid();
         this.position = position;
-        this.addPositionToEntityGrid();
     }
 
     @Override

@@ -30,7 +30,7 @@ public class TemporaryTestTask extends Task {
             ant.setMovement(new PathfindingMovement(
                 ant.getPosition(), 
                 getTargetLocation(), 
-                ant.getWorld().getTileGrid()
+                ant.getSurroundings().getTileGrid()
             ));
             setPhase(TaskPhase.MOVING_TO_TARGET);
         }

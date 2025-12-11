@@ -22,7 +22,7 @@ public class AntColony {
     private List<Item> knownFood;
     private QueenAnt queen;
 
-    public AntColony(ColonyMediator mediator, ColonyTaskBoard taskBoard){
+    public AntColony(HiveMind mediator, ColonyTaskBoard taskBoard){
         ants = new ArrayList<>();
         knownFood = new ArrayList<>();
         this.taskBoard = taskBoard;

@@ -6,7 +6,7 @@ import java.util.List;
 import model.ants.*;
 import model.ants.creation.AntFactory;
 import model.colony.AntColony;
-import model.colony.ColonyMediator;
+import model.colony.HiveMind;
 import model.colony.ColonyTaskBoard;
 import model.datastructures.Position;
 import model.Entity;
@@ -16,14 +16,16 @@ import model.EntityIdManager;
  * Represents the world in which entities exist and interact.
  * Manages the grid of tiles and entities, and handles updates.
  */
-public class World {
+public class World implements EntityRegistry, TileRegistry, Tickable{
     private List<Entity> entities; // Current entities in the world, for easy iteration
     private List<Entity>[][] entityGrid;
     private Tile[][] tileGrid;
     private List<Tile> tiles; // Current tiles in the world, for easy rendering access
-    private final int gridSize;
     private boolean tilesChanged;
-    private ColonyMediator colonyMediator;
+
+    private final int gridSize;
+
+    private HiveMind hiveMind;
     private AntColony colony;
     private ColonyTaskBoard taskBoard;
 
@@ -34,12 +36,11 @@ public class World {
         this.tileGrid = new Tile[gridSize][gridSize];
         this.entities = new ArrayList<>();
         this.tiles = new ArrayList<>();
-        colonyMediator = new ColonyMediator();
+        hiveMind = new HiveMind();
         taskBoard = new ColonyTaskBoard();
-        colony = new AntColony(colonyMediator, taskBoard);
-        colonyMediator.setAntColony(colony);
-        colonyMediator.setColonyTaskBoard(taskBoard);
-        colonyMediator.setWorld(this);
+        colony = new AntColony(hiveMind, taskBoard);
+        hiveMind.setAntColony(colony);
+        hiveMind.setColonyTaskBoard(taskBoard);
         for (int x=0; x<gridSize; x++) {
             for (int y=0; y < gridSize; y++) {
                 entityGrid[x][y] = new ArrayList<>();
@@ -81,32 +82,31 @@ public class World {
             }
         }
 
-        colonyMediator = new ColonyMediator();
+        hiveMind = new HiveMind();
         taskBoard = new ColonyTaskBoard();
-        colony = new AntColony(colonyMediator, taskBoard);
-        colonyMediator.setAntColony(colony);
-        colonyMediator.setColonyTaskBoard(taskBoard);
-        colonyMediator.setWorld(this);
+        colony = new AntColony(hiveMind, taskBoard);
+        hiveMind.setAntColony(colony);
+        hiveMind.setColonyTaskBoard(taskBoard);
 
         AntFactory factory = AntFactory.getInstance();
         
         // Create and register worker ants
         WorkerAnt ant1 = factory.createWorkerAnt(new Position(30, 30));
         ant1.setEntityId(EntityIdManager.getInstance().getNextId());
-        ant1.addEventListener(colonyMediator);
+        ant1.addEventListener(hiveMind);
         addEntity(ant1);
         colony.addAnt(ant1);
         
         WorkerAnt ant2 = factory.createWorkerAnt(new Position(35, 30));
         ant2.setEntityId(EntityIdManager.getInstance().getNextId());
-        ant2.addEventListener(colonyMediator);
+        ant2.addEventListener(hiveMind);
         addEntity(ant2);
         colony.addAnt(ant2);
         
         // Create and register queen
         QueenAnt queen = factory.createQueenAnt(new Position(20, 60));
         queen.setEntityId(EntityIdManager.getInstance().getNextId());
-        queen.addEventListener(colonyMediator);
+        queen.addEventListener(hiveMind);
         addEntity(queen);
         colony.addAnt(queen);
         
@@ -135,7 +135,7 @@ public class World {
         // Create and register larva
         Larva larva1 = factory.createLarva(new Position(23, 35));
         larva1.setEntityId(EntityIdManager.getInstance().getNextId());
-        larva1.addEventListener(colonyMediator);
+        larva1.addEventListener(hiveMind);
         addEntity(larva1);
         colony.addAnt(larva1);
         
@@ -147,6 +147,7 @@ public class World {
      * Adds an entity to the world at its current position.
      * @param entity : The entity to be added.
      */
+    @Override
     public void addEntity(Entity entity){
         int x = entity.getX();
         int y = entity.getY();
@@ -160,6 +161,7 @@ public class World {
      * Removes an entity from the world.
      * @param entity : The entity to be removed.
      */
+    @Override
     public void removeEntity(Entity entity) {
         int x = entity.getX();
         int y = entity.getY();
@@ -211,6 +213,7 @@ public class World {
      * Remove a tile from the world (without turning into an item)
      * @param position the position of the tile to be removed
      */
+    @Override
     public void removeTile(Position position){
         tiles.remove(tileGrid[position.getX()][position.getY()]);
         tileGrid[position.getX()][position.getY()] = null;
@@ -221,15 +224,18 @@ public class World {
      * Adds a tile to the world at its position.
      * @param tile : The tile to be added.
      */
+    @Override
     public void addTile(Tile tile){
         tiles.add(tile);
         tileGrid[tile.getPosition().getX()][tile.getPosition().getY()] = tile;
         tilesChanged = true;
     }
 
-    public List<Entity> getEntities(){
+    @Override
+    public List<Entity> getEntityList(){
         return entities;
     }
+
     public List<Entity>[][] getEntityGrid(){
         return entityGrid;
     }
@@ -248,11 +254,13 @@ public class World {
     /**
      * Updates all entities in the world one simulation tick.
      */
+    @Override
     public void tick(){
-        colonyMediator.update();
-        
+        hiveMind.update();
         for (Entity entity : entities) {
+            WorldContext worldContext = new WorldContext(entities,entityGrid,tiles,tileGrid,gridSize);
             entity.update();
+            entity.setWorldContext(worldContext);
         }
     }
 
@@ -260,6 +268,7 @@ public class World {
      * Gets the tile grid of the world.
      * @return The tile grid as Tile[][].
      */
+    @Override
     public Tile[][] getTileGrid() {
         return tileGrid;
     }
@@ -268,7 +277,8 @@ public class World {
      * Gets the list of tiles in the world. 
      * @return The list of tiles as List<Tile>.
      */
-    public List<Tile> getTiles() {
+    @Override
+    public List<Tile> getTileList() {
         return tiles;
     }
   
@@ -293,8 +303,8 @@ public class World {
 
     public AntColony getAntColony() { return colony;
     }
-    public ColonyMediator getColonyMediator(){
-        return colonyMediator;
+    public HiveMind getColonyMediator(){
+        return hiveMind;
     }
     public ColonyTaskBoard getTaskBoard(){
         return taskBoard;

@@ -12,7 +12,6 @@ import model.colony.tasks.EatTask;
 import model.colony.tasks.FeedBeingTask;
 import model.colony.tasks.Task;
 import model.world.Item;
-import model.world.World;
 
 import java.util.List;
 
@@ -23,11 +22,10 @@ import java.util.List;
  * <p>Ants broadcast events which this mediator listens to and handles appropriately.
  * <p>Also handles colony-wide decisions like birth control based on colony state.
  */
-public class ColonyMediator implements ColonyEventListener {
+public class HiveMind implements ColonyEventListener {
     private ColonyTaskBoard taskBoard;
     private AntColony antColony;
     @SuppressWarnings("unused") // May be needed for future tunnel/nest functionality
-    private World world;
     
     // Birth control
     private int ticksSinceLastBirth = 0;
@@ -130,9 +128,6 @@ public class ColonyMediator implements ColonyEventListener {
     }
     public void setAntColony(AntColony antColony){
         this.antColony = antColony;
-    }
-    public void setWorld(World world){
-        this.world = world;
     }
 
     // Birth control stuff

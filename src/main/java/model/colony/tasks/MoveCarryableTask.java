@@ -67,7 +67,7 @@ public class MoveCarryableTask extends Task{
                 ant.setMovement(new PathfindingMovement(
                         ant.getPosition(),
                         getTargetLocation(),
-                        ant.getWorld().getTileGrid()
+                        ant.getSurroundings().getTileGrid()
                 ));
                 ant.setBehavior(null);
                 setPhase(TaskPhase.MOVING_TO_TARGET);
@@ -87,7 +87,7 @@ public class MoveCarryableTask extends Task{
                 ant.setMovement(new PathfindingMovement(
                         ant.getPosition(),
                         endPosition,
-                        ant.getWorld().getTileGrid()
+                        ant.getSurroundings().getTileGrid()
                 ));
                 if (ant.getPosition().isAdjacentTo(carryablePosition)){
                     setPhase(TaskPhase.COMPLETE);

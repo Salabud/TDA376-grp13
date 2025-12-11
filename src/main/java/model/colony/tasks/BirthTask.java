@@ -62,7 +62,7 @@ public class BirthTask extends Task {
                 ant.setMovement(new PathfindingMovement( // TODO: Change this to "closest empy tile"-movement
                         ant.getPosition(),
                         birthLocation,
-                        ant.getWorld().getTileGrid()));
+                        ant.getSurroundings().getTileGrid()));
                 ant.setBehavior(null);
                 setPhase(TaskPhase.COMPLETE);
                 break;
