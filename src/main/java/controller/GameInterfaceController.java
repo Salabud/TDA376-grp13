@@ -69,10 +69,10 @@ public class GameInterfaceController implements InputHandler, ModelListener {
             case RIGHT:
                 pan(-50,0);
                 break;
-            case ADD:
+            case Z:
                 zoom(metaData.getZoom()+0.2);
                 break;
-            case SUBTRACT:
+            case X:
                 zoom(metaData.getZoom()-0.2);
                 break;
             case SPACE:

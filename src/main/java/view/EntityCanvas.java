@@ -1,5 +1,6 @@
 package view;
 
+import javafx.scene.image.Image;
 import model.ModelPresentor;
 import model.ants.Ant;
 import model.Being;
@@ -19,10 +20,10 @@ import java.util.List;
 public class EntityCanvas extends Canvas {
     private final GraphicsContext gc = getGraphicsContext2D();
     private int cellsize;
-    private final Sprite workerAnt;
-    private final Sprite larva;
-    private final Sprite food;
-    private final Sprite queen;
+    private final ImageSprite workerAnt;
+    private final ImageSprite larva;
+    private final ImageSprite food;
+    private final ImageSprite queen;
     private final Sprite dirt;
     private final Sprite poison;
     private final Sprite selectionSprite;
@@ -32,18 +33,19 @@ public class EntityCanvas extends Canvas {
 
 
     public EntityCanvas(){
+        gc.setImageSmoothing(false);
         this.cellsize = (int)(metaData.getCellSize()* metaData.getZoom());
         setWidth(metaData.getResolutionY());
         setHeight(metaData.getResolutionX());
 
         // Being sprites
-        this.workerAnt = new CircleSprite(1, Color.rgb(250, 149, 0), gc);
-        this.larva = new CircleSprite(1, Color.WHITE, gc);
-        this.queen = new CircleSprite(1, Color.YELLOW, gc);
+        this.workerAnt = new ImageSprite(1.5, gc, new Image(getClass().getResourceAsStream("/sprites/ant_orange.png"),32,32,false,false));
+        this.larva = new ImageSprite(1, gc, new Image(getClass().getResourceAsStream("/sprites/larva.png"),32,32,false,false));
+        this.queen = new ImageSprite(2, gc, new Image(getClass().getResourceAsStream("/sprites/queen_orange.png"),32,32,false,false));
 
         // Item Sprites
         //this.itemOutline = new DiamondSprite(cellsize+6, Color.BLACK, gc);
-        this.food = new DiamondSprite(cellsize+2, Color.GREEN, gc);
+        this.food = new ImageSprite(1,gc, new Image(getClass().getResourceAsStream("/sprites/leaf.png"),32,32,false,false));
         this.dirt = new DiamondSprite(cellsize+2, Color.rgb(50,41,47), gc);
         this.poison = new DiamondSprite(cellsize+2, Color.PURPLE, gc);
 

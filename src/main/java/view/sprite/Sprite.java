@@ -6,7 +6,7 @@ import javafx.scene.paint.Color;
 /**
  * Represents a visual sprite with dimensions and color.
  */
-public abstract class Sprite {
+public abstract class Sprite implements Paintable{
     protected double width;
     protected double height;
     protected Color color;
@@ -47,10 +47,6 @@ public abstract class Sprite {
 
     public void setColor(Color color) {
         this.color = color;
-    }
-
-    public void paint(int x, int y){
-
     }
 
 }
