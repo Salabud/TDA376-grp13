@@ -1,8 +1,10 @@
 package model;
 
-import model.ants.AntFactory;
+import model.ants.Ant;
+import model.ants.creation.AntFactory;
 import model.ants.status.Status;
 import model.colony.AntColony;
+import model.colony.ColonyMediator;
 import model.datastructures.Position;
 import model.world.Item;
 import model.world.MaterialType;
@@ -39,11 +41,11 @@ public class SaveFileLoader {
         JSONObject json = new JSONObject(content);
 
         World loadedWorld = new World();
-
+        ColonyMediator mediator = loadedWorld.getColonyMediator();
 
         // Load colony
         JSONObject colonyObj = json.getJSONObject("colony");
-        AntColony antColony = new AntColony(loadedWorld.getColonyMediator(), loadedWorld.getTaskBoard());
+        AntColony antColony = new AntColony(mediator, loadedWorld.getTaskBoard());
 
         // Load tiles
         JSONArray tiles = json.getJSONArray("tiles");
@@ -85,7 +87,6 @@ public class SaveFileLoader {
                     float hunger = entity.getFloat("hunger");
                     float maxHunger = entity.getFloat("maxHunger");
                     int age = entity.getInt("age");
-                    //float hungerDepletionRate = entity.getFloat("hungerDepletionRate");
                     List<Status> statuses = new ArrayList<>();
                     //TODO add statuses
                     BeingType beingType = BeingType.valueOf(entity.getString("beingType"));
@@ -93,27 +94,19 @@ public class SaveFileLoader {
                         case ANT -> {
                             // Load Ant properties
                             AntType antType = AntType.valueOf(entity.getString("antType"));
-                            int colonyId = entity.getInt("colonyId");
                             String nickname = entity.optString("nickname", null);
-                            switch (antType){
-                                case WORKER_ANT -> {
-                                    AntFactory.getInstance().loadWorkerAnt(loadedWorld, antColony, colonyId, position.getX(), position.getY(),
-                                            age, nickname, loadedWorld.getColonyMediator(), health, maxHealth, hunger, maxHunger, movementInterval,
-                                            statuses);
-                                }
-                                case QUEEN -> {
-                                    AntFactory.getInstance().loadQueenAnt(loadedWorld, antColony, colonyId, position.getX(), position.getY(),
-                                            age, nickname, loadedWorld.getColonyMediator(), health,maxHealth, hunger, maxHunger, movementInterval,
-                                            statuses);
-                                }
-                                case LARVA -> {
-                                    AntFactory.getInstance().loadLarva(loadedWorld, antColony, colonyId, position.getX(), position.getY(),
-                                            age, nickname, loadedWorld.getColonyMediator(), health,maxHealth, hunger, maxHunger, movementInterval,
-                                            statuses);
-                                }
-                                default -> {
-                                }
-                            }
+                            
+                            Ant ant = switch (antType) {
+                                case WORKER_ANT -> AntFactory.getInstance().loadWorkerAnt(entity);
+                                case QUEEN -> AntFactory.getInstance().loadQueenAnt(entity);
+                                case LARVA -> AntFactory.getInstance().loadLarva(entity);
+                            };
+                            
+                            // Register with world and colony
+                            ant.setEntityId(EntityIdManager.getInstance().getNextId());
+                            ant.addEventListener(mediator);
+                            loadedWorld.addEntity(ant);
+                            antColony.addAnt(ant);
                         }
                         default -> {}
                     }

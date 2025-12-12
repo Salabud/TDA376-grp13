@@ -56,7 +56,7 @@ public abstract class Being extends Entity {
         return this.age;
     }
 
-    public void setAge(int age) {
+    public void setAge(float age) {
         this.age = age;
     }
 
@@ -93,6 +93,8 @@ public abstract class Being extends Entity {
     public BeingType getBeingType(){
         return beingType;
     }
+
+
     @Override
     public JSONObject toJSON(){
         JSONObject obj = super.toJSON();

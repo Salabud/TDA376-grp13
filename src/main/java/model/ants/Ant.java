@@ -107,7 +107,23 @@ public abstract class Ant extends Being {
         return antType;
     }
     
-    // Event broadcasting methods ==========================================
+    public String getNickname() {
+        return nickname;
+    }
+    
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+    
+    public List<Status> getStatuses() {
+        return statuses;
+    }
+    
+    public void setStatuses(List<Status> statuses) {
+        this.statuses = statuses;
+    }
+    
+    // Event broadcasting methods
     
     /**
      * Adds an event listener to receive colony events from this ant.
@@ -125,6 +141,14 @@ public abstract class Ant extends Being {
      */
     public void removeEventListener(ColonyEventListener listener) {
         eventListeners.remove(listener);
+    }
+    
+    /**
+     * Returns an unmodifiable view of the event listeners.
+     * @return the list of event listeners
+     */
+    public List<ColonyEventListener> getEventListeners() {
+        return List.copyOf(eventListeners);
     }
     
     /**

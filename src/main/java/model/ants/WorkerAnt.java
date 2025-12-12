@@ -11,24 +11,29 @@ import model.ants.state.AntState;
 import model.colony.tasks.BirthTask;
 import model.colony.tasks.EatTask;
 import model.colony.tasks.Task;
-import model.world.World;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 
 /** Represents a worker ant in the simulation. */
 public class WorkerAnt extends TaskPerformerAnt {
+    private static final float DEFAULT_MAX_HEALTH = 100f;
+    private static final float DEFAULT_MAX_HUNGER = 100f;
     private static final float HUNGER_THRESHOLD = 30f;
     private boolean hasReportedHunger = false;
 
-    public WorkerAnt(World world, int colonyId, int x, int y){
+    public WorkerAnt(Position position) {
         this.type = EntityType.BEING;
         this.beingType = BeingType.ANT;
         this.antType = AntType.WORKER_ANT;
-        this.world = world;
-        this.colonyId = colonyId;
-        this.position = new Position(x,y);
+        this.position = position;
         this.statuses = new ArrayList<>();
+        
+        // type-specific defaults
+        this.maxHealth = DEFAULT_MAX_HEALTH;
+        this.health = DEFAULT_MAX_HEALTH;
+        this.maxHunger = DEFAULT_MAX_HUNGER;
+        this.hunger = DEFAULT_MAX_HUNGER;
     }
 
     @Override

@@ -1,45 +1,41 @@
 package model.ants;
 
 import model.AntType;
-import model.ants.status.Status;
 import model.BeingType;
 import model.Carryable;
 import model.colony.events.HungryEvent;
+import model.colony.events.LarvaTransformEvent;
 import model.datastructures.Position;
 import model.EntityType;
-import model.world.World;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /** Represents a larva in the simulation. */
 public class Larva extends Ant implements Carryable {
-    private float TRANSFORM_AGE = 5*60F; // In seconds
-    private static final float HUNGER_THRESHOLD = 30f; // Report hunger when below this level
-    private boolean hasReportedHunger = false; // Prevent spamming reports
+    private static final float DEFAULT_MAX_HEALTH = 50f;
+    private static final float DEFAULT_MAX_HUNGER = 50f;
+    private static final float TRANSFORM_AGE = 5 * 60f;
+    private static final float HUNGER_THRESHOLD = 30f;
+    private boolean hasReportedHunger = false;
+    private boolean hasRequestedTransform = false;
 
-    public Larva(World world, int colonyId, int x, int y){
-        this.position = new Position(x,y);
-        type = EntityType.BEING;
-        beingType = BeingType.ANT;
-        antType = AntType.LARVA;
+    public Larva(Position position) {
+        this.position = position;
+        this.type = EntityType.BEING;
+        this.beingType = BeingType.ANT;
+        this.antType = AntType.LARVA;
         this.statuses = new ArrayList<>();
-        this.world = world;
-    }
-    public Larva(World world, int colonyId, int x, int y, int age,
-                 String nickname, float health, float maxHealth, float hunger,
-                 float maxHunger, int movementInterval, List<Status> statuses){
-        position = new Position(x,y);
+        
+        // type-specific defaults
+        this.maxHealth = DEFAULT_MAX_HEALTH;
+        this.health = DEFAULT_MAX_HEALTH;
+        this.maxHunger = DEFAULT_MAX_HUNGER;
+        this.hunger = DEFAULT_MAX_HUNGER;
     }
 
     @Override
     public void moveTo(Position position) {
         this.position = position;
-    }
-
-    //TODO: Implement becomeWorker
-    public void becomeWorker(){
-        System.out.println("becoming worker");
     }
 
     @Override
@@ -55,9 +51,12 @@ public class Larva extends Ant implements Carryable {
             hasReportedHunger = false;
         }
         
-        if (this.getAge() > TRANSFORM_AGE){
-            becomeWorker();
+        // Request transformation when old enough
+        if (this.getAge() > TRANSFORM_AGE && !hasRequestedTransform) {
+            broadcastEvent(new LarvaTransformEvent(this));
+            hasRequestedTransform = true;
         }
+        
         super.update();
     }
 }

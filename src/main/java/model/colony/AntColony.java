@@ -37,6 +37,15 @@ public class AntColony {
         }
     }
     
+    public void removeAnt(Ant ant) {
+        this.ants.remove(ant);
+        
+        // Clear queen reference if removing the queen
+        if (ant == queen) {
+            this.queen = null;
+        }
+    }
+    
     public QueenAnt getQueen() {
         return queen;
     }
