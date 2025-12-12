@@ -9,4 +9,5 @@ public interface EntityRegistry {
     public List<Entity>[][] getEntityGrid();
     public void addEntity(Entity entity);
     public void removeEntity(Entity entity);
+    public void updateEntityGrid();
 }
