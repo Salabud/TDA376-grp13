@@ -11,6 +11,7 @@ import model.colony.events.ColonyEventListener;
 import model.colony.events.LarvaBirthEvent;
 import model.colony.events.LarvaTransformEvent;
 import model.datastructures.Position;
+import model.world.EntityRegistry;
 import model.world.World;
 
 /**
@@ -25,7 +26,7 @@ import model.world.World;
  */
 public class AntSpawner implements ColonyEventListener {
     
-    private World world;
+    private EntityRegistry world;
     private AntColony antColony;
     private ColonyEventListener eventListener;
     
@@ -33,7 +34,7 @@ public class AntSpawner implements ColonyEventListener {
      * Sets the world where spawned ants will be added.
      * @param world : the world
      */
-    public void setWorld(World world) {
+    public void setWorld(EntityRegistry world) {
         this.world = world;
     }
     

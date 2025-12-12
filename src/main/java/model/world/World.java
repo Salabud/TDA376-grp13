@@ -5,6 +5,7 @@ import java.util.List;
 
 import model.ants.*;
 import model.ants.creation.AntFactory;
+import model.ants.creation.AntSpawner;
 import model.colony.AntColony;
 import model.colony.HiveMind;
 import model.colony.ColonyTaskBoard;
@@ -28,6 +29,7 @@ public class World implements EntityRegistry, TileRegistry, Tickable{
     private HiveMind hiveMind;
     private AntColony colony;
     private ColonyTaskBoard taskBoard;
+    private AntSpawner spawner;
 
     public World(){
         this.tilesChanged = false;
@@ -87,6 +89,9 @@ public class World implements EntityRegistry, TileRegistry, Tickable{
         colony = new AntColony(hiveMind, taskBoard);
         hiveMind.setAntColony(colony);
         hiveMind.setColonyTaskBoard(taskBoard);
+        spawner = new AntSpawner();
+        spawner.setWorld(this);
+        spawner.setAntColony(colony);
 
         AntFactory factory = AntFactory.getInstance();
         
@@ -107,6 +112,7 @@ public class World implements EntityRegistry, TileRegistry, Tickable{
         QueenAnt queen = factory.createQueenAnt(new Position(20, 60));
         queen.setEntityId(EntityIdManager.getInstance().getNextId());
         queen.addEventListener(hiveMind);
+        queen.addEventListener(spawner);
         addEntity(queen);
         colony.addAnt(queen);
         
@@ -136,6 +142,7 @@ public class World implements EntityRegistry, TileRegistry, Tickable{
         Larva larva1 = factory.createLarva(new Position(23, 35));
         larva1.setEntityId(EntityIdManager.getInstance().getNextId());
         larva1.addEventListener(hiveMind);
+        larva1.addEventListener(spawner);
         addEntity(larva1);
         colony.addAnt(larva1);
         

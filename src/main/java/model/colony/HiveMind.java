@@ -163,6 +163,7 @@ public class HiveMind implements ColonyEventListener {
         long larvaCount = antColony.getLarvaCount();
         if (larvaCount < getTargetLarvaCount()) {
             requestBirth(queen);
+            System.out.println("HiveMind: requested birth");
             ticksSinceLastBirth = 0;
         }
     }

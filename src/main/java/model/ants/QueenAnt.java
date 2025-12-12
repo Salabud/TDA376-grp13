@@ -35,6 +35,7 @@ public class QueenAnt extends TaskPerformerAnt {
 
     @Override
     public void update() {
+        System.out.println("QueenAnt: Eventlisteners: " + getEventListeners());
         // Broadcast hunger event (hasReportedHunger prevents spamming)
         if (getHunger() < HUNGER_THRESHOLD && !hasReportedHunger) {
             broadcastEvent(new HungryEvent(this));
