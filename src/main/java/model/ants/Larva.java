@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class Larva extends Ant implements Carryable {
     private static final float DEFAULT_MAX_HEALTH = 50f;
     private static final float DEFAULT_MAX_HUNGER = 50f;
-    private static final float TRANSFORM_AGE = 1 * 10;
+    private static final float TRANSFORM_AGE = 3 * 60;
     private static final float HUNGER_THRESHOLD = 30f;
     private boolean hasReportedHunger = false;
     private boolean hasRequestedTransform = false;
