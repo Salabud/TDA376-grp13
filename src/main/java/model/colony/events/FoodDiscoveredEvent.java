@@ -1,7 +1,7 @@
 package model.colony.events;
 
-import model.ants.Ant;
-import model.world.Item;
+import model.entity.being.ants.Ant;
+import model.entity.item.Item;
 
 /**
  * Event fired when food is discovered by a scouting ant.

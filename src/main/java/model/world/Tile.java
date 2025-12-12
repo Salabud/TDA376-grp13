@@ -1,6 +1,7 @@
 package model.world;
 
 import model.datastructures.Position;
+import model.entity.item.Item;
 import org.json.JSONObject;
 
 /**

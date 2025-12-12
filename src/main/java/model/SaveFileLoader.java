@@ -1,12 +1,16 @@
 package model;
 
-import model.ants.Ant;
-import model.ants.creation.AntFactory;
-import model.ants.status.Status;
+import model.entity.being.ants.Ant;
+import model.entity.being.ants.AntType;
+import model.entity.being.ants.creation.AntFactory;
+import model.entity.being.ants.status.Status;
 import model.colony.AntColony;
 import model.colony.HiveMind;
 import model.datastructures.Position;
-import model.world.Item;
+import model.entity.EntityIdManager;
+import model.entity.EntityType;
+import model.entity.being.BeingType;
+import model.entity.item.Item;
 import model.world.MaterialType;
 import model.world.Tile;
 import model.world.World;

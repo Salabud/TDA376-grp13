@@ -1,11 +1,11 @@
 package model.colony.tasks;
 
-import model.AntType;
-import model.ants.TaskPerformerAnt;
-import model.ants.behavior.BirthBehavior;
-import model.ants.movement.NoMovement;
-import model.ants.movement.PathfindingMovement;
-import model.ants.state.AntState;
+import model.entity.being.ants.AntType;
+import model.entity.being.ants.TaskPerformerAnt;
+import model.entity.being.ants.behavior.BirthBehavior;
+import model.entity.being.ants.movement.NoMovement;
+import model.entity.being.ants.movement.PathfindingMovement;
+import model.entity.being.ants.state.AntState;
 import model.datastructures.Position;
 
 /**

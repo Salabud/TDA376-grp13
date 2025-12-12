@@ -1,6 +1,6 @@
 package model.colony.events;
 
-import model.ants.Ant;
+import model.entity.being.ants.Ant;
 
 /**
  * Event fired when an ant becomes idle and is available for a new task.

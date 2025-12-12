@@ -1,7 +1,7 @@
 package model.colony.tasks;
 
-import model.AntType;
-import model.ants.TaskPerformerAnt;
+import model.entity.being.ants.AntType;
+import model.entity.being.ants.TaskPerformerAnt;
 import model.datastructures.Position;
 
 /**

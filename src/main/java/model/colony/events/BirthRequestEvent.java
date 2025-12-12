@@ -1,7 +1,7 @@
 package model.colony.events;
 
-import model.ants.Ant;
-import model.ants.QueenAnt;
+import model.entity.being.ants.Ant;
+import model.entity.being.ants.QueenAnt;
 
 /**
  * Event fired when the colony needs a new larva to be born.

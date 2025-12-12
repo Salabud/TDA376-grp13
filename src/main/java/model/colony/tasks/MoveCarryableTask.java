@@ -1,13 +1,13 @@
 package model.colony.tasks;
 
-import model.Carryable;
-import model.ants.Ant;
-import model.ants.TaskPerformerAnt;
-import model.ants.behavior.AntBehavior;
-import model.ants.movement.AntMovement;
-import model.ants.movement.NoMovement;
-import model.ants.movement.PathfindingMovement;
-import model.ants.state.AntState;
+import model.entity.Carryable;
+import model.entity.being.ants.Ant;
+import model.entity.being.ants.TaskPerformerAnt;
+import model.entity.being.ants.behavior.AntBehavior;
+import model.entity.being.ants.movement.AntMovement;
+import model.entity.being.ants.movement.NoMovement;
+import model.entity.being.ants.movement.PathfindingMovement;
+import model.entity.being.ants.state.AntState;
 import model.datastructures.Position;
 
 /**

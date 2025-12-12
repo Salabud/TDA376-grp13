@@ -1,7 +1,7 @@
 package controller.mouseTool;
 
 import controller.GameInterfaceController;
-import model.Entity;
+import model.entity.Entity;
 import model.datastructures.Position;
 import model.world.World;
 

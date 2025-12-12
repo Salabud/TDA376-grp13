@@ -1,12 +1,12 @@
 package model.colony.tasks;
 
-import model.ants.behavior.EatBehavior;
-import model.ants.movement.NoMovement;
-import model.ants.movement.PathfindingMovement;
-import model.ants.state.AntState;
-import model.ants.TaskPerformerAnt;
+import model.entity.being.ants.behavior.EatBehavior;
+import model.entity.being.ants.movement.NoMovement;
+import model.entity.being.ants.movement.PathfindingMovement;
+import model.entity.being.ants.state.AntState;
+import model.entity.being.ants.TaskPerformerAnt;
 import model.datastructures.Position;
-import model.world.Item;
+import model.entity.item.Item;
 
 public class EatTask extends Task {
     private final Item foodItem;

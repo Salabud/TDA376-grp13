@@ -1,5 +1,6 @@
 package model;
 
+import model.entity.Entity;
 import model.world.Tile;
 import model.world.World;
 import org.json.JSONArray;

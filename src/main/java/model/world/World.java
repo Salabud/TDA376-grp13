@@ -4,17 +4,18 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import model.Entity;
-import model.EntityIdManager;
-import model.ants.Larva;
-import model.ants.QueenAnt;
-import model.ants.WorkerAnt;
-import model.ants.creation.AntFactory;
-import model.ants.creation.AntSpawner;
+import model.entity.Entity;
+import model.entity.EntityIdManager;
+import model.entity.being.ants.Larva;
+import model.entity.being.ants.QueenAnt;
+import model.entity.being.ants.WorkerAnt;
+import model.entity.being.ants.creation.AntFactory;
+import model.entity.being.ants.creation.AntSpawner;
 import model.colony.AntColony;
 import model.colony.ColonyTaskBoard;
 import model.colony.HiveMind;
 import model.datastructures.Position;
+import model.entity.item.Item;
 
 /**
  * Represents the world in which entities exist and interact.

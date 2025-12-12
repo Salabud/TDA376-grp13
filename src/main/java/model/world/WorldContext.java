@@ -1,6 +1,6 @@
 package model.world;
 
-import model.Entity;
+import model.entity.Entity;
 import model.datastructures.Position;
 
 import java.util.List;

@@ -1,6 +1,6 @@
 package model.colony.events;
 
-import model.ants.Ant;
+import model.entity.being.ants.Ant;
 
 /**
  * Base interface for all colony events.

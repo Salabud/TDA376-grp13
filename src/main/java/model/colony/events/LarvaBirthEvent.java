@@ -1,6 +1,6 @@
 package model.colony.events;
 
-import model.ants.Ant;
+import model.entity.being.ants.Ant;
 import model.datastructures.Position;
 
 /**

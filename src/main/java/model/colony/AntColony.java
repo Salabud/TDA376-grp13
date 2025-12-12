@@ -1,10 +1,10 @@
 package model.colony;
 
-import model.AntType;
-import model.ants.Ant;
-import model.ants.QueenAnt;
+import model.entity.being.ants.AntType;
+import model.entity.being.ants.Ant;
+import model.entity.being.ants.QueenAnt;
 import model.datastructures.Position;
-import model.world.Item;
+import model.entity.item.Item;
 
 import org.json.JSONObject;
 

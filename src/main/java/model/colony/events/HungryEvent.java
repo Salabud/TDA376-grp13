@@ -1,7 +1,7 @@
 package model.colony.events;
 
-import model.Being;
-import model.ants.Ant;
+import model.entity.being.Being;
+import model.entity.being.ants.Ant;
 
 /**
  * Event fired when an ant or being is hungry and needs food.

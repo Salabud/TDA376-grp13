@@ -1,7 +1,7 @@
 package model.colony.tasks;
 
-import model.ants.movement.RandomMovement;
-import model.ants.TaskPerformerAnt;
+import model.entity.being.ants.movement.RandomMovement;
+import model.entity.being.ants.TaskPerformerAnt;
 import model.datastructures.Position;
 
 public class MoveRandomlyTask extends Task {

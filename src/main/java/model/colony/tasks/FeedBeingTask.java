@@ -1,13 +1,13 @@
 package model.colony.tasks;
 
-import model.Being;
-import model.ants.TaskPerformerAnt;
-import model.ants.behavior.FeedBehavior;
-import model.ants.movement.NoMovement;
-import model.ants.movement.PathfindingMovement;
-import model.ants.state.AntState;
+import model.entity.being.Being;
+import model.entity.being.ants.TaskPerformerAnt;
+import model.entity.being.ants.behavior.FeedBehavior;
+import model.entity.being.ants.movement.NoMovement;
+import model.entity.being.ants.movement.PathfindingMovement;
+import model.entity.being.ants.state.AntState;
 import model.datastructures.Position;
-import model.world.Item;
+import model.entity.item.Item;
 
 /**
  * Task for feeding any Being by fetching food and bringing it to the target.

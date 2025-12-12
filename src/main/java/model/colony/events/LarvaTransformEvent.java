@@ -1,7 +1,7 @@
 package model.colony.events;
 
-import model.ants.Ant;
-import model.ants.Larva;
+import model.entity.being.ants.Ant;
+import model.entity.being.ants.Larva;
 
 /**
  * Event fired when a larva is ready to transform into a worker ant.

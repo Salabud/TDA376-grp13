@@ -1,10 +1,8 @@
 package controller.mouseTool;
 
-import model.Entity;
 import model.datastructures.Position;
-import model.world.Item;
+import model.entity.item.Item;
 import model.world.MaterialType;
-import model.world.Tile;
 import model.world.World;
 
 public class PlaceFood extends MouseTool{

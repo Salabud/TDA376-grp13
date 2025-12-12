@@ -1,6 +1,6 @@
 package model.world;
 
-import model.Entity;
+import model.entity.Entity;
 
 import java.util.List;
 

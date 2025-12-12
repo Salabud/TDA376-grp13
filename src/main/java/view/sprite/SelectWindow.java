@@ -1,14 +1,12 @@
 package view.sprite;
 
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Label;
-import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
-import model.Being;
-import model.Entity;
-import model.ants.Ant;
-import model.world.Item;
+import model.entity.being.Being;
+import model.entity.Entity;
+import model.entity.being.ants.Ant;
+import model.entity.item.Item;
 
 public class SelectWindow{
     private Entity entity;

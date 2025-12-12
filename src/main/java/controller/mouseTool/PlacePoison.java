@@ -1,7 +1,7 @@
 package controller.mouseTool;
 
 import model.datastructures.Position;
-import model.world.Item;
+import model.entity.item.Item;
 import model.world.MaterialType;
 import model.world.World;
 

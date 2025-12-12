@@ -1,8 +1,8 @@
 package model.colony.tasks;
 
-import model.ants.movement.NoMovement;
-import model.ants.movement.PathfindingMovement;
-import model.ants.TaskPerformerAnt;
+import model.entity.being.ants.movement.NoMovement;
+import model.entity.being.ants.movement.PathfindingMovement;
+import model.entity.being.ants.TaskPerformerAnt;
 import model.datastructures.Position;
 
 /**

@@ -1,9 +1,9 @@
 package model.colony;
 
-import model.Being;
-import model.ants.Larva;
-import model.ants.QueenAnt;
-import model.ants.TaskPerformerAnt;
+import model.entity.being.Being;
+import model.entity.being.ants.Larva;
+import model.entity.being.ants.QueenAnt;
+import model.entity.being.ants.TaskPerformerAnt;
 import model.colony.antnest.Tunnel;
 import model.colony.events.*;
 import model.datastructures.Position;
@@ -11,7 +11,7 @@ import model.colony.tasks.BirthTask;
 import model.colony.tasks.EatTask;
 import model.colony.tasks.FeedBeingTask;
 import model.colony.tasks.Task;
-import model.world.Item;
+import model.entity.item.Item;
 
 import java.util.List;
 
