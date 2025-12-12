@@ -52,7 +52,6 @@ public class Larva extends Ant implements Carryable {
         }
         
         // Request transformation when old enough
-        System.out.println(this.getAge());
         if (this.getAge() > TRANSFORM_AGE && !hasRequestedTransform) {
             broadcastEvent(new LarvaTransformEvent(this));
             hasRequestedTransform = true;

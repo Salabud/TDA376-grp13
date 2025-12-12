@@ -4,15 +4,17 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import model.ants.*;
+import model.Entity;
+import model.EntityIdManager;
+import model.ants.Larva;
+import model.ants.QueenAnt;
+import model.ants.WorkerAnt;
 import model.ants.creation.AntFactory;
 import model.ants.creation.AntSpawner;
 import model.colony.AntColony;
-import model.colony.HiveMind;
 import model.colony.ColonyTaskBoard;
+import model.colony.HiveMind;
 import model.datastructures.Position;
-import model.Entity;
-import model.EntityIdManager;
 
 /**
  * Represents the world in which entities exist and interact.
@@ -273,8 +275,13 @@ public class World implements EntityRegistry, TileRegistry, Tickable{
             entity.update();
             entity.setWorldContext(worldContext);
         }
-        System.out.println(entityPositionHashMap.size());
         updateEntityGrid();
+        for(Entity entity: entityPositionHashMap.keySet()){
+            if (entity instanceof QueenAnt){
+                System.out.println(entity.getPosition());
+                System.out.println(entityPositionHashMap.get(entity));
+            }
+        }
     }
 
     /**
@@ -313,7 +320,7 @@ public class World implements EntityRegistry, TileRegistry, Tickable{
             Position oldPosition = entityPositionHashMap.get(entity);
             Position newPosition = entity.getPosition();
 
-            if (oldPosition == newPosition){return;}
+            if (oldPosition.equals(newPosition)){continue;}
 
             entityGrid[oldPosition.getX()][oldPosition.getY()].remove(entity);
             entityGrid[newPosition.getX()][newPosition.getY()].add(entity);
