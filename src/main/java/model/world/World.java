@@ -276,12 +276,6 @@ public class World implements EntityRegistry, TileRegistry, Tickable{
             entity.setWorldContext(worldContext);
         }
         updateEntityGrid();
-        for(Entity entity: entityPositionHashMap.keySet()){
-            if (entity instanceof QueenAnt){
-                System.out.println(entity.getPosition());
-                System.out.println(entityPositionHashMap.get(entity));
-            }
-        }
     }
 
     /**
@@ -314,6 +308,12 @@ public class World implements EntityRegistry, TileRegistry, Tickable{
       }
       return null;
     }
+
+    /**
+     * Updates the entity grid based for based on entities position.
+     * Requires that the entity in entityGRID has the same position in the
+     * entityPosition hashmap.
+     */
     @Override
     public void updateEntityGrid(){
         for(Entity entity : entityPositionHashMap.keySet()){
