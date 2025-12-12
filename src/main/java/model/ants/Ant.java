@@ -86,9 +86,7 @@ public abstract class Ant extends Being {
         }
         // Execute movement strategy (if any)
         if (movement != null) {
-            this.removePositionFromEntityGrid();
             movement.move(this);
-            this.addPositionToEntityGrid();
 
             // If movement just completed, switch to NoMovement
             if (movement.isComplete() && !(movement instanceof NoMovement)) {

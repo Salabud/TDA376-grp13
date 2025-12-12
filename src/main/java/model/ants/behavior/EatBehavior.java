@@ -38,7 +38,7 @@ public class EatBehavior implements AntBehavior {
         
         eatingProgress++;
         if (eatingProgress >= EATING_DURATION) {
-            ant.getWorld().removeEntity(foodItem);
+            foodItem.setRemoveFlag(true);
             isComplete = true;
             System.out.println("EatBehavior: isComplete():" + isComplete());
         }

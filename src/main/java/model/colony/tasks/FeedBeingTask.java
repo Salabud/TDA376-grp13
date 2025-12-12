@@ -64,7 +64,7 @@ public class FeedBeingTask extends Task {
                 ant.setMovement(new PathfindingMovement(
                         ant.getPosition(),
                         food.getPosition(),
-                        ant.getWorld().getTileGrid()
+                        ant.getSurroundings().getTileGrid()
                 ));
                 ant.setBehavior(null);
                 setPhase(TaskPhase.MOVING_TO_TARGET);
@@ -85,7 +85,7 @@ public class FeedBeingTask extends Task {
                     ant.setMovement(new PathfindingMovement(
                             ant.getPosition(),
                             target.getPosition(),
-                            ant.getWorld().getTileGrid()
+                            ant.getSurroundings().getTileGrid()
                     ));
                 }
                 if (ant.getPosition().isAdjacentTo(target.getPosition())) {

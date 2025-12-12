@@ -14,7 +14,7 @@ public class MoveRandomlyTask extends Task {
     public void execute(TaskPerformerAnt ant) {
         // Create new RandomMovement when current one completes (or on first call)
         if (!(ant.getMovement() instanceof RandomMovement) || ant.getMovement().isComplete()) {
-            ant.setMovement(new RandomMovement(ant, ant.getWorld().getTileGrid()));
+            ant.setMovement(new RandomMovement(ant, ant.getSurroundings().getTileGrid()));
             setPhase(TaskPhase.WORKING);
         }
         // Note: This task never completes - ant picks new random goals forever

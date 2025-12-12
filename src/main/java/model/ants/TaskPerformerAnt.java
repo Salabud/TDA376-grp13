@@ -11,7 +11,7 @@ import model.colony.tasks.Task;
 import org.json.JSONObject;
 
 /** Abstract class for ants that can perform tasks. E.g. WorkerAnt, QueenAnt, (TODO: SoldierAnt)*/
-public class TaskPerformerAnt extends Ant{
+public abstract class TaskPerformerAnt extends Ant{
     protected Task currentTask;
     protected Task previousTask; // Task to resume after interruption
     private Carryable carriedObject = null;

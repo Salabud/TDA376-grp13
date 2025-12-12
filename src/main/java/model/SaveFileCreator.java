@@ -19,13 +19,13 @@ public class SaveFileCreator {
 
         World world = model.getWorld();
         JSONArray tileArray = new JSONArray();
-        for (Tile tile : world.getTiles()){
+        for (Tile tile : world.getTileList()){
             tileArray.put(tile.toJSON());
         }
         json.put("tiles", tileArray);
 
         JSONArray entityArray = new JSONArray();
-        for (Entity entity : world.getEntities()){
+        for (Entity entity : world.getEntityList()){
             entityArray.put(entity.toJSON());
         }
         json.put("entities", entityArray);

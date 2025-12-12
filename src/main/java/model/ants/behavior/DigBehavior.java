@@ -23,8 +23,8 @@ public class DigBehavior implements AntBehavior{
         diggingProgress++;
         System.out.println("Eating: " + diggingProgress);
         if (diggingProgress >= DIGGING_DURATION) {
-            ant.getWorld().removeTile(tileToDig.getPosition());
-            ant.getWorld().addEntity(tileToDig.toItem());
+            //ant.getWorld().removeTile(tileToDig.getPosition()); //TODO Use a listener here instead
+            //ant.getWorld().addEntity(tileToDig.toItem());
             ant.setBehavior(null);
             isComplete = true;
         }

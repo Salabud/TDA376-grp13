@@ -1,5 +1,6 @@
 package model;
 
+import model.world.WorldContext;
 import org.json.JSONObject;
 
 import model.datastructures.Position;
@@ -11,11 +12,12 @@ import model.world.World;
  * simulation.
  */
 public abstract class Entity implements Updateable {
-    protected World world; // Entity probably shouldn't know this
     protected Position position;
     protected int movementInterval;
     protected EntityType type; // Final?
     protected int entityId;
+    protected WorldContext surroundings;
+    protected boolean removeFlag = false;
 
     public void update() {
     }
@@ -40,13 +42,6 @@ public abstract class Entity implements Updateable {
         return this.entityId;
     }
 
-    public void removePositionFromEntityGrid() {
-        this.world.getEntityGrid()[position.getX()][position.getY()].remove(this);
-    }
-
-    public void addPositionToEntityGrid() {
-        this.world.getEntityGrid()[position.getX()][position.getY()].add(this);
-    }
 
     public void setEntityId(int entityId) {
         this.entityId = entityId;
@@ -84,14 +79,6 @@ public abstract class Entity implements Updateable {
         this.movementInterval = movementInterval;
     }
 
-    /**
-     * Gets the world the entity belongs to.
-     *
-     * @return The world the entity belongs to.
-     */
-    public World getWorld() {
-        return this.world;
-    }
 
     /**
      * Create a JSON Object of the entity
@@ -106,5 +93,16 @@ public abstract class Entity implements Updateable {
         obj.put("entityType", type);
         obj.put("movementInterval", movementInterval);
         return obj;
+    }
+
+    public void setWorldContext(WorldContext worldContext) {
+        surroundings = worldContext;
+    }
+    public WorldContext getSurroundings(){
+        return surroundings;
+    }
+
+    public void setRemoveFlag(boolean removeFlag) {
+        this.removeFlag = removeFlag;
     }
 }

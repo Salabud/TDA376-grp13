@@ -52,7 +52,7 @@ public class WorkerAnt extends TaskPerformerAnt {
         
         if (currentTask == null && this.state == AntState.IDLE && !(this.movement instanceof RandomMovement)) {
             this.behavior = new ScoutBehavior();
-            this.movement = new RandomMovement(this, world.getTileGrid());
+            this.movement = new RandomMovement(this, surroundings.getTileGrid());
         }
         super.update();
     }

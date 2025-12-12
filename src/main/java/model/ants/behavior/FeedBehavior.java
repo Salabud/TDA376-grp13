@@ -42,7 +42,7 @@ public class FeedBehavior implements AntBehavior {
         eatingProgress++;
         if (eatingProgress >= EATING_DURATION) {
             if (foodItem != null) {
-                ant.getWorld().removeEntity(foodItem);
+                foodItem.setRemoveFlag(true);
             }
             isComplete = true;
         }

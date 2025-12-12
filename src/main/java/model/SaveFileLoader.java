@@ -4,7 +4,7 @@ import model.ants.Ant;
 import model.ants.creation.AntFactory;
 import model.ants.status.Status;
 import model.colony.AntColony;
-import model.colony.ColonyMediator;
+import model.colony.HiveMind;
 import model.datastructures.Position;
 import model.world.Item;
 import model.world.MaterialType;
@@ -41,7 +41,7 @@ public class SaveFileLoader {
         JSONObject json = new JSONObject(content);
 
         World loadedWorld = new World();
-        ColonyMediator mediator = loadedWorld.getColonyMediator();
+        HiveMind mediator = loadedWorld.getColonyMediator();
 
         // Load colony
         JSONObject colonyObj = json.getJSONObject("colony");

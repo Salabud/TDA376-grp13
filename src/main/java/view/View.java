@@ -107,7 +107,7 @@ public class View implements ModelListener {
     public void onEntitiesChanged(World world) {
         // Update specific entity rendering
         if (entityCanvas != null) {
-            entityCanvas.updateEntities(world.getEntities());
+            entityCanvas.updateEntities(world.getEntityList());
 
         }
     }

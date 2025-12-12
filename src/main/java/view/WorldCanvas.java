@@ -61,7 +61,7 @@ public class WorldCanvas extends Canvas {
         gc.fillRect(0,0, metaData.getSquareOffset(), metaData.getScreenHeight());
         gc.fillRect(metaData.getScreenHeight()+ metaData.getSquareOffset(), 0, metaData.getSquareOffset(), metaData.getScreenHeight());
 
-        for (Tile tile : world.getTiles()){
+        for (Tile tile : world.getTileList()){
             int posX = tile.getX()*cellsize + metaData.getSquareOffset();
             int posY = tile.getY()*cellsize;
             switch (tile.getMaterialType()) {
