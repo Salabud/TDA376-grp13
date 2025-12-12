@@ -13,8 +13,8 @@ public class MetaDataRegistry {
     private double viewPortHeight; //Width of the current viewPort
 
     private MetaDataRegistry(){
-        resolutionX = 1200;
-        resolutionY = 1200;
+        resolutionX = 800;
+        resolutionY = 800;
         viewPortWidth = resolutionX;
         viewPortHeight = resolutionY;
 

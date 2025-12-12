@@ -55,19 +55,20 @@ public class GameInterfaceController implements InputHandler, ModelListener {
      */
     public void handleKeyPress(KeyEvent event) {
         keysPressed.add(event.getCode());
+        //System.out.println(Arrays.toString(keysPressed.toArray()));
 
         switch (event.getCode()) {
             case UP:
-                pan(0,50);
-                break;
-            case DOWN:
                 pan(0,-50);
                 break;
+            case DOWN:
+                pan(0,50);
+                break;
             case LEFT:
-                pan(50,0);
+                pan(-50,0);
                 break;
             case RIGHT:
-                pan(-50,0);
+                pan(50,0);
                 break;
             case Z:
                 zoom(metaData.getZoom()+0.2);
@@ -226,20 +227,35 @@ public class GameInterfaceController implements InputHandler, ModelListener {
         double oldZoom = metaData.getZoom();
         double cameraX = metaData.getCameraX();
         double cameraY = metaData.getCameraY();
-        double screenWidth = metaData.getResolutionY()/zoom;
-        double screenHeight = metaData.getResolutionX()/zoom;
+        double screenWidth = metaData.getViewPortWidth();
+        double screenHeight = metaData.getViewPortHeight();
+        boolean isZoomingIn = oldZoom < zoom;
 
+        //TODO: Fix this, man :(
+        if (isZoomingIn){
+            double newScreenWidth = screenWidth/zoom;
+            double newScreenHeight = screenHeight/zoom;
+            int cameraOffsetX = (int)(screenWidth-newScreenWidth)/2;
+            int cameraOffsetY = (int)(screenHeight-newScreenHeight)/2;
+            pan(cameraOffsetX,cameraOffsetY);
+            metaData.setViewPortWidth(newScreenWidth);
+            metaData.setViewPortHeight(newScreenHeight);
+            System.out.println("MetaDataRegistry: camX, camY, scW, scH: " + metaData.getCameraX() + " " + metaData.getCameraY() + " " + newScreenWidth + " " + newScreenHeight);
+        }
+        else{
+
+        }
 
         metaData.setZoom(zoom); //zoom is a double between 1 and 2 (2 = 2x zoom)
-
         // adjust camera so same world point remains centered
         //metaData.setCameraX((int) (cameraX-(screenWidth*zoom -screenWidth)/2));
         //metaData.setCameraY((int) (cameraY-(screenHeight*zoom -screenHeight)/2));
         view.updateZoom();
     }
+
     public void pan(int x, int y){
-        metaData.setCameraX(metaData.getCameraX()+x);
-        metaData.setCameraY(metaData.getCameraY()+y);
+        metaData.setCameraX(metaData.getCameraX()-x);
+        metaData.setCameraY(metaData.getCameraY()-y);
         view.updateZoom();
     }
 
@@ -267,7 +283,7 @@ public class GameInterfaceController implements InputHandler, ModelListener {
     @Override
     public void onTick() {
         //Does not work for some reason. Threading?
-        //System.out.println(Arrays.toString(keysPressed.toArray()));
+        System.out.println(Arrays.toString(keysPressed.toArray()));
         if (keysPressed.contains(KeyCode.DOWN))  pan(0, 4);
         if (keysPressed.contains(KeyCode.DOWN))  pan(0, -4);
         if (keysPressed.contains(KeyCode.LEFT))  pan(4, 0);
