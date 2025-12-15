@@ -1,6 +1,6 @@
 package model.entity.being.ants.status;
 
-import model.ants.Ant;
+import model.entity.being.ants.Ant;
 
 public class Starving implements Status{
 

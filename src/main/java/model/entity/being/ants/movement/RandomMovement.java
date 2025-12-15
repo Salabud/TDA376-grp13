@@ -45,7 +45,8 @@ public class RandomMovement implements AntMovement {
     private void findReachableGoal(Position start, Tile[][] tileGrid, int maxRadius) {
         int gridWidth = tileGrid.length;
         int gridHeight = tileGrid[0].length;
-        
+        final int skyLimit = 19; //prevent ants from flying
+
         List<Position> farPositions = new ArrayList<>();
         List<Position> nearPositions = new ArrayList<>();
         
@@ -76,7 +77,7 @@ public class RandomMovement implements AntMovement {
                 int ny = current.getY() + dir[1];
                 String nKey = nx + "," + ny;
                 
-                if (nx >= 0 && nx < gridWidth && ny >= 0 && ny < gridHeight 
+                if (nx >= 0 && nx < gridWidth && ny >= skyLimit && ny < gridHeight
                         && !visited.contains(nKey)
                         && tileGrid[nx][ny] == null) {
                     visited.add(nKey);
