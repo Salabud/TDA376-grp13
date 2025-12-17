@@ -7,27 +7,27 @@ public class MetaDataRegistry {
     private double cellSize;
     private int squareOffset;
     private double zoom; // Current level of magnification/zoom
-    private double cameraX; //X co-ord of the viewPort
-    private double cameraY; //Y co-ord of the viewPort
-    private double viewPortWidth; //Width of the current viewPort
-    private double viewPortHeight; //Width of the current viewPort
+    private double cameraX; // X co-ord of the viewPort
+    private double cameraY; // Y co-ord of the viewPort
+    private double viewPortWidth; // Width of the current viewPort
+    private double viewPortHeight; // Width of the current viewPort
 
-    private MetaDataRegistry(){
-        resolutionX = 1200;
-        resolutionY = 1200;
+    private MetaDataRegistry() {
+        resolutionX = 800;
+        resolutionY = 800;
         viewPortWidth = resolutionX;
         viewPortHeight = resolutionY;
 
-        squareOffset = (resolutionY - resolutionX)/2;
-        zoom =1;
-        cellSize = ((double) resolutionX /100)*zoom;
+        squareOffset = (resolutionY - resolutionX) / 2;
+        zoom = 1;
+        cellSize = ((double) resolutionX / 100) * zoom;
         cameraX = 0;
         cameraY = 0;
 
     }
 
-    public static MetaDataRegistry getInstance(){
-        if (INSTANCE == null){
+    public static MetaDataRegistry getInstance() {
+        if (INSTANCE == null) {
             INSTANCE = new MetaDataRegistry();
         }
         return INSTANCE;
@@ -76,7 +76,7 @@ public class MetaDataRegistry {
 
     public void setZoom(double zoom) {
         this.zoom = zoom;
-        cellSize = (int)((resolutionX /100)*zoom);
+        cellSize = (int) ((resolutionX / 100) * zoom);
     }
 
     public double getCameraX() {
