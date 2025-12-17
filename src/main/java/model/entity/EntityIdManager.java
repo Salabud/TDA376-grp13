@@ -1,5 +1,8 @@
 package model.entity;
 
+/**
+ * Singleton class responsible for managing unique entity IDs.
+ */
 public class EntityIdManager {
     private static EntityIdManager INSTANCE;
     private int nextId;

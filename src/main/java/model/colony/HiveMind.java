@@ -272,8 +272,8 @@ public class HiveMind implements ColonyEventListener {
         antColony.deleteKnownFood(food);
     }
 
-    // TODO: Make these into events and handle these events properly
     /**
+     * TODO: Make this into an event instead and handle it properly
      * Report that a tunnel is blocked and needs clearing.
      * @param tunnel : The blocked tunnel
      */
@@ -283,6 +283,7 @@ public class HiveMind implements ColonyEventListener {
     }
     
     /**
+     * TODO: Make this into an event instead and handle it properly
      * Report that a new tunnel needs to be dug.
      * @param tunnel : The tunnel that needs digging
      */

@@ -1,3 +1,8 @@
+
+/**
+ * Controller for the main menu, handling button actions and user input events.
+ * Implements InputHandler to process key and mouse events from the main menu view.
+ */
 package controller;
 
 import model.Model;

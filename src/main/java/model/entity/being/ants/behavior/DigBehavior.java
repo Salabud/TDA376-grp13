@@ -3,6 +3,10 @@ package model.entity.being.ants.behavior;
 import model.entity.being.ants.Ant;
 import model.world.Tile;
 
+/**
+ * Behavior representing the digging action of an ant.
+ * The ant will dig a specified tile over a set duration.
+ */
 public class DigBehavior implements AntBehavior{
     private boolean isComplete;
     private int diggingProgress;

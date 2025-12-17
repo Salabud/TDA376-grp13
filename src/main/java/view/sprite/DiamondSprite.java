@@ -3,6 +3,9 @@ package view.sprite;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
+/**
+ * DiamondSprite is a concrete implementation of Sprite that represents diamond shapes.
+ */
 public class DiamondSprite extends Sprite{
     public DiamondSprite(double width, double height, Color color, GraphicsContext gc) {
         super(width, height, color, gc);

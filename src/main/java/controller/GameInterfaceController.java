@@ -1,3 +1,9 @@
+
+/**
+ * Controller for the main game interface, mediating between the Model and View.
+ * Handles user input, tool selection, and coordinates actions in the game.
+ * Implements InputHandler to process events from the game interface view.
+ */
 package controller;
 
 import controller.mouseTool.*;

@@ -1,5 +1,8 @@
 package view;
 
+/**
+ * Singleton class that holds metadata about the game's display settings.
+ */
 public class MetaDataRegistry {
     private static MetaDataRegistry INSTANCE;
     private int screenWidth;

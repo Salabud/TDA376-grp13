@@ -4,6 +4,10 @@ import model.entity.being.ants.Ant;
 import model.colony.tasks.FeedBeingTask;
 import model.colony.tasks.Task;
 
+/**
+ * Status effect representing poisoning in an ant.
+ * Applies periodic health damage and increases hunger of the affected ant.
+ */
 public class Poisoned implements Status {
 
     private float poisonDamagePerTick;

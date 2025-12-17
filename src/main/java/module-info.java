@@ -47,4 +47,10 @@ module com.example.antsimulator {
     opens model.entity.being to javafx.fxml;
     exports model.entity.item;
     opens model.entity.item to javafx.fxml;
+    exports model.saving;
+    opens model.saving to javafx.fxml;
+    exports view.canvas;
+    opens view.canvas to javafx.fxml;
+    exports view.audio;
+    opens view.audio to javafx.fxml;
 }

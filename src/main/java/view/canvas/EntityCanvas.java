@@ -1,4 +1,4 @@
-package view;
+package view.canvas;
 
 import model.entity.being.ants.Ant;
 import model.entity.being.Being;
@@ -8,6 +8,7 @@ import model.entity.item.Item;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
+import view.MetaDataRegistry;
 import view.sprite.*;
 
 import java.util.List;

@@ -3,6 +3,9 @@ package view.sprite;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
+/**
+ * CircleSprite is a concrete implementation of Sprite that represents circular shapes.
+ */
 public class CircleSprite extends Sprite{
 
     public CircleSprite(double width, double height, Color color, GraphicsContext gc) {

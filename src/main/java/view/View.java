@@ -7,6 +7,10 @@ import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import view.audio.MusicHandler;
+import view.canvas.EntityCanvas;
+import view.canvas.InterfaceCanvas;
+import view.canvas.WorldCanvas;
 
 /**
  * View class, Observer of Model, displays game state.

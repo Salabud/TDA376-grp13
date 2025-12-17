@@ -1,3 +1,8 @@
+
+/**
+ * Mouse tool for removing tiles in a cross pattern (shovel action).
+ * Implements singleton pattern.
+ */
 package controller.mouseTool;
 
 import model.datastructures.Position;
@@ -11,6 +16,11 @@ public class Shovel extends MouseTool{
         pressTriggered = true;
     }
 
+    /**
+     * Removes tiles in a cross pattern centered on the given position.
+     * @param world the world to act upon
+     * @param position the center position for the shovel action
+     */
     @Override
     public void execute(World world, Position position){
         int x = position.getX();

@@ -5,6 +5,10 @@ import model.datastructures.Position;
 
 import java.util.List;
 
+/**
+ * Record representing the context of the world, including entities and tiles.
+ * Implements the context pattern for easy and limited access to world data.
+ */
 public record WorldContext (List<Entity> entityList,
                             List<Entity>[][] entityGrid,
                             List<Tile> tileList,

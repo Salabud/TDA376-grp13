@@ -1,4 +1,4 @@
-package model;
+package model.saving;
 
 import model.entity.being.ants.Ant;
 import model.entity.being.ants.AntType;
@@ -23,13 +23,13 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Responsible for loading save files into the model.
+ */
 public class SaveFileLoader {
     private static SaveFileLoader INSTANCE;
 
-    private SaveFileLoader(){
-
-    }
-
+    private SaveFileLoader(){}
 
     /**
      * Takes the name of a savefile in .json format and loads it into the game.

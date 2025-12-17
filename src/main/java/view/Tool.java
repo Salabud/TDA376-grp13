@@ -1,5 +1,8 @@
 package view;
 
+/**
+ * Enum representing different tools available in the game.
+ */
 public enum Tool {
     SELECT,
     SHOVEL,

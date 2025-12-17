@@ -8,6 +8,10 @@ import model.entity.being.ants.TaskPerformerAnt;
 import model.datastructures.Position;
 import model.entity.item.Item;
 
+/**
+ * Task representing an ant eating a food item.
+ * The ant will move to the food item and consume it.
+ */
 public class EatTask extends Task {
     private final Item foodItem;
     private final Position foodPosition;

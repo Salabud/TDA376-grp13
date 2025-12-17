@@ -3,6 +3,9 @@ package view.sprite;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
+/**
+ * SelectSprite is a concrete implementation of Sprite that represents a selection rectangle.
+ */
 public class SelectSprite extends Sprite{
 
     public SelectSprite(double width, double height, Color color, GraphicsContext gc) {

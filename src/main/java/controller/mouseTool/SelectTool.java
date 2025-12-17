@@ -1,3 +1,8 @@
+
+/**
+ * Mouse tool for selecting entities in the world via the game interface.
+ * Implements singleton pattern.
+ */
 package controller.mouseTool;
 
 import controller.GameInterfaceController;
@@ -12,6 +17,11 @@ public class SelectTool extends MouseTool{
         clickTriggered = true;
     }
 
+    /**
+     * Selects the entity at the given position, or deselects if none is present.
+     * @param world the world to act upon
+     * @param position the position to select
+     */
     @Override
     public void execute(World world, Position position){
         int x = position.getX();
@@ -23,10 +33,12 @@ public class SelectTool extends MouseTool{
         } else {
             gameInterfaceController.selectEntity(-1);
         }
-
-
     }
 
+    /**
+     * Sets the controller to be used for selection actions.
+     * @param gameInterfaceController the controller to set
+     */
     public void setController(GameInterfaceController gameInterfaceController){
         this.gameInterfaceController = gameInterfaceController;
     }

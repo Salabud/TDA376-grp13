@@ -1,17 +1,15 @@
-package view;
+package view.audio;
 import java.net.URL;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.sound.sampled.FloatControl;
 
-/*
- * Author: Ludvig Hygrell
- *
- * Minimum decibel = -80.0
- * Maximum decibel = 6.0206
+/**
+ * Sound class to handle audio playback in the game.
+ * <p>Minimum decibel = -80.0
+ * <p>Maximum decibel = 6.0206
  */
-
 public class Sound {
     private Clip clip;
     private FloatControl gainControl;

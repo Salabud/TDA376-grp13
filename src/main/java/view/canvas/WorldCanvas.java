@@ -1,4 +1,4 @@
-package view;
+package view.canvas;
 
 import model.world.MaterialType;
 import model.world.Tile;
@@ -6,6 +6,7 @@ import model.world.World;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
+import view.MetaDataRegistry;
 import view.sprite.Sprite;
 import view.sprite.SquareSprite;
 

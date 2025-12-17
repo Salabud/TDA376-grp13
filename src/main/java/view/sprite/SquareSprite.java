@@ -3,6 +3,9 @@ package view.sprite;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
+/**
+ * SquareSprite is a concrete implementation of Sprite that represents square shapes.
+ */
 public class SquareSprite extends Sprite{
 
     public SquareSprite(double width, double height, Color color, GraphicsContext gc) {

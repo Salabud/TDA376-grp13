@@ -8,6 +8,9 @@ import model.entity.Entity;
 import model.entity.being.ants.Ant;
 import model.entity.item.Item;
 
+/**
+ * SelectWindow is responsible for displaying information about a selected entity.
+ */
 public class SelectWindow{
     private Entity entity;
     private GraphicsContext gc;

@@ -9,6 +9,9 @@ import javafx.util.StringConverter;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * GameInterface manages the UI components of the game interface.
+ */
 public class GameInterface {
     private List<Node> nodes;
 

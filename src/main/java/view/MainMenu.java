@@ -9,8 +9,6 @@ import javafx.scene.text.Font;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
 /**
  * Singleton class for storing all the node elements that make up the Main Menu
  */

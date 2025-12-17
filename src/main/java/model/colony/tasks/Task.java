@@ -9,9 +9,9 @@ import model.datastructures.Position;
  * E.g. ForageTask, ExpandNestTask, FeedQueenTask etc.
  * 
  * Provides common fields and behavior shared by all tasks:
- * - Task phase tracking (internal state machine)
- * - Assignment status
- * - Completion checking
+ * <p>- Task phase tracking (internal state machine)
+ * <p>- Assignment status
+ * <p>- Completion checking
  */
 public abstract class Task {
     

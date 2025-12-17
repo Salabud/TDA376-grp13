@@ -1,3 +1,8 @@
+
+/**
+ * Mouse tool for placing dirt tiles in the world.
+ * Implements singleton pattern.
+ */
 package controller.mouseTool;
 
 import model.datastructures.Position;
@@ -12,6 +17,11 @@ public class PlaceDirt extends MouseTool{
         pressTriggered = true;
     }
 
+    /**
+     * Places dirt tiles at the given position and its four adjacent tiles if they are empty.
+     * @param world the world to act upon
+     * @param position the center position to place dirt
+     */
     @Override
     public void execute(World world, Position position){
         int x = position.getX();
@@ -32,5 +42,4 @@ public class PlaceDirt extends MouseTool{
         }
         return INSTANCE;
     }
-
 }

@@ -1,5 +1,6 @@
-package model;
+package model.saving;
 
+import model.Model;
 import model.entity.Entity;
 import model.world.Tile;
 import model.world.World;
@@ -9,6 +10,9 @@ import org.json.JSONObject;
 import java.io.FileWriter;
 import java.io.IOException;
 
+/**
+ * Responsible for creating save files from the current state of the model.
+ */
 public class SaveFileCreator {
     private static SaveFileCreator INSTANCE;
 
