@@ -55,7 +55,7 @@ public class Sound {
             gainControl.setValue(0);
             clip.setFramePosition(0);
             clip.start();
-            clip.loop(clip.LOOP_CONTINUOUSLY);
+            clip.loop(Clip.LOOP_CONTINUOUSLY);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -68,7 +68,7 @@ public class Sound {
                 gainControl.setValue(decibel);
                 clip.setFramePosition(0);
                 clip.start();
-                clip.loop(clip.LOOP_CONTINUOUSLY);
+                clip.loop(Clip.LOOP_CONTINUOUSLY);
             } else {
             }
         } catch (Exception e) {

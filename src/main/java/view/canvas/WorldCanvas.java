@@ -17,16 +17,16 @@ import java.util.List;
  */
 public class WorldCanvas extends Canvas {
 
-    private GraphicsContext gc;
+    private final GraphicsContext gc;
     private int cellsize; //TODO: Cellsize dynamically reflect window dimensions
     private int gridStrokeSize;
     private final Sprite dirt;
     private final Sprite stone;
     private final Sprite food;
     private final Sprite grass;
-    private Color background;
-    private Color sky;
-    private int outlineThickness;
+    private final Color background;
+    private final Color sky;
+    private final int outlineThickness;
 
     private final MetaDataRegistry metaData = MetaDataRegistry.getInstance();
 

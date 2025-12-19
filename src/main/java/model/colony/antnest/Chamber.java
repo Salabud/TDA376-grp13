@@ -9,10 +9,10 @@ import java.util.List;
  * Acts as a node in the nest graph.
  */
 public class Chamber {
-    private String id;
-    private Position position;
-    private ChamberType type;
-    private List<Tunnel> tunnels;
+    private final String id;
+    private final Position position;
+    private final ChamberType type;
+    private final List<Tunnel> tunnels;
 
     
     //TODO: Keep track of tiles occupied by the chamber

@@ -19,14 +19,14 @@ import view.canvas.WorldCanvas;
  * Implements ModelListener to observe model changes.
  */
 public class View implements ModelListener {
-    private Stage stage;
+    private final Stage stage;
     private Scene scene;
-    private BorderPane root;
+    private final BorderPane root;
     private InputHandler inputHandler;
     private GameInterface gameInterface;
     private MusicHandler musicHandler;
     private final MetaDataRegistry metaDataRegistry = MetaDataRegistry.getInstance();
-    private ModelPresentor modelPresentor;
+    private final ModelPresentor modelPresentor;
 
     // Canvas components for rendering
     private WorldCanvas worldCanvas;

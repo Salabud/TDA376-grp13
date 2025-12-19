@@ -6,7 +6,7 @@ import javafx.scene.paint.Color;
 import view.MetaDataRegistry;
 
 public class ImageSprite implements Paintable{
-    private double size;
+    private final double size;
     GraphicsContext gc;
     Image image;
 

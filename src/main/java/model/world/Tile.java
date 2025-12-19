@@ -8,8 +8,8 @@ import org.json.JSONObject;
  * Represents a static tile in the world grid with a specific material type.
  */
 public class Tile {
-    private Position position;
-    private MaterialType materialType;
+    private final Position position;
+    private final MaterialType materialType;
 
     public Tile(int x, int y, MaterialType materialType){
         this.materialType = materialType;

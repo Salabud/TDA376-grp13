@@ -10,6 +10,6 @@ public interface Carryable {
      * Move the carryable entity to a new position.
      * @param position : The new position to move to.
      */
-    public void moveTo(Position position);
-    public Position getPosition();
+    void moveTo(Position position);
+    Position getPosition();
 }

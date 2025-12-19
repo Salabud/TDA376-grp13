@@ -10,8 +10,8 @@ import java.util.List;
  * Contains a list of tile positions that need to be excavated.
  */
 public class Tunnel {
-    private Chamber chamberA;
-    private Chamber chamberB;
+    private final Chamber chamberA;
+    private final Chamber chamberB;
     private boolean isBlocked;
     private boolean needsDigging;
 
@@ -19,7 +19,7 @@ public class Tunnel {
      * The list of tile positions that make up this tunnel.
      * From Chamber A center to Chamber B center.
      */
-    private List<Position> tilePositions;
+    private final List<Position> tilePositions;
     
     /**
      * Creates a tunnel between two chambers.

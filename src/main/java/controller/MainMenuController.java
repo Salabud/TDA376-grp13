@@ -14,8 +14,8 @@ import view.MainMenu;
 import java.io.IOException;
 
 public class MainMenuController implements InputHandler{
-    private Model model;
-    private View view;
+    private final Model model;
+    private final View view;
 
     public MainMenuController(Model model, View view) {
         this.model = model;

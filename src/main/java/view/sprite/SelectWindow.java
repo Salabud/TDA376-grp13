@@ -13,11 +13,11 @@ import model.entity.item.Item;
  */
 public class SelectWindow{
     private Entity entity;
-    private GraphicsContext gc;
-    private int x;
-    private int y;
-    private int width;
-    private int height;
+    private final GraphicsContext gc;
+    private final int x;
+    private final int y;
+    private final int width;
+    private final int height;
 
     public SelectWindow(int x, int y, GraphicsContext gc){
         this.x = x;

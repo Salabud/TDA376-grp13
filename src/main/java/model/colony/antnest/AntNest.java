@@ -8,8 +8,8 @@ import java.util.*;
  * connected by tunnels (edges).
  */
 public class AntNest {
-    private List<Chamber> chambers;
-    private List<Tunnel> tunnels;
+    private final List<Chamber> chambers;
+    private final List<Tunnel> tunnels;
     private Chamber entrance;
 
     /** Minimum distance required between any two chambers in tiles. */

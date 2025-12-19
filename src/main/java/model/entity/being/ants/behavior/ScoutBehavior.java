@@ -59,8 +59,8 @@ public class ScoutBehavior implements AntBehavior {
                 
                 for (Entity entity : entitiesAtPosition) {
                     if (entity instanceof Item item && 
-                        item.getMaterialType() == MaterialType.FOOD && 
-                        item.isScouted() == false) {
+                        item.getMaterialType() == MaterialType.FOOD &&
+                            !item.isScouted()) {
                         if (!isKnownFood(item, knownFood)) {
                             System.out.println("reported a scouted item");
                             ant.broadcastEvent(new FoodDiscoveredEvent(item, ant));

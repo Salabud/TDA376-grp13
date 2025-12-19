@@ -15,7 +15,7 @@ import model.datastructures.Position;
  * The pickupable equivalent of a broken tile.
  */
 public class Item extends Entity implements Carryable {
-    private MaterialType materialType;
+    private final MaterialType materialType;
     private boolean scouted;
 
     public Item(World world, Position position, MaterialType materialType) {

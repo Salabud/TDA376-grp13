@@ -5,11 +5,11 @@ import model.entity.Entity;
 import java.util.List;
 
 public interface ModelPresentor {
-    public List<Entity>[][] getEntityGrid();
+    List<Entity>[][] getEntityGrid();
 
-    public List<Entity> getEntityList();
+    List<Entity> getEntityList();
 
-    public Tile[][] getTileGrid();
+    Tile[][] getTileGrid();
 
-    public List<Tile> getTiles();
+    List<Tile> getTiles();
 }

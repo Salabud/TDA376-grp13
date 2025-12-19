@@ -81,6 +81,10 @@ public class RandomMovement implements AntMovement {
                 boolean inBoundsY = ny >= 0 && ny < gridHeight;
                 boolean aboveSky = ny >= skyLimit;
                 boolean notVisited = !visited.contains(nKey);
+                if(nx <= 0){nx = 0;}
+                if(ny <= 0){ny = 0;}
+                if(nx >= 100){nx = 99;}
+                if(ny >= 100){ny = 99;}
                 boolean isEmpty = tileGrid[nx][ny] == null;
 
                 if (inBoundsX && inBoundsY && aboveSky && notVisited && isEmpty) {

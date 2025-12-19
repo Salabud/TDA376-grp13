@@ -1,5 +1,5 @@
 package view.sprite;
 
 public interface Paintable {
-    public void paint(int x, int y);
+    void paint(int x, int y);
 }

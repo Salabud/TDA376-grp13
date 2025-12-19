@@ -8,8 +8,8 @@ import model.entity.being.ants.Ant;
  */
 public class Starving implements Status{
 
-    private float starvationDamagePerTick;
-    private float BASE_STARVATION_DAMAGE = 0.3F;
+    private final float starvationDamagePerTick;
+    private final float BASE_STARVATION_DAMAGE = 0.3F;
 
     public Starving() {
         this.starvationDamagePerTick = BASE_STARVATION_DAMAGE;

@@ -40,7 +40,7 @@ public class WorkerAnt extends TaskPerformerAnt {
     public void update() {
         // Broadcast hunger event (hasReportedHunger prevents spamming)
         boolean isHungry = getHunger() < HUNGER_THRESHOLD;
-        boolean isNotFeeding = (!(getState() != AntState.FEEDING));
+        boolean isNotFeeding = (getState() == AntState.FEEDING);
         boolean isNotEating = !(currentTask instanceof EatTask);
 
         if (isHungry && isNotFeeding && isNotEating && !hasReportedHunger) {
@@ -64,10 +64,7 @@ public class WorkerAnt extends TaskPerformerAnt {
     @Override
     protected boolean isTaskTypeAllowed(Task task) {
         // Workers cannot give birth
-        if (task instanceof BirthTask) {
-            return false;
-        }
-        return true;
+        return !(task instanceof BirthTask);
     }
 
     /**

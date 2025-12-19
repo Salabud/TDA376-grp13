@@ -22,10 +22,10 @@ import model.entity.item.Item;
  * Manages the grid of tiles and entities, and handles updates.
  */
 public class World implements EntityRegistry, TileRegistry, Tickable{
-    private List<Entity> entities; // Current entities in the world, for easy iteration
-    private List<Entity>[][] entityGrid;
-    private Tile[][] tileGrid;
-    private List<Tile> tiles; // Current tiles in the world, for easy rendering access
+    private final List<Entity> entities; // Current entities in the world, for easy iteration
+    private final List<Entity>[][] entityGrid;
+    private final Tile[][] tileGrid;
+    private final List<Tile> tiles; // Current tiles in the world, for easy rendering access
     private boolean tilesChanged;
 
     private final int gridSize;

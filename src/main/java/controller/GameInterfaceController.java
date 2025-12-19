@@ -38,9 +38,9 @@ import java.util.Set;
  * Extensibly implements InputHandler (following the observer pattern) to process View events.
  */
 public class GameInterfaceController implements InputHandler, ModelListener {
-    private Model model;
-    private View view;
-    private GameInterface gameInterface;
+    private final Model model;
+    private final View view;
+    private final GameInterface gameInterface;
     private boolean suppressFirstClick;
     private MouseTool currentTool;
     private boolean dragging;
@@ -48,7 +48,7 @@ public class GameInterfaceController implements InputHandler, ModelListener {
     private static final int TICKS_PER_SECOND = 60;
     private static final int SLOW_TICKS_PER_SECOND = 20;
 
-    private Set<KeyCode> keysPressed;
+    private final Set<KeyCode> keysPressed;
 
     public GameInterfaceController(Model model, View view) {
         this.model = model;

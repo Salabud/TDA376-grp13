@@ -10,10 +10,10 @@ import model.entity.being.ants.Ant;
  */
 public class Poisoned implements Status {
 
-    private float poisonDamagePerTick;
-    private float poisonHungerPerTick;
-    private float BASE_POISON_DAMAGE = 0.3F;
-    private float BASE_HUNGER_DAMAGE = 0.2F;
+    private final float poisonDamagePerTick;
+    private final float poisonHungerPerTick;
+    private final float BASE_POISON_DAMAGE = 0.3F;
+    private final float BASE_HUNGER_DAMAGE = 0.2F;
 
     public Poisoned() {
         this.poisonDamagePerTick = BASE_POISON_DAMAGE;
@@ -26,9 +26,6 @@ public class Poisoned implements Status {
     }  
     @Override
     public boolean allowsTask(Task task) {
-        if (task instanceof FeedBeingTask) {
-            return false;
-        }
-        return true;
+        return !(task instanceof FeedBeingTask);
     }
 }

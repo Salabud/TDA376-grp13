@@ -48,7 +48,7 @@ public class EntityCanvas extends Canvas {
     private final Sprite poison;
     private final Sprite selectionSprite;
     private int selectedEntityId = -1;
-    private SelectWindow selectWindow;
+    private final SelectWindow selectWindow;
     private final MetaDataRegistry metaData = MetaDataRegistry.getInstance();
 
     public EntityCanvas() {

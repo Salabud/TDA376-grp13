@@ -10,7 +10,7 @@ import model.world.Tile;
 public class DigBehavior implements AntBehavior{
     private boolean isComplete;
     private int diggingProgress;
-    private Tile tileToDig;
+    private final Tile tileToDig;
 
     private static final int DIGGING_DURATION = 60;
 

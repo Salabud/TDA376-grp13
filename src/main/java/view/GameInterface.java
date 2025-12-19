@@ -18,21 +18,21 @@ import java.util.List;
  * GameInterface manages the UI components of the game interface.
  */
 public class GameInterface {
-    private List<Node> nodes;
+    private final List<Node> nodes;
 
-    private Button exitButton;
-    private Button saveButton;
-    private Button speed1Button;
+    private final Button exitButton;
+    private final Button saveButton;
+    private final Button speed1Button;
     private Button speed2Button;
-    private Button speed3Button;
-    private Button pauseButton;
-    private ComboBox<Tool> tools;
-    private String font;
-    private MetaDataRegistry metaData;
-    private Image shovelImage;
-    private Image poisonImage;
-    private Image foodImage;
-    private Image dirtImage;
+    private final Button speed3Button;
+    private final Button pauseButton;
+    private final ComboBox<Tool> tools;
+    private final String font;
+    private final MetaDataRegistry metaData;
+    private final Image shovelImage;
+    private final Image poisonImage;
+    private final Image foodImage;
+    private final Image dirtImage;
 
     public GameInterface() {
 

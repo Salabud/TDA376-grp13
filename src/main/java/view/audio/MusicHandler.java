@@ -4,7 +4,7 @@ package view.audio;
  * Singleton class that manages background music for the game.
  */
 public class MusicHandler {
-    private Sound mainMenuTrack;
+    private final Sound mainMenuTrack;
     private Sound currentTrack;
     private static MusicHandler INSTANCE;
 

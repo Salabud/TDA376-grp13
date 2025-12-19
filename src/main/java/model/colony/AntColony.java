@@ -17,9 +17,9 @@ import java.util.List;
  * coordination is handled by ColonyMediator.
  */
 public class AntColony {
-    private List<Ant> ants;
-    private ColonyTaskBoard taskBoard; //TODO: We don't need this here
-    private List<Item> knownFood;
+    private final List<Ant> ants;
+    private final ColonyTaskBoard taskBoard; //TODO: We don't need this here
+    private final List<Item> knownFood;
     private QueenAnt queen;
 
     public AntColony(HiveMind mediator, ColonyTaskBoard taskBoard){

@@ -8,9 +8,9 @@ import java.util.List;
  * Interface for managing a registry of entities within the world.
  */
 public interface EntityRegistry {
-    public List<Entity> getEntityList();
-    public List<Entity>[][] getEntityGrid();
-    public void addEntity(Entity entity);
-    public void removeEntity(Entity entity);
-    public void updateEntityGrid();
+    List<Entity> getEntityList();
+    List<Entity>[][] getEntityGrid();
+    void addEntity(Entity entity);
+    void removeEntity(Entity entity);
+    void updateEntityGrid();
 }

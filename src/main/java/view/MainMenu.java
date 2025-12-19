@@ -14,14 +14,14 @@ import java.util.List;
  */
 public class MainMenu {
     private static MainMenu INSTANCE;
-    private List<Node> nodes;
-    private Button newGameButton;
-    private Button loadGameButton;
-    private Button settingsButton;
-    private String backGroundColor;
-    private String buttonColor;
-    private Label titleLabel;
-    private MetaDataRegistry metaData = MetaDataRegistry.getInstance();
+    private final List<Node> nodes;
+    private final Button newGameButton;
+    private final Button loadGameButton;
+    private final Button settingsButton;
+    private final String backGroundColor;
+    private final String buttonColor;
+    private final Label titleLabel;
+    private final MetaDataRegistry metaData = MetaDataRegistry.getInstance();
 
     private MainMenu(){
         nodes = new ArrayList<>();
